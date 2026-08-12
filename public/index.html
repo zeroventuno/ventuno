@@ -579,21 +579,27 @@ html.static .scroll-ind{display:none}
       <div class="proj-info">
         <span class="proj-tag" data-i18n="roero.tag">Case em destaque — Web App</span>
         <h3 class="proj-title">Centro Sportivo Roero</h3>
-        <p class="proj-desc" data-i18n="roero.desc">Plataforma web para um centro esportivo aquático com 5 unidades — da disponibilidade de raias em tempo real ao painel administrativo.</p>
+        <p class="proj-desc" data-i18n="roero.desc">Plataforma completa para um centro esportivo aquático com 5 sedes: disponibilidade de raias em tempo real, totem de check-in, CMS próprio e uma rotina de notícias com IA — substituindo um site que não era tocado desde 2005.</p>
         <div class="proj-points">
-          <div class="pp"><span class="k" data-i18n="lbl.problem">Problema</span><span class="v" data-i18n="roero.p1">Cinco piscinas, informação dispersa: nadadores sem visibilidade de raias livres, staff sobrecarregado com check-ins manuais e gestão em planilhas.</span></div>
-          <div class="pp"><span class="k" data-i18n="lbl.solution">Solução</span><span class="v" data-i18n="roero.p2">Sistema de disponibilidade de raias em tempo real, check-in self-service e painel administrativo unificado para as 5 unidades.</span></div>
-          <div class="pp"><span class="k" data-i18n="lbl.impact">Impacto</span><span class="v" data-i18n="roero.p3">Uma única fonte de verdade para usuários e gestão — menos fila, menos telefone, decisão baseada em dado real de ocupação.</span></div>
+          <div class="pp"><span class="k" data-i18n="lbl.problem">Problema</span><span class="v" data-i18n="roero.p1">Site de 2005 sem HTTPS nem versão mobile, navegação entre sedes feita só por imagens, reservas espalhadas em dois sistemas de terceiros e conteúdo que só mudava com ajuda técnica.</span></div>
+          <div class="pp"><span class="k" data-i18n="lbl.solution">Solução</span><span class="v" data-i18n="roero.p2">As 5 sedes num só sistema, com raias em tempo real, totem de auto-atendimento, calendário unificado e painel administrativo com dois níveis de acesso.</span></div>
+          <div class="pp"><span class="k" data-i18n="lbl.impact">Impacto</span><span class="v" data-i18n="roero.p3">A equipe publica sozinha, sem programador. Ocupação vira dado real em vez de telefonema, e o site se mantém atualizado sem esforço editorial.</span></div>
         </div>
         <div class="stack">
-          <span class="chip">Next.js</span><span class="chip">Supabase</span><span class="chip">GitHub</span><span class="chip">Vercel</span><span class="chip">Realtime</span>
+          <span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Supabase</span><span class="chip">n8n</span><span class="chip">OpenAI</span><span class="chip">Vercel</span>
         </div>
       </div>
       <div class="proj-visual" data-parallax data-gallery="roero" data-index="0" data-hover>
         <div class="pv">
           <div class="ph"><span class="big">CSR</span><span data-i18n="roero.ph">screenshot da plataforma</span></div>
           <img class="real" src="assets/roero.jpg" alt="Centro Sportivo Roero — home da plataforma com hero e navegação">
+          <span class="pv-badge" data-i18n="roero.gal">Galeria · 5</span>
         </div>
+      </div>
+      <div class="proj-sub rv">
+        <span class="proj-tag" data-i18n="roero.subtag">Automação — rassegna stampa</span>
+        <h4 class="sub-title" data-i18n="roero.subtitle">Um site que se mantém vivo sozinho</h4>
+        <p class="proj-desc" style="max-width:72ch" data-i18n="roero.subtext">Duas vezes por semana, uma rotina busca notícias reais de natação, polo aquático e nado artístico em cinco fontes, reescreve em italiano no tom do centro e deposita como rascunho no painel. Publicar continua sendo decisão humana — a máquina só elimina a página parada.</p>
       </div>
     </article>
 
@@ -872,11 +878,16 @@ pt:{
  "work.title":"Projetos","work.side":"Cases selecionados",
  "lbl.problem":"Problema","lbl.solution":"Solução","lbl.impact":"Impacto","lbl.process":"Processo","lbl.build":"Montagem","lbl.lesson":"Tese",
  "roero.tag":"Case em destaque — Web App",
- "roero.desc":"Plataforma web para um centro esportivo aquático com 5 unidades — da disponibilidade de raias em tempo real ao painel administrativo.",
- "roero.p1":"Cinco piscinas, informação dispersa: nadadores sem visibilidade de raias livres, staff sobrecarregado com check-ins manuais e gestão em planilhas.",
- "roero.p2":"Sistema de disponibilidade de raias em tempo real, check-in self-service e painel administrativo unificado para as 5 unidades.",
- "roero.p3":"Uma única fonte de verdade para usuários e gestão — menos fila, menos telefone, decisão baseada em dado real de ocupação.",
+ "roero.desc":"Plataforma completa para um centro esportivo aquático com 5 sedes: disponibilidade de raias em tempo real, totem de check-in, CMS próprio e uma rotina de notícias com IA — substituindo um site que não era tocado desde 2005.",
+ "roero.p1":"Site de 2005 sem HTTPS nem versão mobile, navegação entre sedes feita só por imagens, reservas espalhadas em dois sistemas de terceiros e conteúdo que só mudava com ajuda técnica.",
+ "roero.p2":"As 5 sedes num só sistema, com raias em tempo real, totem de auto-atendimento, calendário unificado e painel administrativo com dois níveis de acesso.",
+ "roero.p3":"A equipe publica sozinha, sem programador. Ocupação vira dado real em vez de telefonema, e o site se mantém atualizado sem esforço editorial.",
  "roero.ph":"screenshot da plataforma",
+ "roero.gal":"Galeria · 5",
+ "roero.subtag":"Automação — rassegna stampa",
+ "roero.subtitle":"Um site que se mantém vivo sozinho",
+ "roero.subtext":"Duas vezes por semana, uma rotina busca notícias reais de natação, polo aquático e nado artístico em cinco fontes, reescreve em italiano no tom do centro e deposita como rascunho no painel. Publicar continua sendo decisão humana — a máquina só elimina a página parada.",
+ "roero.g2":"Página de sede — raias em tempo real, horários e tarifas","roero.g3":"Totem de check-in — escolha da raia","roero.g4":"Painel administrativo — visão geral","roero.g5":"Automação n8n — rassegna stampa com IA",
  "lbl.concept":"Conceito","lbl.data":"Dados","lbl.system":"Sistema",
  "trak.tag":"Produto pessoal — Dashboard de treino",
  "trak.desc":"Dashboard de treino construído para a preparação de um IRONMAN 70.3 — dados reais de Strava e Garmin, análise de carga e um treinador de IA que escreve direto no banco.",
@@ -946,11 +957,16 @@ en:{
  "work.title":"Work","work.side":"Selected cases",
  "lbl.problem":"Problem","lbl.solution":"Solution","lbl.impact":"Impact","lbl.process":"Process","lbl.build":"Build","lbl.lesson":"Thesis",
  "roero.tag":"Featured case — Web App",
- "roero.desc":"Web platform for an aquatic sports center spanning 5 facilities — from real-time lane availability to the full admin panel.",
- "roero.p1":"Five pools, scattered information: swimmers with no visibility of free lanes, staff overloaded with manual check-ins and spreadsheet management.",
- "roero.p2":"Real-time lane availability, self-service check-in and a unified admin panel across all 5 facilities.",
- "roero.p3":"A single source of truth for users and management — fewer queues, fewer phone calls, decisions based on real occupancy data.",
+ "roero.desc":"A full platform for an aquatic sports center with 5 facilities: real-time lane availability, a self-service kiosk, its own CMS and an AI news routine — replacing a site untouched since 2005.",
+ "roero.p1":"A 2005 site with no HTTPS and no mobile version, navigation between facilities done through images alone, bookings scattered across two third-party systems, and content that only changed with technical help.",
+ "roero.p2":"All 5 facilities in one system, with real-time lanes, a self-service kiosk, a unified calendar and an admin panel with two permission levels.",
+ "roero.p3":"The team publishes on its own, without a developer. Occupancy becomes real data instead of a phone call, and the site stays current with no editorial effort.",
  "roero.ph":"platform screenshot",
+ "roero.gal":"Gallery · 5",
+ "roero.subtag":"Automation — press review",
+ "roero.subtitle":"A site that keeps itself alive",
+ "roero.subtext":"Twice a week a routine pulls real swimming, water polo and artistic swimming news from five sources, rewrites it in Italian in the center's voice and drops it into the panel as a draft. Publishing stays a human decision — the machine only kills the stale page.",
+ "roero.g2":"Facility page — real-time lanes, hours and rates","roero.g3":"Check-in kiosk — choosing the lane","roero.g4":"Admin panel — overview","roero.g5":"n8n automation — AI press review",
  "lbl.concept":"Concept","lbl.data":"Data","lbl.system":"System",
  "trak.tag":"Personal product — Training dashboard",
  "trak.desc":"Training dashboard built for an IRONMAN 70.3 preparation — real Strava and Garmin data, load analysis and an AI coach that writes straight to the database.",
@@ -1020,11 +1036,16 @@ it:{
  "work.title":"Progetti","work.side":"Case selezionati",
  "lbl.problem":"Problema","lbl.solution":"Soluzione","lbl.impact":"Impatto","lbl.process":"Processo","lbl.build":"Montaggio","lbl.lesson":"Tesi",
  "roero.tag":"Case in evidenza — Web App",
- "roero.desc":"Piattaforma web per un centro sportivo acquatico con 5 sedi — dalla disponibilità corsie in tempo reale al pannello amministrativo.",
- "roero.p1":"Cinque piscine, informazioni disperse: nuotatori senza visibilità sulle corsie libere, staff sovraccarico tra check-in manuali e fogli di calcolo.",
- "roero.p2":"Disponibilità corsie in tempo reale, check-in self-service e pannello amministrativo unificato per le 5 sedi.",
- "roero.p3":"Un'unica fonte di verità per utenti e gestione — meno code, meno telefonate, decisioni basate su dati reali di occupazione.",
+ "roero.desc":"Piattaforma completa per un centro sportivo acquatico con 5 sedi: disponibilità corsie in tempo reale, totem di check-in, CMS proprio e una rassegna stampa con IA — al posto di un sito fermo dal 2005.",
+ "roero.p1":"Sito del 2005 senza HTTPS né versione mobile, navigazione tra le sedi affidata solo a immagini, prenotazioni divise su due sistemi esterni e contenuti modificabili solo con aiuto tecnico.",
+ "roero.p2":"Le 5 sedi in un unico sistema, con corsie in tempo reale, totem self-service, calendario unificato e pannello amministrativo con due livelli di accesso.",
+ "roero.p3":"Il personale pubblica da solo, senza sviluppatore. L'occupazione diventa un dato reale invece di una telefonata, e il sito resta aggiornato senza sforzo editoriale.",
  "roero.ph":"screenshot della piattaforma",
+ "roero.gal":"Galleria · 5",
+ "roero.subtag":"Automazione — rassegna stampa",
+ "roero.subtitle":"Un sito che si tiene vivo da solo",
+ "roero.subtext":"Due volte a settimana una routine raccoglie notizie vere di nuoto, pallanuoto e nuoto artistico da cinque fonti, le riscrive in italiano nel tono del centro e le deposita in bozza nel pannello. Pubblicare resta una decisione umana — la macchina elimina solo la pagina ferma.",
+ "roero.g2":"Pagina sede — corsie in tempo reale, orari e tariffe","roero.g3":"Totem di check-in — scelta della corsia","roero.g4":"Pannello amministrativo — panoramica","roero.g5":"Automazione n8n — rassegna stampa con IA",
  "lbl.concept":"Concetto","lbl.data":"Dati","lbl.system":"Sistema",
  "trak.tag":"Prodotto personale — Dashboard di allenamento",
  "trak.desc":"Dashboard di allenamento costruita per la preparazione di un IRONMAN 70.3 — dati reali da Strava e Garmin, analisi del carico e un coach IA che scrive direttamente sul database.",
@@ -1094,11 +1115,16 @@ es:{
  "work.title":"Proyectos","work.side":"Casos seleccionados",
  "lbl.problem":"Problema","lbl.solution":"Solución","lbl.impact":"Impacto","lbl.process":"Proceso","lbl.build":"Montaje","lbl.lesson":"Tesis",
  "roero.tag":"Caso destacado — Web App",
- "roero.desc":"Plataforma web para un centro deportivo acuático con 5 sedes — de la disponibilidad de calles en tiempo real al panel administrativo.",
- "roero.p1":"Cinco piscinas, información dispersa: nadadores sin visibilidad de las calles libres, personal saturado con registros manuales y gestión en hojas de cálculo.",
- "roero.p2":"Sistema de disponibilidad de calles en tiempo real, check-in self-service y panel administrativo unificado para las 5 sedes.",
- "roero.p3":"Una única fuente de verdad para usuarios y gestión — menos colas, menos llamadas, decisiones basadas en datos reales de ocupación.",
+ "roero.desc":"Plataforma completa para un centro deportivo acuático con 5 sedes: disponibilidad de calles en tiempo real, tótem de check-in, CMS propio y una rutina de noticias con IA — en lugar de una web sin tocar desde 2005.",
+ "roero.p1":"Web de 2005 sin HTTPS ni versión móvil, navegación entre sedes hecha solo con imágenes, reservas repartidas en dos sistemas externos y contenido que solo cambiaba con ayuda técnica.",
+ "roero.p2":"Las 5 sedes en un único sistema, con calles en tiempo real, tótem de autoservicio, calendario unificado y panel administrativo con dos niveles de acceso.",
+ "roero.p3":"El equipo publica solo, sin programador. La ocupación pasa a ser dato real en vez de llamada telefónica, y la web se mantiene al día sin esfuerzo editorial.",
  "roero.ph":"captura de la plataforma",
+ "roero.gal":"Galería · 5",
+ "roero.subtag":"Automatización — reseña de prensa",
+ "roero.subtitle":"Una web que se mantiene viva sola",
+ "roero.subtext":"Dos veces por semana una rutina recoge noticias reales de natación, waterpolo y natación artística de cinco fuentes, las reescribe en italiano con el tono del centro y las deja como borrador en el panel. Publicar sigue siendo decisión humana — la máquina solo elimina la página parada.",
+ "roero.g2":"Página de sede — calles en tiempo real, horarios y tarifas","roero.g3":"Tótem de check-in — elección de la calle","roero.g4":"Panel administrativo — visión general","roero.g5":"Automatización n8n — reseña de prensa con IA",
  "lbl.concept":"Concepto","lbl.data":"Datos","lbl.system":"Sistema",
  "trak.tag":"Producto personal — Dashboard de entrenamiento",
  "trak.desc":"Dashboard de entrenamiento creado para la preparación de un IRONMAN 70.3 — datos reales de Strava y Garmin, análisis de carga y un entrenador de IA que escribe directamente en la base de datos.",
@@ -1168,11 +1194,16 @@ fr:{
  "work.title":"Projets","work.side":"Projets sélectionnés",
  "lbl.problem":"Problème","lbl.solution":"Solution","lbl.impact":"Impact","lbl.process":"Processus","lbl.build":"Montage","lbl.lesson":"Thèse",
  "roero.tag":"Projet phare — Web App",
- "roero.desc":"Plateforme web pour un centre sportif aquatique de 5 sites — de la disponibilité des lignes d'eau en temps réel au panneau d'administration.",
- "roero.p1":"Cinq piscines, information dispersée : des nageurs sans visibilité sur les lignes libres, une équipe surchargée par les enregistrements manuels et la gestion sur tableur.",
- "roero.p2":"Disponibilité des lignes en temps réel, enregistrement en libre-service et panneau d'administration unifié pour les 5 sites.",
- "roero.p3":"Une source unique de vérité pour les usagers et la direction — moins de file d'attente, moins d'appels, des décisions fondées sur des données réelles d'occupation.",
+ "roero.desc":"Plateforme complète pour un centre sportif aquatique de 5 sites : disponibilité des lignes en temps réel, borne de check-in, CMS maison et une revue de presse par IA — à la place d'un site inchangé depuis 2005.",
+ "roero.p1":"Un site de 2005 sans HTTPS ni version mobile, une navigation entre sites reposant uniquement sur des images, des réservations éclatées sur deux systèmes tiers et un contenu modifiable seulement avec une aide technique.",
+ "roero.p2":"Les 5 sites dans un seul système, avec lignes d'eau en temps réel, borne en libre-service, calendrier unifié et panneau d'administration à deux niveaux d'accès.",
+ "roero.p3":"L'équipe publie seule, sans développeur. L'occupation devient une donnée réelle plutôt qu'un appel téléphonique, et le site reste à jour sans effort éditorial.",
  "roero.ph":"capture de la plateforme",
+ "roero.gal":"Galerie · 5",
+ "roero.subtag":"Automatisation — revue de presse",
+ "roero.subtitle":"Un site qui se maintient vivant tout seul",
+ "roero.subtext":"Deux fois par semaine, une routine récupère de vraies actualités de natation, water-polo et natation artistique sur cinq sources, les réécrit en italien dans le ton du centre et les dépose en brouillon dans le panneau. Publier reste une décision humaine — la machine ne supprime que la page figée.",
+ "roero.g2":"Page de site — lignes en temps réel, horaires et tarifs","roero.g3":"Borne de check-in — choix de la ligne","roero.g4":"Panneau d'administration — vue d'ensemble","roero.g5":"Automatisation n8n — revue de presse par IA",
  "lbl.concept":"Concept","lbl.data":"Données","lbl.system":"Système",
  "trak.tag":"Produit personnel — Tableau de bord d'entraînement",
  "trak.desc":"Tableau de bord créé pour la préparation d'un IRONMAN 70.3 — données réelles de Strava et Garmin, analyse de charge et un coach IA qui écrit directement dans la base.",
@@ -1242,11 +1273,16 @@ de:{
  "work.title":"Projekte","work.side":"Ausgewählte Projekte",
  "lbl.problem":"Problem","lbl.solution":"Lösung","lbl.impact":"Wirkung","lbl.process":"Prozess","lbl.build":"Aufbau","lbl.lesson":"These",
  "roero.tag":"Referenzprojekt — Web-App",
- "roero.desc":"Web-Plattform für ein Wassersportzentrum mit 5 Standorten — von der Bahnverfügbarkeit in Echtzeit bis zum Verwaltungspanel.",
- "roero.p1":"Fünf Schwimmbäder, verstreute Informationen: Schwimmer ohne Überblick über freie Bahnen, Personal überlastet mit manuellen Check-ins und Tabellenkalkulationen.",
- "roero.p2":"Bahnverfügbarkeit in Echtzeit, Self-Service-Check-in und ein einheitliches Verwaltungspanel für alle 5 Standorte.",
- "roero.p3":"Eine einzige verlässliche Datenquelle für Gäste und Leitung — weniger Warteschlangen, weniger Telefonate, Entscheidungen auf Basis echter Auslastungsdaten.",
+ "roero.desc":"Komplette Plattform für ein Wassersportzentrum mit 5 Standorten: Bahnverfügbarkeit in Echtzeit, Check-in-Terminal, eigenes CMS und eine KI-Presseschau — als Ersatz für eine Website, die seit 2005 unangetastet war.",
+ "roero.p1":"Eine Website von 2005 ohne HTTPS und ohne mobile Version, Navigation zwischen den Standorten allein über Bilder, Buchungen verteilt auf zwei Fremdsysteme und Inhalte, die sich nur mit technischer Hilfe ändern ließen.",
+ "roero.p2":"Alle 5 Standorte in einem System, mit Echtzeit-Bahnen, Self-Service-Terminal, einheitlichem Kalender und einem Verwaltungspanel mit zwei Zugriffsebenen.",
+ "roero.p3":"Das Team veröffentlicht selbst, ohne Entwickler. Auslastung wird zu echten Daten statt zu einem Telefonanruf, und die Seite bleibt ohne redaktionellen Aufwand aktuell.",
  "roero.ph":"Screenshot der Plattform",
+ "roero.gal":"Galerie · 5",
+ "roero.subtag":"Automatisierung — Presseschau",
+ "roero.subtitle":"Eine Website, die sich selbst am Leben hält",
+ "roero.subtext":"Zweimal pro Woche holt eine Routine echte Nachrichten aus Schwimmen, Wasserball und Kunstschwimmen von fünf Quellen, schreibt sie im Ton des Zentrums auf Italienisch um und legt sie als Entwurf ins Panel. Das Veröffentlichen bleibt eine menschliche Entscheidung — die Maschine beseitigt nur die stehengebliebene Seite.",
+ "roero.g2":"Standortseite — Bahnen in Echtzeit, Zeiten und Tarife","roero.g3":"Check-in-Terminal — Bahnauswahl","roero.g4":"Verwaltungspanel — Übersicht","roero.g5":"n8n-Automatisierung — KI-Presseschau",
  "lbl.concept":"Konzept","lbl.data":"Daten","lbl.system":"System",
  "trak.tag":"Eigenes Produkt — Trainings-Dashboard",
  "trak.desc":"Trainings-Dashboard für die Vorbereitung auf einen IRONMAN 70.3 — echte Daten aus Strava und Garmin, Belastungsanalyse und ein KI-Coach, der direkt in die Datenbank schreibt.",
@@ -1652,7 +1688,13 @@ document.querySelectorAll('.field').forEach(f=>{
 /* ---------- lightbox modal ---------- */
 (function(){
   const GAL={
-    roero:[{src:'assets/roero.jpg',cap:'Centro Sportivo Roero'}],
+    roero:[
+      {src:'assets/roero.jpg',cap:'Centro Sportivo Roero'},
+      {src:'assets/roero-2-sede.jpg',key:'roero.g2'},
+      {src:'assets/roero-3-kiosk.jpg',key:'roero.g3'},
+      {src:'assets/roero-4-admin.jpg',key:'roero.g4'},
+      {src:'assets/roero-5-n8n.jpg',key:'roero.g5'}
+    ],
     trak:[
       {src:'assets/trak.png',cap:'TRAK — Dashboard'},
       {src:'assets/trak-2-calendar.jpg',key:'trak.g2'},
