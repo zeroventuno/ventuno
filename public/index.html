@@ -362,6 +362,16 @@ form{display:flex;flex-direction:column;gap:0}
   transition:transform .3s,box-shadow .3s;
 }
 .submit:hover{transform:translateY(-2px);box-shadow:0 10px 40px var(--acc-glow)}
+.submit[disabled]{opacity:.55;cursor:default;transform:none;box-shadow:none}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-status{
+  margin-top:16px;min-height:20px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--txt-3);opacity:0;transition:opacity .3s;
+}
+.form-status.on{opacity:1}
+.form-status.ok{color:var(--acc)}
+.form-status.err{color:#FF6B5E}
 
 /* ---------- lightbox modal ---------- */
 .modal{
@@ -738,7 +748,12 @@ html.static .scroll-ind{display:none}
           <label for="f-msg" data-i18n="form.msg">Mensagem</label>
           <textarea id="f-msg" name="message" required></textarea>
         </div>
-        <button type="submit" class="submit rv" data-hover><span data-i18n="form.send">Enviar mensagem</span> →</button>
+        <div class="hp" aria-hidden="true">
+          <label for="f-site">Website</label>
+          <input id="f-site" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <button type="submit" class="submit rv" data-hover><span class="btn-label" data-i18n="form.send">Enviar mensagem</span> →</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
   </div>
@@ -836,6 +851,10 @@ pt:{
  "exp.eck":"Certificações","exp.ecv":"Mecânico de Bicicletas — Park Tool School, SP (2021)<br>Bike Fit · Ashlar Vellum Cobalt (3D)",
  "contact.title":"Contato","contact.big":"Vamos construir<br>algo <em>juntos.</em>","contact.phone":"Telefone",
  "form.name":"Nome","form.email":"E-mail","form.msg":"Mensagem","form.send":"Enviar mensagem",
+ "form.sending":"Enviando…","form.ok":"Mensagem enviada — respondo em breve.",
+ "form.err":"Não foi possível enviar. Tente novamente ou escreva para cristiano@zeroventuno.com",
+ "form.errfields":"Preencha nome, e-mail e mensagem.","form.errmail":"E-mail inválido.",
+ "form.errrate":"Muitas tentativas. Tente de novo daqui a pouco.",
  "footer.tag":"021 → VENTUNO — sem tradução perdida",
  "meta.desc":"VENTUNO — estúdio de design, projetos e consultoria em desenvolvimento web. Do Rio de Janeiro (021) a Cuneo, Itália."
 },
@@ -906,6 +925,10 @@ en:{
  "exp.eck":"Certifications","exp.ecv":"Bicycle Mechanic — Park Tool School, SP (2021)<br>Bike Fit · Ashlar Vellum Cobalt (3D)",
  "contact.title":"Contact","contact.big":"Let's build<br>something <em>together.</em>","contact.phone":"Phone",
  "form.name":"Name","form.email":"E-mail","form.msg":"Message","form.send":"Send message",
+ "form.sending":"Sending…","form.ok":"Message sent — I'll get back to you shortly.",
+ "form.err":"Couldn't send. Try again or write to cristiano@zeroventuno.com",
+ "form.errfields":"Please fill in name, e-mail and message.","form.errmail":"Invalid e-mail address.",
+ "form.errrate":"Too many attempts. Please try again in a moment.",
  "footer.tag":"021 → VENTUNO — nothing lost in translation",
  "meta.desc":"VENTUNO — design, projects and web-development consulting studio. From Rio de Janeiro (021) to Cuneo, Italy."
 },
@@ -976,6 +999,10 @@ it:{
  "exp.eck":"Certificazioni","exp.ecv":"Meccanico di Biciclette — Park Tool School, SP (2021)<br>Bike Fit · Ashlar Vellum Cobalt (3D)",
  "contact.title":"Contatti","contact.big":"Costruiamo<br>qualcosa <em>insieme.</em>","contact.phone":"Telefono",
  "form.name":"Nome","form.email":"E-mail","form.msg":"Messaggio","form.send":"Invia messaggio",
+ "form.sending":"Invio in corso…","form.ok":"Messaggio inviato — ti rispondo a breve.",
+ "form.err":"Invio non riuscito. Riprova o scrivi a cristiano@zeroventuno.com",
+ "form.errfields":"Compila nome, e-mail e messaggio.","form.errmail":"Indirizzo e-mail non valido.",
+ "form.errrate":"Troppi tentativi. Riprova tra poco.",
  "footer.tag":"021 → VENTUNO — niente perso nella traduzione",
  "meta.desc":"VENTUNO — studio di design, progetti e consulenza in sviluppo web. Da Rio de Janeiro (021) a Cuneo, Italia."
 }
@@ -1320,15 +1347,51 @@ document.querySelectorAll('.field').forEach(f=>{
   });
 })();
 
-document.getElementById('contact-form').addEventListener('submit',e=>{
-  e.preventDefault();
-  const n=document.getElementById('f-name').value.trim();
-  const em=document.getElementById('f-email').value.trim();
-  const m=document.getElementById('f-msg').value.trim();
-  const subject=encodeURIComponent('Contato via ventuno — '+(n||'site'));
-  const body=encodeURIComponent(m+'\n\n— '+n+' <'+em+'>');
-  window.location.href=`mailto:cristiano@zeroventuno.com?subject=${subject}&body=${body}`;
-});
+(function(){
+  const form=document.getElementById('contact-form');
+  const statusEl=document.getElementById('form-status');
+  const btn=form.querySelector('.submit');
+  const label=btn.querySelector('.btn-label');
+  const t=k=>{const l=window.__lang||'pt';return (I18N[l]&&I18N[l][k])||I18N.pt[k]||''};
+  function say(key,kind){
+    statusEl.textContent=t(key);
+    statusEl.className='form-status on'+(kind?' '+kind:'');
+  }
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const payload={
+      name:document.getElementById('f-name').value.trim(),
+      email:document.getElementById('f-email').value.trim(),
+      message:document.getElementById('f-msg').value.trim(),
+      website:document.getElementById('f-site').value,
+      lang:window.__lang||'pt'
+    };
+    if(!payload.name||!payload.email||!payload.message){say('form.errfields','err');return}
+    btn.disabled=true;
+    label.textContent=t('form.sending');
+    say('form.sending');
+    try{
+      const r=await fetch('/api/contact',{
+        method:'POST',
+        headers:{'content-type':'application/json'},
+        body:JSON.stringify(payload)
+      });
+      const data=await r.json().catch(()=>({}));
+      if(r.ok&&data.ok){
+        form.reset();
+        form.querySelectorAll('.field').forEach(f=>f.classList.remove('filled','focus'));
+        say('form.ok','ok');
+      }else{
+        say(data.error==='invalid_email'?'form.errmail':data.error==='rate_limited'?'form.errrate':'form.err','err');
+      }
+    }catch(_){
+      say('form.err','err');
+    }finally{
+      btn.disabled=false;
+      label.textContent=t('form.send');
+    }
+  });
+})();
 </script>
 </body>
 </html>

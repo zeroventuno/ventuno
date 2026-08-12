@@ -1,0 +1,15 @@
+{
+  "name": "ventuno-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VENTUNO — portfolio site + contact endpoint",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.21.2",
+    "nodemailer": "^9.0.5"
+  }
+}
