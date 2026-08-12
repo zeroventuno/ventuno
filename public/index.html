@@ -606,16 +606,18 @@ html.static .scroll-ind{display:none}
     <!-- TRAK -->
     <article class="proj rv" id="trak">
       <div class="proj-info">
-        <span class="proj-tag" data-i18n="trak.tag">Produto pessoal — Dashboard de treino</span>
-        <h3 class="proj-title">TRAK</h3>
-        <p class="proj-desc" data-i18n="trak.desc">Dashboard de treino construído para a preparação de um IRONMAN 70.3 — dados reais de Strava e Garmin, análise de carga e um treinador de IA que escreve direto no banco.</p>
+        <span class="proj-tag" data-i18n="trak.tag">Produto pessoal → produto · Dashboard de treino</span>
+        <h3 class="proj-title">MY TRAKR</h3>
+        <p class="proj-desc" data-i18n="trak.desc">O dashboard que nasceu para um IRONMAN 70.3 e virou produto.</p>
         <div class="proj-points">
-          <div class="pp"><span class="k" data-i18n="lbl.concept">Conceito</span><span class="v" data-i18n="trak.p1">O dashboard é o espelho de um treinador de IA: o coach analisa os check-ins diários, prescreve a semana e grava tudo no banco — o painel apenas reflete, em tempo real.</span></div>
-          <div class="pp"><span class="k" data-i18n="lbl.data">Dados</span><span class="v" data-i18n="trak.p2">Carga de treino, zonas de potência/FC/ritmo, prontidão (sono, HRV, Body Battery), composição corporal e calendário mensal — tudo alimentado por dados reais de treino.</span></div>
-          <div class="pp"><span class="k" data-i18n="lbl.system">Sistema</span><span class="v" data-i18n="trak.p3">Arquitetura de blocos modulares ligáveis por configuração, identidade visual própria e deploy contínuo do repositório à produção.</span></div>
+          <div class="pp"><span class="k" data-i18n="lbl.origin">Origem</span><span class="v" data-i18n="trak.p1">Comecei como ferramenta de uso próprio: um painel para enxergar a preparação inteira num lugar só — calendário, carga, prontidão, lesões, temporada em fases.</span></div>
+          <div class="pp"><span class="k" data-i18n="lbl.turn">A virada</span><span class="v" data-i18n="trak.p2">O que funcionava para um atleta passou a funcionar para qualquer um. O TRAK virou <b>MY TRAKR</b>: multi-tenant, cada atleta com a própria conta e os próprios dados, isolados no banco.</span></div>
+          <div class="pp"><span class="k" data-i18n="lbl.concept">Conceito</span><span class="v" data-i18n="trak.p3">O produto <b>não embarca IA</b>. O atleta conecta a própria — Claude ou ChatGPT — por um conector MCP. O modelo passa a ler e escrever no sistema, e o painel é a camada visual daquela conversa. O custo de inferência sai da assinatura que ele já tem, e a prescrição continua com quem tem responsabilidade por ela.</span></div>
+          <div class="pp"><span class="k" data-i18n="lbl.system">Sistema</span><span class="v" data-i18n="trak.p4">Adesão por tempo em zona, pace ajustado por inclinação (GAP), carga de treino calculada, protocolos de teste de limiar com cadência de reteste, importação do Strava e leitura/escrita do formato <code>.fit</code> implementada do zero.</span></div>
+          <div class="pp"><span class="k" data-i18n="lbl.thesis">Tese</span><span class="v" data-i18n="trak.p5">O painel não compete com o chat. Ele mostra exatamente o que a conversa não consegue mostrar: tendência, comparação entre o prescrito e o realizado, e a temporada inteira de uma vez.</span></div>
         </div>
         <div class="stack">
-          <span class="chip">Next.js</span><span class="chip">Supabase</span><span class="chip">Recharts</span><span class="chip">Strava API</span><span class="chip">Claude · MCP</span><span class="chip">Vercel</span>
+          <span class="chip">Next.js</span><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Tailwind</span><span class="chip">Supabase · RLS</span><span class="chip">MCP</span><span class="chip">Vercel</span>
         </div>
       </div>
       <div class="proj-visual" data-parallax data-gallery="trak" data-index="0" data-hover>
@@ -633,6 +635,30 @@ html.static .scroll-ind{display:none}
       <div class="proj-brand rv" data-gallery="trak" data-index="7" data-hover>
         <img src="assets/trak-logo-sketch.jpg" alt="Logo TRAK em construção — do esboço a lápis ao vetor final" loading="lazy">
         <span class="cap" data-i18n="trak.brand">Identidade própria — do esboço ao vetor</span>
+      </div>
+    </article>
+
+    <!-- MY TRAKR · Assessorias (B2B) -->
+    <article class="proj rv" id="b2b">
+      <div class="proj-info">
+        <span class="proj-tag" data-i18n="b2b.tag">Produto em construção · Plataforma B2B</span>
+        <h3 class="proj-title">MY TRAKR · Assessorias</h3>
+        <p class="proj-desc" data-i18n="b2b.desc">Escalar uma assessoria esportiva sem perder a qualidade do atendimento.</p>
+        <div class="proj-points">
+          <div class="pp"><span class="k" data-i18n="lbl.problem">Problema</span><span class="v" data-i18n="b2b.p1">Um treinador atende 30 a 50 alunos, e o gargalo não é conhecimento — é repetição mecânica. Montar semana, transcrever treino, conferir o que foi feito. Do outro lado, o dono raramente tem instrumentação de negócio: não sabe qual treinador está sobrecarregado nem qual carteira está perdendo aluno.</span></div>
+          <div class="pp"><span class="k" data-i18n="lbl.concept">Conceito</span><span class="v" data-i18n="b2b.p2">Copiloto de IA para o profissional, painel para o resto. Conversa serve ao julgamento; painel serve à repetição. Cada profissional — treinador, nutricionista, fisioterapeuta — escreve no mesmo aluno, com escopo e permissões próprias.</span></div>
+          <div class="pp"><span class="k" data-i18n="lbl.operation">Operação</span><span class="v" data-i18n="b2b.p3">Roster agrupado por fase e ordenado por atenção, banco de treinos da casa, prescrição em lote, blocos de plano multi-semana distribuídos pela disponibilidade real de cada aluno.</span></div>
+          <div class="pp"><span class="k" data-i18n="lbl.management">Gestão</span><span class="v" data-i18n="b2b.p4">Dashboards internos de negócio: placar comparativo por treinador, custo e margem por aluno, capacidade por profissional, redistribuição de carteiras com prévia do impacto antes de confirmar, e CRM de retenção — quem estava treinando e parou, com o valor mensal em risco.</span></div>
+          <div class="pp"><span class="k" data-i18n="lbl.thesis">Tese</span><span class="v" data-i18n="b2b.p5">A unidade do painel do dono é o <b>treinador</b>, não o aluno. Empilhar todos os atletas numa lista é a versão que quebra justamente nos 200 alunos que são a meta.</span></div>
+        </div>
+        <div class="stack">
+          <span class="chip">Next.js</span><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Tailwind</span><span class="chip">Supabase · RLS</span><span class="chip">MCP</span><span class="chip">n8n</span><span class="chip">Vercel</span>
+        </div>
+      </div>
+      <div class="proj-visual" data-parallax>
+        <div class="pv">
+          <div class="ph"><span class="big">B2B</span><span data-i18n="b2b.ph">em construção</span></div>
+        </div>
       </div>
     </article>
 
@@ -889,11 +915,22 @@ pt:{
  "roero.subtext":"Duas vezes por semana, uma rotina busca notícias reais de natação, polo aquático e nado artístico em cinco fontes, reescreve em italiano no tom do centro e deposita como rascunho no painel. Publicar continua sendo decisão humana — a máquina só elimina a página parada.",
  "roero.g2":"Página de sede — raias em tempo real, horários e tarifas","roero.g3":"Totem de check-in — escolha da raia","roero.g4":"Painel administrativo — visão geral","roero.g5":"Automação n8n — rassegna stampa com IA",
  "lbl.concept":"Conceito","lbl.data":"Dados","lbl.system":"Sistema",
- "trak.tag":"Produto pessoal — Dashboard de treino",
- "trak.desc":"Dashboard de treino construído para a preparação de um IRONMAN 70.3 — dados reais de Strava e Garmin, análise de carga e um treinador de IA que escreve direto no banco.",
- "trak.p1":"O dashboard é o espelho de um treinador de IA: o coach analisa os check-ins diários, prescreve a semana e grava tudo no banco — o painel apenas reflete, em tempo real.",
- "trak.p2":"Carga de treino, zonas de potência/FC/ritmo, prontidão (sono, HRV, Body Battery), composição corporal e calendário mensal — tudo alimentado por dados reais de treino.",
- "trak.p3":"Arquitetura de blocos modulares ligáveis por configuração, identidade visual própria e deploy contínuo do repositório à produção.",
+ "lbl.origin":"Origem","lbl.turn":"A virada","lbl.thesis":"Tese","lbl.operation":"Operação","lbl.management":"Gestão",
+ "trak.tag":"Produto pessoal → produto · Dashboard de treino",
+ "trak.desc":"O dashboard que nasceu para um IRONMAN 70.3 e virou produto.",
+ "trak.p1":"Comecei como ferramenta de uso próprio: um painel para enxergar a preparação inteira num lugar só — calendário, carga, prontidão, lesões, temporada em fases.",
+ "trak.p2":"O que funcionava para um atleta passou a funcionar para qualquer um. O TRAK virou <b>MY TRAKR</b>: multi-tenant, cada atleta com a própria conta e os próprios dados, isolados no banco.",
+ "trak.p3":"O produto <b>não embarca IA</b>. O atleta conecta a própria — Claude ou ChatGPT — por um conector MCP. O modelo passa a ler e escrever no sistema, e o painel é a camada visual daquela conversa. O custo de inferência sai da assinatura que ele já tem, e a prescrição continua com quem tem responsabilidade por ela.",
+ "trak.p4":"Adesão por tempo em zona, pace ajustado por inclinação (GAP), carga de treino calculada, protocolos de teste de limiar com cadência de reteste, importação do Strava e leitura/escrita do formato <code>.fit</code> implementada do zero.",
+ "trak.p5":"O painel não compete com o chat. Ele mostra exatamente o que a conversa não consegue mostrar: tendência, comparação entre o prescrito e o realizado, e a temporada inteira de uma vez.",
+ "b2b.tag":"Produto em construção · Plataforma B2B",
+ "b2b.desc":"Escalar uma assessoria esportiva sem perder a qualidade do atendimento.",
+ "b2b.p1":"Um treinador atende 30 a 50 alunos, e o gargalo não é conhecimento — é repetição mecânica. Montar semana, transcrever treino, conferir o que foi feito. Do outro lado, o dono raramente tem instrumentação de negócio: não sabe qual treinador está sobrecarregado nem qual carteira está perdendo aluno.",
+ "b2b.p2":"Copiloto de IA para o profissional, painel para o resto. Conversa serve ao julgamento; painel serve à repetição. Cada profissional — treinador, nutricionista, fisioterapeuta — escreve no mesmo aluno, com escopo e permissões próprias.",
+ "b2b.p3":"Roster agrupado por fase e ordenado por atenção, banco de treinos da casa, prescrição em lote, blocos de plano multi-semana distribuídos pela disponibilidade real de cada aluno.",
+ "b2b.p4":"Dashboards internos de negócio: placar comparativo por treinador, custo e margem por aluno, capacidade por profissional, redistribuição de carteiras com prévia do impacto antes de confirmar, e CRM de retenção — quem estava treinando e parou, com o valor mensal em risco.",
+ "b2b.p5":"A unidade do painel do dono é o <b>treinador</b>, não o aluno. Empilhar todos os atletas numa lista é a versão que quebra justamente nos 200 alunos que são a meta.",
+ "b2b.ph":"em construção",
  "trak.ph":"screenshot do dashboard",
  "trak.brand":"Identidade própria — do esboço ao vetor",
  "trak.gal":"Galeria · 8",
@@ -968,11 +1005,22 @@ en:{
  "roero.subtext":"Twice a week a routine pulls real swimming, water polo and artistic swimming news from five sources, rewrites it in Italian in the center's voice and drops it into the panel as a draft. Publishing stays a human decision — the machine only kills the stale page.",
  "roero.g2":"Facility page — real-time lanes, hours and rates","roero.g3":"Check-in kiosk — choosing the lane","roero.g4":"Admin panel — overview","roero.g5":"n8n automation — AI press review",
  "lbl.concept":"Concept","lbl.data":"Data","lbl.system":"System",
- "trak.tag":"Personal product — Training dashboard",
- "trak.desc":"Training dashboard built for an IRONMAN 70.3 preparation — real Strava and Garmin data, load analysis and an AI coach that writes straight to the database.",
- "trak.p1":"The dashboard is the mirror of an AI coach: the coach analyzes daily check-ins, prescribes the week and writes everything to the database — the panel simply reflects it, in real time.",
- "trak.p2":"Training load, power/HR/pace zones, readiness (sleep, HRV, Body Battery), body composition and a monthly calendar — all fed by real training data.",
- "trak.p3":"Modular block architecture toggled by configuration, its own visual identity and continuous deployment from repository to production.",
+ "lbl.origin":"Origin","lbl.turn":"The turn","lbl.thesis":"Thesis","lbl.operation":"Operations","lbl.management":"Management",
+ "trak.tag":"Personal product → product · Training dashboard",
+ "trak.desc":"The dashboard born for an IRONMAN 70.3 that became a product.",
+ "trak.p1":"It started as a tool for my own use: a panel to see the whole preparation in one place — calendar, load, readiness, injuries, the season in phases.",
+ "trak.p2":"What worked for one athlete started working for anyone. TRAK became <b>MY TRAKR</b>: multi-tenant, each athlete with their own account and their own data, isolated in the database.",
+ "trak.p3":"The product <b>ships no AI</b>. The athlete connects their own — Claude or ChatGPT — through an MCP connector. The model reads and writes into the system, and the panel is the visual layer of that conversation. Inference cost comes out of the subscription they already pay for, and prescription stays with whoever is accountable for it.",
+ "trak.p4":"Adherence by time in zone, grade-adjusted pace (GAP), computed training load, threshold-test protocols with retest cadence, Strava import, and <code>.fit</code> read/write implemented from scratch.",
+ "trak.p5":"The panel doesn't compete with the chat. It shows exactly what a conversation can't: trend, prescribed versus completed, and the entire season at once.",
+ "b2b.tag":"Product in progress · B2B platform",
+ "b2b.desc":"Scaling a coaching business without losing the quality of the service.",
+ "b2b.p1":"A coach handles 30 to 50 athletes, and the bottleneck isn't knowledge — it's mechanical repetition. Building the week, transcribing the session, checking what was done. On the other side, the owner rarely has business instrumentation: no idea which coach is overloaded or which roster is losing athletes.",
+ "b2b.p2":"An AI copilot for the professional, a panel for everything else. Conversation serves judgement; the panel serves repetition. Every professional — coach, nutritionist, physiotherapist — writes on the same athlete, each with their own scope and permissions.",
+ "b2b.p3":"Roster grouped by phase and ordered by attention, an in-house workout bank, batch prescription, and multi-week plan blocks distributed across each athlete's real availability.",
+ "b2b.p4":"Internal business dashboards: comparative scoreboard by coach, cost and margin per athlete, capacity per professional, roster redistribution with an impact preview before confirming, and a retention CRM — who was training and stopped, with the monthly revenue at risk.",
+ "b2b.p5":"The unit of the owner's panel is the <b>coach</b>, not the athlete. Stacking every athlete into one list is the version that breaks at exactly the 200 athletes that are the goal.",
+ "b2b.ph":"in progress",
  "trak.ph":"dashboard screenshot",
  "trak.brand":"Its own identity — from sketch to vector",
  "trak.gal":"Gallery · 8",
@@ -1047,11 +1095,22 @@ it:{
  "roero.subtext":"Due volte a settimana una routine raccoglie notizie vere di nuoto, pallanuoto e nuoto artistico da cinque fonti, le riscrive in italiano nel tono del centro e le deposita in bozza nel pannello. Pubblicare resta una decisione umana — la macchina elimina solo la pagina ferma.",
  "roero.g2":"Pagina sede — corsie in tempo reale, orari e tariffe","roero.g3":"Totem di check-in — scelta della corsia","roero.g4":"Pannello amministrativo — panoramica","roero.g5":"Automazione n8n — rassegna stampa con IA",
  "lbl.concept":"Concetto","lbl.data":"Dati","lbl.system":"Sistema",
- "trak.tag":"Prodotto personale — Dashboard di allenamento",
- "trak.desc":"Dashboard di allenamento costruita per la preparazione di un IRONMAN 70.3 — dati reali da Strava e Garmin, analisi del carico e un coach IA che scrive direttamente sul database.",
- "trak.p1":"La dashboard è lo specchio di un coach IA: il coach analizza i check-in giornalieri, prescrive la settimana e scrive tutto sul database — il pannello si limita a rifletterlo, in tempo reale.",
- "trak.p2":"Carico di allenamento, zone di potenza/FC/passo, readiness (sonno, HRV, Body Battery), composizione corporea e calendario mensile — tutto alimentato da dati reali di allenamento.",
- "trak.p3":"Architettura a blocchi modulari attivabili da configurazione, identità visiva propria e deploy continuo dal repository alla produzione.",
+ "lbl.origin":"Origine","lbl.turn":"La svolta","lbl.thesis":"Tesi","lbl.operation":"Operatività","lbl.management":"Gestione",
+ "trak.tag":"Prodotto personale → prodotto · Dashboard di allenamento",
+ "trak.desc":"La dashboard nata per un IRONMAN 70.3 e diventata prodotto.",
+ "trak.p1":"È partita come strumento per uso personale: un pannello per vedere l'intera preparazione in un unico posto — calendario, carico, readiness, infortuni, stagione per fasi.",
+ "trak.p2":"Ciò che funzionava per un atleta ha iniziato a funzionare per chiunque. TRAK è diventata <b>MY TRAKR</b>: multi-tenant, ogni atleta con il proprio account e i propri dati, isolati nel database.",
+ "trak.p3":"Il prodotto <b>non incorpora IA</b>. L'atleta collega la propria — Claude o ChatGPT — tramite un connettore MCP. Il modello legge e scrive nel sistema, e il pannello è il livello visivo di quella conversazione. Il costo di inferenza esce dall'abbonamento che ha già, e la prescrizione resta a chi ne ha la responsabilità.",
+ "trak.p4":"Aderenza per tempo in zona, passo corretto per pendenza (GAP), carico di allenamento calcolato, protocolli di test di soglia con cadenza di ripetizione, importazione da Strava e lettura/scrittura del formato <code>.fit</code> implementata da zero.",
+ "trak.p5":"Il pannello non compete con la chat. Mostra esattamente ciò che la conversazione non riesce a mostrare: tendenza, confronto tra prescritto e svolto, e l'intera stagione in una volta.",
+ "b2b.tag":"Prodotto in costruzione · Piattaforma B2B",
+ "b2b.desc":"Far crescere una società di coaching senza perdere la qualità del servizio.",
+ "b2b.p1":"Un allenatore segue dai 30 ai 50 atleti, e il collo di bottiglia non è la conoscenza — è la ripetizione meccanica. Costruire la settimana, trascrivere l'allenamento, verificare cosa è stato fatto. Dall'altra parte, il titolare raramente ha strumenti di gestione: non sa quale allenatore è sovraccarico né quale portafoglio sta perdendo atleti.",
+ "b2b.p2":"Copilota IA per il professionista, pannello per tutto il resto. La conversazione serve al giudizio; il pannello serve alla ripetizione. Ogni professionista — allenatore, nutrizionista, fisioterapista — scrive sullo stesso atleta, con ambito e permessi propri.",
+ "b2b.p3":"Roster raggruppato per fase e ordinato per priorità di attenzione, banca allenamenti della struttura, prescrizione in blocco, blocchi di piano pluri-settimanali distribuiti sulla disponibilità reale di ogni atleta.",
+ "b2b.p4":"Dashboard interne di business: quadro comparativo per allenatore, costo e margine per atleta, capacità per professionista, ridistribuzione dei portafogli con anteprima dell'impatto prima di confermare, e CRM di retention — chi si allenava e ha smesso, con il valore mensile a rischio.",
+ "b2b.p5":"L'unità del pannello del titolare è l'<b>allenatore</b>, non l'atleta. Impilare tutti gli atleti in un'unica lista è la versione che si rompe proprio ai 200 atleti che sono l'obiettivo.",
+ "b2b.ph":"in costruzione",
  "trak.ph":"screenshot della dashboard",
  "trak.brand":"Identità propria — dallo schizzo al vettoriale",
  "trak.gal":"Galleria · 8",
@@ -1126,11 +1185,22 @@ es:{
  "roero.subtext":"Dos veces por semana una rutina recoge noticias reales de natación, waterpolo y natación artística de cinco fuentes, las reescribe en italiano con el tono del centro y las deja como borrador en el panel. Publicar sigue siendo decisión humana — la máquina solo elimina la página parada.",
  "roero.g2":"Página de sede — calles en tiempo real, horarios y tarifas","roero.g3":"Tótem de check-in — elección de la calle","roero.g4":"Panel administrativo — visión general","roero.g5":"Automatización n8n — reseña de prensa con IA",
  "lbl.concept":"Concepto","lbl.data":"Datos","lbl.system":"Sistema",
- "trak.tag":"Producto personal — Dashboard de entrenamiento",
- "trak.desc":"Dashboard de entrenamiento creado para la preparación de un IRONMAN 70.3 — datos reales de Strava y Garmin, análisis de carga y un entrenador de IA que escribe directamente en la base de datos.",
- "trak.p1":"El dashboard es el espejo de un entrenador de IA: el coach analiza los check-ins diarios, prescribe la semana y lo registra todo en la base de datos — el panel solo lo refleja, en tiempo real.",
- "trak.p2":"Carga de entrenamiento, zonas de potencia/FC/ritmo, readiness (sueño, HRV, Body Battery), composición corporal y calendario mensual — todo alimentado con datos reales.",
- "trak.p3":"Arquitectura de bloques modulares activables por configuración, identidad visual propia y despliegue continuo del repositorio a producción.",
+ "lbl.origin":"Origen","lbl.turn":"El giro","lbl.thesis":"Tesis","lbl.operation":"Operación","lbl.management":"Gestión",
+ "trak.tag":"Producto personal → producto · Dashboard de entrenamiento",
+ "trak.desc":"El dashboard que nació para un IRONMAN 70.3 y se convirtió en producto.",
+ "trak.p1":"Empezó como herramienta de uso propio: un panel para ver toda la preparación en un solo lugar — calendario, carga, readiness, lesiones, temporada por fases.",
+ "trak.p2":"Lo que funcionaba para un atleta pasó a funcionar para cualquiera. TRAK se convirtió en <b>MY TRAKR</b>: multi-tenant, cada atleta con su propia cuenta y sus propios datos, aislados en la base de datos.",
+ "trak.p3":"El producto <b>no incorpora IA</b>. El atleta conecta la suya — Claude o ChatGPT — mediante un conector MCP. El modelo lee y escribe en el sistema, y el panel es la capa visual de esa conversación. El coste de inferencia sale de la suscripción que ya paga, y la prescripción sigue en manos de quien tiene la responsabilidad.",
+ "trak.p4":"Adherencia por tiempo en zona, ritmo ajustado por pendiente (GAP), carga de entrenamiento calculada, protocolos de test de umbral con cadencia de repetición, importación desde Strava y lectura/escritura del formato <code>.fit</code> implementada desde cero.",
+ "trak.p5":"El panel no compite con el chat. Muestra exactamente lo que la conversación no puede: tendencia, comparación entre lo prescrito y lo realizado, y la temporada entera de una vez.",
+ "b2b.tag":"Producto en construcción · Plataforma B2B",
+ "b2b.desc":"Escalar una asesoría deportiva sin perder la calidad de la atención.",
+ "b2b.p1":"Un entrenador atiende de 30 a 50 alumnos, y el cuello de botella no es el conocimiento — es la repetición mecánica. Montar la semana, transcribir el entrenamiento, comprobar lo que se hizo. Del otro lado, el dueño rara vez tiene instrumentación de negocio: no sabe qué entrenador está sobrecargado ni qué cartera está perdiendo alumnos.",
+ "b2b.p2":"Copiloto de IA para el profesional, panel para todo lo demás. La conversación sirve al criterio; el panel sirve a la repetición. Cada profesional — entrenador, nutricionista, fisioterapeuta — escribe sobre el mismo alumno, con su propio alcance y permisos.",
+ "b2b.p3":"Roster agrupado por fase y ordenado por atención, banco de entrenamientos de la casa, prescripción por lotes, bloques de plan multi-semana distribuidos según la disponibilidad real de cada alumno.",
+ "b2b.p4":"Dashboards internos de negocio: marcador comparativo por entrenador, coste y margen por alumno, capacidad por profesional, redistribución de carteras con vista previa del impacto antes de confirmar, y CRM de retención — quién entrenaba y dejó de hacerlo, con el valor mensual en riesgo.",
+ "b2b.p5":"La unidad del panel del dueño es el <b>entrenador</b>, no el alumno. Apilar a todos los atletas en una lista es la versión que se rompe justo en los 200 alumnos que son la meta.",
+ "b2b.ph":"en construcción",
  "trak.ph":"captura del dashboard",
  "trak.brand":"Identidad propia — del boceto al vector",
  "trak.gal":"Galería · 8",
@@ -1205,11 +1275,22 @@ fr:{
  "roero.subtext":"Deux fois par semaine, une routine récupère de vraies actualités de natation, water-polo et natation artistique sur cinq sources, les réécrit en italien dans le ton du centre et les dépose en brouillon dans le panneau. Publier reste une décision humaine — la machine ne supprime que la page figée.",
  "roero.g2":"Page de site — lignes en temps réel, horaires et tarifs","roero.g3":"Borne de check-in — choix de la ligne","roero.g4":"Panneau d'administration — vue d'ensemble","roero.g5":"Automatisation n8n — revue de presse par IA",
  "lbl.concept":"Concept","lbl.data":"Données","lbl.system":"Système",
- "trak.tag":"Produit personnel — Tableau de bord d'entraînement",
- "trak.desc":"Tableau de bord créé pour la préparation d'un IRONMAN 70.3 — données réelles de Strava et Garmin, analyse de charge et un coach IA qui écrit directement dans la base.",
- "trak.p1":"Le tableau de bord est le miroir d'un coach IA : il analyse les check-ins quotidiens, prescrit la semaine et enregistre tout dans la base — l'interface ne fait que refléter, en temps réel.",
- "trak.p2":"Charge d'entraînement, zones de puissance/FC/allure, readiness (sommeil, VFC, Body Battery), composition corporelle et calendrier mensuel — le tout alimenté par des données réelles.",
- "trak.p3":"Architecture en blocs modulaires activables par configuration, identité visuelle propre et déploiement continu du dépôt à la production.",
+ "lbl.origin":"Origine","lbl.turn":"Le tournant","lbl.thesis":"Thèse","lbl.operation":"Opérations","lbl.management":"Gestion",
+ "trak.tag":"Produit personnel → produit · Tableau de bord d'entraînement",
+ "trak.desc":"Le tableau de bord né pour un IRONMAN 70.3, devenu produit.",
+ "trak.p1":"Cela a commencé comme un outil personnel : un tableau de bord pour voir toute la préparation au même endroit — calendrier, charge, readiness, blessures, saison par phases.",
+ "trak.p2":"Ce qui marchait pour un athlète s'est mis à marcher pour n'importe qui. TRAK est devenu <b>MY TRAKR</b> : multi-tenant, chaque athlète avec son propre compte et ses propres données, isolées dans la base.",
+ "trak.p3":"Le produit <b>n'embarque pas d'IA</b>. L'athlète connecte la sienne — Claude ou ChatGPT — via un connecteur MCP. Le modèle lit et écrit dans le système, et le tableau de bord est la couche visuelle de cette conversation. Le coût d'inférence sort de l'abonnement qu'il a déjà, et la prescription reste à celui qui en porte la responsabilité.",
+ "trak.p4":"Adhérence par temps en zone, allure corrigée de la pente (GAP), charge d'entraînement calculée, protocoles de test de seuil avec cadence de retest, import Strava et lecture/écriture du format <code>.fit</code> implémentées de zéro.",
+ "trak.p5":"Le tableau de bord ne concurrence pas le chat. Il montre exactement ce que la conversation ne peut pas montrer : la tendance, la comparaison entre prescrit et réalisé, et la saison entière d'un seul coup.",
+ "b2b.tag":"Produit en construction · Plateforme B2B",
+ "b2b.desc":"Faire grandir une structure de coaching sans perdre la qualité du suivi.",
+ "b2b.p1":"Un coach suit 30 à 50 athlètes, et le goulot d'étranglement n'est pas la connaissance — c'est la répétition mécanique. Construire la semaine, transcrire la séance, vérifier ce qui a été fait. De l'autre côté, le dirigeant n'a que rarement d'instruments de pilotage : il ignore quel coach est surchargé et quel portefeuille perd des athlètes.",
+ "b2b.p2":"Un copilote IA pour le professionnel, un tableau de bord pour le reste. La conversation sert au jugement ; le tableau de bord sert à la répétition. Chaque professionnel — coach, nutritionniste, kinésithérapeute — écrit sur le même athlète, avec son propre périmètre et ses permissions.",
+ "b2b.p3":"Roster groupé par phase et trié par priorité d'attention, bibliothèque de séances de la structure, prescription en lot, blocs de plan pluri-hebdomadaires répartis selon la disponibilité réelle de chaque athlète.",
+ "b2b.p4":"Tableaux de bord de gestion : comparatif par coach, coût et marge par athlète, capacité par professionnel, redistribution des portefeuilles avec aperçu de l'impact avant validation, et CRM de rétention — qui s'entraînait et a arrêté, avec le revenu mensuel en jeu.",
+ "b2b.p5":"L'unité du tableau de bord du dirigeant, c'est le <b>coach</b>, pas l'athlète. Empiler tous les athlètes dans une seule liste, c'est la version qui casse précisément aux 200 athlètes visés.",
+ "b2b.ph":"en construction",
  "trak.ph":"capture du tableau de bord",
  "trak.brand":"Identité propre — du croquis au vectoriel",
  "trak.gal":"Galerie · 8",
@@ -1284,11 +1365,22 @@ de:{
  "roero.subtext":"Zweimal pro Woche holt eine Routine echte Nachrichten aus Schwimmen, Wasserball und Kunstschwimmen von fünf Quellen, schreibt sie im Ton des Zentrums auf Italienisch um und legt sie als Entwurf ins Panel. Das Veröffentlichen bleibt eine menschliche Entscheidung — die Maschine beseitigt nur die stehengebliebene Seite.",
  "roero.g2":"Standortseite — Bahnen in Echtzeit, Zeiten und Tarife","roero.g3":"Check-in-Terminal — Bahnauswahl","roero.g4":"Verwaltungspanel — Übersicht","roero.g5":"n8n-Automatisierung — KI-Presseschau",
  "lbl.concept":"Konzept","lbl.data":"Daten","lbl.system":"System",
- "trak.tag":"Eigenes Produkt — Trainings-Dashboard",
- "trak.desc":"Trainings-Dashboard für die Vorbereitung auf einen IRONMAN 70.3 — echte Daten aus Strava und Garmin, Belastungsanalyse und ein KI-Coach, der direkt in die Datenbank schreibt.",
- "trak.p1":"Das Dashboard ist der Spiegel eines KI-Coaches: Er analysiert die täglichen Check-ins, plant die Woche und schreibt alles in die Datenbank — die Oberfläche spiegelt es nur wider, in Echtzeit.",
- "trak.p2":"Trainingsbelastung, Leistungs-/HF-/Pace-Zonen, Readiness (Schlaf, HRV, Body Battery), Körperzusammensetzung und Monatskalender — alles aus echten Trainingsdaten.",
- "trak.p3":"Modulare Blockarchitektur, per Konfiguration zuschaltbar, eigene visuelle Identität und Continuous Deployment vom Repository in die Produktion.",
+ "lbl.origin":"Ursprung","lbl.turn":"Die Wende","lbl.thesis":"These","lbl.operation":"Betrieb","lbl.management":"Steuerung",
+ "trak.tag":"Eigenes Produkt → Produkt · Trainings-Dashboard",
+ "trak.desc":"Das Dashboard, das für einen IRONMAN 70.3 entstand und zum Produkt wurde.",
+ "trak.p1":"Es begann als Werkzeug für den Eigenbedarf: ein Panel, um die gesamte Vorbereitung an einem Ort zu sehen — Kalender, Belastung, Readiness, Verletzungen, Saison in Phasen.",
+ "trak.p2":"Was für einen Athleten funktionierte, funktionierte plötzlich für alle. Aus TRAK wurde <b>MY TRAKR</b>: mandantenfähig, jeder Athlet mit eigenem Konto und eigenen Daten, in der Datenbank isoliert.",
+ "trak.p3":"Das Produkt <b>bringt keine KI mit</b>. Der Athlet verbindet seine eigene — Claude oder ChatGPT — über einen MCP-Connector. Das Modell liest und schreibt im System, und das Panel ist die visuelle Ebene dieses Gesprächs. Die Inferenzkosten laufen über das Abo, das er ohnehin hat, und die Trainingsvorgabe bleibt bei dem, der die Verantwortung dafür trägt.",
+ "trak.p4":"Adhärenz nach Zeit in der Zone, steigungskorrigiertes Tempo (GAP), berechnete Trainingsbelastung, Schwellentest-Protokolle mit Retest-Rhythmus, Strava-Import und von Grund auf implementiertes Lesen/Schreiben des <code>.fit</code>-Formats.",
+ "trak.p5":"Das Panel konkurriert nicht mit dem Chat. Es zeigt genau das, was ein Gespräch nicht zeigen kann: Trend, Soll gegen Ist, und die ganze Saison auf einen Blick.",
+ "b2b.tag":"Produkt im Aufbau · B2B-Plattform",
+ "b2b.desc":"Ein Coaching-Unternehmen skalieren, ohne die Betreuungsqualität zu verlieren.",
+ "b2b.p1":"Ein Trainer betreut 30 bis 50 Sportler, und der Engpass ist nicht das Wissen — es ist die mechanische Wiederholung. Die Woche bauen, die Einheit übertragen, prüfen, was gemacht wurde. Auf der anderen Seite hat die Inhaberin oder der Inhaber selten betriebswirtschaftliche Instrumente: unklar, welcher Trainer überlastet ist und welcher Kundenstamm Sportler verliert.",
+ "b2b.p2":"KI-Copilot für die Fachkraft, Panel für alles andere. Das Gespräch dient dem Urteil; das Panel dient der Wiederholung. Jede Fachkraft — Trainer, Ernährungsberaterin, Physiotherapeut — schreibt beim selben Sportler, mit eigenem Zuständigkeitsbereich und eigenen Rechten.",
+ "b2b.p3":"Roster nach Phase gruppiert und nach Aufmerksamkeitsbedarf sortiert, hauseigene Trainingsbibliothek, Stapel-Vorgabe und mehrwöchige Planblöcke, verteilt nach der realen Verfügbarkeit jedes Sportlers.",
+ "b2b.p4":"Interne Business-Dashboards: Vergleichsübersicht je Trainer, Kosten und Marge je Sportler, Kapazität je Fachkraft, Neuverteilung der Kundenstämme mit Wirkungsvorschau vor der Bestätigung, und ein Retention-CRM — wer trainiert hat und aufgehört hat, mit dem monatlichen Umsatzrisiko.",
+ "b2b.p5":"Die Einheit im Panel der Inhaberin ist der <b>Trainer</b>, nicht der Sportler. Alle Athleten in eine Liste zu stapeln ist die Variante, die genau bei den angestrebten 200 Sportlern bricht.",
+ "b2b.ph":"im Aufbau",
  "trak.ph":"Screenshot des Dashboards",
  "trak.brand":"Eigene Identität — von der Skizze zum Vektor",
  "trak.gal":"Galerie · 8",
@@ -1435,7 +1527,8 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     ['#top','#C8FF00'],    // hero — lime VENTUNO
     ['#about','#FFD400'],  // sobre — amarelo
     ['#roero','#3EC5FF'],  // Roero — azzurro piscina
-    ['#trak','#C8FF00'],   // TRAK — lime da marca
+    ['#trak','#C8FF00'],   // MY TRAKR — lime da marca
+    ['#b2b','#4FD6C5'],    // MY TRAKR Assessorias — teal secundário do produto
     ['#bikes','#FF5546'],  // bikes — vermelho corrida
     ['#om','#FF8A00'],     // Officine Mattio — laranja oficina
     ['#ai','#FF5FA2'],     // IA — rosa do jersey
@@ -1696,7 +1789,7 @@ document.querySelectorAll('.field').forEach(f=>{
       {src:'assets/roero-5-n8n.jpg',key:'roero.g5'}
     ],
     trak:[
-      {src:'assets/trak.png',cap:'TRAK — Dashboard'},
+      {src:'assets/trak.png',cap:'MY TRAKR — Dashboard'},
       {src:'assets/trak-2-calendar.jpg',key:'trak.g2'},
       {src:'assets/trak-3-season.jpg',key:'trak.g3'},
       {src:'assets/trak-4-zones.jpg',key:'trak.g4'},
