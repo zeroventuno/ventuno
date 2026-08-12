@@ -96,14 +96,32 @@ nav{
 .nav-links a:hover{color:var(--txt)}
 .nav-links a:hover::after{width:100%}
 @media(max-width:820px){.nav-links{display:none}}
-.lang{display:flex;gap:2px;border:1px solid var(--line);border-radius:99px;padding:3px}
-.lang button{
-  font-family:var(--mono);font-size:10px;letter-spacing:.08em;
-  padding:4px 10px;border-radius:99px;color:var(--txt-3);
-  transition:all .25s;
+.lang{position:relative}
+.lang-toggle{
+  display:flex;align-items:center;gap:7px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+  border:1px solid var(--line);border-radius:99px;padding:7px 13px;color:var(--txt-2);
+  transition:border-color .25s,color .25s;
 }
-.lang button.active{background:var(--acc);color:#0A0A0B}
-.lang button:not(.active):hover{color:var(--txt)}
+.lang-toggle:hover,.lang[data-open="1"] .lang-toggle{border-color:var(--acc);color:var(--acc)}
+.lang-toggle .caret{font-size:8px;transition:transform .25s}
+.lang[data-open="1"] .lang-toggle .caret{transform:rotate(180deg)}
+.lang-menu{
+  position:absolute;top:calc(100% + 8px);right:0;z-index:5;
+  display:flex;flex-direction:column;min-width:132px;
+  background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:5px;
+  opacity:0;visibility:hidden;transform:translateY(-6px);
+  transition:opacity .25s,transform .25s,visibility .25s;
+}
+.lang[data-open="1"] .lang-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.lang-menu button{
+  display:flex;align-items:center;gap:9px;text-align:left;
+  font-family:var(--mono);font-size:10px;letter-spacing:.08em;
+  padding:8px 10px;border-radius:6px;color:var(--txt-2);transition:background .2s,color .2s;
+}
+.lang-menu button:hover{background:var(--bg-3);color:var(--txt)}
+.lang-menu button[aria-current="true"]{color:var(--acc)}
+.lang-menu .code{opacity:.5;min-width:16px}
 
 /* ---------- hero ---------- */
 .hero{
@@ -451,10 +469,18 @@ html.static .scroll-ind{display:none}
       <a href="#exp" data-hover data-i18n="nav.exp">Experiência</a>
       <a href="#contact" data-hover data-i18n="nav.contact">Contato</a>
     </div>
-    <div class="lang" role="group" aria-label="Language">
-      <button data-lang="pt" class="active" data-hover>PT</button>
-      <button data-lang="en" data-hover>EN</button>
-      <button data-lang="it" data-hover>IT</button>
+    <div class="lang" id="lang" data-open="0">
+      <button class="lang-toggle" id="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Idioma / Language" data-hover>
+        <span id="lang-current">PT</span><span class="caret">▼</span>
+      </button>
+      <div class="lang-menu" id="lang-menu" role="menu">
+        <button data-lang="pt" role="menuitem" data-hover><span class="code">PT</span>Português</button>
+        <button data-lang="en" role="menuitem" data-hover><span class="code">EN</span>English</button>
+        <button data-lang="it" role="menuitem" data-hover><span class="code">IT</span>Italiano</button>
+        <button data-lang="es" role="menuitem" data-hover><span class="code">ES</span>Español</button>
+        <button data-lang="fr" role="menuitem" data-hover><span class="code">FR</span>Français</button>
+        <button data-lang="de" role="menuitem" data-hover><span class="code">DE</span>Deutsch</button>
+      </div>
     </div>
   </div>
 </nav>
@@ -1019,6 +1045,228 @@ it:{
  "form.errrate":"Troppi tentativi. Riprova tra poco.",
  "footer.tag":"021 → VENTUNO — niente perso nella traduzione",
  "meta.desc":"VENTUNO — studio di design, progetti e consulenza in sviluppo web. Da Rio de Janeiro (021) a Cuneo, Italia."
+},
+es:{
+ "nav.about":"Perfil","nav.work":"Proyectos","nav.skills":"Skills","nav.exp":"Experiencia","nav.contact":"Contacto",
+ "hero.meta1":"Diseño · Proyectos · Consultoría","hero.meta2":"Entre disciplinas, por naturaleza",
+ "hero.l1":"Diseño que","hero.l2":"funciona<em>.</em>","hero.l3":"Procesos","hero.l4":"que escalan<em>.</em>",
+ "hero.sub":"VENTUNO es el estudio de Cristiano Cunha — diseño industrial de formación, desarrollo web por práctica, operaciones por oficio. Del 021 de Río a la rutina italiana, sin nada perdido en la traducción.",
+ "hero.cta":"Ver proyectos ↓","hero.scroll":"scroll",
+ "about.title":"Perfil",
+ "about.bio":"Nacido en Río de Janeiro y formado en Diseño Industrial por la PUC-Rio, he construido más de 15 años gestionando operaciones y equipos — primero en uno de los mayores bancos de Brasil, hoy en una empresa italiana de referencia en bicicletas. VENTUNO es el cruce: <em>pienso como diseñador, ejecuto como desarrollador, organizo como quien gestionó operaciones complejas durante décadas.</em>",
+ "about.f1k":"Base","about.f1v":"nacido en Río de Janeiro","about.f2k":"Ciudadanía","about.f2v":"<b>Suizo-brasileña</b>",
+ "about.f3k":"Idiomas","about.f3v":"<b>Portugués</b> nativo · <b>Inglés</b> avanzado · <b>Italiano</b> intermedio",
+ "about.f4k":"Formación","about.f4v":"<b>Diseño Industrial</b> — PUC-Rio",
+ "work.title":"Proyectos","work.side":"Casos seleccionados",
+ "lbl.problem":"Problema","lbl.solution":"Solución","lbl.impact":"Impacto","lbl.process":"Proceso","lbl.build":"Montaje","lbl.lesson":"Tesis",
+ "roero.tag":"Caso destacado — Web App",
+ "roero.desc":"Plataforma web para un centro deportivo acuático con 5 sedes — de la disponibilidad de calles en tiempo real al panel administrativo.",
+ "roero.p1":"Cinco piscinas, información dispersa: nadadores sin visibilidad de las calles libres, personal saturado con registros manuales y gestión en hojas de cálculo.",
+ "roero.p2":"Sistema de disponibilidad de calles en tiempo real, check-in self-service y panel administrativo unificado para las 5 sedes.",
+ "roero.p3":"Una única fuente de verdad para usuarios y gestión — menos colas, menos llamadas, decisiones basadas en datos reales de ocupación.",
+ "roero.ph":"captura de la plataforma",
+ "lbl.concept":"Concepto","lbl.data":"Datos","lbl.system":"Sistema",
+ "trak.tag":"Producto personal — Dashboard de entrenamiento",
+ "trak.desc":"Dashboard de entrenamiento creado para la preparación de un IRONMAN 70.3 — datos reales de Strava y Garmin, análisis de carga y un entrenador de IA que escribe directamente en la base de datos.",
+ "trak.p1":"El dashboard es el espejo de un entrenador de IA: el coach analiza los check-ins diarios, prescribe la semana y lo registra todo en la base de datos — el panel solo lo refleja, en tiempo real.",
+ "trak.p2":"Carga de entrenamiento, zonas de potencia/FC/ritmo, readiness (sueño, HRV, Body Battery), composición corporal y calendario mensual — todo alimentado con datos reales.",
+ "trak.p3":"Arquitectura de bloques modulares activables por configuración, identidad visual propia y despliegue continuo del repositorio a producción.",
+ "trak.ph":"captura del dashboard",
+ "trak.brand":"Identidad propia — del boceto al vector",
+ "trak.gal":"Galería · 8",
+ "trak.idtag":"Identidad — proceso creativo",
+ "trak.idtitle":"Una marca que mide el esfuerzo",
+ "trak.idtext":"La identidad nace del propio producto: tres barras en progresión — el gráfico de rendimiento que crece sesión tras sesión — y un wordmark en cursiva que aporta velocidad. El símbolo aparece en construcción, del trazo a lápiz al vector final: moderno, hi-tech, diseñado para medir el rendimiento.",
+ "trak.g2":"Calendario de entrenamientos","trak.g3":"Season — volumen semanal por fase","trak.g4":"Zonas de rendimiento","trak.g5":"Composición corporal","trak.g6":"Plan de alimentación diario","trak.g7":"Entrenamiento ajustado por el coach de IA",
+ "bikes.tag":"Proyecto personal — Origen de la marca",
+ "bikes.desc":"Antes de ser estudio, Ventuno fue nombre de bicicleta: dos máquinas de carbono — una de carretera, otra de triatlón — investigadas, especificadas y montadas a mano por el fundador.",
+ "bikes.p1":"Meses de investigación profunda: geometría del cuadro, selección de componentes, compatibilidades, pesos, relación coste-rendimiento.",
+ "bikes.p2":"Montaje integral hecho a mano, del cockpit a la transmisión — con certificación de mecánica (Park Tool School) y bike fit para cerrar el ciclo.",
+ "bikes.p3":"El mismo método del estudio: investigación obsesiva, especificación precisa, ejecución propia. Diseñar no es solo dibujar — es decidir bien.",
+ "bikes.ph":"fotos de las bicicletas",
+ "om.tag":"Sistemas internos — Vibe coding","om.title":"Sistemas Operativos<br>Officine Mattio",
+ "om.desc":"Cuatro sistemas construidos con vibe coding (Antigravity) para resolver problemas operativos reales de la propia rutina de trabajo. Quien vive el proceso construye la herramienta adecuada — del problema real a la herramienta funcional, en días, no meses.",
+ "om.chip":"Del problema a la herramienta",
+ "om.s1t":"Control de Envíos","om.s1d":"Gestión y seguimiento de logística y transporte internacional.",
+ "om.s2t":"Tickets de Soporte","om.s2d":"Plataforma para asistencia técnica y gestión de garantías.",
+ "om.s3t":"Alquiler de Bicicletas","om.s3d":"Sistema de control de alquiler de flota.",
+ "om.s4t":"Fichaje & RR. HH.","om.s4d":"Registro de entrada/salida, parte mensual y solicitudes de vacaciones.",
+ "ai.tag":"Prueba de concepto — IA generativa","ai.title":"Producción visual con IA",
+ "ai.desc":"De un diseño 2D de un maillot a un maniquí 3D realista en una escena de uso real — y hasta un vídeo final — en pocos minutos y pocos prompts. Sin fotógrafo, sin modelo, sin set físico. Eficiencia y reducción radical del coste de producción para marcas pequeñas.",
+ "ai.s1t":"Diseño 2D","ai.s1d":"Estampado técnico plano del kit — el input original del diseñador.",
+ "ai.s2t":"Render 3D","ai.s2d":"Maniquí 3D realista con la prenda puesta, generado por IA en minutos.",
+ "ai.s3t":"Escena real","ai.s3d":"El kit en situación de uso real — luz, carretera y movimiento, sin salir del estudio.",
+ "ai.s4t":"Vídeo de campaña","ai.s4d":"La escena cobra movimiento: vídeo listo para redes — sin rodaje.",
+ "skills.side":"Tres disciplinas, una práctica",
+ "skills.dd":"Del producto físico a la interfaz digital, con base en Diseño Industrial.",
+ "skills.td":"Desarrollo web autodidacta, IA aplicada y automatización de flujos.",
+ "skills.ot":"Operaciones","skills.od":"15+ años gestionando clientes, flujos y equipos en entornos complejos.",
+ "sk.d1":"Diseño Industrial","sk.d2":"Comunicación Visual","sk.d3":"Modelado 3D · Cobalt","sk.d4":"UI / Diseño Web",
+ "sk.t2":"Vibe coding · Antigravity","sk.t3":"Automatización · n8n","sk.t4":"IA generativa",
+ "sk.o3":"Logística internacional","sk.o6":"Gestión de equipos","sk.o7":"Excel avanzado",
+ "exp.title":"Experiencia","exp.e1d":"2022 — Actualidad",
+ "exp.e1t":"Atención posventa y garantías internacionales, coordinación de logística de exportación (DHL, FedEx, BRT), seguimiento del flujo operativo mediante ERP y desarrollo de herramientas internas de control de procesos.",
+ "exp.e2r":"Gerente Bancario / Team Leader",
+ "exp.e2t":"15 años coordinando equipos multidisciplinares: CRM, procesos administrativos, actividades financieras y atención a clientes corporate y privados en uno de los mayores bancos de Brasil.",
+ "exp.e3d":"Formación y Certificaciones","exp.edk":"Formación",
+ "exp.edv":"Diseño Industrial — Proyecto de Producto y Comunicación Visual, PUC-Rio (1997)<br>Publicidad y Marketing — Faculdade da Cidade",
+ "exp.eck":"Certificaciones","exp.ecv":"Mecánico de Bicicletas — Park Tool School, SP (2021)<br>Bike Fit · Ashlar Vellum Cobalt (3D)",
+ "contact.title":"Contacto","contact.big":"Construyamos<br>algo <em>juntos.</em>","contact.phone":"Teléfono",
+ "form.name":"Nombre","form.email":"E-mail","form.msg":"Mensaje","form.send":"Enviar mensaje",
+ "form.sending":"Enviando…","form.ok":"Mensaje enviado — te respondo en breve.",
+ "form.err":"No se pudo enviar. Inténtalo de nuevo o escribe a cristiano@zeroventuno.com",
+ "form.errfields":"Rellena nombre, e-mail y mensaje.","form.errmail":"E-mail no válido.",
+ "form.errrate":"Demasiados intentos. Vuelve a probar en un momento.",
+ "footer.tag":"021 → VENTUNO — nada perdido en la traducción",
+ "meta.desc":"VENTUNO — estudio de diseño, proyectos y consultoría en desarrollo web. De Río de Janeiro (021) a Cuneo, Italia."
+},
+fr:{
+ "nav.about":"À propos","nav.work":"Projets","nav.skills":"Skills","nav.exp":"Expérience","nav.contact":"Contact",
+ "hero.meta1":"Design · Projets · Conseil","hero.meta2":"Entre les disciplines, par nature",
+ "hero.l1":"Du design qui","hero.l2":"fonctionne<em>.</em>","hero.l3":"Des processus","hero.l4":"qui évoluent<em>.</em>",
+ "hero.sub":"VENTUNO est le studio de Cristiano Cunha — designer industriel de formation, développeur web par la pratique, opérations par métier. Du 021 de Rio au quotidien italien, sans rien perdre à la traduction.",
+ "hero.cta":"Voir les projets ↓","hero.scroll":"scroll",
+ "about.title":"À propos",
+ "about.bio":"Né à Rio de Janeiro et diplômé en Design Industriel à la PUC-Rio, j'ai passé plus de 15 ans à gérer des opérations et des équipes — d'abord dans l'une des plus grandes banques du Brésil, aujourd'hui dans une entreprise italienne de référence dans le vélo. VENTUNO, c'est le croisement : <em>je pense en designer, je construis en développeur, j'organise comme quelqu'un qui a piloté des opérations complexes pendant des décennies.</em>",
+ "about.f1k":"Basé à","about.f1v":"né à Rio de Janeiro","about.f2k":"Nationalité","about.f2v":"<b>Suisse-brésilienne</b>",
+ "about.f3k":"Langues","about.f3v":"<b>Portugais</b> natif · <b>Anglais</b> avancé · <b>Italien</b> intermédiaire",
+ "about.f4k":"Formation","about.f4v":"<b>Design Industriel</b> — PUC-Rio",
+ "work.title":"Projets","work.side":"Projets sélectionnés",
+ "lbl.problem":"Problème","lbl.solution":"Solution","lbl.impact":"Impact","lbl.process":"Processus","lbl.build":"Montage","lbl.lesson":"Thèse",
+ "roero.tag":"Projet phare — Web App",
+ "roero.desc":"Plateforme web pour un centre sportif aquatique de 5 sites — de la disponibilité des lignes d'eau en temps réel au panneau d'administration.",
+ "roero.p1":"Cinq piscines, information dispersée : des nageurs sans visibilité sur les lignes libres, une équipe surchargée par les enregistrements manuels et la gestion sur tableur.",
+ "roero.p2":"Disponibilité des lignes en temps réel, enregistrement en libre-service et panneau d'administration unifié pour les 5 sites.",
+ "roero.p3":"Une source unique de vérité pour les usagers et la direction — moins de file d'attente, moins d'appels, des décisions fondées sur des données réelles d'occupation.",
+ "roero.ph":"capture de la plateforme",
+ "lbl.concept":"Concept","lbl.data":"Données","lbl.system":"Système",
+ "trak.tag":"Produit personnel — Tableau de bord d'entraînement",
+ "trak.desc":"Tableau de bord créé pour la préparation d'un IRONMAN 70.3 — données réelles de Strava et Garmin, analyse de charge et un coach IA qui écrit directement dans la base.",
+ "trak.p1":"Le tableau de bord est le miroir d'un coach IA : il analyse les check-ins quotidiens, prescrit la semaine et enregistre tout dans la base — l'interface ne fait que refléter, en temps réel.",
+ "trak.p2":"Charge d'entraînement, zones de puissance/FC/allure, readiness (sommeil, VFC, Body Battery), composition corporelle et calendrier mensuel — le tout alimenté par des données réelles.",
+ "trak.p3":"Architecture en blocs modulaires activables par configuration, identité visuelle propre et déploiement continu du dépôt à la production.",
+ "trak.ph":"capture du tableau de bord",
+ "trak.brand":"Identité propre — du croquis au vectoriel",
+ "trak.gal":"Galerie · 8",
+ "trak.idtag":"Identité — processus créatif",
+ "trak.idtitle":"Une marque qui mesure l'effort",
+ "trak.idtext":"L'identité naît du produit lui-même : trois barres en progression — la courbe de performance qui grandit séance après séance — et un logotype en italique qui apporte la vitesse. Le symbole apparaît en construction, du trait au crayon au vectoriel final : moderne, hi-tech, dessiné pour mesurer la performance.",
+ "trak.g2":"Calendrier d'entraînement","trak.g3":"Season — volume hebdomadaire par phase","trak.g4":"Zones de performance","trak.g5":"Composition corporelle","trak.g6":"Plan alimentaire quotidien","trak.g7":"Séance ajustée par le coach IA",
+ "bikes.tag":"Projet personnel — Origine de la marque",
+ "bikes.desc":"Avant d'être un studio, Ventuno était un nom de vélo : deux machines en carbone — une de route, une de triathlon — étudiées, spécifiées et montées à la main par le fondateur.",
+ "bikes.p1":"Des mois de recherche approfondie : géométrie du cadre, sélection des composants, compatibilités, poids, rapport coût-performance.",
+ "bikes.p2":"Montage intégral fait main, du cockpit à la transmission — avec une certification de mécanique (Park Tool School) et une étude posturale pour boucler la boucle.",
+ "bikes.p3":"La même méthode que le studio : recherche obsessionnelle, spécification précise, exécution personnelle. Concevoir, ce n'est pas seulement dessiner — c'est bien décider.",
+ "bikes.ph":"photos des vélos",
+ "om.tag":"Systèmes internes — Vibe coding","om.title":"Systèmes Opérationnels<br>Officine Mattio",
+ "om.desc":"Quatre systèmes construits en vibe coding (Antigravity) pour résoudre de vrais problèmes opérationnels issus de mon quotidien de travail. Celui qui vit le processus construit le bon outil — du problème réel à l'outil fonctionnel, en jours et non en mois.",
+ "om.chip":"Du problème à l'outil",
+ "om.s1t":"Suivi des Expéditions","om.s1d":"Gestion et suivi de la logistique et du transport international.",
+ "om.s2t":"Tickets de Support","om.s2d":"Plateforme d'assistance technique et de gestion des garanties.",
+ "om.s3t":"Location de Vélos","om.s3d":"Système de gestion de la location de flotte.",
+ "om.s4t":"Pointage & RH","om.s4d":"Pointage entrée/sortie, relevé mensuel et demandes de congés.",
+ "ai.tag":"Preuve de concept — IA générative","ai.title":"Production visuelle par IA",
+ "ai.desc":"D'un dessin 2D de maillot à un mannequin 3D réaliste dans une scène d'usage réel — et jusqu'à une vidéo finale — en quelques minutes et quelques prompts. Sans photographe, sans mannequin, sans plateau. Efficacité et réduction radicale du coût de production pour les petites marques.",
+ "ai.s1t":"Dessin 2D","ai.s1d":"Impression technique à plat de la tenue — l'input original du designer.",
+ "ai.s2t":"Rendu 3D","ai.s2d":"Mannequin 3D réaliste portant la pièce, généré par IA en quelques minutes.",
+ "ai.s3t":"Scène réelle","ai.s3d":"La tenue en situation réelle — lumière, route et mouvement, sans quitter le studio.",
+ "ai.s4t":"Vidéo de campagne","ai.s4d":"La scène s'anime : vidéo prête pour les réseaux — sans tournage.",
+ "skills.side":"Trois disciplines, une pratique",
+ "skills.dd":"Du produit physique à l'interface numérique, sur une base de Design Industriel.",
+ "skills.td":"Développement web en autodidacte, IA appliquée et automatisation des flux.",
+ "skills.ot":"Opérations","skills.od":"15+ ans à gérer clients, flux et équipes dans des environnements complexes.",
+ "sk.d1":"Design Industriel","sk.d2":"Communication Visuelle","sk.d3":"Modélisation 3D · Cobalt","sk.d4":"UI / Design Web",
+ "sk.t2":"Vibe coding · Antigravity","sk.t3":"Automatisation · n8n","sk.t4":"IA générative",
+ "sk.o3":"Logistique internationale","sk.o6":"Gestion d'équipes","sk.o7":"Excel avancé",
+ "exp.title":"Expérience","exp.e1d":"2022 — Aujourd'hui",
+ "exp.e1t":"Service après-vente et garanties internationales, coordination de la logistique export (DHL, FedEx, BRT), suivi du flux opérationnel via ERP et développement d'outils internes de contrôle des processus.",
+ "exp.e2r":"Responsable Bancaire / Team Leader",
+ "exp.e2t":"15 ans à encadrer des équipes pluridisciplinaires : CRM, processus administratifs, activités financières et relation clients entreprises et particuliers dans l'une des plus grandes banques du Brésil.",
+ "exp.e3d":"Formation & Certifications","exp.edk":"Formation",
+ "exp.edv":"Design Industriel — Design Produit et Communication Visuelle, PUC-Rio (1997)<br>Publicité et Marketing — Faculdade da Cidade",
+ "exp.eck":"Certifications","exp.ecv":"Mécanicien Vélo — Park Tool School, SP (2021)<br>Bike Fit · Ashlar Vellum Cobalt (3D)",
+ "contact.title":"Contact","contact.big":"Construisons<br>quelque chose <em>ensemble.</em>","contact.phone":"Téléphone",
+ "form.name":"Nom","form.email":"E-mail","form.msg":"Message","form.send":"Envoyer le message",
+ "form.sending":"Envoi en cours…","form.ok":"Message envoyé — je reviens vers vous très vite.",
+ "form.err":"L'envoi a échoué. Réessayez ou écrivez à cristiano@zeroventuno.com",
+ "form.errfields":"Renseignez le nom, l'e-mail et le message.","form.errmail":"Adresse e-mail invalide.",
+ "form.errrate":"Trop de tentatives. Réessayez dans un instant.",
+ "footer.tag":"021 → VENTUNO — rien de perdu à la traduction",
+ "meta.desc":"VENTUNO — studio de design, projets et conseil en développement web. De Rio de Janeiro (021) à Cuneo, Italie."
+},
+de:{
+ "nav.about":"Über mich","nav.work":"Projekte","nav.skills":"Skills","nav.exp":"Erfahrung","nav.contact":"Kontakt",
+ "hero.meta1":"Design · Projekte · Beratung","hero.meta2":"Zwischen den Disziplinen, von Natur aus",
+ "hero.l1":"Design, das","hero.l2":"funktioniert<em>.</em>","hero.l3":"Prozesse,","hero.l4":"die skalieren<em>.</em>",
+ "hero.sub":"VENTUNO ist das Studio von Cristiano Cunha — Industriedesigner von Ausbildung, Webentwickler aus Praxis, Operations aus Handwerk. Von Rios 021 in den italienischen Alltag, ohne Verluste in der Übersetzung.",
+ "hero.cta":"Projekte ansehen ↓","hero.scroll":"scroll",
+ "about.title":"Über mich",
+ "about.bio":"Geboren in Rio de Janeiro, Industriedesign an der PUC-Rio studiert, habe ich über 15 Jahre Operations und Teams geführt — zuerst in einer der größten Banken Brasiliens, heute in einem italienischen Referenzunternehmen der Fahrradbranche. VENTUNO ist genau dieser Schnittpunkt: <em>Ich denke wie ein Designer, baue wie ein Entwickler und organisiere wie jemand, der jahrzehntelang komplexe Abläufe gesteuert hat.</em>",
+ "about.f1k":"Standort","about.f1v":"geboren in Rio de Janeiro","about.f2k":"Staatsbürgerschaft","about.f2v":"<b>Schweizerisch-brasilianisch</b>",
+ "about.f3k":"Sprachen","about.f3v":"<b>Portugiesisch</b> Muttersprache · <b>Englisch</b> fortgeschritten · <b>Italienisch</b> mittleres Niveau",
+ "about.f4k":"Ausbildung","about.f4v":"<b>Industriedesign</b> — PUC-Rio",
+ "work.title":"Projekte","work.side":"Ausgewählte Projekte",
+ "lbl.problem":"Problem","lbl.solution":"Lösung","lbl.impact":"Wirkung","lbl.process":"Prozess","lbl.build":"Aufbau","lbl.lesson":"These",
+ "roero.tag":"Referenzprojekt — Web-App",
+ "roero.desc":"Web-Plattform für ein Wassersportzentrum mit 5 Standorten — von der Bahnverfügbarkeit in Echtzeit bis zum Verwaltungspanel.",
+ "roero.p1":"Fünf Schwimmbäder, verstreute Informationen: Schwimmer ohne Überblick über freie Bahnen, Personal überlastet mit manuellen Check-ins und Tabellenkalkulationen.",
+ "roero.p2":"Bahnverfügbarkeit in Echtzeit, Self-Service-Check-in und ein einheitliches Verwaltungspanel für alle 5 Standorte.",
+ "roero.p3":"Eine einzige verlässliche Datenquelle für Gäste und Leitung — weniger Warteschlangen, weniger Telefonate, Entscheidungen auf Basis echter Auslastungsdaten.",
+ "roero.ph":"Screenshot der Plattform",
+ "lbl.concept":"Konzept","lbl.data":"Daten","lbl.system":"System",
+ "trak.tag":"Eigenes Produkt — Trainings-Dashboard",
+ "trak.desc":"Trainings-Dashboard für die Vorbereitung auf einen IRONMAN 70.3 — echte Daten aus Strava und Garmin, Belastungsanalyse und ein KI-Coach, der direkt in die Datenbank schreibt.",
+ "trak.p1":"Das Dashboard ist der Spiegel eines KI-Coaches: Er analysiert die täglichen Check-ins, plant die Woche und schreibt alles in die Datenbank — die Oberfläche spiegelt es nur wider, in Echtzeit.",
+ "trak.p2":"Trainingsbelastung, Leistungs-/HF-/Pace-Zonen, Readiness (Schlaf, HRV, Body Battery), Körperzusammensetzung und Monatskalender — alles aus echten Trainingsdaten.",
+ "trak.p3":"Modulare Blockarchitektur, per Konfiguration zuschaltbar, eigene visuelle Identität und Continuous Deployment vom Repository in die Produktion.",
+ "trak.ph":"Screenshot des Dashboards",
+ "trak.brand":"Eigene Identität — von der Skizze zum Vektor",
+ "trak.gal":"Galerie · 8",
+ "trak.idtag":"Identität — kreativer Prozess",
+ "trak.idtitle":"Eine Marke, die Anstrengung misst",
+ "trak.idtext":"Die Identität entsteht aus dem Produkt selbst: drei ansteigende Balken — die Leistungskurve, die mit jedem Training wächst — und eine kursive Wortmarke, die Geschwindigkeit verleiht. Das Symbol erscheint im Entstehen, vom Bleistiftstrich bis zum fertigen Vektor: modern, hi-tech, gemacht, um Leistung zu messen.",
+ "trak.g2":"Trainingskalender","trak.g3":"Season — Wochenvolumen nach Phase","trak.g4":"Leistungszonen","trak.g5":"Körperzusammensetzung","trak.g6":"Täglicher Ernährungsplan","trak.g7":"Vom KI-Coach angepasstes Training",
+ "bikes.tag":"Persönliches Projekt — Ursprung der Marke",
+ "bikes.desc":"Bevor es ein Studio war, war Ventuno ein Fahrradname: zwei Carbon-Maschinen — eine für die Straße, eine für den Triathlon — vom Gründer recherchiert, spezifiziert und von Hand aufgebaut.",
+ "bikes.p1":"Monate intensiver Recherche: Rahmengeometrie, Auswahl der Komponenten, Kompatibilitäten, Gewichte, Preis-Leistungs-Verhältnis.",
+ "bikes.p2":"Vollständiger Aufbau von Hand, vom Cockpit bis zum Antrieb — mit Mechaniker-Zertifizierung (Park Tool School) und Bikefitting als Abschluss.",
+ "bikes.p3":"Dieselbe Methode wie im Studio: besessene Recherche, präzise Spezifikation, eigene Umsetzung. Design heißt nicht nur zeichnen — es heißt gut entscheiden.",
+ "bikes.ph":"Fotos der Fahrräder",
+ "om.tag":"Interne Systeme — Vibe Coding","om.title":"Operative Systeme<br>Officine Mattio",
+ "om.desc":"Vier Systeme, per Vibe Coding (Antigravity) gebaut, um echte operative Probleme aus dem eigenen Arbeitsalltag zu lösen. Wer den Prozess lebt, baut das richtige Werkzeug dafür — vom echten Problem zum funktionierenden Tool, in Tagen statt Monaten.",
+ "om.chip":"Vom Problem zum Werkzeug",
+ "om.s1t":"Versandverwaltung","om.s1d":"Verwaltung und Sendungsverfolgung in Logistik und internationalem Transport.",
+ "om.s2t":"Support-Tickets","om.s2d":"Plattform für technischen Service und Garantieabwicklung.",
+ "om.s3t":"Fahrradvermietung","om.s3d":"System zur Verwaltung der Mietflotte.",
+ "om.s4t":"Zeiterfassung & HR","om.s4d":"Kommen/Gehen, Monatsübersicht und Urlaubsanträge.",
+ "ai.tag":"Proof of Concept — Generative KI","ai.title":"Visuelle Produktion mit KI",
+ "ai.desc":"Von einer 2D-Zeichnung eines Trikotdesigns zu einer realistischen 3D-Figur in einer echten Einsatzszene — bis hin zum fertigen Video — in wenigen Minuten und wenigen Prompts. Ohne Fotograf, ohne Model, ohne Studio-Set. Effizienz und radikal geringere Produktionskosten für kleine Marken.",
+ "ai.s1t":"2D-Zeichnung","ai.s1d":"Technische Flachdarstellung des Trikots — der ursprüngliche Input des Designers.",
+ "ai.s2t":"3D-Render","ai.s2d":"Realistische 3D-Figur im Trikot, per KI in Minuten erzeugt.",
+ "ai.s3t":"Echte Szene","ai.s3d":"Das Trikot im echten Einsatz — Licht, Straße und Bewegung, ohne das Studio zu verlassen.",
+ "ai.s4t":"Kampagnenvideo","ai.s4d":"Die Szene wird lebendig: Video bereit für Social Media — ganz ohne Dreh.",
+ "skills.side":"Drei Disziplinen, eine Praxis",
+ "skills.dd":"Vom physischen Produkt zur digitalen Oberfläche, auf Basis von Industriedesign.",
+ "skills.td":"Autodidaktische Webentwicklung, angewandte KI und Prozessautomatisierung.",
+ "skills.ot":"Operations","skills.od":"15+ Jahre Kunden, Abläufe und Teams in komplexen Umfeldern geführt.",
+ "sk.d1":"Industriedesign","sk.d2":"Visuelle Kommunikation","sk.d3":"3D-Modellierung · Cobalt","sk.d4":"UI / Webdesign",
+ "sk.t2":"Vibe Coding · Antigravity","sk.t3":"Automatisierung · n8n","sk.t4":"Generative KI",
+ "sk.o3":"Internationale Logistik","sk.o6":"Teamführung","sk.o7":"Excel für Fortgeschrittene",
+ "exp.title":"Erfahrung","exp.e1d":"2022 — heute",
+ "exp.e1t":"After-Sales-Betreuung und internationale Garantieabwicklung, Koordination der Exportlogistik (DHL, FedEx, BRT), Überwachung der operativen Abläufe über ERP und Entwicklung interner Werkzeuge zur Prozesskontrolle.",
+ "exp.e2r":"Bankmanager / Teamleiter",
+ "exp.e2t":"15 Jahre Führung interdisziplinärer Teams: CRM, Verwaltungsprozesse, Finanzgeschäft und Betreuung von Firmen- und Privatkunden in einer der größten Banken Brasiliens.",
+ "exp.e3d":"Ausbildung & Zertifikate","exp.edk":"Ausbildung",
+ "exp.edv":"Industriedesign — Produktdesign und Visuelle Kommunikation, PUC-Rio (1997)<br>Werbung und Marketing — Faculdade da Cidade",
+ "exp.eck":"Zertifikate","exp.ecv":"Fahrradmechaniker — Park Tool School, SP (2021)<br>Bikefitting · Ashlar Vellum Cobalt (3D)",
+ "contact.title":"Kontakt","contact.big":"Lassen Sie uns<br>etwas <em>bauen.</em>","contact.phone":"Telefon",
+ "form.name":"Name","form.email":"E-Mail","form.msg":"Nachricht","form.send":"Nachricht senden",
+ "form.sending":"Wird gesendet…","form.ok":"Nachricht gesendet — ich melde mich in Kürze.",
+ "form.err":"Senden fehlgeschlagen. Bitte erneut versuchen oder an cristiano@zeroventuno.com schreiben",
+ "form.errfields":"Bitte Name, E-Mail und Nachricht ausfüllen.","form.errmail":"Ungültige E-Mail-Adresse.",
+ "form.errrate":"Zu viele Versuche. Bitte gleich noch einmal probieren.",
+ "footer.tag":"021 → VENTUNO — nichts geht in der Übersetzung verloren",
+ "meta.desc":"VENTUNO — Studio für Design, Projekte und Beratung in der Webentwicklung. Von Rio de Janeiro (021) nach Cuneo, Italien."
 }
 };
 
@@ -1038,14 +1286,52 @@ function setLang(lang){
   if(bio && dict['about.bio']) bio.innerHTML = dict['about.bio'];
   const md = document.getElementById('meta-desc');
   if(md) md.setAttribute('content', dict['meta.desc']);
-  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
-  try{localStorage.setItem('ventuno-lang',lang)}catch(e){}
+  const cur=document.getElementById('lang-current');
+  if(cur) cur.textContent=lang.toUpperCase();
+  document.querySelectorAll('#lang-menu button').forEach(b=>
+    b.setAttribute('aria-current', String(b.dataset.lang===lang)));
 }
-document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
-try{
-  const saved = localStorage.getItem('ventuno-lang');
-  if(saved && saved!=='pt') setLang(saved);
-}catch(e){}
+
+const LANGS=['pt','en','it','es','fr','de'];
+
+/* Idioma inicial: preferência salva → idioma do navegador → inglês.
+   O inglês é o fallback (e não o português) porque quem chega com um
+   idioma fora da lista é, quase sempre, um visitante internacional. */
+function detectLang(){
+  // ?lang=de força um idioma — útil para mandar o link já traduzido a alguém
+  const forced=new URLSearchParams(location.search).get('lang');
+  if(forced && LANGS.includes(forced.toLowerCase())) return forced.toLowerCase();
+  try{
+    const saved=localStorage.getItem('ventuno-lang');
+    if(saved && LANGS.includes(saved)) return saved;
+  }catch(e){}
+  const prefs=(navigator.languages && navigator.languages.length)
+    ? navigator.languages : [navigator.language||''];
+  for(const p of prefs){
+    const base=String(p).toLowerCase().split('-')[0];
+    if(LANGS.includes(base)) return base;
+  }
+  return 'en';
+}
+
+/* menu do seletor */
+(function(){
+  const wrap=document.getElementById('lang');
+  const toggle=document.getElementById('lang-toggle');
+  if(!wrap||!toggle) return;
+  const open=v=>{wrap.dataset.open=v?'1':'0';toggle.setAttribute('aria-expanded',String(!!v))};
+  toggle.addEventListener('click',e=>{e.stopPropagation();open(wrap.dataset.open!=='1')});
+  document.querySelectorAll('#lang-menu button').forEach(b=>
+    b.addEventListener('click',()=>{
+      setLang(b.dataset.lang);
+      try{localStorage.setItem('ventuno-lang',b.dataset.lang)}catch(e){}
+      open(false);
+    }));
+  document.addEventListener('click',()=>open(false));
+  window.addEventListener('keydown',e=>{if(e.key==='Escape')open(false)});
+})();
+
+setLang(detectLang());
 
 /* ================= setup ================= */
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -1266,7 +1552,7 @@ if(!reduced && hasGsap){
     };
     applySplit();
     // re-split on language change
-    document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('#lang-menu button').forEach(b=>b.addEventListener('click',()=>{
       requestAnimationFrame(()=>{delete bio.dataset.orig;applySplit();ScrollTrigger.refresh()});
     }));
   })();
