@@ -295,6 +295,8 @@ section{position:relative;padding:clamp(90px,14vh,170px) clamp(20px,4vw,56px)}
   font-family:var(--display);font-weight:700;font-size:clamp(70px,9vw,150px);
   color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.14);line-height:1;
 }
+/* placeholder que exibe a logo do produto no lugar do texto */
+.ph-logo img{width:min(76%,540px);height:auto;margin-bottom:6px}
 .proj-visual img.real{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 /* sub-section header inside a case (full width) */
 .proj-sub{grid-column:1/-1;display:flex;flex-direction:column;gap:16px;border-top:1px solid var(--line);padding-top:34px;margin-top:8px}
@@ -633,7 +635,7 @@ html.static .scroll-ind{display:none}
         <p class="proj-desc" style="max-width:72ch" data-i18n="trak.idtext">A identidade nasce do próprio produto: três barras em progressão — o gráfico de performance que cresce treino após treino — e um wordmark itálico que empresta velocidade. O símbolo aparece em construção, do traçado a lápis ao vetor final: moderno, hi-tech, desenhado para medir desempenho.</p>
       </div>
       <div class="proj-brand rv" data-gallery="trak" data-index="7" data-hover>
-        <img src="assets/trak-logo-sketch.jpg" alt="Logo TRAK em construção — do esboço a lápis ao vetor final" loading="lazy">
+        <img src="assets/trakr-logo-sketch.jpg" alt="Logo MY TRAKR em construção — do esboço a lápis ao vetor final" loading="lazy">
         <span class="cap" data-i18n="trak.brand">Identidade própria — do esboço ao vetor</span>
       </div>
     </article>
@@ -642,7 +644,7 @@ html.static .scroll-ind{display:none}
     <article class="proj rv" id="b2b">
       <div class="proj-info">
         <span class="proj-tag" data-i18n="b2b.tag">Produto em construção · Plataforma B2B</span>
-        <h3 class="proj-title">MY TRAKR · Assessorias</h3>
+        <h3 class="proj-title">TRAKR<span style="color:var(--acc)">+</span></h3>
         <p class="proj-desc" data-i18n="b2b.desc">Escalar uma assessoria esportiva sem perder a qualidade do atendimento.</p>
         <div class="proj-points">
           <div class="pp"><span class="k" data-i18n="lbl.problem">Problema</span><span class="v" data-i18n="b2b.p1">Um treinador atende 30 a 50 alunos, e o gargalo não é conhecimento — é repetição mecânica. Montar semana, transcrever treino, conferir o que foi feito. Do outro lado, o dono raramente tem instrumentação de negócio: não sabe qual treinador está sobrecarregado nem qual carteira está perdendo aluno.</span></div>
@@ -657,7 +659,10 @@ html.static .scroll-ind{display:none}
       </div>
       <div class="proj-visual" data-parallax>
         <div class="pv">
-          <div class="ph"><span class="big">B2B</span><span data-i18n="b2b.ph">em construção</span></div>
+          <div class="ph ph-logo">
+            <img src="assets/trakr-plus.png" alt="TRAKR+ — logo da plataforma B2B">
+            <span data-i18n="b2b.ph">em construção</span>
+          </div>
         </div>
       </div>
     </article>
@@ -1796,7 +1801,7 @@ document.querySelectorAll('.field').forEach(f=>{
       {src:'assets/trak-5-body.jpg',key:'trak.g5'},
       {src:'assets/trak-6-nutricao.jpg',key:'trak.g6'},
       {src:'assets/trak-7-workout.jpg',key:'trak.g7'},
-      {src:'assets/trak-logo-sketch.jpg',key:'trak.brand'}
+      {src:'assets/trakr-logo-sketch.jpg',key:'trak.brand'}
     ],
     ai:[{src:'assets/ai-1-2d.jpg',key:'ai.s1t'},{src:'assets/ai-2-3d.jpg',key:'ai.s2t'},{src:'assets/ai-3-cena.jpg',key:'ai.s3t'},{src:'assets/ai-4-video.mp4',key:'ai.s4t',video:true}]
   };

@@ -146,6 +146,12 @@ app.use(
     },
   })
 );
-app.use((_req, res) => res.sendFile(path.join(__dirname, "public", "index.html")));
+// SPA fallback — mas um arquivo que não existe deve dar 404, e não devolver a
+// página inteira: senão uma imagem quebrada responde 200 e o erro passa batido.
+app.use((req, res) => {
+  const last = req.path.split("/").pop() || "";
+  if (last.includes(".")) return res.status(404).type("txt").send("Not found");
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 
 app.listen(PORT, () => console.log(`VENTUNO no ar na porta ${PORT}`));
