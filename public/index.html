@@ -445,6 +445,18 @@ form{display:flex;flex-direction:column;gap:0}
 .modal figure{max-width:min(1200px,88vw);display:flex;flex-direction:column;gap:14px;transform:scale(.96);transition:transform .35s cubic-bezier(.65,0,.35,1)}
 .modal.open figure{transform:scale(1)}
 .modal .m-media img,.modal .m-media video{max-width:100%;max-height:76vh;object-fit:contain;border:1px solid var(--line);border-radius:6px;background:#0A0A0B;display:block;margin:0 auto}
+/* imagens muito altas (página inteira) ganham uma janela com rolagem própria,
+   em vez de encolherem até virar um risco ilegível */
+.modal .m-media.tall{
+  max-height:76vh;overflow-y:auto;overscroll-behavior:contain;
+  border:1px solid var(--line);border-radius:6px;background:#0A0A0B;
+  width:min(100%,760px);margin:0 auto;
+}
+.modal .m-media.tall img{max-height:none;border:0;border-radius:0;width:100%}
+.modal .m-media.tall::-webkit-scrollbar{width:10px}
+.modal .m-media.tall::-webkit-scrollbar-track{background:#111113}
+.modal .m-media.tall::-webkit-scrollbar-thumb{background:var(--acc-dim);border-radius:99px}
+.modal .m-media.tall::-webkit-scrollbar-thumb:hover{background:var(--acc)}
 .modal figcaption{display:flex;justify-content:space-between;gap:20px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--txt-2)}
 .modal figcaption .idx{color:var(--acc)}
 .modal button{
@@ -624,9 +636,9 @@ html.static .scroll-ind{display:none}
       </div>
       <div class="proj-visual" data-parallax data-gallery="trak" data-index="0" data-hover>
         <div class="pv">
-          <div class="ph"><span class="big">TRAK</span><span data-i18n="trak.ph">screenshot do dashboard</span></div>
-          <img class="real" src="assets/trak.png" alt="TRAK — dashboard de treino com contagem para a prova, readiness e gráfico de fitness/fadiga">
-          <span class="pv-badge" data-i18n="trak.gal">Galeria · 8</span>
+          <div class="ph"><span class="big">TRAKR</span><span data-i18n="trak.ph">screenshot do dashboard</span></div>
+          <img class="real" src="assets/trakr-card.jpg" alt="MY TRAKR — contagem para a prova, prontidão, condicionamento e calendário">
+          <span class="pv-badge" data-i18n="trak.gal">Galeria · 11</span>
         </div>
       </div>
       <div class="proj-sub rv">
@@ -634,7 +646,7 @@ html.static .scroll-ind{display:none}
         <h4 class="sub-title" data-i18n="trak.idtitle">Uma marca que mede o esforço</h4>
         <p class="proj-desc" style="max-width:72ch" data-i18n="trak.idtext">A identidade nasce do próprio produto: três barras em progressão — o gráfico de performance que cresce treino após treino — e um wordmark itálico que empresta velocidade. O símbolo aparece em construção, do traçado a lápis ao vetor final: moderno, hi-tech, desenhado para medir desempenho.</p>
       </div>
-      <div class="proj-brand rv" data-gallery="trak" data-index="7" data-hover>
+      <div class="proj-brand rv" data-gallery="trak" data-index="10" data-hover>
         <img src="assets/trakr-logo-sketch.jpg" alt="Logo MY TRAKR em construção — do esboço a lápis ao vetor final" loading="lazy">
         <span class="cap" data-i18n="trak.brand">Identidade própria — do esboço ao vetor</span>
       </div>
@@ -938,11 +950,12 @@ pt:{
  "b2b.ph":"em construção",
  "trak.ph":"screenshot do dashboard",
  "trak.brand":"Identidade própria — do esboço ao vetor",
- "trak.gal":"Galeria · 8",
+ "trak.gal":"Galeria · 11",
+ "trak.g1":"Contagem para a prova e prontidão do dia","trak.g8":"Força, registro de lesões e estilo de vida","trak.g9":"Configurações do atleta — disponibilidade e o que mede","trak.g10":"O sistema completo, de ponta a ponta",
  "trak.idtag":"Identidade — processo criativo",
  "trak.idtitle":"Uma marca que mede o esforço",
  "trak.idtext":"A identidade nasce do próprio produto: três barras em progressão — o gráfico de performance que cresce treino após treino — e um wordmark itálico que empresta velocidade. O símbolo aparece em construção, do traçado a lápis ao vetor final: moderno, hi-tech, desenhado para medir desempenho.",
- "trak.g2":"Calendário de treinos","trak.g3":"Season — volume semanal por fase","trak.g4":"Zonas de performance","trak.g5":"Composição corporal","trak.g6":"Plano alimentar diário","trak.g7":"Treino ajustado pelo coach de IA",
+ "trak.g2":"Condicionamento e frescor — fitness, fadiga e forma","trak.g3":"Calendário de treinos com totais semanais","trak.g4":"Temporada — volume semanal por fase","trak.g5":"Zonas de performance — bike, corrida e natação","trak.g6":"Composição corporal — tendências de bioimpedância","trak.g7":"Plano alimentar e nutrição por duração de treino",
  "bikes.tag":"Projeto pessoal — Origem da marca",
  "bikes.desc":"Antes de ser estúdio, Ventuno foi nome de bicicleta: duas máquinas de carbono — uma de estrada, uma de triathlon — pesquisadas, especificadas e montadas à mão pelo fundador.",
  "bikes.p1":"Meses de pesquisa profunda: geometria de quadro, curadoria de componentes, compatibilidades, pesos, relação custo-desempenho.",
@@ -1028,11 +1041,12 @@ en:{
  "b2b.ph":"in progress",
  "trak.ph":"dashboard screenshot",
  "trak.brand":"Its own identity — from sketch to vector",
- "trak.gal":"Gallery · 8",
+ "trak.gal":"Gallery · 11",
+ "trak.g1":"Race countdown and today's readiness","trak.g8":"Strength, injury log and lifestyle","trak.g9":"Athlete settings — availability and what you measure","trak.g10":"The whole system, end to end",
  "trak.idtag":"Identity — creative process",
  "trak.idtitle":"A brand that measures effort",
  "trak.idtext":"The identity is born from the product itself: three ascending bars — the performance chart growing session after session — and an italic wordmark that lends speed. The symbol is shown under construction, from pencil strokes to the final vector: modern, hi-tech, designed to measure performance.",
- "trak.g2":"Training calendar","trak.g3":"Season — weekly volume by phase","trak.g4":"Performance zones","trak.g5":"Body composition","trak.g6":"Daily nutrition plan","trak.g7":"Workout adjusted by the AI coach",
+ "trak.g2":"Fitness and freshness — fitness, fatigue and form","trak.g3":"Training calendar with weekly totals","trak.g4":"Season — weekly volume by phase","trak.g5":"Performance zones — bike, run and swim","trak.g6":"Body composition — bioimpedance trends","trak.g7":"Meal plan and nutrition by session length",
  "bikes.tag":"Personal project — Origin of the brand",
  "bikes.desc":"Before it was a studio, Ventuno was a bicycle name: two carbon machines — one road, one triathlon — researched, specified and hand-built by the founder.",
  "bikes.p1":"Months of deep research: frame geometry, component curation, compatibility, weight, cost-performance ratio.",
@@ -1118,11 +1132,12 @@ it:{
  "b2b.ph":"in costruzione",
  "trak.ph":"screenshot della dashboard",
  "trak.brand":"Identità propria — dallo schizzo al vettoriale",
- "trak.gal":"Galleria · 8",
+ "trak.gal":"Galleria · 11",
+ "trak.g1":"Conto alla rovescia per la gara e readiness del giorno","trak.g8":"Forza, registro infortuni e stile di vita","trak.g9":"Impostazioni dell'atleta — disponibilità e cosa misuri","trak.g10":"L'intero sistema, dall'inizio alla fine",
  "trak.idtag":"Identità — processo creativo",
  "trak.idtitle":"Un marchio che misura lo sforzo",
  "trak.idtext":"L'identità nasce dal prodotto stesso: tre barre in progressione — il grafico della performance che cresce allenamento dopo allenamento — e un wordmark in corsivo che dà velocità. Il simbolo appare in costruzione, dal tratto a matita al vettoriale finale: moderno, hi-tech, disegnato per misurare le prestazioni.",
- "trak.g2":"Calendario allenamenti","trak.g3":"Season — volume settimanale per fase","trak.g4":"Zone di performance","trak.g5":"Composizione corporea","trak.g6":"Piano alimentare giornaliero","trak.g7":"Allenamento adattato dal coach IA",
+ "trak.g2":"Condizione e freschezza — fitness, fatica e forma","trak.g3":"Calendario allenamenti con totali settimanali","trak.g4":"Stagione — volume settimanale per fase","trak.g5":"Zone di performance — bici, corsa e nuoto","trak.g6":"Composizione corporea — andamento bioimpedenza","trak.g7":"Piano alimentare e nutrizione per durata dell'allenamento",
  "bikes.tag":"Progetto personale — Origine del brand",
  "bikes.desc":"Prima di essere uno studio, Ventuno era il nome di una bicicletta: due macchine in carbonio — una da strada, una da triathlon — ricercate, specificate e montate a mano dal fondatore.",
  "bikes.p1":"Mesi di ricerca profonda: geometria del telaio, selezione dei componenti, compatibilità, pesi, rapporto costo-prestazioni.",
@@ -1208,11 +1223,12 @@ es:{
  "b2b.ph":"en construcción",
  "trak.ph":"captura del dashboard",
  "trak.brand":"Identidad propia — del boceto al vector",
- "trak.gal":"Galería · 8",
+ "trak.gal":"Galería · 11",
+ "trak.g1":"Cuenta atrás para la prueba y readiness del día","trak.g8":"Fuerza, registro de lesiones y estilo de vida","trak.g9":"Ajustes del atleta — disponibilidad y qué mides","trak.g10":"El sistema completo, de principio a fin",
  "trak.idtag":"Identidad — proceso creativo",
  "trak.idtitle":"Una marca que mide el esfuerzo",
  "trak.idtext":"La identidad nace del propio producto: tres barras en progresión — el gráfico de rendimiento que crece sesión tras sesión — y un wordmark en cursiva que aporta velocidad. El símbolo aparece en construcción, del trazo a lápiz al vector final: moderno, hi-tech, diseñado para medir el rendimiento.",
- "trak.g2":"Calendario de entrenamientos","trak.g3":"Season — volumen semanal por fase","trak.g4":"Zonas de rendimiento","trak.g5":"Composición corporal","trak.g6":"Plan de alimentación diario","trak.g7":"Entrenamiento ajustado por el coach de IA",
+ "trak.g2":"Condición y frescura — fitness, fatiga y forma","trak.g3":"Calendario de entrenamientos con totales semanales","trak.g4":"Temporada — volumen semanal por fase","trak.g5":"Zonas de rendimiento — bici, carrera y natación","trak.g6":"Composición corporal — tendencias de bioimpedancia","trak.g7":"Plan de alimentación y nutrición por duración de sesión",
  "bikes.tag":"Proyecto personal — Origen de la marca",
  "bikes.desc":"Antes de ser estudio, Ventuno fue nombre de bicicleta: dos máquinas de carbono — una de carretera, otra de triatlón — investigadas, especificadas y montadas a mano por el fundador.",
  "bikes.p1":"Meses de investigación profunda: geometría del cuadro, selección de componentes, compatibilidades, pesos, relación coste-rendimiento.",
@@ -1298,11 +1314,12 @@ fr:{
  "b2b.ph":"en construction",
  "trak.ph":"capture du tableau de bord",
  "trak.brand":"Identité propre — du croquis au vectoriel",
- "trak.gal":"Galerie · 8",
+ "trak.gal":"Galerie · 11",
+ "trak.g1":"Compte à rebours de la course et readiness du jour","trak.g8":"Force, journal des blessures et hygiène de vie","trak.g9":"Réglages de l'athlète — disponibilité et ce que vous mesurez","trak.g10":"Le système entier, de bout en bout",
  "trak.idtag":"Identité — processus créatif",
  "trak.idtitle":"Une marque qui mesure l'effort",
  "trak.idtext":"L'identité naît du produit lui-même : trois barres en progression — la courbe de performance qui grandit séance après séance — et un logotype en italique qui apporte la vitesse. Le symbole apparaît en construction, du trait au crayon au vectoriel final : moderne, hi-tech, dessiné pour mesurer la performance.",
- "trak.g2":"Calendrier d'entraînement","trak.g3":"Season — volume hebdomadaire par phase","trak.g4":"Zones de performance","trak.g5":"Composition corporelle","trak.g6":"Plan alimentaire quotidien","trak.g7":"Séance ajustée par le coach IA",
+ "trak.g2":"Condition et fraîcheur — fitness, fatigue et forme","trak.g3":"Calendrier d'entraînement avec totaux hebdomadaires","trak.g4":"Saison — volume hebdomadaire par phase","trak.g5":"Zones de performance — vélo, course et natation","trak.g6":"Composition corporelle — tendances de bio-impédance","trak.g7":"Plan alimentaire et nutrition selon la durée de séance",
  "bikes.tag":"Projet personnel — Origine de la marque",
  "bikes.desc":"Avant d'être un studio, Ventuno était un nom de vélo : deux machines en carbone — une de route, une de triathlon — étudiées, spécifiées et montées à la main par le fondateur.",
  "bikes.p1":"Des mois de recherche approfondie : géométrie du cadre, sélection des composants, compatibilités, poids, rapport coût-performance.",
@@ -1388,11 +1405,12 @@ de:{
  "b2b.ph":"im Aufbau",
  "trak.ph":"Screenshot des Dashboards",
  "trak.brand":"Eigene Identität — von der Skizze zum Vektor",
- "trak.gal":"Galerie · 8",
+ "trak.gal":"Galerie · 11",
+ "trak.g1":"Countdown zum Wettkampf und Readiness des Tages","trak.g8":"Kraft, Verletzungsprotokoll und Lebensstil","trak.g9":"Athleteneinstellungen — Verfügbarkeit und was gemessen wird","trak.g10":"Das ganze System, von Anfang bis Ende",
  "trak.idtag":"Identität — kreativer Prozess",
  "trak.idtitle":"Eine Marke, die Anstrengung misst",
  "trak.idtext":"Die Identität entsteht aus dem Produkt selbst: drei ansteigende Balken — die Leistungskurve, die mit jedem Training wächst — und eine kursive Wortmarke, die Geschwindigkeit verleiht. Das Symbol erscheint im Entstehen, vom Bleistiftstrich bis zum fertigen Vektor: modern, hi-tech, gemacht, um Leistung zu messen.",
- "trak.g2":"Trainingskalender","trak.g3":"Season — Wochenvolumen nach Phase","trak.g4":"Leistungszonen","trak.g5":"Körperzusammensetzung","trak.g6":"Täglicher Ernährungsplan","trak.g7":"Vom KI-Coach angepasstes Training",
+ "trak.g2":"Form und Frische — Fitness, Ermüdung und Form","trak.g3":"Trainingskalender mit Wochensummen","trak.g4":"Saison — Wochenvolumen nach Phase","trak.g5":"Leistungszonen — Rad, Lauf und Schwimmen","trak.g6":"Körperzusammensetzung — Bioimpedanz-Verlauf","trak.g7":"Ernährungsplan nach Trainingsdauer",
  "bikes.tag":"Persönliches Projekt — Ursprung der Marke",
  "bikes.desc":"Bevor es ein Studio war, war Ventuno ein Fahrradname: zwei Carbon-Maschinen — eine für die Straße, eine für den Triathlon — vom Gründer recherchiert, spezifiziert und von Hand aufgebaut.",
  "bikes.p1":"Monate intensiver Recherche: Rahmengeometrie, Auswahl der Komponenten, Kompatibilitäten, Gewichte, Preis-Leistungs-Verhältnis.",
@@ -1794,13 +1812,16 @@ document.querySelectorAll('.field').forEach(f=>{
       {src:'assets/roero-5-n8n.jpg',key:'roero.g5'}
     ],
     trak:[
-      {src:'assets/trak.png',cap:'MY TRAKR — Dashboard'},
-      {src:'assets/trak-2-calendar.jpg',key:'trak.g2'},
-      {src:'assets/trak-3-season.jpg',key:'trak.g3'},
-      {src:'assets/trak-4-zones.jpg',key:'trak.g4'},
-      {src:'assets/trak-5-body.jpg',key:'trak.g5'},
-      {src:'assets/trak-6-nutricao.jpg',key:'trak.g6'},
-      {src:'assets/trak-7-workout.jpg',key:'trak.g7'},
+      {src:'assets/trakr-01-hero.jpg',key:'trak.g1'},
+      {src:'assets/trakr-02-fitness.jpg',key:'trak.g2'},
+      {src:'assets/trakr-03-calendario.jpg',key:'trak.g3'},
+      {src:'assets/trakr-04-temporada.jpg',key:'trak.g4'},
+      {src:'assets/trakr-05-zonas.jpg',key:'trak.g5'},
+      {src:'assets/trakr-06-corpo.jpg',key:'trak.g6'},
+      {src:'assets/trakr-07-nutricao.jpg',key:'trak.g7'},
+      {src:'assets/trakr-08-forca.jpg',key:'trak.g8'},
+      {src:'assets/trakr-09-config.jpg',key:'trak.g9'},
+      {src:'assets/trakr-10-completo.jpg',key:'trak.g10',tall:true},
       {src:'assets/trakr-logo-sketch.jpg',key:'trak.brand'}
     ],
     ai:[{src:'assets/ai-1-2d.jpg',key:'ai.s1t'},{src:'assets/ai-2-3d.jpg',key:'ai.s2t'},{src:'assets/ai-3-cena.jpg',key:'ai.s3t'},{src:'assets/ai-4-video.mp4',key:'ai.s4t',video:true}]
@@ -1813,6 +1834,8 @@ document.querySelectorAll('.field').forEach(f=>{
   function render(){
     const items=GAL[cur],it=items[idx];
     media.innerHTML='';
+    media.classList.toggle('tall',!!it.tall);
+    media.scrollTop=0;
     let el;
     if(it.video){el=document.createElement('video');el.src=it.src;el.controls=true;el.autoplay=true;el.muted=true;el.loop=true;el.playsInline=true}
     else{el=document.createElement('img');el.src=it.src;el.alt=caption(it)}
