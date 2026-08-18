@@ -298,6 +298,15 @@ section{position:relative;padding:clamp(90px,14vh,170px) clamp(20px,4vw,56px)}
 /* placeholder que exibe a logo do produto no lugar do texto */
 .ph-logo img{width:min(76%,540px);height:auto;margin-bottom:6px}
 .proj-visual img.real{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* faixa de números do case (largura total) */
+.proj-stats{
+  grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-top:6px;
+}
+@media(max-width:700px){.proj-stats{grid-template-columns:1fr 1fr}}
+.proj-stats .st{background:var(--bg-2);padding:20px;display:flex;flex-direction:column;gap:6px}
+.proj-stats .n{font-family:var(--display);font-weight:600;font-size:clamp(24px,2.6vw,34px);line-height:1;color:var(--acc)}
+.proj-stats .l{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--txt-3);line-height:1.4}
 /* sub-section header inside a case (full width) */
 .proj-sub{grid-column:1/-1;display:flex;flex-direction:column;gap:16px;border-top:1px solid var(--line);padding-top:34px;margin-top:8px}
 .proj-sub .sub-title{font-family:var(--display);font-weight:500;font-size:clamp(22px,2.4vw,34px);line-height:1.1}
@@ -617,6 +626,44 @@ html.static .scroll-ind{display:none}
       </div>
     </article>
 
+    <!-- Flamme Rouge -->
+    <article class="proj rv" id="flamme">
+      <div class="proj-info">
+        <span class="proj-tag" data-i18n="fr.tag">Produto próprio · Direção de prova em ciclismo</span>
+        <h3 class="proj-title">Flamme Rouge</h3>
+        <p class="proj-desc" data-i18n="fr.desc">Direção de prova ao vivo para ciclismo de estrada.</p>
+        <div class="proj-points">
+          <div class="pp"><span class="k" data-i18n="lbl.problem">Problema</span><span class="v" data-i18n="fr.p1">Prova de estrada acontece no rádio. A direção pergunta onde está o carro de fechamento e recebe uma estimativa — e é em cima dela que se reabre a via e que se cumpre, ou não, o tempo de interdição combinado com a autoridade de trânsito.</span></div>
+          <div class="pp"><span class="k" data-i18n="lbl.concept">Conceito</span><span class="v" data-i18n="fr.p2">Cada veículo de apoio recebe um código de 6 caracteres impresso na folha do briefing, com QR ao lado. O motorista aponta a câmera e o celular dele vira o rastreador daquele veículo — sem loja de aplicativos, sem conta, sem equipamento para comprar, carregar e recolher no fim do dia.</span></div>
+          <div class="pp"><span class="k" data-i18n="lbl.measure">Medição</span><span class="v" data-i18n="fr.p3">A janela entre abertura e fechamento deixa de ser palpite: o sistema guarda a que horas a abertura passou por cada ponto, e a janela vira a diferença entre dois horários observados. Sem histórico suficiente, a tela diz <b>projetado</b> e explica o motivo, em vez de fingir precisão.</span></div>
+          <div class="pp"><span class="k" data-i18n="lbl.terrain">Terreno</span><span class="v" data-i18n="fr.p4">Numa ida-e-volta, dois veículos podem estar a dezenas de metros em linha reta e a dezenas de quilômetros pela estrada. O sistema projeta cada posição sobre o traçado indexado e compara ao longo dele — inclusive o custo de quem já passou do ponto e precisa retornar contra o fluxo.</span></div>
+          <div class="pp"><span class="k" data-i18n="lbl.resilience">Resiliência</span><span class="v" data-i18n="fr.p5">Um pedido de socorro fura a fila na frente de qualquer ponto de GPS e é retentado até o servidor confirmar. Nada é enviado antes de ser gravado no aparelho: num teste sem cobertura, os pontos acumulados chegaram completos, em ordem e sem duplicar quando o sinal voltou.</span></div>
+          <div class="pp"><span class="k" data-i18n="lbl.status">Status</span><span class="v" data-i18n="fr.p6">Em produção técnica, ainda sem cliente pagante. Testado em campo numa prova real com dois celulares e três funções simultâneas — abertura, fechamento e ambulância —, incluindo alerta de acidente com confirmação e acionamento automático.</span></div>
+        </div>
+        <div class="stack">
+          <span class="chip">Next.js 15</span><span class="chip">TypeScript</span><span class="chip">Supabase</span><span class="chip">MapLibre GL</span><span class="chip">Tailwind v4</span><span class="chip">Vitest</span><span class="chip">Vercel</span>
+        </div>
+      </div>
+      <div class="proj-visual" data-parallax data-gallery="flamme" data-index="0" data-hover>
+        <div class="pv">
+          <div class="ph"><span class="big">FR</span><span data-i18n="fr.ph">o flamme rouge</span></div>
+          <img class="real" src="assets/flamme-1-kite.jpg" alt="Flamme Rouge — o arco vermelho do último quilômetro, visto da moto que segue a corrida">
+          <span class="pv-badge" data-i18n="fr.gal">Galeria · 3</span>
+        </div>
+      </div>
+      <div class="proj-stats rv">
+        <div class="st"><span class="n">~35.300</span><span class="l" data-i18n="fr.s1">linhas de código</span></div>
+        <div class="st"><span class="n">325</span><span class="l" data-i18n="fr.s2">testes automatizados</span></div>
+        <div class="st"><span class="n">6</span><span class="l" data-i18n="fr.s3">idiomas verificados no build</span></div>
+        <div class="st"><span class="n">9</span><span class="l" data-i18n="fr.s4">papéis de veículo</span></div>
+      </div>
+      <div class="proj-sub rv">
+        <span class="proj-tag" data-i18n="fr.subtag">Decisões técnicas</span>
+        <h4 class="sub-title" data-i18n="fr.subtitle">O que se decide antes do dia da prova</h4>
+        <p class="proj-desc" style="max-width:74ch" data-i18n="fr.subtext">O dicionário é tipado: uma chave ausente em alemão quebra o build, em vez de virar texto cru na tela de um motorista austríaco no dia da prova. A justificativa de cada acionamento é gravada desmontada — chave e números —, porque a mesma frase é lida por até três pessoas em idiomas diferentes, e só montando na leitura ela acerta para todas. Tabelas com dado sensível não têm política de RLS nenhuma: o Postgres nega por padrão. E a degradação é desenhada, não acidental — chave de mapa indisponível cai sozinha para o fundo padrão, banco fora do ar não vira porta trancada num formulário.</p>
+      </div>
+    </article>
+
     <!-- TRAK -->
     <article class="proj rv" id="trak">
       <div class="proj-info">
@@ -933,6 +980,21 @@ pt:{
  "roero.g2":"Página de sede — raias em tempo real, horários e tarifas","roero.g3":"Totem de check-in — escolha da raia","roero.g4":"Painel administrativo — visão geral","roero.g5":"Automação n8n — rassegna stampa com IA",
  "lbl.concept":"Conceito","lbl.data":"Dados","lbl.system":"Sistema",
  "lbl.origin":"Origem","lbl.turn":"A virada","lbl.thesis":"Tese","lbl.operation":"Operação","lbl.management":"Gestão",
+ "lbl.measure":"Medição","lbl.terrain":"Terreno","lbl.resilience":"Resiliência","lbl.status":"Status",
+ "fr.tag":"Produto próprio · Direção de prova em ciclismo",
+ "fr.desc":"Direção de prova ao vivo para ciclismo de estrada.",
+ "fr.p1":"Prova de estrada acontece no rádio. A direção pergunta onde está o carro de fechamento e recebe uma estimativa — e é em cima dela que se reabre a via e que se cumpre, ou não, o tempo de interdição combinado com a autoridade de trânsito.",
+ "fr.p2":"Cada veículo de apoio recebe um código de 6 caracteres impresso na folha do briefing, com QR ao lado. O motorista aponta a câmera e o celular dele vira o rastreador daquele veículo — sem loja de aplicativos, sem conta, sem equipamento para comprar, carregar e recolher no fim do dia.",
+ "fr.p3":"A janela entre abertura e fechamento deixa de ser palpite: o sistema guarda a que horas a abertura passou por cada ponto, e a janela vira a diferença entre dois horários observados. Sem histórico suficiente, a tela diz <b>projetado</b> e explica o motivo, em vez de fingir precisão.",
+ "fr.p4":"Numa ida-e-volta, dois veículos podem estar a dezenas de metros em linha reta e a dezenas de quilômetros pela estrada. O sistema projeta cada posição sobre o traçado indexado e compara ao longo dele — inclusive o custo de quem já passou do ponto e precisa retornar contra o fluxo.",
+ "fr.p5":"Um pedido de socorro fura a fila na frente de qualquer ponto de GPS e é retentado até o servidor confirmar. Nada é enviado antes de ser gravado no aparelho: num teste sem cobertura, os pontos acumulados chegaram completos, em ordem e sem duplicar quando o sinal voltou.",
+ "fr.p6":"Em produção técnica, ainda sem cliente pagante. Testado em campo numa prova real com dois celulares e três funções simultâneas — abertura, fechamento e ambulância —, incluindo alerta de acidente com confirmação e acionamento automático.",
+ "fr.ph":"o flamme rouge","fr.gal":"Galeria · 3",
+ "fr.s1":"linhas de código","fr.s2":"testes automatizados","fr.s3":"idiomas verificados no build","fr.s4":"papéis de veículo",
+ "fr.g1":"O último quilômetro — de onde vem o nome","fr.g2":"O comboio de apoio no percurso","fr.g3":"O carro de fechamento e a via que reabre atrás dele",
+ "fr.subtag":"Decisões técnicas",
+ "fr.subtitle":"O que se decide antes do dia da prova",
+ "fr.subtext":"O dicionário é tipado: uma chave ausente em alemão quebra o build, em vez de virar texto cru na tela de um motorista austríaco no dia da prova. A justificativa de cada acionamento é gravada desmontada — chave e números —, porque a mesma frase é lida por até três pessoas em idiomas diferentes, e só montando na leitura ela acerta para todas. Tabelas com dado sensível não têm política de RLS nenhuma: o Postgres nega por padrão. E a degradação é desenhada, não acidental — chave de mapa indisponível cai sozinha para o fundo padrão, banco fora do ar não vira porta trancada num formulário.",
  "trak.tag":"Produto pessoal → produto · Dashboard de treino",
  "trak.desc":"O dashboard que nasceu para um IRONMAN 70.3 e virou produto.",
  "trak.p1":"Comecei como ferramenta de uso próprio: um painel para enxergar a preparação inteira num lugar só — calendário, carga, prontidão, lesões, temporada em fases.",
@@ -1024,6 +1086,21 @@ en:{
  "roero.g2":"Facility page — real-time lanes, hours and rates","roero.g3":"Check-in kiosk — choosing the lane","roero.g4":"Admin panel — overview","roero.g5":"n8n automation — AI press review",
  "lbl.concept":"Concept","lbl.data":"Data","lbl.system":"System",
  "lbl.origin":"Origin","lbl.turn":"The turn","lbl.thesis":"Thesis","lbl.operation":"Operations","lbl.management":"Management",
+ "lbl.measure":"Measurement","lbl.terrain":"Terrain","lbl.resilience":"Resilience","lbl.status":"Status",
+ "fr.tag":"Own product · Race control for road cycling",
+ "fr.desc":"Live race control for road cycling.",
+ "fr.p1":"A road race runs on the radio. Race control asks where the closing car is and gets an estimate — and the road is reopened on the strength of that estimate, along with the closure window agreed with the traffic authority, met or missed.",
+ "fr.p2":"Each support vehicle gets a 6-character code printed on the briefing sheet, with a QR code beside it. The driver points the camera, and their phone becomes that vehicle's tracker — no app store, no account, no hardware to buy, charge, hand out and collect at the end of the day.",
+ "fr.p3":"The window between the lead and closing car stops being guesswork: the system records what time the lead car passed each point, and the window becomes the difference between two observed times. When there is not enough history, the screen says <b>projected</b> and gives the reason, instead of faking precision.",
+ "fr.p4":"On an out-and-back course, two vehicles can be tens of metres apart as the crow flies and tens of kilometres apart along the road. The system projects each position onto the indexed course and compares along it — including the cost paid by a vehicle that has already passed the point and has to turn back against the flow.",
+ "fr.p5":"A call for help jumps the queue ahead of any GPS point and is retried until the server confirms it. Nothing is sent before it is written to the device: in a test with no coverage, the stored points all arrived — complete, in order and without duplicates — as soon as the signal returned.",
+ "fr.p6":"Technically in production, no paying customer yet. Field-tested on a real race with two phones and three simultaneous roles — lead car, closing car and ambulance — including a crash alert with confirmation and automatic dispatch.",
+ "fr.ph":"the flamme rouge","fr.gal":"Gallery · 3",
+ "fr.s1":"lines of code","fr.s2":"automated tests","fr.s3":"languages checked at build time","fr.s4":"vehicle roles",
+ "fr.g1":"The final kilometre — where the name comes from","fr.g2":"The support convoy on the course","fr.g3":"The closing car and the road reopening behind it",
+ "fr.subtag":"Engineering decisions",
+ "fr.subtitle":"What gets decided before race day",
+ "fr.subtext":"The dictionary is typed: a key missing in German breaks the build instead of showing up as a raw string on an Austrian driver's screen on race day. Each dispatch justification is stored in pieces — keys and numbers — because the same sentence is read by up to three people in different languages, and only assembling it on read gets it right for all of them. Tables holding sensitive data carry no RLS policy at all: Postgres denies by default. And degradation is designed, not accidental — an unavailable map key falls back to the default basemap on its own, a database outage does not become a locked door on a form.",
  "trak.tag":"Personal product → product · Training dashboard",
  "trak.desc":"The dashboard born for an IRONMAN 70.3 that became a product.",
  "trak.p1":"It started as a tool for my own use: a panel to see the whole preparation in one place — calendar, load, readiness, injuries, the season in phases.",
@@ -1115,6 +1192,21 @@ it:{
  "roero.g2":"Pagina sede — corsie in tempo reale, orari e tariffe","roero.g3":"Totem di check-in — scelta della corsia","roero.g4":"Pannello amministrativo — panoramica","roero.g5":"Automazione n8n — rassegna stampa con IA",
  "lbl.concept":"Concetto","lbl.data":"Dati","lbl.system":"Sistema",
  "lbl.origin":"Origine","lbl.turn":"La svolta","lbl.thesis":"Tesi","lbl.operation":"Operatività","lbl.management":"Gestione",
+ "lbl.measure":"Misura","lbl.terrain":"Terreno","lbl.resilience":"Resilienza","lbl.status":"Stato",
+ "fr.tag":"Prodotto proprio · Direzione gara nel ciclismo",
+ "fr.desc":"Direzione gara in tempo reale per il ciclismo su strada.",
+ "fr.p1":"Una gara su strada si gestisce via radio. La direzione chiede dov'è l'auto di fine corsa e riceve una stima — ed è su quella stima che si riapre la strada e che si rispetta, o no, il tempo di chiusura concordato con la polizia stradale.",
+ "fr.p2":"Ogni veicolo di assistenza riceve un codice di 6 caratteri stampato sul foglio del briefing, con un QR accanto. L'autista inquadra con la fotocamera e il suo telefono diventa il tracker di quel veicolo — nessuno store, nessun account, nessun dispositivo da comprare, caricare, distribuire e ritirare a fine giornata.",
+ "fr.p3":"La finestra tra apripista e fine corsa smette di essere un'ipotesi: il sistema registra a che ora l'apripista è passata da ogni punto, e la finestra diventa la differenza tra due orari osservati. Quando lo storico non basta, lo schermo scrive <b>proiettato</b> e ne spiega il motivo, invece di fingere precisione.",
+ "fr.p4":"Su un percorso di andata e ritorno, due veicoli possono distare decine di metri in linea d'aria e decine di chilometri su strada. Il sistema proietta ogni posizione sul tracciato indicizzato e confronta lungo di esso — considerando anche il costo di chi ha già superato il punto e deve tornare indietro contromano.",
+ "fr.p5":"Una richiesta di soccorso passa davanti a qualsiasi punto GPS e viene ritentata finché il server non conferma. Niente viene inviato prima di essere scritto sul dispositivo: in un test senza copertura, i punti accumulati sono arrivati tutti — completi, in ordine e senza duplicati — appena il segnale è tornato.",
+ "fr.p6":"Tecnicamente in produzione, ancora senza cliente pagante. Provato sul campo in una gara vera con due telefoni e tre ruoli simultanei — apripista, fine corsa e ambulanza — compreso un allarme incidente con conferma e attivazione automatica.",
+ "fr.ph":"il flamme rouge","fr.gal":"Galleria · 3",
+ "fr.s1":"righe di codice","fr.s2":"test automatici","fr.s3":"lingue verificate in compilazione","fr.s4":"ruoli veicolo",
+ "fr.g1":"L'ultimo chilometro — da cui viene il nome","fr.g2":"Il convoglio di assistenza sul percorso","fr.g3":"L'auto di fine corsa e la strada che riapre dietro",
+ "fr.subtag":"Scelte tecniche",
+ "fr.subtitle":"Ciò che si decide prima del giorno di gara",
+ "fr.subtext":"Il dizionario è tipizzato: una chiave assente in tedesco rompe la build, invece di comparire come stringa grezza sullo schermo di un autista austriaco il giorno della gara. La motivazione di ogni attivazione è salvata a pezzi — chiavi e numeri — perché la stessa frase è letta da un massimo di tre persone in lingue diverse, e solo componendola in lettura risulta giusta per tutte. Le tabelle con dati sensibili non hanno alcuna policy RLS: Postgres nega per impostazione predefinita. E il degrado è progettato, non accidentale — una chiave mappa non disponibile ripiega da sola sullo sfondo predefinito, un database irraggiungibile non diventa una porta chiusa su un modulo.",
  "trak.tag":"Prodotto personale → prodotto · Dashboard di allenamento",
  "trak.desc":"La dashboard nata per un IRONMAN 70.3 e diventata prodotto.",
  "trak.p1":"È partita come strumento per uso personale: un pannello per vedere l'intera preparazione in un unico posto — calendario, carico, readiness, infortuni, stagione per fasi.",
@@ -1206,6 +1298,21 @@ es:{
  "roero.g2":"Página de sede — calles en tiempo real, horarios y tarifas","roero.g3":"Tótem de check-in — elección de la calle","roero.g4":"Panel administrativo — visión general","roero.g5":"Automatización n8n — reseña de prensa con IA",
  "lbl.concept":"Concepto","lbl.data":"Datos","lbl.system":"Sistema",
  "lbl.origin":"Origen","lbl.turn":"El giro","lbl.thesis":"Tesis","lbl.operation":"Operación","lbl.management":"Gestión",
+ "lbl.measure":"Medición","lbl.terrain":"Terreno","lbl.resilience":"Resiliencia","lbl.status":"Estado",
+ "fr.tag":"Producto propio · Dirección de carrera en ciclismo",
+ "fr.desc":"Dirección de carrera en vivo para ciclismo de ruta.",
+ "fr.p1":"Una carrera de ruta se gestiona por radio. La dirección pregunta dónde está el coche de cierre y recibe una estimación — y sobre esa estimación se reabre la vía y se cumple, o no, el tiempo de corte acordado con la autoridad de tráfico.",
+ "fr.p2":"Cada vehículo de apoyo recibe un código de 6 caracteres impreso en la hoja del briefing, con un QR al lado. El conductor apunta la cámara y su móvil se convierte en el rastreador de ese vehículo — sin tienda de aplicaciones, sin cuenta, sin equipo que comprar, cargar, repartir y recoger al final del día.",
+ "fr.p3":"La ventana entre el coche de apertura y el de cierre deja de ser una suposición: el sistema guarda a qué hora pasó la apertura por cada punto, y la ventana pasa a ser la diferencia entre dos horarios observados. Sin histórico suficiente, la pantalla dice <b>proyectado</b> y explica el motivo, en vez de fingir precisión.",
+ "fr.p4":"En un recorrido de ida y vuelta, dos vehículos pueden estar a decenas de metros en línea recta y a decenas de kilómetros por carretera. El sistema proyecta cada posición sobre el trazado indexado y compara a lo largo de él — incluido el coste de quien ya pasó el punto y debe volver en sentido contrario.",
+ "fr.p5":"Una petición de auxilio se salta la cola por delante de cualquier punto de GPS y se reintenta hasta que el servidor confirma. Nada se envía antes de escribirse en el dispositivo: en una prueba sin cobertura, los puntos acumulados llegaron completos, en orden y sin duplicados en cuanto volvió la señal.",
+ "fr.p6":"En producción técnica, todavía sin cliente de pago. Probado en campo en una carrera real con dos móviles y tres funciones simultáneas — apertura, cierre y ambulancia —, incluida una alerta de accidente con confirmación y activación automática.",
+ "fr.ph":"el flamme rouge","fr.gal":"Galería · 3",
+ "fr.s1":"líneas de código","fr.s2":"pruebas automatizadas","fr.s3":"idiomas verificados en compilación","fr.s4":"roles de vehículo",
+ "fr.g1":"El último kilómetro — de donde viene el nombre","fr.g2":"El convoy de apoyo en el recorrido","fr.g3":"El coche de cierre y la vía que reabre detrás",
+ "fr.subtag":"Decisiones técnicas",
+ "fr.subtitle":"Lo que se decide antes del día de carrera",
+ "fr.subtext":"El diccionario está tipado: una clave ausente en alemán rompe la compilación, en vez de aparecer como texto crudo en la pantalla de un conductor austríaco el día de la carrera. La justificación de cada activación se guarda desmontada — claves y números — porque la misma frase la leen hasta tres personas en idiomas distintos, y solo montándola en la lectura resulta correcta para todas. Las tablas con datos sensibles no tienen ninguna política RLS: Postgres deniega por defecto. Y la degradación está diseñada, no es accidental — una clave de mapa no disponible cae sola al fondo por defecto, una base de datos caída no se convierte en una puerta cerrada en un formulario.",
  "trak.tag":"Producto personal → producto · Dashboard de entrenamiento",
  "trak.desc":"El dashboard que nació para un IRONMAN 70.3 y se convirtió en producto.",
  "trak.p1":"Empezó como herramienta de uso propio: un panel para ver toda la preparación en un solo lugar — calendario, carga, readiness, lesiones, temporada por fases.",
@@ -1297,6 +1404,21 @@ fr:{
  "roero.g2":"Page de site — lignes en temps réel, horaires et tarifs","roero.g3":"Borne de check-in — choix de la ligne","roero.g4":"Panneau d'administration — vue d'ensemble","roero.g5":"Automatisation n8n — revue de presse par IA",
  "lbl.concept":"Concept","lbl.data":"Données","lbl.system":"Système",
  "lbl.origin":"Origine","lbl.turn":"Le tournant","lbl.thesis":"Thèse","lbl.operation":"Opérations","lbl.management":"Gestion",
+ "lbl.measure":"Mesure","lbl.terrain":"Terrain","lbl.resilience":"Résilience","lbl.status":"Statut",
+ "fr.tag":"Produit maison · Direction de course en cyclisme",
+ "fr.desc":"Direction de course en direct pour le cyclisme sur route.",
+ "fr.p1":"Une course sur route se gère à la radio. La direction demande où se trouve la voiture-balai et reçoit une estimation — et c'est sur cette estimation que la route rouvre, et que l'horaire de fermeture convenu avec les autorités est tenu, ou non.",
+ "fr.p2":"Chaque véhicule d'assistance reçoit un code de 6 caractères imprimé sur la feuille de briefing, avec un QR à côté. Le conducteur vise avec la caméra et son téléphone devient le traceur de ce véhicule — sans magasin d'applications, sans compte, sans matériel à acheter, recharger, distribuer et récupérer en fin de journée.",
+ "fr.p3":"La fenêtre entre la voiture d'ouverture et la voiture-balai cesse d'être une supposition : le système enregistre l'heure de passage de l'ouverture à chaque point, et la fenêtre devient l'écart entre deux heures observées. Sans historique suffisant, l'écran affiche <b>projeté</b> et en donne la raison, au lieu de feindre la précision.",
+ "fr.p4":"Sur un parcours en aller-retour, deux véhicules peuvent être à des dizaines de mètres à vol d'oiseau et à des dizaines de kilomètres par la route. Le système projette chaque position sur le tracé indexé et compare le long de celui-ci — y compris le coût pour celui qui a déjà dépassé le point et doit revenir à contresens.",
+ "fr.p5":"Un appel à l'aide passe devant n'importe quel point GPS et est réessayé jusqu'à confirmation du serveur. Rien n'est envoyé avant d'être écrit sur l'appareil : lors d'un test sans couverture, les points accumulés sont tous arrivés — complets, dans l'ordre et sans doublons — dès le retour du signal.",
+ "fr.p6":"En production technique, encore sans client payant. Testé sur le terrain lors d'une vraie course avec deux téléphones et trois rôles simultanés — ouverture, voiture-balai et ambulance —, y compris une alerte de chute avec confirmation et déclenchement automatique.",
+ "fr.ph":"la flamme rouge","fr.gal":"Galerie · 3",
+ "fr.s1":"lignes de code","fr.s2":"tests automatisés","fr.s3":"langues vérifiées à la compilation","fr.s4":"rôles de véhicule",
+ "fr.g1":"Le dernier kilomètre — d'où vient le nom","fr.g2":"Le convoi d'assistance sur le parcours","fr.g3":"La voiture-balai et la route qui rouvre derrière",
+ "fr.subtag":"Choix techniques",
+ "fr.subtitle":"Ce qui se décide avant le jour de la course",
+ "fr.subtext":"Le dictionnaire est typé : une clé absente en allemand casse le build, au lieu d'apparaître en texte brut sur l'écran d'un conducteur autrichien le jour de la course. La justification de chaque déclenchement est stockée en pièces détachées — clés et nombres — car la même phrase est lue par jusqu'à trois personnes dans des langues différentes, et seule sa composition à la lecture la rend juste pour toutes. Les tables contenant des données sensibles n'ont aucune politique RLS : Postgres refuse par défaut. Et la dégradation est conçue, non accidentelle — une clé de carte indisponible bascule seule sur le fond par défaut, une base de données hors service ne devient pas une porte verrouillée sur un formulaire.",
  "trak.tag":"Produit personnel → produit · Tableau de bord d'entraînement",
  "trak.desc":"Le tableau de bord né pour un IRONMAN 70.3, devenu produit.",
  "trak.p1":"Cela a commencé comme un outil personnel : un tableau de bord pour voir toute la préparation au même endroit — calendrier, charge, readiness, blessures, saison par phases.",
@@ -1388,6 +1510,21 @@ de:{
  "roero.g2":"Standortseite — Bahnen in Echtzeit, Zeiten und Tarife","roero.g3":"Check-in-Terminal — Bahnauswahl","roero.g4":"Verwaltungspanel — Übersicht","roero.g5":"n8n-Automatisierung — KI-Presseschau",
  "lbl.concept":"Konzept","lbl.data":"Daten","lbl.system":"System",
  "lbl.origin":"Ursprung","lbl.turn":"Die Wende","lbl.thesis":"These","lbl.operation":"Betrieb","lbl.management":"Steuerung",
+ "lbl.measure":"Messung","lbl.terrain":"Gelände","lbl.resilience":"Ausfallsicherheit","lbl.status":"Status",
+ "fr.tag":"Eigenes Produkt · Rennleitung im Straßenradsport",
+ "fr.desc":"Rennleitung in Echtzeit für den Straßenradsport.",
+ "fr.p1":"Ein Straßenrennen läuft über Funk. Die Rennleitung fragt, wo das Schlussfahrzeug ist, und bekommt eine Schätzung — und auf dieser Schätzung beruht die Freigabe der Straße und die mit der Verkehrsbehörde vereinbarte Sperrzeit, eingehalten oder nicht.",
+ "fr.p2":"Jedes Begleitfahrzeug erhält einen 6-stelligen Code, gedruckt auf dem Briefing-Blatt, mit QR-Code daneben. Der Fahrer hält die Kamera darauf, und sein Telefon wird zum Tracker dieses Fahrzeugs — kein App-Store, kein Konto, keine Hardware, die gekauft, geladen, verteilt und abends wieder eingesammelt werden muss.",
+ "fr.p3":"Das Fenster zwischen Führungs- und Schlussfahrzeug ist keine Vermutung mehr: Das System hält fest, wann das Führungsfahrzeug jeden Punkt passiert hat, und das Fenster wird zur Differenz zweier beobachteter Zeiten. Fehlt die Historie, schreibt der Bildschirm <b>projiziert</b> und nennt den Grund, statt Präzision vorzutäuschen.",
+ "fr.p4":"Auf einer Hin-und-zurück-Strecke können zwei Fahrzeuge in Luftlinie zig Meter und entlang der Straße zig Kilometer auseinanderliegen. Das System projiziert jede Position auf die indizierte Strecke und vergleicht entlang dieser — samt dem Aufwand für ein Fahrzeug, das den Punkt bereits passiert hat und gegen die Fahrtrichtung zurück muss.",
+ "fr.p5":"Ein Hilferuf überholt jeden GPS-Punkt in der Warteschlange und wird wiederholt, bis der Server bestätigt. Nichts wird gesendet, bevor es auf dem Gerät gespeichert ist: In einem Test ohne Netz kamen alle gesammelten Punkte vollständig, in der richtigen Reihenfolge und ohne Duplikate an, sobald das Signal zurück war.",
+ "fr.p6":"Technisch in Produktion, noch ohne zahlenden Kunden. Im Feld getestet bei einem echten Rennen mit zwei Telefonen und drei gleichzeitigen Rollen — Führungsfahrzeug, Schlussfahrzeug und Krankenwagen —, inklusive Sturzalarm mit Bestätigung und automatischer Alarmierung.",
+ "fr.ph":"die Flamme Rouge","fr.gal":"Galerie · 3",
+ "fr.s1":"Codezeilen","fr.s2":"automatisierte Tests","fr.s3":"Sprachen, beim Build geprüft","fr.s4":"Fahrzeugrollen",
+ "fr.g1":"Der letzte Kilometer — daher der Name","fr.g2":"Der Begleitkonvoi auf der Strecke","fr.g3":"Das Schlussfahrzeug und die Straße, die dahinter wieder öffnet",
+ "fr.subtag":"Technische Entscheidungen",
+ "fr.subtitle":"Was vor dem Renntag entschieden wird",
+ "fr.subtext":"Das Wörterbuch ist typisiert: Ein fehlender Schlüssel im Deutschen bricht den Build, statt am Renntag als roher Text auf dem Bildschirm eines österreichischen Fahrers zu landen. Die Begründung jeder Alarmierung wird zerlegt gespeichert — Schlüssel und Zahlen — denn denselben Satz lesen bis zu drei Personen in verschiedenen Sprachen, und nur beim Lesen zusammengesetzt stimmt er für alle. Tabellen mit sensiblen Daten haben gar keine RLS-Policy: Postgres verweigert standardmäßig. Und die Degradation ist geplant, nicht zufällig — ein nicht verfügbarer Kartenschlüssel fällt von selbst auf die Standardkarte zurück, eine ausgefallene Datenbank wird nicht zur verschlossenen Tür in einem Formular.",
  "trak.tag":"Eigenes Produkt → Produkt · Trainings-Dashboard",
  "trak.desc":"Das Dashboard, das für einen IRONMAN 70.3 entstand und zum Produkt wurde.",
  "trak.p1":"Es begann als Werkzeug für den Eigenbedarf: ein Panel, um die gesamte Vorbereitung an einem Ort zu sehen — Kalender, Belastung, Readiness, Verletzungen, Saison in Phasen.",
@@ -1550,6 +1687,7 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     ['#top','#C8FF00'],    // hero — lime VENTUNO
     ['#about','#FFD400'],  // sobre — amarelo
     ['#roero','#3EC5FF'],  // Roero — azzurro piscina
+    ['#flamme','#FF3B30'], // Flamme Rouge — o vermelho do último quilômetro
     ['#trak','#C8FF00'],   // MY TRAKR — lime da marca
     ['#b2b','#4FD6C5'],    // MY TRAKR Assessorias — teal secundário do produto
     ['#bikes','#FF5546'],  // bikes — vermelho corrida
@@ -1810,6 +1948,11 @@ document.querySelectorAll('.field').forEach(f=>{
       {src:'assets/roero-3-kiosk.jpg',key:'roero.g3'},
       {src:'assets/roero-4-admin.jpg',key:'roero.g4'},
       {src:'assets/roero-5-n8n.jpg',key:'roero.g5'}
+    ],
+    flamme:[
+      {src:'assets/flamme-1-kite.jpg',key:'fr.g1'},
+      {src:'assets/flamme-2-pave.jpg',key:'fr.g2'},
+      {src:'assets/flamme-3-fechamento.jpg',key:'fr.g3'}
     ],
     trak:[
       {src:'assets/trakr-01-hero.jpg',key:'trak.g1'},
