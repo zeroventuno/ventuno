@@ -342,7 +342,7 @@ section{position:relative;padding:clamp(90px,14vh,170px) clamp(20px,4vw,56px)}
 .ai-step:last-child::after{display:none}
 @media(max-width:1000px){.ai-step::after{display:none}}
 /* OM sub-systems */
-.om-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.om-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
 @media(max-width:600px){.om-grid{grid-template-columns:1fr}}
 .om-item{background:var(--bg-2);padding:24px 22px;display:flex;flex-direction:column;gap:8px;transition:background .3s}
 .om-item:hover{background:var(--bg-3)}
@@ -726,6 +726,41 @@ html.static .scroll-ind{display:none}
       </div>
     </article>
 
+    <!-- OM Rent Bikes -->
+    <article class="proj rv" id="omrent">
+      <div class="proj-info">
+        <span class="proj-tag" data-i18n="omr.tag">Em produção · Gestão de locação de frota</span>
+        <h3 class="proj-title">OM Rent Bikes</h3>
+        <p class="proj-desc" data-i18n="omr.desc">Sistema de gestão de aluguel de bicicletas de alta performance, rodando numa operação real na Itália.</p>
+        <div class="proj-points">
+          <div class="pp"><span class="k" data-i18n="lbl.problem">Problema</span><span class="v" data-i18n="omr.p1">Cada bicicleta é um ativo caro e único, montada peça a peça, que precisa estar no lugar certo, no tamanho certo, para o cliente certo. E o mesmo equipamento é disputado por reservas que se sobrepõem no transporte, não só no calendário — planilha não resolve isso.</span></div>
+          <div class="pp"><span class="k" data-i18n="lbl.model">Modelo</span><span class="v" data-i18n="omr.p2">A bicicleta é tratada como ativo, com componentes, custo de montagem e retorno acumulado em aluguéis. Um diagrama interativo com pontos clicáveis liga cada peça ao campo do formulário — cadastrar deixa de exigir vocabulário técnico de mecânico.</span></div>
+          <div class="pp"><span class="k" data-i18n="lbl.window">Janela física</span><span class="v" data-i18n="omr.p3">Um aluguel de segunda a sexta pode ter a bike saindo no domingo e voltando no sábado. Bloquear a frota pelas datas contratadas faz duas reservas colidirem no caminhão, então entrega e devolução são campos próprios e o bloqueio usa a janela real de indisponibilidade.</span></div>
+          <div class="pp"><span class="k" data-i18n="lbl.contract">Contrato</span><span class="v" data-i18n="omr.p4">O contrato de locação não é texto decorativo: tem cláusulas de responsabilidade, condições de pagamento, dados bancários e política de cancelamento com penalidades. É montado a partir dos dados do aluguel, no idioma do cliente, pronto para assinar.</span></div>
+          <div class="pp"><span class="k" data-i18n="lbl.migration">Migração</span><span class="v" data-i18n="omr.p5">O projeto atravessou três bancos e uma reescrita completa de framework, sempre com dados reais em produção. As três tabelas centrais nunca foram recriadas: as 27 migrations só estendem o schema, e a reescrita foi erguida sobre o mesmo banco — o que permitiu migrar módulo a módulo em vez de virar a chave de uma vez.</span></div>
+        </div>
+        <div class="stack">
+          <span class="chip">Next.js 16</span><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">Supabase · RLS</span><span class="chip">Tailwind v4</span><span class="chip">Recharts</span><span class="chip">Vercel</span>
+        </div>
+      </div>
+      <div class="proj-visual" data-parallax>
+        <div class="pv">
+          <div class="ph"><span class="big">OMR</span><span data-i18n="omr.ph">telas do sistema</span></div>
+        </div>
+      </div>
+      <div class="proj-stats rv">
+        <div class="st"><span class="n">~10.100</span><span class="l" data-i18n="omr.s1">linhas de TypeScript</span></div>
+        <div class="st"><span class="n">22</span><span class="l" data-i18n="omr.s2">telas</span></div>
+        <div class="st"><span class="n">27</span><span class="l" data-i18n="omr.s3">migrations sem recriar tabela</span></div>
+        <div class="st"><span class="n">~1.370</span><span class="l" data-i18n="omr.s4">strings em 3 idiomas</span></div>
+      </div>
+      <div class="proj-sub rv">
+        <span class="proj-tag" data-i18n="omr.subtag">Em andamento — de sistema a produto</span>
+        <h4 class="sub-title" data-i18n="omr.subtitle">Uma camada de marca em vez de um fork</h4>
+        <p class="proj-desc" style="max-width:74ch" data-i18n="omr.subtext">A identidade visual e a identidade jurídica foram extraídas para uma camada única: cores, nome, favicon e os dados que entram no contrato saem todos de um só lugar. É o que transforma um sistema feito para um cliente em base para atender vários — sem duplicar código e sem manter dois sistemas parecidos vivos ao mesmo tempo.</p>
+      </div>
+    </article>
+
     <!-- Bikes -->
     <article class="proj rv" id="bikes">
       <div class="proj-info">
@@ -759,8 +794,7 @@ html.static .scroll-ind{display:none}
       <div class="om-grid">
         <div class="om-item rv"><span class="n">OM/01</span><span class="t" data-i18n="om.s1t">Controle de Envios</span><span class="d" data-i18n="om.s1d">Gestão e rastreamento de logística e transportes internacionais.</span></div>
         <div class="om-item rv"><span class="n">OM/02</span><span class="t" data-i18n="om.s2t">Tickets de Suporte</span><span class="d" data-i18n="om.s2d">Plataforma para assistência técnica e gestão de garantias.</span></div>
-        <div class="om-item rv"><span class="n">OM/03</span><span class="t" data-i18n="om.s3t">Aluguel de Bicicletas</span><span class="d" data-i18n="om.s3d">Sistema de controle de locação de frota.</span></div>
-        <div class="om-item rv"><span class="n">OM/04</span><span class="t" data-i18n="om.s4t">Ponto & RH</span><span class="d" data-i18n="om.s4d">Registro de entrada/saída, folha mensal e solicitações de férias.</span></div>
+        <div class="om-item rv"><span class="n">OM/03</span><span class="t" data-i18n="om.s3t">Ponto & RH</span><span class="d" data-i18n="om.s3d">Registro de entrada/saída, folha mensal e solicitações de férias.</span></div>
       </div>
     </article>
 
@@ -981,6 +1015,19 @@ pt:{
  "lbl.concept":"Conceito","lbl.data":"Dados","lbl.system":"Sistema",
  "lbl.origin":"Origem","lbl.turn":"A virada","lbl.thesis":"Tese","lbl.operation":"Operação","lbl.management":"Gestão",
  "lbl.measure":"Medição","lbl.terrain":"Terreno","lbl.resilience":"Resiliência","lbl.status":"Status",
+ "lbl.model":"Modelo","lbl.window":"Janela física","lbl.contract":"Contrato","lbl.migration":"Migração",
+ "omr.tag":"Em produção · Gestão de locação de frota",
+ "omr.desc":"Sistema de gestão de aluguel de bicicletas de alta performance, rodando numa operação real na Itália.",
+ "omr.p1":"Cada bicicleta é um ativo caro e único, montada peça a peça, que precisa estar no lugar certo, no tamanho certo, para o cliente certo. E o mesmo equipamento é disputado por reservas que se sobrepõem no transporte, não só no calendário — planilha não resolve isso.",
+ "omr.p2":"A bicicleta é tratada como ativo, com componentes, custo de montagem e retorno acumulado em aluguéis. Um diagrama interativo com pontos clicáveis liga cada peça ao campo do formulário — cadastrar deixa de exigir vocabulário técnico de mecânico.",
+ "omr.p3":"Um aluguel de segunda a sexta pode ter a bike saindo no domingo e voltando no sábado. Bloquear a frota pelas datas contratadas faz duas reservas colidirem no caminhão, então entrega e devolução são campos próprios e o bloqueio usa a janela real de indisponibilidade.",
+ "omr.p4":"O contrato de locação não é texto decorativo: tem cláusulas de responsabilidade, condições de pagamento, dados bancários e política de cancelamento com penalidades. É montado a partir dos dados do aluguel, no idioma do cliente, pronto para assinar.",
+ "omr.p5":"O projeto atravessou três bancos e uma reescrita completa de framework, sempre com dados reais em produção. As três tabelas centrais nunca foram recriadas: as 27 migrations só estendem o schema, e a reescrita foi erguida sobre o mesmo banco — o que permitiu migrar módulo a módulo em vez de virar a chave de uma vez.",
+ "omr.ph":"telas do sistema",
+ "omr.s1":"linhas de TypeScript","omr.s2":"telas","omr.s3":"migrations sem recriar tabela","omr.s4":"strings em 3 idiomas",
+ "omr.subtag":"Em andamento — de sistema a produto",
+ "omr.subtitle":"Uma camada de marca em vez de um fork",
+ "omr.subtext":"A identidade visual e a identidade jurídica foram extraídas para uma camada única: cores, nome, favicon e os dados que entram no contrato saem todos de um só lugar. É o que transforma um sistema feito para um cliente em base para atender vários — sem duplicar código e sem manter dois sistemas parecidos vivos ao mesmo tempo.",
  "fr.tag":"Produto próprio · Direção de prova em ciclismo",
  "fr.desc":"Direção de prova ao vivo para ciclismo de estrada.",
  "fr.p1":"Prova de estrada acontece no rádio. A direção pergunta onde está o carro de fechamento e recebe uma estimativa — e é em cima dela que se reabre a via e que se cumpre, ou não, o tempo de interdição combinado com a autoridade de trânsito.",
@@ -1025,12 +1072,11 @@ pt:{
  "bikes.p3":"O mesmo método do estúdio: pesquisa obsessiva, especificação precisa, execução própria. Design não é só desenhar — é decidir bem.",
  "bikes.ph":"fotos das bicicletas",
  "om.tag":"Sistemas internos — Vibe coding","om.title":"Sistemas Operacionais<br>Officine Mattio",
- "om.desc":"Quatro sistemas construídos via vibe coding (Antigravity) para resolver problemas operacionais reais da própria rotina de trabalho. Quem vive o processo constrói a ferramenta certa para ele — do problema real à ferramenta funcional, em dias, não meses.",
+ "om.desc":"Três sistemas construídos via vibe coding (Antigravity) para resolver problemas operacionais reais da própria rotina de trabalho. Quem vive o processo constrói a ferramenta certa para ele — do problema real à ferramenta funcional, em dias, não meses.",
  "om.chip":"Do problema à ferramenta",
  "om.s1t":"Controle de Envios","om.s1d":"Gestão e rastreamento de logística e transportes internacionais.",
  "om.s2t":"Tickets de Suporte","om.s2d":"Plataforma para assistência técnica e gestão de garantias.",
- "om.s3t":"Aluguel de Bicicletas","om.s3d":"Sistema de controle de locação de frota.",
- "om.s4t":"Ponto & RH","om.s4d":"Registro de entrada/saída, folha mensal e solicitações de férias.",
+ "om.s3t":"Ponto & RH","om.s3d":"Registro de entrada/saída, folha mensal e solicitações de férias.",
  "ai.tag":"Prova de conceito — IA generativa","ai.title":"Produção visual com IA",
  "ai.desc":"De um desenho 2D de estampa de jersey a um manequim 3D realista em cenário de uso real — e até vídeo final — em poucos minutos e poucos prompts. Sem fotógrafo, sem modelo, sem set físico. Eficiência e redução radical de custo de produção para marcas pequenas.",
  "ai.s1t":"Desenho 2D","ai.s1d":"Estampa técnica plana do kit — o input original do designer.",
@@ -1087,6 +1133,19 @@ en:{
  "lbl.concept":"Concept","lbl.data":"Data","lbl.system":"System",
  "lbl.origin":"Origin","lbl.turn":"The turn","lbl.thesis":"Thesis","lbl.operation":"Operations","lbl.management":"Management",
  "lbl.measure":"Measurement","lbl.terrain":"Terrain","lbl.resilience":"Resilience","lbl.status":"Status",
+ "lbl.model":"Model","lbl.window":"Physical window","lbl.contract":"Contract","lbl.migration":"Migration",
+ "omr.tag":"In production · Rental fleet management",
+ "omr.desc":"Management system for high-performance bicycle rental, running a real operation in Italy.",
+ "omr.p1":"Each bicycle is an expensive, one-of-a-kind asset, built part by part, that has to be in the right place, in the right size, for the right customer. And the same equipment is contested by bookings that overlap in transport, not just on the calendar — a spreadsheet doesn't solve that.",
+ "omr.p2":"The bike is modelled as an asset, with components, build cost and return accumulated across rentals. An interactive diagram with clickable hotspots links each part to its form field — registering a bike no longer requires a mechanic's vocabulary.",
+ "omr.p3":"A Monday-to-Friday rental may have the bike leaving on Sunday and coming back on Saturday. Blocking the fleet by the contracted dates makes two bookings collide in the truck, so delivery and return are fields of their own and the block uses the real window of unavailability.",
+ "omr.p4":"The rental contract is not decorative text: it carries liability clauses, payment terms, bank details and a cancellation policy with penalties. It is assembled from the rental's own data, in the customer's language, ready to sign.",
+ "omr.p5":"The project went through three databases and a full framework rewrite, always with real production data. The three core tables were never recreated: the 27 migrations only extend the schema, and the rewrite was built on top of the same database — which allowed migrating module by module instead of flipping a switch.",
+ "omr.ph":"system screens",
+ "omr.s1":"lines of TypeScript","omr.s2":"screens","omr.s3":"migrations, no table recreated","omr.s4":"strings across 3 languages",
+ "omr.subtag":"In progress — from system to product",
+ "omr.subtitle":"A brand layer instead of a fork",
+ "omr.subtext":"The visual identity and the legal identity were extracted into a single layer: colours, name, favicon and the data that goes into the contract all come from one place. That is what turns a system built for one client into a base for serving many — without duplicating code and without keeping two near-identical systems alive at once.",
  "fr.tag":"Own product · Race control for road cycling",
  "fr.desc":"Live race control for road cycling.",
  "fr.p1":"A road race runs on the radio. Race control asks where the closing car is and gets an estimate — and the road is reopened on the strength of that estimate, along with the closure window agreed with the traffic authority, met or missed.",
@@ -1131,12 +1190,11 @@ en:{
  "bikes.p3":"The same method as the studio: obsessive research, precise specification, hands-on execution. Design isn't just drawing — it's deciding well.",
  "bikes.ph":"photos of the bikes",
  "om.tag":"Internal systems — Vibe coding","om.title":"Operational Systems<br>Officine Mattio",
- "om.desc":"Four systems built via vibe coding (Antigravity) to solve real operational problems from my own daily workflow. Whoever lives the process builds the right tool for it — from real problem to working tool in days, not months.",
+ "om.desc":"Three systems built via vibe coding (Antigravity) to solve real operational problems from my own daily workflow. Whoever lives the process builds the right tool for it — from real problem to working tool in days, not months.",
  "om.chip":"From problem to tool",
  "om.s1t":"Shipment Control","om.s1d":"Management and tracking of international logistics and transport.",
  "om.s2t":"Support Tickets","om.s2d":"Platform for technical assistance and warranty management.",
- "om.s3t":"Bike Rental","om.s3d":"Fleet rental management system.",
- "om.s4t":"Time & HR","om.s4d":"Clock-in/out, monthly timesheets and vacation requests.",
+ "om.s3t":"Time & HR","om.s3d":"Clock-in/out, monthly timesheets and vacation requests.",
  "ai.tag":"Proof of concept — Generative AI","ai.title":"AI Visual Production",
  "ai.desc":"From a 2D cycling-jersey artwork to a realistic 3D mannequin in a real-use scene — and even a final video — in minutes and a few prompts. No photographer, no model, no physical set. Efficiency and radical production-cost reduction for small brands.",
  "ai.s1t":"2D Artwork","ai.s1d":"Flat technical kit print — the designer's original input.",
@@ -1193,6 +1251,19 @@ it:{
  "lbl.concept":"Concetto","lbl.data":"Dati","lbl.system":"Sistema",
  "lbl.origin":"Origine","lbl.turn":"La svolta","lbl.thesis":"Tesi","lbl.operation":"Operatività","lbl.management":"Gestione",
  "lbl.measure":"Misura","lbl.terrain":"Terreno","lbl.resilience":"Resilienza","lbl.status":"Stato",
+ "lbl.model":"Modello","lbl.window":"Finestra fisica","lbl.contract":"Contratto","lbl.migration":"Migrazione",
+ "omr.tag":"In produzione · Gestione noleggio flotta",
+ "omr.desc":"Sistema di gestione del noleggio di biciclette di alta gamma, in esercizio in un'attività reale in Italia.",
+ "omr.p1":"Ogni bicicletta è un bene costoso e unico, montata pezzo per pezzo, che deve trovarsi nel posto giusto, nella taglia giusta, per il cliente giusto. E la stessa attrezzatura è contesa da prenotazioni che si sovrappongono nel trasporto, non solo sul calendario — un foglio di calcolo non lo risolve.",
+ "omr.p2":"La bici è trattata come un bene, con componenti, costo di montaggio e ritorno accumulato sui noleggi. Un diagramma interattivo con punti cliccabili collega ogni pezzo al campo del modulo — registrare una bici non richiede più il vocabolario del meccanico.",
+ "omr.p3":"Un noleggio dal lunedì al venerdì può avere la bici che parte la domenica e rientra il sabato. Bloccare la flotta sulle date contrattuali fa scontrare due prenotazioni sul camion, quindi consegna e riconsegna sono campi propri e il blocco usa la finestra reale di indisponibilità.",
+ "omr.p4":"Il contratto di noleggio non è un testo decorativo: contiene clausole di responsabilità, condizioni di pagamento, dati bancari e politica di cancellazione con penali. Viene composto dai dati del noleggio, nella lingua del cliente, pronto da firmare.",
+ "omr.p5":"Il progetto ha attraversato tre database e una riscrittura completa del framework, sempre con dati reali in produzione. Le tre tabelle centrali non sono mai state ricreate: le 27 migration estendono soltanto lo schema, e la riscrittura è stata costruita sopra lo stesso database — permettendo di migrare modulo per modulo invece di cambiare tutto in una volta.",
+ "omr.ph":"schermate del sistema",
+ "omr.s1":"righe di TypeScript","omr.s2":"schermate","omr.s3":"migration senza ricreare tabelle","omr.s4":"stringhe in 3 lingue",
+ "omr.subtag":"In corso — da sistema a prodotto",
+ "omr.subtitle":"Un livello di marca invece di un fork",
+ "omr.subtext":"L'identità visiva e quella giuridica sono state estratte in un unico livello: colori, nome, favicon e i dati che finiscono nel contratto arrivano tutti da un solo posto. È ciò che trasforma un sistema fatto per un cliente in una base per servirne molti — senza duplicare il codice e senza tenere in vita due sistemi quasi identici.",
  "fr.tag":"Prodotto proprio · Direzione gara nel ciclismo",
  "fr.desc":"Direzione gara in tempo reale per il ciclismo su strada.",
  "fr.p1":"Una gara su strada si gestisce via radio. La direzione chiede dov'è l'auto di fine corsa e riceve una stima — ed è su quella stima che si riapre la strada e che si rispetta, o no, il tempo di chiusura concordato con la polizia stradale.",
@@ -1237,12 +1308,11 @@ it:{
  "bikes.p3":"Lo stesso metodo dello studio: ricerca ossessiva, specifica precisa, esecuzione in prima persona. Il design non è solo disegnare — è decidere bene.",
  "bikes.ph":"foto delle biciclette",
  "om.tag":"Sistemi interni — Vibe coding","om.title":"Sistemi Operativi<br>Officine Mattio",
- "om.desc":"Quattro sistemi costruiti via vibe coding (Antigravity) per risolvere problemi operativi reali della mia routine di lavoro. Chi vive il processo costruisce lo strumento giusto — dal problema reale allo strumento funzionante in giorni, non mesi.",
+ "om.desc":"Tre sistemi costruiti via vibe coding (Antigravity) per risolvere problemi operativi reali della mia routine di lavoro. Chi vive il processo costruisce lo strumento giusto — dal problema reale allo strumento funzionante in giorni, non mesi.",
  "om.chip":"Dal problema allo strumento",
  "om.s1t":"Controllo Spedizioni","om.s1d":"Gestione e tracciamento di logistica e trasporti internazionali.",
  "om.s2t":"Ticket di Assistenza","om.s2d":"Piattaforma per assistenza tecnica e gestione garanzie.",
- "om.s3t":"Noleggio Biciclette","om.s3d":"Sistema di gestione del noleggio flotta.",
- "om.s4t":"Presenze & HR","om.s4d":"Timbrature, foglio presenze mensile e richieste ferie.",
+ "om.s3t":"Presenze & HR","om.s3d":"Timbrature, foglio presenze mensile e richieste ferie.",
  "ai.tag":"Proof of concept — IA generativa","ai.title":"Produzione visiva con IA",
  "ai.desc":"Da un disegno 2D di una grafica per jersey a un manichino 3D realistico in una scena d'uso reale — fino al video finale — in pochi minuti e pochi prompt. Senza fotografo, senza modello, senza set fisico. Efficienza e riduzione radicale dei costi di produzione per i piccoli brand.",
  "ai.s1t":"Disegno 2D","ai.s1d":"Grafica tecnica piatta del kit — l'input originale del designer.",
@@ -1299,6 +1369,19 @@ es:{
  "lbl.concept":"Concepto","lbl.data":"Datos","lbl.system":"Sistema",
  "lbl.origin":"Origen","lbl.turn":"El giro","lbl.thesis":"Tesis","lbl.operation":"Operación","lbl.management":"Gestión",
  "lbl.measure":"Medición","lbl.terrain":"Terreno","lbl.resilience":"Resiliencia","lbl.status":"Estado",
+ "lbl.model":"Modelo","lbl.window":"Ventana física","lbl.contract":"Contrato","lbl.migration":"Migración",
+ "omr.tag":"En producción · Gestión de alquiler de flota",
+ "omr.desc":"Sistema de gestión de alquiler de bicicletas de alto rendimiento, en marcha en una operación real en Italia.",
+ "omr.p1":"Cada bicicleta es un activo caro y único, montada pieza a pieza, que tiene que estar en el lugar correcto, en la talla correcta, para el cliente correcto. Y el mismo equipo lo disputan reservas que se solapan en el transporte, no solo en el calendario — una hoja de cálculo no resuelve eso.",
+ "omr.p2":"La bici se modela como activo, con componentes, coste de montaje y retorno acumulado en alquileres. Un diagrama interactivo con puntos clicables conecta cada pieza con su campo del formulario — registrar una bici deja de exigir el vocabulario de un mecánico.",
+ "omr.p3":"Un alquiler de lunes a viernes puede tener la bici saliendo el domingo y volviendo el sábado. Bloquear la flota por las fechas contratadas hace que dos reservas choquen en el camión, así que entrega y devolución son campos propios y el bloqueo usa la ventana real de indisponibilidad.",
+ "omr.p4":"El contrato de alquiler no es texto decorativo: lleva cláusulas de responsabilidad, condiciones de pago, datos bancarios y política de cancelación con penalizaciones. Se compone a partir de los datos del alquiler, en el idioma del cliente, listo para firmar.",
+ "omr.p5":"El proyecto pasó por tres bases de datos y una reescritura completa de framework, siempre con datos reales en producción. Las tres tablas centrales nunca se recrearon: las 27 migraciones solo extienden el esquema, y la reescritura se levantó sobre la misma base — lo que permitió migrar módulo a módulo en vez de cambiarlo todo de golpe.",
+ "omr.ph":"pantallas del sistema",
+ "omr.s1":"líneas de TypeScript","omr.s2":"pantallas","omr.s3":"migraciones sin recrear tablas","omr.s4":"cadenas en 3 idiomas",
+ "omr.subtag":"En curso — de sistema a producto",
+ "omr.subtitle":"Una capa de marca en vez de un fork",
+ "omr.subtext":"La identidad visual y la jurídica se extrajeron a una capa única: colores, nombre, favicon y los datos que entran en el contrato salen todos de un solo sitio. Es lo que convierte un sistema hecho para un cliente en base para atender a muchos — sin duplicar código y sin mantener vivos dos sistemas casi idénticos.",
  "fr.tag":"Producto propio · Dirección de carrera en ciclismo",
  "fr.desc":"Dirección de carrera en vivo para ciclismo de ruta.",
  "fr.p1":"Una carrera de ruta se gestiona por radio. La dirección pregunta dónde está el coche de cierre y recibe una estimación — y sobre esa estimación se reabre la vía y se cumple, o no, el tiempo de corte acordado con la autoridad de tráfico.",
@@ -1343,12 +1426,11 @@ es:{
  "bikes.p3":"El mismo método del estudio: investigación obsesiva, especificación precisa, ejecución propia. Diseñar no es solo dibujar — es decidir bien.",
  "bikes.ph":"fotos de las bicicletas",
  "om.tag":"Sistemas internos — Vibe coding","om.title":"Sistemas Operativos<br>Officine Mattio",
- "om.desc":"Cuatro sistemas construidos con vibe coding (Antigravity) para resolver problemas operativos reales de la propia rutina de trabajo. Quien vive el proceso construye la herramienta adecuada — del problema real a la herramienta funcional, en días, no meses.",
+ "om.desc":"Tres sistemas construidos con vibe coding (Antigravity) para resolver problemas operativos reales de la propia rutina de trabajo. Quien vive el proceso construye la herramienta adecuada — del problema real a la herramienta funcional, en días, no meses.",
  "om.chip":"Del problema a la herramienta",
  "om.s1t":"Control de Envíos","om.s1d":"Gestión y seguimiento de logística y transporte internacional.",
  "om.s2t":"Tickets de Soporte","om.s2d":"Plataforma para asistencia técnica y gestión de garantías.",
- "om.s3t":"Alquiler de Bicicletas","om.s3d":"Sistema de control de alquiler de flota.",
- "om.s4t":"Fichaje & RR. HH.","om.s4d":"Registro de entrada/salida, parte mensual y solicitudes de vacaciones.",
+ "om.s3t":"Fichaje & RR. HH.","om.s3d":"Registro de entrada/salida, parte mensual y solicitudes de vacaciones.",
  "ai.tag":"Prueba de concepto — IA generativa","ai.title":"Producción visual con IA",
  "ai.desc":"De un diseño 2D de un maillot a un maniquí 3D realista en una escena de uso real — y hasta un vídeo final — en pocos minutos y pocos prompts. Sin fotógrafo, sin modelo, sin set físico. Eficiencia y reducción radical del coste de producción para marcas pequeñas.",
  "ai.s1t":"Diseño 2D","ai.s1d":"Estampado técnico plano del kit — el input original del diseñador.",
@@ -1405,6 +1487,19 @@ fr:{
  "lbl.concept":"Concept","lbl.data":"Données","lbl.system":"Système",
  "lbl.origin":"Origine","lbl.turn":"Le tournant","lbl.thesis":"Thèse","lbl.operation":"Opérations","lbl.management":"Gestion",
  "lbl.measure":"Mesure","lbl.terrain":"Terrain","lbl.resilience":"Résilience","lbl.status":"Statut",
+ "lbl.model":"Modèle","lbl.window":"Fenêtre physique","lbl.contract":"Contrat","lbl.migration":"Migration",
+ "omr.tag":"En production · Gestion de flotte de location",
+ "omr.desc":"Système de gestion de location de vélos haut de gamme, en service dans une exploitation réelle en Italie.",
+ "omr.p1":"Chaque vélo est un actif coûteux et unique, monté pièce par pièce, qui doit se trouver au bon endroit, à la bonne taille, pour le bon client. Et le même matériel est disputé par des réservations qui se chevauchent dans le transport, pas seulement au calendrier — un tableur ne règle pas cela.",
+ "omr.p2":"Le vélo est modélisé comme un actif, avec ses composants, son coût de montage et le retour cumulé sur les locations. Un schéma interactif à points cliquables relie chaque pièce à son champ du formulaire — enregistrer un vélo n'exige plus le vocabulaire d'un mécanicien.",
+ "omr.p3":"Une location du lundi au vendredi peut voir le vélo partir le dimanche et revenir le samedi. Bloquer la flotte sur les dates contractuelles fait entrer deux réservations en collision dans le camion : livraison et retour sont donc des champs à part, et le blocage suit la vraie fenêtre d'indisponibilité.",
+ "omr.p4":"Le contrat de location n'est pas un texte décoratif : il porte des clauses de responsabilité, des conditions de paiement, des coordonnées bancaires et une politique d'annulation avec pénalités. Il est composé à partir des données de la location, dans la langue du client, prêt à signer.",
+ "omr.p5":"Le projet a traversé trois bases de données et une réécriture complète du framework, toujours avec des données réelles en production. Les trois tables centrales n'ont jamais été recréées : les 27 migrations ne font qu'étendre le schéma, et la réécriture a été bâtie sur la même base — ce qui a permis de migrer module par module au lieu de tout basculer d'un coup.",
+ "omr.ph":"écrans du système",
+ "omr.s1":"lignes de TypeScript","omr.s2":"écrans","omr.s3":"migrations sans recréer de table","omr.s4":"chaînes en 3 langues",
+ "omr.subtag":"En cours — du système au produit",
+ "omr.subtitle":"Une couche de marque plutôt qu'un fork",
+ "omr.subtext":"L'identité visuelle et l'identité juridique ont été extraites dans une couche unique : couleurs, nom, favicon et les données qui alimentent le contrat proviennent tous d'un seul endroit. C'est ce qui transforme un système fait pour un client en socle pour en servir plusieurs — sans dupliquer le code ni maintenir deux systèmes presque identiques.",
  "fr.tag":"Produit maison · Direction de course en cyclisme",
  "fr.desc":"Direction de course en direct pour le cyclisme sur route.",
  "fr.p1":"Une course sur route se gère à la radio. La direction demande où se trouve la voiture-balai et reçoit une estimation — et c'est sur cette estimation que la route rouvre, et que l'horaire de fermeture convenu avec les autorités est tenu, ou non.",
@@ -1449,12 +1544,11 @@ fr:{
  "bikes.p3":"La même méthode que le studio : recherche obsessionnelle, spécification précise, exécution personnelle. Concevoir, ce n'est pas seulement dessiner — c'est bien décider.",
  "bikes.ph":"photos des vélos",
  "om.tag":"Systèmes internes — Vibe coding","om.title":"Systèmes Opérationnels<br>Officine Mattio",
- "om.desc":"Quatre systèmes construits en vibe coding (Antigravity) pour résoudre de vrais problèmes opérationnels issus de mon quotidien de travail. Celui qui vit le processus construit le bon outil — du problème réel à l'outil fonctionnel, en jours et non en mois.",
+ "om.desc":"Trois systèmes construits en vibe coding (Antigravity) pour résoudre de vrais problèmes opérationnels issus de mon quotidien de travail. Celui qui vit le processus construit le bon outil — du problème réel à l'outil fonctionnel, en jours et non en mois.",
  "om.chip":"Du problème à l'outil",
  "om.s1t":"Suivi des Expéditions","om.s1d":"Gestion et suivi de la logistique et du transport international.",
  "om.s2t":"Tickets de Support","om.s2d":"Plateforme d'assistance technique et de gestion des garanties.",
- "om.s3t":"Location de Vélos","om.s3d":"Système de gestion de la location de flotte.",
- "om.s4t":"Pointage & RH","om.s4d":"Pointage entrée/sortie, relevé mensuel et demandes de congés.",
+ "om.s3t":"Pointage & RH","om.s3d":"Pointage entrée/sortie, relevé mensuel et demandes de congés.",
  "ai.tag":"Preuve de concept — IA générative","ai.title":"Production visuelle par IA",
  "ai.desc":"D'un dessin 2D de maillot à un mannequin 3D réaliste dans une scène d'usage réel — et jusqu'à une vidéo finale — en quelques minutes et quelques prompts. Sans photographe, sans mannequin, sans plateau. Efficacité et réduction radicale du coût de production pour les petites marques.",
  "ai.s1t":"Dessin 2D","ai.s1d":"Impression technique à plat de la tenue — l'input original du designer.",
@@ -1511,6 +1605,19 @@ de:{
  "lbl.concept":"Konzept","lbl.data":"Daten","lbl.system":"System",
  "lbl.origin":"Ursprung","lbl.turn":"Die Wende","lbl.thesis":"These","lbl.operation":"Betrieb","lbl.management":"Steuerung",
  "lbl.measure":"Messung","lbl.terrain":"Gelände","lbl.resilience":"Ausfallsicherheit","lbl.status":"Status",
+ "lbl.model":"Modell","lbl.window":"Physisches Zeitfenster","lbl.contract":"Vertrag","lbl.migration":"Migration",
+ "omr.tag":"In Produktion · Verwaltung der Mietflotte",
+ "omr.desc":"Verwaltungssystem für den Verleih von High-End-Fahrrädern, im Einsatz in einem realen Betrieb in Italien.",
+ "omr.p1":"Jedes Fahrrad ist ein teurer Einzelwert, Teil für Teil aufgebaut, das am richtigen Ort, in der richtigen Größe, für den richtigen Kunden stehen muss. Und dasselbe Material wird von Buchungen beansprucht, die sich im Transport überschneiden, nicht nur im Kalender — mit einer Tabelle ist das nicht zu lösen.",
+ "omr.p2":"Das Rad wird als Anlagegut modelliert, mit Komponenten, Aufbaukosten und der über die Vermietungen aufgelaufenen Rendite. Ein interaktives Diagramm mit klickbaren Punkten verbindet jedes Teil mit seinem Formularfeld — ein Rad zu erfassen verlangt kein Mechaniker-Vokabular mehr.",
+ "omr.p3":"Eine Vermietung von Montag bis Freitag kann bedeuten, dass das Rad am Sonntag rausgeht und am Samstag zurückkommt. Sperrt man die Flotte nach den Vertragsdaten, kollidieren zwei Buchungen im Transporter — deshalb sind Auslieferung und Rückgabe eigene Felder, und die Sperre folgt dem echten Zeitfenster der Nichtverfügbarkeit.",
+ "omr.p4":"Der Mietvertrag ist kein dekorativer Text: Er enthält Haftungsklauseln, Zahlungsbedingungen, Bankdaten und eine Stornoregelung mit Gebühren. Er wird aus den Daten der Vermietung zusammengesetzt, in der Sprache des Kunden, unterschriftsreif.",
+ "omr.p5":"Das Projekt hat drei Datenbanken und eine komplette Framework-Neuentwicklung durchlaufen, immer mit echten Produktionsdaten. Die drei Kerntabellen wurden nie neu angelegt: Die 27 Migrationen erweitern das Schema nur, und die Neuentwicklung wurde auf derselben Datenbank aufgesetzt — so ließ sich Modul für Modul migrieren statt alles auf einmal umzuschalten.",
+ "omr.ph":"Systemansichten",
+ "omr.s1":"Zeilen TypeScript","omr.s2":"Bildschirme","omr.s3":"Migrationen ohne neu angelegte Tabelle","omr.s4":"Textbausteine in 3 Sprachen",
+ "omr.subtag":"Laufend — vom System zum Produkt",
+ "omr.subtitle":"Eine Markenschicht statt eines Forks",
+ "omr.subtext":"Visuelle und juristische Identität wurden in eine einzige Schicht ausgelagert: Farben, Name, Favicon und die Daten, die in den Vertrag einfließen, kommen alle aus einer Quelle. Genau das macht aus einem System für einen Kunden die Grundlage, um viele zu bedienen — ohne Code zu duplizieren und ohne zwei fast identische Systeme parallel am Leben zu halten.",
  "fr.tag":"Eigenes Produkt · Rennleitung im Straßenradsport",
  "fr.desc":"Rennleitung in Echtzeit für den Straßenradsport.",
  "fr.p1":"Ein Straßenrennen läuft über Funk. Die Rennleitung fragt, wo das Schlussfahrzeug ist, und bekommt eine Schätzung — und auf dieser Schätzung beruht die Freigabe der Straße und die mit der Verkehrsbehörde vereinbarte Sperrzeit, eingehalten oder nicht.",
@@ -1555,12 +1662,11 @@ de:{
  "bikes.p3":"Dieselbe Methode wie im Studio: besessene Recherche, präzise Spezifikation, eigene Umsetzung. Design heißt nicht nur zeichnen — es heißt gut entscheiden.",
  "bikes.ph":"Fotos der Fahrräder",
  "om.tag":"Interne Systeme — Vibe Coding","om.title":"Operative Systeme<br>Officine Mattio",
- "om.desc":"Vier Systeme, per Vibe Coding (Antigravity) gebaut, um echte operative Probleme aus dem eigenen Arbeitsalltag zu lösen. Wer den Prozess lebt, baut das richtige Werkzeug dafür — vom echten Problem zum funktionierenden Tool, in Tagen statt Monaten.",
+ "om.desc":"Drei Systeme, per Vibe Coding (Antigravity) gebaut, um echte operative Probleme aus dem eigenen Arbeitsalltag zu lösen. Wer den Prozess lebt, baut das richtige Werkzeug dafür — vom echten Problem zum funktionierenden Tool, in Tagen statt Monaten.",
  "om.chip":"Vom Problem zum Werkzeug",
  "om.s1t":"Versandverwaltung","om.s1d":"Verwaltung und Sendungsverfolgung in Logistik und internationalem Transport.",
  "om.s2t":"Support-Tickets","om.s2d":"Plattform für technischen Service und Garantieabwicklung.",
- "om.s3t":"Fahrradvermietung","om.s3d":"System zur Verwaltung der Mietflotte.",
- "om.s4t":"Zeiterfassung & HR","om.s4d":"Kommen/Gehen, Monatsübersicht und Urlaubsanträge.",
+ "om.s3t":"Zeiterfassung & HR","om.s3d":"Kommen/Gehen, Monatsübersicht und Urlaubsanträge.",
  "ai.tag":"Proof of Concept — Generative KI","ai.title":"Visuelle Produktion mit KI",
  "ai.desc":"Von einer 2D-Zeichnung eines Trikotdesigns zu einer realistischen 3D-Figur in einer echten Einsatzszene — bis hin zum fertigen Video — in wenigen Minuten und wenigen Prompts. Ohne Fotograf, ohne Model, ohne Studio-Set. Effizienz und radikal geringere Produktionskosten für kleine Marken.",
  "ai.s1t":"2D-Zeichnung","ai.s1d":"Technische Flachdarstellung des Trikots — der ursprüngliche Input des Designers.",
@@ -1690,6 +1796,7 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     ['#flamme','#FF3B30'], // Flamme Rouge — o vermelho do último quilômetro
     ['#trak','#C8FF00'],   // MY TRAKR — lime da marca
     ['#b2b','#4FD6C5'],    // MY TRAKR Assessorias — teal secundário do produto
+    ['#omrent','#7C5CFF'], // OM Rent Bikes — indigo, entre o teal e o vermelho das bikes
     ['#bikes','#FF5546'],  // bikes — vermelho corrida
     ['#om','#FF8A00'],     // Officine Mattio — laranja oficina
     ['#ai','#FF5FA2'],     // IA — rosa do jersey
