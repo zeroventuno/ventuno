@@ -489,6 +489,40 @@ form{display:flex;flex-direction:column;gap:0}
 .modal .m-next{right:18px;top:50%;transform:translateY(-50%)}
 .modal.single .m-prev,.modal.single .m-next{display:none}
 
+/* ---------- case: aprofundamento atrás de um clique ---------- */
+/* o JS move os bullets extras e as subseções para cá no carregamento;
+   sem JS nada é escondido e o case continua inteiro na página */
+.proj-detail{display:none}
+.proj-more{
+  margin-top:24px;display:inline-flex;align-self:flex-start;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--acc);background:transparent;cursor:pointer;
+  border:1px solid var(--acc-dim);border-radius:99px;padding:12px 22px;
+  transition:border-color .28s,background .28s;
+}
+.proj-more:hover{border-color:var(--acc);background:var(--acc-dim)}
+.proj-more::after{content:'→';transition:transform .28s}
+.proj-more:hover::after{transform:translateX(4px)}
+/* modo detalhe do modal */
+.m-detail{display:none}
+.modal.detail figure{display:none}
+.modal.detail .m-prev,.modal.detail .m-next{display:none}
+.modal.detail .m-detail .proj-detail{display:block}
+.modal.detail .m-detail{
+  display:block;width:min(92vw,820px);max-height:84vh;
+  overflow-y:auto;overscroll-behavior:contain;padding:2px 4px;
+  transform:scale(.96);transition:transform .35s cubic-bezier(.65,0,.35,1);
+}
+.modal.detail.open .m-detail{transform:scale(1)}
+.modal.detail .m-detail::-webkit-scrollbar{width:10px}
+.modal.detail .m-detail::-webkit-scrollbar-track{background:#111113}
+.modal.detail .m-detail::-webkit-scrollbar-thumb{background:var(--acc-dim);border-radius:99px}
+.modal.detail .m-detail::-webkit-scrollbar-thumb:hover{background:var(--acc)}
+/* as revelações nunca disparam dentro do modal — força visível */
+.m-detail .rv,.proj-detail .rv{opacity:1!important;transform:none!important}
+.m-detail .proj-sub{margin-top:36px;border-top:1px solid var(--line);padding-top:28px}
+.m-detail .proj-brand{margin-top:26px}
+
 /* ---------- footer ---------- */
 footer{
   border-top:1px solid var(--line);
@@ -989,6 +1023,7 @@ html.static .scroll-ind{display:none}
     <div class="m-media"></div>
     <figcaption><span class="m-cap"></span><span class="idx"></span></figcaption>
   </figure>
+  <div class="m-detail"></div>
 </div>
 
 <footer>
@@ -1018,7 +1053,7 @@ pt:{
  "about.f3k":"Idiomas","about.f3v":"<b>Português</b> nativo · <b>Inglês</b> avançado · <b>Italiano</b> intermediário",
  "about.f4k":"Formação","about.f4v":"<b>Design Industrial</b> — PUC-Rio",
  "work.title":"Projetos","work.side":"Cases selecionados",
- "lbl.problem":"Problema","lbl.solution":"Solução","lbl.impact":"Impacto","lbl.process":"Processo","lbl.build":"Montagem","lbl.lesson":"Tese",
+ "lbl.problem":"Problema","lbl.more":"Ver detalhes","lbl.solution":"Solução","lbl.impact":"Impacto","lbl.process":"Processo","lbl.build":"Montagem","lbl.lesson":"Tese",
  "roero.tag":"Case em destaque — Web App",
  "roero.desc":"Plataforma completa para um centro esportivo aquático com 5 sedes: disponibilidade de raias em tempo real, totem de check-in, CMS próprio e uma rotina de notícias com IA — substituindo um site que não era tocado desde 2005.",
  "roero.p1":"Site de 2005 sem HTTPS nem versão mobile, navegação entre sedes feita só por imagens, reservas espalhadas em dois sistemas de terceiros e conteúdo que só mudava com ajuda técnica.",
@@ -1136,7 +1171,7 @@ en:{
  "about.f3k":"Languages","about.f3v":"<b>Portuguese</b> native · <b>English</b> advanced · <b>Italian</b> intermediate",
  "about.f4k":"Education","about.f4v":"<b>Industrial Design</b> — PUC-Rio",
  "work.title":"Work","work.side":"Selected cases",
- "lbl.problem":"Problem","lbl.solution":"Solution","lbl.impact":"Impact","lbl.process":"Process","lbl.build":"Build","lbl.lesson":"Thesis",
+ "lbl.problem":"Problem","lbl.more":"See details","lbl.solution":"Solution","lbl.impact":"Impact","lbl.process":"Process","lbl.build":"Build","lbl.lesson":"Thesis",
  "roero.tag":"Featured case — Web App",
  "roero.desc":"A full platform for an aquatic sports center with 5 facilities: real-time lane availability, a self-service kiosk, its own CMS and an AI news routine — replacing a site untouched since 2005.",
  "roero.p1":"A 2005 site with no HTTPS and no mobile version, navigation between facilities done through images alone, bookings scattered across two third-party systems, and content that only changed with technical help.",
@@ -1254,7 +1289,7 @@ it:{
  "about.f3k":"Lingue","about.f3v":"<b>Portoghese</b> madrelingua · <b>Inglese</b> avanzato · <b>Italiano</b> intermedio",
  "about.f4k":"Formazione","about.f4v":"<b>Design Industriale</b> — PUC-Rio",
  "work.title":"Progetti","work.side":"Case selezionati",
- "lbl.problem":"Problema","lbl.solution":"Soluzione","lbl.impact":"Impatto","lbl.process":"Processo","lbl.build":"Montaggio","lbl.lesson":"Tesi",
+ "lbl.problem":"Problema","lbl.more":"Vedi i dettagli","lbl.solution":"Soluzione","lbl.impact":"Impatto","lbl.process":"Processo","lbl.build":"Montaggio","lbl.lesson":"Tesi",
  "roero.tag":"Case in evidenza — Web App",
  "roero.desc":"Piattaforma completa per un centro sportivo acquatico con 5 sedi: disponibilità corsie in tempo reale, totem di check-in, CMS proprio e una rassegna stampa con IA — al posto di un sito fermo dal 2005.",
  "roero.p1":"Sito del 2005 senza HTTPS né versione mobile, navigazione tra le sedi affidata solo a immagini, prenotazioni divise su due sistemi esterni e contenuti modificabili solo con aiuto tecnico.",
@@ -1372,7 +1407,7 @@ es:{
  "about.f3k":"Idiomas","about.f3v":"<b>Portugués</b> nativo · <b>Inglés</b> avanzado · <b>Italiano</b> intermedio",
  "about.f4k":"Formación","about.f4v":"<b>Diseño Industrial</b> — PUC-Rio",
  "work.title":"Proyectos","work.side":"Casos seleccionados",
- "lbl.problem":"Problema","lbl.solution":"Solución","lbl.impact":"Impacto","lbl.process":"Proceso","lbl.build":"Montaje","lbl.lesson":"Tesis",
+ "lbl.problem":"Problema","lbl.more":"Ver detalles","lbl.solution":"Solución","lbl.impact":"Impacto","lbl.process":"Proceso","lbl.build":"Montaje","lbl.lesson":"Tesis",
  "roero.tag":"Caso destacado — Web App",
  "roero.desc":"Plataforma completa para un centro deportivo acuático con 5 sedes: disponibilidad de calles en tiempo real, tótem de check-in, CMS propio y una rutina de noticias con IA — en lugar de una web sin tocar desde 2005.",
  "roero.p1":"Web de 2005 sin HTTPS ni versión móvil, navegación entre sedes hecha solo con imágenes, reservas repartidas en dos sistemas externos y contenido que solo cambiaba con ayuda técnica.",
@@ -1490,7 +1525,7 @@ fr:{
  "about.f3k":"Langues","about.f3v":"<b>Portugais</b> natif · <b>Anglais</b> avancé · <b>Italien</b> intermédiaire",
  "about.f4k":"Formation","about.f4v":"<b>Design Industriel</b> — PUC-Rio",
  "work.title":"Projets","work.side":"Projets sélectionnés",
- "lbl.problem":"Problème","lbl.solution":"Solution","lbl.impact":"Impact","lbl.process":"Processus","lbl.build":"Montage","lbl.lesson":"Thèse",
+ "lbl.problem":"Problème","lbl.more":"Voir les détails","lbl.solution":"Solution","lbl.impact":"Impact","lbl.process":"Processus","lbl.build":"Montage","lbl.lesson":"Thèse",
  "roero.tag":"Projet phare — Web App",
  "roero.desc":"Plateforme complète pour un centre sportif aquatique de 5 sites : disponibilité des lignes en temps réel, borne de check-in, CMS maison et une revue de presse par IA — à la place d'un site inchangé depuis 2005.",
  "roero.p1":"Un site de 2005 sans HTTPS ni version mobile, une navigation entre sites reposant uniquement sur des images, des réservations éclatées sur deux systèmes tiers et un contenu modifiable seulement avec une aide technique.",
@@ -1608,7 +1643,7 @@ de:{
  "about.f3k":"Sprachen","about.f3v":"<b>Portugiesisch</b> Muttersprache · <b>Englisch</b> fortgeschritten · <b>Italienisch</b> mittleres Niveau",
  "about.f4k":"Ausbildung","about.f4v":"<b>Industriedesign</b> — PUC-Rio",
  "work.title":"Projekte","work.side":"Ausgewählte Projekte",
- "lbl.problem":"Problem","lbl.solution":"Lösung","lbl.impact":"Wirkung","lbl.process":"Prozess","lbl.build":"Aufbau","lbl.lesson":"These",
+ "lbl.problem":"Problem","lbl.more":"Details ansehen","lbl.solution":"Lösung","lbl.impact":"Wirkung","lbl.process":"Prozess","lbl.build":"Aufbau","lbl.lesson":"These",
  "roero.tag":"Referenzprojekt — Web-App",
  "roero.desc":"Komplette Plattform für ein Wassersportzentrum mit 5 Standorten: Bahnverfügbarkeit in Echtzeit, Check-in-Terminal, eigenes CMS und eine KI-Presseschau — als Ersatz für eine Website, die seit 2005 unangetastet war.",
  "roero.p1":"Eine Website von 2005 ohne HTTPS und ohne mobile Version, Navigation zwischen den Standorten allein über Bilder, Buchungen verteilt auf zwei Fremdsysteme und Inhalte, die sich nur mit technischer Hilfe ändern ließen.",
@@ -2123,6 +2158,7 @@ document.querySelectorAll('.field').forEach(f=>{
   const modal=document.getElementById('modal');
   if(!modal)return;
   const media=modal.querySelector('.m-media'),cap=modal.querySelector('.m-cap'),idxEl=modal.querySelector('.idx');
+  const detailBox=modal.querySelector('.m-detail');
   let cur=null,idx=0;
   const caption=it=>{const l=window.__lang||'pt';return it.key?String(I18N[l][it.key]||'').replace(/<[^>]+>/g,''):it.cap};
   function render(){
@@ -2139,8 +2175,22 @@ document.querySelectorAll('.field').forEach(f=>{
     modal.classList.toggle('single',items.length<2);
   }
   function open(g,i){if(!GAL[g])return;cur=g;idx=i||0;render();modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';if(lenis)lenis.stop()}
-  function close(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';media.innerHTML='';if(lenis)lenis.start()}
-  function step(d){const n=GAL[cur].length;idx=(idx+d+n)%n;render()}
+  function close(){
+    modal.classList.remove('open','detail');modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';media.innerHTML='';
+    if(detailHome){const d=detailBox.querySelector('.proj-detail');if(d)detailHome.appendChild(d);detailHome=null}
+    if(lenis)lenis.start();
+  }
+  function step(d){if(modal.classList.contains('detail'))return;const n=GAL[cur].length;idx=(idx+d+n)%n;render()}
+  /* --- modo detalhe: o mesmo overlay, com o conteudo do case --- */
+  let detailHome=null;
+  function openDetail(art){
+    const det=art.querySelector('.proj-detail');if(!det)return;
+    detailHome=art;detailBox.appendChild(det);
+    modal.classList.add('open','detail');modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';detailBox.scrollTop=0;
+    if(lenis)lenis.stop();
+  }
   document.querySelectorAll('[data-gallery]').forEach(el=>{
     el.addEventListener('click',()=>open(el.dataset.gallery,parseInt(el.dataset.index||'0',10)));
   });
@@ -2153,6 +2203,30 @@ document.querySelectorAll('.field').forEach(f=>{
     if(e.key==='Escape')close();
     else if(e.key==='ArrowLeft')step(-1);
     else if(e.key==='ArrowRight')step(1);
+  });
+
+  /* --- cada case fica com o gancho na pagina e o resto atras do clique --- */
+  document.querySelectorAll('article.proj').forEach(art=>{
+    const pts=art.querySelector('.proj-points');
+    const bullets=pts?[...pts.children].filter(el=>el.classList.contains('pp')).slice(1):[];
+    const subs=[...art.children].filter(el=>el.classList.contains('proj-sub')||el.classList.contains('proj-brand'));
+    if(bullets.length+subs.length<2)return;          // nada que justifique um clique
+    const det=document.createElement('div');det.className='proj-detail';
+    if(bullets.length){
+      const wrap=document.createElement('div');wrap.className='proj-points';
+      bullets.forEach(el=>wrap.appendChild(el));det.appendChild(wrap);
+    }
+    subs.forEach(el=>det.appendChild(el));
+    art.appendChild(det);
+    const btn=document.createElement('button');
+    btn.type='button';btn.className='proj-more';
+    btn.setAttribute('data-i18n','lbl.more');btn.setAttribute('data-hover','');
+    const d=I18N[window.__lang||'pt'];
+    btn.textContent=(d&&d['lbl.more'])||'Ver detalhes';
+    const stack=art.querySelector('.stack');
+    if(stack&&stack.parentNode)stack.parentNode.insertBefore(btn,stack.nextSibling);
+    else art.querySelector('.proj-info').appendChild(btn);
+    btn.addEventListener('click',()=>openDetail(art));
   });
 })();
 
