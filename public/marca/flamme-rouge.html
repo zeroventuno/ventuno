@@ -1,0 +1,727 @@
+<!doctype html><html><head><title>Flamme Rouge — manual de identidade</title><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><link rel="icon" type="image/svg+xml" href="/assets/marca/favicon.svg"></head><body>
+
+
+<style>
+  /* ---------------------------------------------------------------------
+     Papel por padrão: um manual de marca é impresso, conferido e riscado.
+     O escuro existe porque o produto vive nele, e a marca precisa ser
+     verificada nos dois grounds.
+     --------------------------------------------------------------------- */
+  :root {
+    --paper: #f5f3f2;
+    --card: #ffffff;
+    --sunk: #ebe8e6;
+    --ink: #17110f;
+    --ink-soft: #5d5350;
+    --ink-faint: #918784;
+    --rule: #ddd7d5;
+    --rule-firm: #c3bab7;
+
+    --rouge: #d92d20;
+    --rouge-deep: #8f1a12;
+    --lime: #a6e51a;
+
+    --ok: #1a7f4b;
+    --no: #c02418;
+
+    --grid: rgba(23, 17, 15, 0.055);
+
+    --sans: "Helvetica Neue", "Arial Nova", Arial, system-ui, sans-serif;
+    --mono: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, Menlo, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0f0d0c;
+      --card: #191514;
+      --sunk: #221d1b;
+      --ink: #f1ecea;
+      --ink-soft: #a89d99;
+      --ink-faint: #756a66;
+      --rule: #2e2725;
+      --rule-firm: #443a37;
+      --rouge: #f2453a;
+      --rouge-deep: #b3241a;
+      --ok: #4ade80;
+      --no: #ff6a5e;
+      --grid: rgba(241, 236, 234, 0.06);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #0f0d0c;
+    --card: #191514;
+    --sunk: #221d1b;
+    --ink: #f1ecea;
+    --ink-soft: #a89d99;
+    --ink-faint: #756a66;
+    --rule: #2e2725;
+    --rule-firm: #443a37;
+    --rouge: #f2453a;
+    --rouge-deep: #b3241a;
+    --ok: #4ade80;
+    --no: #ff6a5e;
+    --grid: rgba(241, 236, 234, 0.06);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet { max-width: 1060px; margin: 0 auto; padding: clamp(2rem,5vw,4rem) clamp(1.25rem,4vw,3rem) 6rem; }
+
+  /* --- tipografia ----------------------------------------------------- */
+
+  .kicker { font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rouge); margin: 0; }
+  h1 { font-size: clamp(2.1rem,6vw,3.6rem); line-height: 1; letter-spacing: -0.035em; font-weight: 700; margin: 0.7rem 0 0; text-wrap: balance; }
+  h2 { font-size: clamp(1.3rem,3vw,1.85rem); line-height: 1.12; letter-spacing: -0.022em; font-weight: 700; margin: 0; text-wrap: balance; }
+  h3 { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); font-weight: 500; margin: 0; }
+  p { margin: 0; max-width: 60ch; }
+  .lede { font-size: 1.0625rem; color: var(--ink-soft); }
+  .note { font-size: 0.9375rem; color: var(--ink-soft); }
+  strong { color: var(--ink); font-weight: 650; }
+  em { font-style: italic; }
+  code { font-family: var(--mono); font-size: 0.875em; background: var(--sunk); padding: 0.1em 0.35em; }
+
+  header.cover { display: flex; flex-direction: column; gap: 1.1rem; padding-bottom: 3rem; border-bottom: 3px solid var(--rouge); }
+
+  .cover-mark { display: flex; align-items: center; gap: 1.5rem; padding: 2rem 0 0.5rem; flex-wrap: wrap; }
+
+  .cover-meta { display: flex; flex-wrap: wrap; gap: 0.4rem 2rem; font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.06em; color: var(--ink-faint); text-transform: uppercase; }
+
+  section { display: flex; flex-direction: column; gap: 1.75rem; padding: 3.5rem 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: 0; }
+
+  .sec-head { display: grid; gap: 0.9rem; }
+  @media (min-width: 820px) { .sec-head { grid-template-columns: 9rem minmax(0,1fr); gap: 2.5rem; align-items: start; } }
+  .sec-num { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.16em; color: var(--ink-faint); padding-top: 0.35rem; }
+  .block { display: flex; flex-direction: column; gap: 0.9rem; }
+
+  .plate {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    display: grid; place-items: center;
+    padding: clamp(1.75rem,5vw,3.5rem) 1.25rem;
+    overflow-x: auto;
+  }
+  .plate-grid {
+    background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 24px 24px; background-position: center;
+  }
+  .plate-dark { background: #0f1114; border-color: #2b2523; }
+  .plate-white { background: #fff; border-color: var(--rule-firm); }
+
+  /* --- grades ---------------------------------------------------------- */
+
+  .cells { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); grid-template-columns: repeat(auto-fit, minmax(min(100%,14rem),1fr)); }
+  .cell { background: var(--card); padding: 1.6rem 1.25rem 1.25rem; display: flex; flex-direction: column; align-items: center; gap: 1.1rem; text-align: center; }
+  .cell-cap { display: flex; flex-direction: column; gap: 0.3rem; }
+  .cell-cap b { font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  .cell-cap span { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.45; }
+
+  /* --- paleta ---------------------------------------------------------- */
+
+  .swatches { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); grid-template-columns: repeat(auto-fit, minmax(min(100%,11rem),1fr)); }
+  .sw { background: var(--card); display: flex; flex-direction: column; }
+  .sw-chip { height: 5.5rem; }
+  .sw-info { padding: 0.85rem 0.95rem; display: flex; flex-direction: column; gap: 0.3rem; }
+  .sw-info b { font-size: 0.9375rem; font-weight: 650; }
+  .sw-info span { font-family: var(--mono); font-size: 0.6875rem; color: var(--ink-faint); }
+  .sw-use { font-size: 0.8125rem; color: var(--ink-soft); line-height: 1.4; padding-top: 0.2rem; }
+
+  /* --- regra destacada -------------------------------------------------- */
+
+  .rule-box { border: 2px solid var(--rouge); padding: 1.5rem; display: flex; flex-direction: column; gap: 0.9rem; background: var(--card); }
+  .rule-box h4 { margin: 0; font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; }
+
+  /* --- certo / errado --------------------------------------------------- */
+
+  .dodont { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); grid-template-columns: repeat(auto-fit, minmax(min(100%,12rem),1fr)); }
+  .dd { background: var(--card); padding: 1.4rem 1rem 1.1rem; display: flex; flex-direction: column; align-items: center; gap: 0.9rem; text-align: center; }
+  .dd-art { width: 100%; height: 5.5rem; display: grid; place-items: center; background: var(--sunk); }
+  .dd-tag { font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.12em; text-transform: uppercase; display: flex; align-items: center; gap: 0.35rem; }
+  .dd-tag.yes { color: var(--ok); }
+  .dd-tag.no { color: var(--no); }
+  .dd p { font-size: 0.8125rem; color: var(--ink-soft); line-height: 1.4; }
+
+  /* --- aplicações ------------------------------------------------------- */
+
+  .apps { display: grid; gap: 1.15rem; grid-template-columns: repeat(auto-fit, minmax(min(100%,15rem),1fr)); }
+  .app { display: flex; flex-direction: column; gap: 0.65rem; }
+  .app-box { border: 1px solid var(--rule); background: var(--card); min-height: 7.5rem; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+  .app-cap { font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.08em; color: var(--ink-faint); }
+
+  .tabbar { width: 100%; background: #cfcac8; border-radius: 7px 7px 0 0; padding: 6px 6px 0; display: flex; gap: 4px; }
+  .tab { background: #fbfafa; border-radius: 6px 6px 0 0; padding: 7px 11px; display: flex; align-items: center; gap: 7px; font-size: 11px; color: #3d3634; max-width: 12rem; }
+  .tab span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tab.off { background: #e6e2e0; color: #857b78; }
+
+  .home { background: linear-gradient(160deg,#2b2523 0%,#0f0d0c 100%); border-radius: 18px; padding: 1.3rem 1rem; display: flex; gap: 1.1rem; justify-content: center; width: 100%; }
+  .ic { display: flex; flex-direction: column; align-items: center; gap: 0.45rem; }
+  .ic-tile { width: 54px; height: 54px; border-radius: 12px; display: grid; place-items: center; box-shadow: 0 3px 10px rgba(0,0,0,.5); }
+  .ic span { font-size: 9.5px; color: #ddd4d1; }
+
+  .dash { background: #0a0c10; border: 1px solid #2a3138; border-radius: 4px; padding: 0.7rem 0.9rem; display: flex; align-items: center; gap: 0.75rem; width: 100%; }
+  .dash-n { font-size: 0.78rem; font-weight: 650; color: #e8ecf2; }
+  .dash-live { margin-left: auto; font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.1em; color: #22c55e; display: flex; align-items: center; gap: 0.35rem; }
+  .dash-live i { width: 6px; height: 6px; border-radius: 50%; background: currentColor; display: block; }
+  .dash-alert { margin-left: auto; font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.1em; color: #ff3b3b; display: flex; align-items: center; gap: 0.35rem; }
+
+  .print { background: #fff; border: 1px solid #ccc6c4; padding: 0.9rem 1rem; width: 100%; color: #17110f; }
+  .print-h { display: flex; align-items: center; gap: 0.6rem; padding-bottom: 0.5rem; border-bottom: 1.5px solid #17110f; }
+  .print-t { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em; }
+  .print-d { margin-left: auto; font-family: var(--mono); font-size: 0.5rem; color: #918784; }
+  .print-rows { display: flex; flex-direction: column; gap: 0.25rem; padding-top: 0.5rem; }
+  .print-row { display: flex; align-items: baseline; gap: 0.5rem; font-size: 0.58rem; }
+  .print-row .w { color: #5d5350; flex: 1; }
+  .print-row .c { font-family: var(--mono); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.09em; font-variant-numeric: tabular-nums; }
+
+  /* --- inventário ------------------------------------------------------- */
+
+  .files { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  .files th, .files td { text-align: left; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  .files th { font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); font-weight: 500; }
+  .files td:first-child { font-family: var(--mono); font-size: 0.75rem; white-space: nowrap; }
+  .files td:last-child { color: var(--ink-soft); }
+  .files-wrap { overflow-x: auto; border: 1px solid var(--rule); background: var(--card); }
+
+  ul.tight { margin: 0; padding-left: 1.05rem; display: flex; flex-direction: column; gap: 0.4rem; }
+  ul.tight li { font-size: 0.9375rem; color: var(--ink-soft); }
+  ul.tight li::marker { color: var(--rouge); }
+
+  :focus-visible { outline: 2px solid var(--rouge); outline-offset: 3px; }
+</style>
+
+<!-- ======================================================================
+     Geometria da marca. Uma definição, várias aplicações.
+     ====================================================================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mark" viewBox="0 0 100 100">
+      <polygon points="8,20 92,20 66,50 92,80 8,80" fill="currentColor" />
+    </symbol>
+    <symbol id="mark-pole" viewBox="0 0 100 100">
+      <rect x="16" y="12" width="7" height="76" fill="currentColor" />
+      <polygon points="23,22 88,22 68,44 88,66 23,66" fill="currentColor" />
+    </symbol>
+  </defs>
+</svg>
+
+<div style="border-bottom:1px solid var(--rule);background:var(--card)">
+  <div style="max-width:1060px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+    <span style="display:inline-flex;align-items:center;gap:.6rem">
+      <svg width="20" height="20" viewBox="0 0 100 100" style="color:var(--rouge)" aria-hidden="true"><use href="#mark-pole"></use></svg>
+      <span style="font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)">Flamme Rouge</span>
+    </span>
+    <a href="/#identity" style="font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);text-decoration:none">&larr; ventuno / identidade</a>
+  </div>
+</div>
+
+<div class="sheet">
+
+  <header class="cover">
+    <p class="kicker">Manual de identidade · v1</p>
+    <h1>Flamme&nbsp;Rouge</h1>
+    <div class="cover-mark">
+      <svg width="120" height="120" viewBox="0 0 100 100" style="color: var(--rouge)" role="img" aria-label="Marca Flamme Rouge">
+        <use href="#mark-pole"></use>
+      </svg>
+      <div style="display:flex;flex-direction:column;gap:0.4rem;line-height:0.9">
+        <span style="font-size:clamp(1.8rem,5vw,2.9rem);font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Flamme</span>
+        <span style="font-size:clamp(1.8rem,5vw,2.9rem);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--rouge)">Rouge</span>
+        <span style="font-family:var(--mono);font-size:0.625rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--ink-faint);padding-top:0.5rem">by TRAKR</span>
+      </div>
+    </div>
+    <p class="lede">
+      Sistema de direção de prova ao vivo para ciclismo de estrada. Este
+      documento define a marca, a regra de cor que o produto exige e os limites
+      de uso. Tudo aqui sai de uma geometria única versionada no repositório —
+      não há um segundo lugar onde a marca exista.
+    </p>
+    <div class="cover-meta">
+      <span>Mercados: BR · IT · UK · FR · ES · DE</span>
+      <span>Marca endossada</span>
+      <span>Fonte: src/brand/mark.ts</span>
+    </div>
+  </header>
+
+  <!-- ===================== 01 · ORIGEM ===================== -->
+  <section>
+    <div class="sec-head">
+      <p class="sec-num">01</p>
+      <div class="block">
+        <h2>De onde vem a forma</h2>
+        <p class="note">
+          O <em>flamme rouge</em> é a bandeirola vermelha pendurada sobre a
+          estrada a um quilômetro da chegada. Está em toda prova de estrada do
+          mundo, e é o objeto mais reconhecível do ciclismo depois da própria
+          bicicleta. Para quem trabalha em prova, ela não precisa de legenda.
+        </p>
+        <p class="note">
+          A marca é essa bandeirola reduzida ao essencial: um retângulo com a
+          <strong>mordida em V</strong> na ponta. Nenhum gradiente, nenhuma
+          textura, nenhuma perspectiva — porque o primeiro contato com esta
+          marca não é um cartaz, é um favicon de 16&nbsp;px, e o segundo é uma
+          folha fotocopiada numa prancheta.
+        </p>
+      </div>
+    </div>
+
+    <div class="plate plate-grid">
+      <svg width="440" height="176" viewBox="0 0 250 100" style="max-width:100%" role="img" aria-label="Construção da marca">
+        <!-- cotas -->
+        <g stroke="var(--rule-firm)" stroke-width="0.4" fill="none">
+          <line x1="8" y1="12" x2="8" y2="16" /><line x1="92" y1="12" x2="92" y2="16" />
+          <line x1="8" y1="14" x2="92" y2="14" />
+          <line x1="96" y1="20" x2="100" y2="20" /><line x1="96" y1="80" x2="100" y2="80" />
+          <line x1="98" y1="20" x2="98" y2="80" />
+          <line x1="66" y1="84" x2="66" y2="88" /><line x1="92" y1="84" x2="92" y2="88" />
+          <line x1="66" y1="86" x2="92" y2="86" />
+        </g>
+        <text x="50" y="10" font-family="ui-monospace,monospace" font-size="4.2" fill="var(--ink-faint)" text-anchor="middle">84</text>
+        <text x="104" y="52" font-family="ui-monospace,monospace" font-size="4.2" fill="var(--ink-faint)">60</text>
+        <text x="79" y="94" font-family="ui-monospace,monospace" font-size="4.2" fill="var(--ink-faint)" text-anchor="middle">26</text>
+
+        <polygon points="8,20 92,20 66,50 92,80 8,80" fill="var(--rouge)" />
+
+        <text x="130" y="30" font-family="ui-monospace,monospace" font-size="4.4" fill="var(--ink-soft)">PROPORÇÃO   84 : 60  (7 : 5)</text>
+        <text x="130" y="40" font-family="ui-monospace,monospace" font-size="4.4" fill="var(--ink-soft)">MORDIDA     26  = 31% da largura</text>
+        <text x="130" y="50" font-family="ui-monospace,monospace" font-size="4.4" fill="var(--ink-soft)">VÉRTICE     na meia-altura exata</text>
+        <text x="130" y="60" font-family="ui-monospace,monospace" font-size="4.4" fill="var(--ink-soft)">CANTOS      vivos, sem raio</text>
+        <text x="130" y="76" font-family="ui-monospace,monospace" font-size="4" fill="var(--ink-faint)">viewBox 0 0 100 100</text>
+        <text x="130" y="84" font-family="ui-monospace,monospace" font-size="4" fill="var(--ink-faint)">8,20 92,20 66,50 92,80 8,80</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===================== 02 · DUAS CONSTRUÇÕES ===================== -->
+  <section>
+    <div class="sec-head">
+      <p class="sec-num">02</p>
+      <div class="block">
+        <h2>Duas construções, e quando usar cada uma</h2>
+        <p class="note">
+          Não são variações de gosto. A 16&nbsp;px o mastro tem meio pixel de
+          espessura, e some ou borra conforme o arredondamento de cada
+          navegador — o que sobra é uma bandeirola torta. O ícone sem mastro
+          ocupa a caixa inteira e continua nítido em qualquer tamanho.
+        </p>
+      </div>
+    </div>
+
+    <div class="cells">
+      <div class="cell">
+        <svg width="88" height="88" viewBox="0 0 100 100" style="color:var(--rouge)" role="img" aria-label="Assinatura com mastro"><use href="#mark-pole"></use></svg>
+        <div class="cell-cap">
+          <b>Com mastro</b>
+          <span>Assinatura. Login, impressos, material comercial.<br><strong>Mínimo 24&nbsp;px.</strong></span>
+        </div>
+      </div>
+      <div class="cell">
+        <svg width="88" height="88" viewBox="0 0 100 100" style="color:var(--rouge)" role="img" aria-label="Ícone sem mastro"><use href="#mark"></use></svg>
+        <div class="cell-cap">
+          <b>Sem mastro</b>
+          <span>Ícone. Favicon, app, cabeçalho, qualquer uso pequeno.<br><strong>Mínimo 16&nbsp;px.</strong></span>
+        </div>
+      </div>
+      <div class="cell">
+        <div style="display:flex;align-items:flex-end;gap:0.9rem;color:var(--rouge)">
+          <svg width="48" height="48" viewBox="0 0 100 100" aria-hidden="true"><use href="#mark"></use></svg>
+          <svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true"><use href="#mark"></use></svg>
+          <svg width="24" height="24" viewBox="0 0 100 100" aria-hidden="true"><use href="#mark"></use></svg>
+          <svg width="16" height="16" viewBox="0 0 100 100" aria-hidden="true"><use href="#mark"></use></svg>
+        </div>
+        <div class="cell-cap">
+          <b>Escala</b>
+          <span>48 · 32 · 24 · 16&nbsp;px. A forma não se altera; nenhuma versão simplificada é necessária.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="plate plate-grid">
+      <svg width="360" height="200" viewBox="0 0 180 100" style="max-width:100%" role="img" aria-label="Área de proteção">
+        <rect x="8" y="20" width="84" height="60" fill="none" stroke="var(--rule-firm)" stroke-width="0.5" stroke-dasharray="2 2" />
+        <rect x="-18" y="-6" width="136" height="112" fill="none" stroke="var(--rouge)" stroke-width="0.6" stroke-dasharray="3 2" opacity="0.55" />
+        <polygon points="8,20 92,20 66,50 92,80 8,80" fill="var(--rouge)" />
+        <g stroke="var(--rule-firm)" stroke-width="0.4"><line x1="-18" y1="10" x2="8" y2="10" /></g>
+        <text x="-5" y="8" font-family="ui-monospace,monospace" font-size="4" fill="var(--ink-faint)">26</text>
+        <text x="124" y="42" font-family="ui-monospace,monospace" font-size="4.6" fill="var(--ink-soft)">ÁREA DE PROTEÇÃO</text>
+        <text x="124" y="52" font-family="ui-monospace,monospace" font-size="4.2" fill="var(--ink-faint)">= profundidade da mordida</text>
+        <text x="124" y="60" font-family="ui-monospace,monospace" font-size="4.2" fill="var(--ink-faint)">em todos os lados</text>
+      </svg>
+    </div>
+    <p class="note" style="margin-top:-0.6rem">
+      A área de proteção é a própria profundidade da mordida — a marca traz sua
+      unidade de medida consigo, então a regra não depende de tabela. Nada de
+      texto, borda ou outro logotipo entra nesse retângulo.
+    </p>
+  </section>
+
+  <!-- ===================== 03 · COR ===================== -->
+  <section>
+    <div class="sec-head">
+      <p class="sec-num">03</p>
+      <div class="block">
+        <h2>Cor</h2>
+        <p class="note">
+          Paleta curta de propósito. O rouge é a única cor de marca; o resto é
+          estrutura.
+        </p>
+      </div>
+    </div>
+
+    <div class="swatches">
+      <div class="sw">
+        <div class="sw-chip" style="background:#d92d20"></div>
+        <div class="sw-info"><b>Rouge</b><span>#D92D20 · RGB 217 45 32</span>
+          <span class="sw-use">A marca. Só fora da superfície operacional.</span></div>
+      </div>
+      <div class="sw">
+        <div class="sw-chip" style="background:#8f1a12"></div>
+        <div class="sw-info"><b>Rouge profond</b><span>#8F1A12</span>
+          <span class="sw-use">Apoio impresso, estados de pressão.</span></div>
+      </div>
+      <div class="sw">
+        <div class="sw-chip" style="background:#12171c"></div>
+        <div class="sw-info"><b>Asphalte</b><span>#12171C</span>
+          <span class="sw-use">Fundo do produto, texto sobre claro.</span></div>
+      </div>
+      <div class="sw">
+        <div class="sw-chip" style="background:#ecEFF1"></div>
+        <div class="sw-info"><b>Craie</b><span>#ECEFF1</span>
+          <span class="sw-use">Marca monocromática sobre escuro.</span></div>
+      </div>
+      <div class="sw">
+        <div class="sw-chip" style="background:#a6e51a"></div>
+        <div class="sw-info"><b>TRAKR lime</b><span>#A6E51A</span>
+          <span class="sw-use">Só no endosso. Nunca isolado.</span></div>
+      </div>
+    </div>
+
+    <div class="rule-box">
+      <h4>A regra que não pode ser quebrada</h4>
+      <p class="note" style="max-width:none">
+        <strong>O rouge da marca não aparece dentro da superfície operacional.</strong>
+        No painel da direção e no app do motorista, vermelho significa uma coisa
+        só: <strong>alguém precisa de socorro</strong>. Um alerta de acidente, um
+        veículo sem sinal.
+      </p>
+      <p class="note" style="max-width:none">
+        Se a marca ocupar o cabeçalho em vermelho, o olho para de tratar
+        vermelho como urgência em vinte minutos de prova — e a cor perde o poder
+        exatamente onde ele é necessário. Não é preciosismo de design: é a
+        diferença entre o diretor ver o alerta pelo canto do olho ou não ver.
+      </p>
+      <p class="note" style="max-width:none">
+        Por isso a marca tem duas aplicações, e escolher entre elas não é
+        estética:
+      </p>
+      <ul class="tight">
+        <li><strong>Rouge</strong> — login, impressos, material comercial, ícone de app, site.</li>
+        <li><strong>Monocromática</strong> — cabeçalho do painel, app do motorista, e qualquer tela que também exiba estado operacional.</li>
+      </ul>
+      <p class="note" style="max-width:none">
+        A bandeirola é reconhecível pelo recorte, não pela cor. Ela não perde
+        identidade em branco.
+      </p>
+    </div>
+
+    <div class="cells">
+      <div class="cell" style="background:#0a0c10">
+        <div class="dash" style="max-width:22rem">
+          <svg width="19" height="19" viewBox="0 0 100 100" style="color:#e8ecf2" aria-hidden="true"><use href="#mark"></use></svg>
+          <span class="dash-n">Giro delle Langhe</span>
+          <span class="dash-alert"><i style="width:6px;height:6px;border-radius:50%;background:currentColor;display:block"></i>ACIDENTE KM 42</span>
+        </div>
+        <div class="cell-cap"><b style="color:#f1eceA">Certo</b><span style="color:#a89d99">Marca em branco. O único vermelho da tela é o alerta — e ele salta.</span></div>
+      </div>
+      <div class="cell" style="background:#0a0c10">
+        <div class="dash" style="max-width:22rem">
+          <svg width="19" height="19" viewBox="0 0 100 100" style="color:#ff3b3b" aria-hidden="true"><use href="#mark"></use></svg>
+          <span class="dash-n">Giro delle Langhe</span>
+          <span class="dash-alert"><i style="width:6px;height:6px;border-radius:50%;background:currentColor;display:block"></i>ACIDENTE KM 42</span>
+        </div>
+        <div class="cell-cap"><b style="color:#ff6a5e">Errado</b><span style="color:#a89d99">Dois vermelhos disputando. O alerta deixa de ser a coisa mais urgente da tela.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 04 · USOS INCORRETOS ===================== -->
+  <section>
+    <div class="sec-head">
+      <p class="sec-num">04</p>
+      <div class="block">
+        <h2>Usos incorretos</h2>
+        <p class="note">
+          A página mais útil de qualquer manual. Cada item abaixo é uma coisa
+          que vai acontecer se não estiver escrita.
+        </p>
+      </div>
+    </div>
+
+    <div class="dodont">
+      <div class="dd">
+        <div class="dd-art"><svg width="60" height="60" viewBox="0 0 100 100" style="color:var(--rouge)" aria-hidden="true"><use href="#mark"></use></svg></div>
+        <span class="dd-tag yes">✓ Correto</span>
+        <p>Proporção original, cor sólida, cantos vivos.</p>
+      </div>
+      <div class="dd">
+        <div class="dd-art"><svg width="88" height="48" viewBox="0 0 100 100" preserveAspectRatio="none" style="color:var(--rouge)" aria-hidden="true"><use href="#mark"></use></svg></div>
+        <span class="dd-tag no">✕ Nunca</span>
+        <p>Esticar ou achatar. A proporção 7:5 é a marca.</p>
+      </div>
+      <div class="dd">
+        <div class="dd-art"><svg width="60" height="60" viewBox="0 0 100 100" style="color:var(--rouge);transform:rotate(-18deg)" aria-hidden="true"><use href="#mark"></use></svg></div>
+        <span class="dd-tag no">✕ Nunca</span>
+        <p>Girar. A bandeirola pende na horizontal, sempre.</p>
+      </div>
+      <div class="dd">
+        <div class="dd-art">
+          <svg width="60" height="60" viewBox="0 0 100 100" aria-hidden="true">
+            <polygon points="8,20 92,20 66,50 92,80 8,80" fill="none" stroke="var(--rouge)" stroke-width="5" />
+          </svg>
+        </div>
+        <span class="dd-tag no">✕ Nunca</span>
+        <p>Contornar. Vira ruído abaixo de 32&nbsp;px.</p>
+      </div>
+      <div class="dd">
+        <div class="dd-art"><svg width="60" height="60" viewBox="0 0 100 100" style="color:#7c3aed" aria-hidden="true"><use href="#mark"></use></svg></div>
+        <span class="dd-tag no">✕ Nunca</span>
+        <p>Recolorir fora da paleta. Rouge, branco ou asfalto.</p>
+      </div>
+      <div class="dd">
+        <div class="dd-art"><svg width="60" height="60" viewBox="0 0 100 100" style="color:var(--rouge);filter:drop-shadow(3px 4px 4px rgba(0,0,0,.55))" aria-hidden="true"><use href="#mark"></use></svg></div>
+        <span class="dd-tag no">✕ Nunca</span>
+        <p>Sombra, brilho, gradiente ou bisel.</p>
+      </div>
+      <div class="dd">
+        <div class="dd-art"><svg width="18" height="18" viewBox="0 0 100 100" style="color:var(--rouge)" aria-hidden="true"><use href="#mark-pole"></use></svg></div>
+        <span class="dd-tag no">✕ Nunca</span>
+        <p>Versão com mastro abaixo de 24&nbsp;px. Use o ícone.</p>
+      </div>
+      <div class="dd">
+        <div class="dd-art" style="background:#c0392b"><svg width="60" height="60" viewBox="0 0 100 100" style="color:var(--rouge)" aria-hidden="true"><use href="#mark"></use></svg></div>
+        <span class="dd-tag no">✕ Nunca</span>
+        <p>Rouge sobre vermelho ou sobre foto sem contraste.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 05 · ENDOSSO ===================== -->
+  <section>
+    <div class="sec-head">
+      <p class="sec-num">05</p>
+      <div class="block">
+        <h2>O endosso</h2>
+        <p class="note">
+          A marca é própria porque o comprador é próprio: quem contrata direção
+          de prova é organização e federação, não o atleta do TRAKR nem o
+          treinador do TRAKR+. O endosso existe porque a vizinhança é real — o
+          diretor de prova conhece o TRAKR pelos treinadores que passam pelos
+          eventos dele.
+        </p>
+        <p class="note">
+          <strong>Onde usar:</strong> primeiro contato, rodapé, proposta
+          comercial, tela de login. <strong>Onde não usar:</strong> dentro do
+          produto em operação. O motorista no meio da prova não precisa saber
+          quem é a controladora.
+        </p>
+      </div>
+    </div>
+
+    <div class="plate">
+      <div style="display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;justify-content:center">
+        <svg width="76" height="76" viewBox="0 0 100 100" style="color:var(--rouge)" role="img" aria-label="Marca"><use href="#mark-pole"></use></svg>
+        <div style="display:flex;flex-direction:column;gap:0.3rem;line-height:0.92">
+          <span style="font-size:2rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Flamme</span>
+          <span style="font-size:2rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--rouge)">Rouge</span>
+          <span style="font-family:var(--mono);font-size:0.625rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--ink-faint);padding-top:0.6rem">
+            by <span style="color:var(--lime);font-weight:700">TRAKR</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cells">
+      <div class="cell">
+        <div class="cell-cap"><b>Completo</b><span><code>Flamme Rouge</code><br>Login, impressos, domínio, contrato.</span></div>
+      </div>
+      <div class="cell">
+        <div class="cell-cap"><b>Curto</b><span><code>Flamme</code><br>Cabeçalho estreito, ícone, rádio.</span></div>
+      </div>
+      <div class="cell">
+        <div class="cell-cap"><b>Endossado</b><span><code>Flamme Rouge, by TRAKR</code><br>Rodapé, comercial, primeiro contato.</span></div>
+      </div>
+    </div>
+    <p class="note" style="margin-top:-0.6rem">
+      As três formas são oficiais. Isso não é redundância: doze caracteres em
+      duas palavras seriam encurtados de qualquer jeito na prática, e a
+      diferença entre <em>uma</em> marca e <em>duas</em> é essa redução ter sido
+      desenhada de propósito em vez de acontecer sozinha.
+    </p>
+  </section>
+
+  <!-- ===================== 06 · APLICAÇÕES ===================== -->
+  <section>
+    <div class="sec-head">
+      <p class="sec-num">06</p>
+      <div class="block">
+        <h2>Aplicações</h2>
+        <p class="note">
+          A folha impressa é o teste mais duro: preto e branco, sem cor para
+          carregar o reconhecimento.
+        </p>
+      </div>
+    </div>
+
+    <div class="apps">
+      <div class="app">
+        <div class="app-box" style="padding:0;align-items:flex-end">
+          <div class="tabbar">
+            <div class="tab">
+              <svg width="14" height="14" viewBox="0 0 100 100" style="color:#d92d20" aria-hidden="true"><use href="#mark"></use></svg>
+              <span>Flamme Rouge — Giro delle Langhe</span>
+            </div>
+            <div class="tab off"><span>Supabase</span></div>
+          </div>
+        </div>
+        <p class="app-cap">Favicon 16 px · rouge</p>
+      </div>
+
+      <div class="app">
+        <div class="app-box" style="padding:0">
+          <div class="home">
+            <div class="ic">
+              <div class="ic-tile" style="background:#d92d20">
+                <svg width="30" height="30" viewBox="0 0 100 100" style="color:#fff" aria-hidden="true"><use href="#mark"></use></svg>
+              </div>
+              <span>Flamme</span>
+            </div>
+            <div class="ic">
+              <div class="ic-tile" style="background:#12171c">
+                <svg width="30" height="30" viewBox="0 0 100 100" style="color:#ecEFF1" aria-hidden="true"><use href="#mark"></use></svg>
+              </div>
+              <span>Flamme</span>
+            </div>
+          </div>
+        </div>
+        <p class="app-cap">Ícone do app · branco sobre rouge</p>
+      </div>
+
+      <div class="app">
+        <div class="app-box" style="background:#0a0c10;border-color:#2a3138">
+          <div class="dash">
+            <svg width="19" height="19" viewBox="0 0 100 100" style="color:#e8ecf2" aria-hidden="true"><use href="#mark"></use></svg>
+            <span class="dash-n">Giro delle Langhe</span>
+            <span class="dash-live"><i></i>AO VIVO</span>
+          </div>
+        </div>
+        <p class="app-cap">Painel · monocromática</p>
+      </div>
+
+      <div class="app">
+        <div class="app-box plate-white">
+          <div class="print">
+            <div class="print-h">
+              <svg width="16" height="16" viewBox="0 0 100 100" style="color:#17110f" aria-hidden="true"><use href="#mark"></use></svg>
+              <span class="print-t">CÓDIGOS DE VÍNCULO</span>
+              <span class="print-d">11 OUT 2026</span>
+            </div>
+            <div class="print-rows">
+              <div class="print-row"><span class="w">Carro de abertura</span><span class="c">M6C-FSD</span></div>
+              <div class="print-row"><span class="w">Ambulância 1</span><span class="c">82T-BK8</span></div>
+              <div class="print-row"><span class="w">Vassoura</span><span class="c">3GX-AQ4</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="app-cap">Folha impressa · monocromática</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 07 · TIPOGRAFIA ===================== -->
+  <section>
+    <div class="sec-head">
+      <p class="sec-num">07</p>
+      <div class="block">
+        <h2>Tipografia</h2>
+        <p class="note">
+          Uma advertência honesta antes de qualquer recomendação:
+          <strong>o letreiro atual está composto em fonte de sistema.</strong>
+          Funciona e é legível, mas um logotipo de verdade tem letras
+          desenhadas ou pelo menos uma face licenciada e ajustada. Enquanto
+          isso não for feito, a marca está a meio caminho.
+        </p>
+        <ul class="tight">
+          <li><strong>Letreiro</strong> — grotesca pesada, caixa alta, entreletra generosa (0,10 em). Uma face de largura estreita valorizaria a horizontalidade da bandeirola.</li>
+          <li><strong>Interface</strong> — a mesma família em pesos 400/600/700, ou uma neogrotesca neutra. O produto é lido sob pressão; personalidade tipográfica atrapalha.</li>
+          <li><strong>Dados</strong> — monoespaçada com <code>tabular-nums</code> obrigatório. Distância, tempo e velocidade mudam sozinhos na tela; sem largura fixa o número pula e o olho perde a leitura.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="plate">
+      <div style="display:flex;flex-direction:column;gap:1.4rem;width:100%;max-width:34rem">
+        <div>
+          <p class="app-cap" style="margin-bottom:0.4rem">LETREIRO · caixa alta, 0,10 em</p>
+          <p style="font-size:clamp(1.4rem,4vw,2.2rem);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin:0">Flamme Rouge</p>
+        </div>
+        <div>
+          <p class="app-cap" style="margin-bottom:0.4rem">INTERFACE · 400 / 650</p>
+          <p style="font-size:1rem;margin:0">Carro de fechamento a <strong>12,4 km</strong> do carro de abertura.</p>
+        </div>
+        <div>
+          <p class="app-cap" style="margin-bottom:0.4rem">DADOS · tabular-nums</p>
+          <p style="font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:1.35rem;margin:0;letter-spacing:0.02em">18:42:07 · 12,4 km · 38 km/h</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 08 · ARQUIVOS ===================== -->
+  <section>
+    <div class="sec-head">
+      <p class="sec-num">08</p>
+      <div class="block">
+        <h2>Os arquivos</h2>
+        <p class="note">
+          Existe <strong>uma</strong> definição da marca, em
+          <code>src/brand/mark.ts</code>. Todo o resto é gerado por
+          <code>npm run brand</code>. Um PNG editado à mão é apagado na próxima
+          execução — e isso é o comportamento desejado, não um efeito colateral.
+        </p>
+      </div>
+    </div>
+
+    <div class="files-wrap">
+      <table class="files">
+        <thead>
+          <tr><th>Arquivo</th><th>Uso</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>src/brand/mark.ts</td><td>Fonte única: geometria, cores, nomes e a regra de aplicação.</td></tr>
+          <tr><td>public/icon.svg</td><td>Favicon vetorial. Nítido em qualquer densidade.</td></tr>
+          <tr><td>public/favicon-32.png</td><td>Rede para navegadores sem favicon vetorial.</td></tr>
+          <tr><td>public/icon-192.png<br>public/icon-512.png</td><td>Ícone do PWA. Branco sobre rouge.</td></tr>
+          <tr><td>public/icon-maskable-512.png</td><td>Maskable, marca a 46% da caixa. O sistema recorta na forma que ele escolhe; fora da zona segura a ponta é decepada.</td></tr>
+          <tr><td>public/apple-touch-icon.png</td><td>iOS, 180 px.</td></tr>
+          <tr><td>public/brand/mark-rouge.svg</td><td>Símbolo em rouge.</td></tr>
+          <tr><td>public/brand/mark-mono-dark.svg<br>public/brand/mark-mono-light.svg</td><td>Monocromáticas. Uso obrigatório em tela operacional.</td></tr>
+          <tr><td>public/brand/mark-with-pole.svg</td><td>Símbolo com mastro, mínimo 24 px.</td></tr>
+          <tr><td>public/brand/signature*.svg</td><td>Assinaturas: clara, escura, e as duas endossadas.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</div>
+
+</body></html>
