@@ -1,6 +1,10 @@
 <!doctype html><html><head><title>Flamme Rouge — manual de identidade</title><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><link rel="icon" type="image/svg+xml" href="/assets/marca/favicon.svg"></head><body>
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;700&display=swap">
+
 <style>
   /* ---------------------------------------------------------------------
      Papel por padrão: um manual de marca é impresso, conferido e riscado.
@@ -27,6 +31,9 @@
     --grid: rgba(23, 17, 15, 0.055);
 
     --sans: "Helvetica Neue", "Arial Nova", Arial, system-ui, sans-serif;
+    /* A face do letreiro. Condensada, e e ela que da a horizontalidade que a
+       bandeirola pede — ver secao 06. */
+    --letreiro: "Barlow Condensed", "Arial Narrow", "Helvetica Neue Condensed", sans-serif;
     --mono: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, Menlo, monospace;
   }
 
@@ -228,17 +235,20 @@
 <div class="sheet">
 
   <header class="cover">
-    <p class="kicker">Manual de identidade · v1</p>
+    <p class="kicker">Manual de identidade · v2</p>
     <h1>Flamme&nbsp;Rouge</h1>
     <div class="cover-mark">
-      <svg width="120" height="120" viewBox="0 0 100 100" style="color: var(--rouge)" role="img" aria-label="Marca Flamme Rouge">
-        <use href="#mark-pole"></use>
-      </svg>
-      <div style="display:flex;flex-direction:column;gap:0.4rem;line-height:0.9">
-        <span style="font-size:clamp(1.8rem,5vw,2.9rem);font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Flamme</span>
-        <span style="font-size:clamp(1.8rem,5vw,2.9rem);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--rouge)">Rouge</span>
-        <span style="font-family:var(--mono);font-size:0.625rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--ink-faint);padding-top:0.5rem">by TRAKR</span>
-      </div>
+      <!-- O ARQUIVO, não uma recomposição. Uma versão anterior desta capa
+           montava o letreiro com texto e entreletra uniforme, e ROUGE saía
+           mais estreita que FLAMME — cinco letras contra seis. O logotipo
+           força as duas à mesma largura, e reproduzir isso em CSS é refazer
+           o trabalho que o arquivo já fez. -->
+      <svg viewBox="0 0 282 110" style="width:min(100%,22rem);height:auto;color:var(--ink)" role="img" aria-label="Flamme Rouge"><g transform="translate(4 5) scale(0.9)">
+    <rect x="16" y="12" width="7" height="76" fill="#D92D20"/>
+    <polygon points="23,22 88,22 68,44 88,66 23,66" fill="#D92D20"/>
+  </g>
+  <path d="M131.72 22.13Q131.72 22.49 131.36 22.49L122.9 22.49Q122.75 22.49 122.75 22.64L122.75 32.39Q122.75 32.54 122.9 32.54L128.33 32.54Q128.69 32.54 128.69 32.9L128.69 33.87Q128.69 34.23 128.33 34.23L122.9 34.23Q122.75 34.23 122.75 34.37L122.75 45.64Q122.75 46 122.39 46L121.2 46Q120.84 46 120.84 45.64L120.84 21.16Q120.84 20.8 121.2 20.8L131.36 20.8Q131.72 20.8 131.72 21.16L131.72 22.13Z M147.81 46Q147.45 46 147.45 45.64L147.45 21.16Q147.45 20.8 147.81 20.8L149 20.8Q149.36 20.8 149.36 21.16L149.36 44.16Q149.36 44.31 149.5 44.31L157.92 44.31Q158.28 44.31 158.28 44.67L158.28 45.64Q158.28 46 157.92 46L147.81 46Z M182.91 46Q182.58 46 182.51 45.68L181.54 40.96Q181.54 40.89 181.49 40.85Q181.43 40.82 181.36 40.82L174.3 40.82Q174.23 40.82 174.18 40.85Q174.12 40.89 174.12 40.96L173.15 45.68Q173.12 46 172.76 46L171.57 46Q171.39 46 171.3 45.89Q171.21 45.78 171.24 45.6L176.72 21.12Q176.79 20.8 177.11 20.8L178.55 20.8Q178.91 20.8 178.95 21.12L184.46 45.6L184.46 45.68Q184.46 46 184.13 46L182.91 46ZM174.52 39.09Q174.52 39.23 174.63 39.23L181 39.23Q181.11 39.23 181.11 39.09L177.9 23.86Q177.87 23.75 177.83 23.75Q177.8 23.75 177.76 23.86L174.52 39.09Z M210.84 21.05Q210.95 20.8 211.24 20.8L212.46 20.8Q212.82 20.8 212.82 21.16L212.82 45.64Q212.82 46 212.46 46L211.28 46Q210.92 46 210.92 45.64L210.92 25.23Q210.92 25.12 210.84 25.12Q210.77 25.12 210.74 25.19L206.78 33.98Q206.67 34.26 206.42 34.26Q206.13 34.26 206.02 34.01L202.02 25.26Q201.95 25.19 201.9 25.19Q201.84 25.19 201.84 25.3L201.84 45.64Q201.84 46 201.48 46L200.3 46Q199.94 46 199.94 45.64L199.94 21.16Q199.94 20.8 200.3 20.8L201.52 20.8Q201.81 20.8 201.92 21.05L206.31 30.48Q206.34 30.56 206.42 30.56Q206.49 30.56 206.52 30.48L210.84 21.05Z M241.59 21.05Q241.7 20.8 241.98 20.8L243.21 20.8Q243.57 20.8 243.57 21.16L243.57 45.64Q243.57 46 243.21 46L242.02 46Q241.66 46 241.66 45.64L241.66 25.23Q241.66 25.12 241.59 25.12Q241.52 25.12 241.48 25.19L237.52 33.98Q237.41 34.26 237.16 34.26Q236.87 34.26 236.76 34.01L232.77 25.26Q232.7 25.19 232.64 25.19Q232.59 25.19 232.59 25.3L232.59 45.64Q232.59 46 232.23 46L231.04 46Q230.68 46 230.68 45.64L230.68 21.16Q230.68 20.8 231.04 20.8L232.26 20.8Q232.55 20.8 232.66 21.05L237.05 30.48Q237.09 30.56 237.16 30.56Q237.23 30.56 237.27 30.48L241.59 21.05Z M272.4 22.13Q272.4 22.49 272.04 22.49L263.51 22.49Q263.37 22.49 263.37 22.64L263.37 32.39Q263.37 32.54 263.51 32.54L268.98 32.54Q269.34 32.54 269.34 32.9L269.34 33.87Q269.34 34.23 268.98 34.23L263.51 34.23Q263.37 34.23 263.37 34.37L263.37 44.16Q263.37 44.31 263.51 44.31L272.04 44.31Q272.4 44.31 272.4 44.67L272.4 45.64Q272.4 46 272.04 46L261.82 46Q261.46 46 261.46 45.64L261.46 21.16Q261.46 20.8 261.82 20.8L272.04 20.8Q272.4 20.8 272.4 21.16L272.4 22.13Z" fill="currentColor"/>
+  <path d="M129.52 80Q129.12 80 129.02 79.64L126.24 69.7Q126.17 69.56 126.06 69.56L124.84 69.56Q124.66 69.56 124.66 69.74L124.66 79.57Q124.66 79.75 124.53 79.87Q124.41 80 124.23 80L120.02 80Q119.84 80 119.71 79.87Q119.58 79.75 119.58 79.57L119.58 55.23Q119.58 55.05 119.71 54.93Q119.84 54.8 120.02 54.8L127.29 54.8Q129.27 54.8 130.82 55.75Q132.36 56.71 133.21 58.44Q134.06 60.16 134.06 62.4Q134.06 64.52 133.25 66.14Q132.44 67.76 131 68.66Q130.92 68.7 130.89 68.75Q130.85 68.8 130.89 68.88L134.2 79.5L134.24 79.64Q134.24 80 133.84 80L129.52 80ZM124.84 59.16Q124.66 59.16 124.66 59.34L124.66 65.49Q124.66 65.67 124.84 65.67L126.46 65.67Q127.58 65.67 128.28 64.79Q128.98 63.91 128.98 62.43Q128.98 60.92 128.28 60.04Q127.58 59.16 126.46 59.16L124.84 59.16Z M161.5 80.29Q158.19 80.29 156.21 78.34Q154.23 76.4 154.23 73.16L154.23 61.64Q154.23 58.4 156.21 56.46Q158.19 54.51 161.5 54.51Q164.81 54.51 166.81 56.46Q168.81 58.4 168.81 61.64L168.81 73.16Q168.81 76.4 166.81 78.34Q164.81 80.29 161.5 80.29ZM161.5 75.93Q162.51 75.93 163.12 75.23Q163.73 74.53 163.73 73.38L163.73 61.42Q163.73 60.27 163.12 59.57Q162.51 58.87 161.5 58.87Q160.49 58.87 159.9 59.57Q159.3 60.27 159.3 61.42L159.3 73.38Q159.3 74.53 159.9 75.23Q160.49 75.93 161.5 75.93Z M196.71 80.29Q193.47 80.29 191.51 78.25Q189.55 76.22 189.55 72.84L189.55 55.23Q189.55 55.05 189.68 54.93Q189.8 54.8 189.98 54.8L194.19 54.8Q194.37 54.8 194.5 54.93Q194.63 55.05 194.63 55.23L194.63 73.34Q194.63 74.49 195.2 75.21Q195.78 75.93 196.71 75.93Q197.65 75.93 198.21 75.21Q198.77 74.49 198.77 73.34L198.77 55.23Q198.77 55.05 198.89 54.93Q199.02 54.8 199.2 54.8L203.41 54.8Q203.59 54.8 203.72 54.93Q203.84 55.05 203.84 55.23L203.84 72.84Q203.84 76.22 201.88 78.25Q199.92 80.29 196.71 80.29Z M231.75 80.29Q228.51 80.29 226.55 78.43Q224.59 76.58 224.59 73.48L224.59 61.32Q224.59 58.22 226.55 56.37Q228.51 54.51 231.75 54.51Q234.99 54.51 236.97 56.38Q238.95 58.26 238.95 61.35L238.95 62.72Q238.95 62.9 238.83 63.03Q238.7 63.15 238.52 63.15L234.31 63.15Q234.13 63.15 234 63.03Q233.88 62.9 233.88 62.72L233.88 61.28Q233.88 60.2 233.3 59.53Q232.72 58.87 231.75 58.87Q230.82 58.87 230.24 59.53Q229.66 60.2 229.66 61.28L229.66 73.52Q229.66 74.6 230.24 75.27Q230.82 75.93 231.75 75.93Q232.72 75.93 233.3 75.27Q233.88 74.6 233.88 73.52L233.88 70.64Q233.88 70.46 233.7 70.46L232.11 70.46Q231.93 70.46 231.81 70.33Q231.68 70.21 231.68 70.03L231.68 66.82Q231.68 66.64 231.81 66.52Q231.93 66.39 232.11 66.39L238.52 66.39Q238.7 66.39 238.83 66.52Q238.95 66.64 238.95 66.82L238.95 73.48Q238.95 76.58 236.97 78.43Q234.99 80.29 231.75 80.29Z M273.02 58.72Q273.02 58.9 272.89 59.03Q272.76 59.16 272.58 59.16L265.06 59.16Q264.88 59.16 264.88 59.34L264.88 65.02Q264.88 65.2 265.06 65.2L269.38 65.2Q269.56 65.2 269.69 65.33Q269.81 65.46 269.81 65.64L269.81 69.13Q269.81 69.31 269.69 69.43Q269.56 69.56 269.38 69.56L265.06 69.56Q264.88 69.56 264.88 69.74L264.88 75.46Q264.88 75.64 265.06 75.64L272.58 75.64Q272.76 75.64 272.89 75.77Q273.02 75.9 273.02 76.08L273.02 79.57Q273.02 79.75 272.89 79.87Q272.76 80 272.58 80L260.24 80Q260.06 80 259.93 79.87Q259.8 79.75 259.8 79.57L259.8 55.23Q259.8 55.05 259.93 54.93Q260.06 54.8 260.24 54.8L272.58 54.8Q272.76 54.8 272.89 54.93Q273.02 55.05 273.02 55.23L273.02 58.72Z" fill="#D92D20"/></svg>
     </div>
     <p class="lede">
       Sistema de direção de prova ao vivo para ciclismo de estrada. Este
@@ -248,8 +258,8 @@
     </p>
     <div class="cover-meta">
       <span>Mercados: BR · IT · UK · FR · ES · DE</span>
-      <span>Marca endossada</span>
-      <span>Fonte: src/brand/mark.ts</span>
+      <span>Letreiro: Barlow Condensed 300 / 700</span>
+      <span>Geometria: src/brand/mark.ts</span>
     </div>
   </header>
 
@@ -319,14 +329,14 @@
 
     <div class="cells">
       <div class="cell">
-        <svg width="88" height="88" viewBox="0 0 100 100" style="color:var(--rouge)" role="img" aria-label="Assinatura com mastro"><use href="#mark-pole"></use></svg>
+        <svg width="88" height="88" viewBox="0 0 100 100" style="color:var(--rouge)" role="img" aria-label="Símbolo com mastro"><use href="#mark-pole"></use></svg>
         <div class="cell-cap">
           <b>Com mastro</b>
           <span>Assinatura. Login, impressos, material comercial.<br><strong>Mínimo 24&nbsp;px.</strong></span>
         </div>
       </div>
       <div class="cell">
-        <svg width="88" height="88" viewBox="0 0 100 100" style="color:var(--rouge)" role="img" aria-label="Ícone sem mastro"><use href="#mark"></use></svg>
+        <svg width="88" height="88" viewBox="0 0 100 100" style="color:var(--rouge)" role="img" aria-label="Símbolo sem mastro"><use href="#mark"></use></svg>
         <div class="cell-cap">
           <b>Sem mastro</b>
           <span>Ícone. Favicon, app, cabeçalho, qualquer uso pequeno.<br><strong>Mínimo 16&nbsp;px.</strong></span>
@@ -358,6 +368,70 @@
         <text x="124" y="60" font-family="ui-monospace,monospace" font-size="4.2" fill="var(--ink-faint)">em todos os lados</text>
       </svg>
     </div>
+    <div class="plate plate-grid" style="gap:2.5rem">
+      <div style="display:flex;flex-direction:column;gap:0.6rem;align-items:center">
+        <svg viewBox="0 0 282 110" style="width:100%;max-width:17rem;height:auto" role="img" aria-label="Assinatura empilhada"><g transform="translate(4 5) scale(0.9)">
+    <rect x="16" y="12" width="7" height="76" fill="#D92D20"/>
+    <polygon points="23,22 88,22 68,44 88,66 23,66" fill="#D92D20"/>
+  </g>
+  <path d="M131.72 22.13Q131.72 22.49 131.36 22.49L122.9 22.49Q122.75 22.49 122.75 22.64L122.75 32.39Q122.75 32.54 122.9 32.54L128.33 32.54Q128.69 32.54 128.69 32.9L128.69 33.87Q128.69 34.23 128.33 34.23L122.9 34.23Q122.75 34.23 122.75 34.37L122.75 45.64Q122.75 46 122.39 46L121.2 46Q120.84 46 120.84 45.64L120.84 21.16Q120.84 20.8 121.2 20.8L131.36 20.8Q131.72 20.8 131.72 21.16L131.72 22.13Z M147.81 46Q147.45 46 147.45 45.64L147.45 21.16Q147.45 20.8 147.81 20.8L149 20.8Q149.36 20.8 149.36 21.16L149.36 44.16Q149.36 44.31 149.5 44.31L157.92 44.31Q158.28 44.31 158.28 44.67L158.28 45.64Q158.28 46 157.92 46L147.81 46Z M182.91 46Q182.58 46 182.51 45.68L181.54 40.96Q181.54 40.89 181.49 40.85Q181.43 40.82 181.36 40.82L174.3 40.82Q174.23 40.82 174.18 40.85Q174.12 40.89 174.12 40.96L173.15 45.68Q173.12 46 172.76 46L171.57 46Q171.39 46 171.3 45.89Q171.21 45.78 171.24 45.6L176.72 21.12Q176.79 20.8 177.11 20.8L178.55 20.8Q178.91 20.8 178.95 21.12L184.46 45.6L184.46 45.68Q184.46 46 184.13 46L182.91 46ZM174.52 39.09Q174.52 39.23 174.63 39.23L181 39.23Q181.11 39.23 181.11 39.09L177.9 23.86Q177.87 23.75 177.83 23.75Q177.8 23.75 177.76 23.86L174.52 39.09Z M210.84 21.05Q210.95 20.8 211.24 20.8L212.46 20.8Q212.82 20.8 212.82 21.16L212.82 45.64Q212.82 46 212.46 46L211.28 46Q210.92 46 210.92 45.64L210.92 25.23Q210.92 25.12 210.84 25.12Q210.77 25.12 210.74 25.19L206.78 33.98Q206.67 34.26 206.42 34.26Q206.13 34.26 206.02 34.01L202.02 25.26Q201.95 25.19 201.9 25.19Q201.84 25.19 201.84 25.3L201.84 45.64Q201.84 46 201.48 46L200.3 46Q199.94 46 199.94 45.64L199.94 21.16Q199.94 20.8 200.3 20.8L201.52 20.8Q201.81 20.8 201.92 21.05L206.31 30.48Q206.34 30.56 206.42 30.56Q206.49 30.56 206.52 30.48L210.84 21.05Z M241.59 21.05Q241.7 20.8 241.98 20.8L243.21 20.8Q243.57 20.8 243.57 21.16L243.57 45.64Q243.57 46 243.21 46L242.02 46Q241.66 46 241.66 45.64L241.66 25.23Q241.66 25.12 241.59 25.12Q241.52 25.12 241.48 25.19L237.52 33.98Q237.41 34.26 237.16 34.26Q236.87 34.26 236.76 34.01L232.77 25.26Q232.7 25.19 232.64 25.19Q232.59 25.19 232.59 25.3L232.59 45.64Q232.59 46 232.23 46L231.04 46Q230.68 46 230.68 45.64L230.68 21.16Q230.68 20.8 231.04 20.8L232.26 20.8Q232.55 20.8 232.66 21.05L237.05 30.48Q237.09 30.56 237.16 30.56Q237.23 30.56 237.27 30.48L241.59 21.05Z M272.4 22.13Q272.4 22.49 272.04 22.49L263.51 22.49Q263.37 22.49 263.37 22.64L263.37 32.39Q263.37 32.54 263.51 32.54L268.98 32.54Q269.34 32.54 269.34 32.9L269.34 33.87Q269.34 34.23 268.98 34.23L263.51 34.23Q263.37 34.23 263.37 34.37L263.37 44.16Q263.37 44.31 263.51 44.31L272.04 44.31Q272.4 44.31 272.4 44.67L272.4 45.64Q272.4 46 272.04 46L261.82 46Q261.46 46 261.46 45.64L261.46 21.16Q261.46 20.8 261.82 20.8L272.04 20.8Q272.4 20.8 272.4 21.16L272.4 22.13Z" fill="#12171C"/>
+  <path d="M129.52 80Q129.12 80 129.02 79.64L126.24 69.7Q126.17 69.56 126.06 69.56L124.84 69.56Q124.66 69.56 124.66 69.74L124.66 79.57Q124.66 79.75 124.53 79.87Q124.41 80 124.23 80L120.02 80Q119.84 80 119.71 79.87Q119.58 79.75 119.58 79.57L119.58 55.23Q119.58 55.05 119.71 54.93Q119.84 54.8 120.02 54.8L127.29 54.8Q129.27 54.8 130.82 55.75Q132.36 56.71 133.21 58.44Q134.06 60.16 134.06 62.4Q134.06 64.52 133.25 66.14Q132.44 67.76 131 68.66Q130.92 68.7 130.89 68.75Q130.85 68.8 130.89 68.88L134.2 79.5L134.24 79.64Q134.24 80 133.84 80L129.52 80ZM124.84 59.16Q124.66 59.16 124.66 59.34L124.66 65.49Q124.66 65.67 124.84 65.67L126.46 65.67Q127.58 65.67 128.28 64.79Q128.98 63.91 128.98 62.43Q128.98 60.92 128.28 60.04Q127.58 59.16 126.46 59.16L124.84 59.16Z M161.5 80.29Q158.19 80.29 156.21 78.34Q154.23 76.4 154.23 73.16L154.23 61.64Q154.23 58.4 156.21 56.46Q158.19 54.51 161.5 54.51Q164.81 54.51 166.81 56.46Q168.81 58.4 168.81 61.64L168.81 73.16Q168.81 76.4 166.81 78.34Q164.81 80.29 161.5 80.29ZM161.5 75.93Q162.51 75.93 163.12 75.23Q163.73 74.53 163.73 73.38L163.73 61.42Q163.73 60.27 163.12 59.57Q162.51 58.87 161.5 58.87Q160.49 58.87 159.9 59.57Q159.3 60.27 159.3 61.42L159.3 73.38Q159.3 74.53 159.9 75.23Q160.49 75.93 161.5 75.93Z M196.71 80.29Q193.47 80.29 191.51 78.25Q189.55 76.22 189.55 72.84L189.55 55.23Q189.55 55.05 189.68 54.93Q189.8 54.8 189.98 54.8L194.19 54.8Q194.37 54.8 194.5 54.93Q194.63 55.05 194.63 55.23L194.63 73.34Q194.63 74.49 195.2 75.21Q195.78 75.93 196.71 75.93Q197.65 75.93 198.21 75.21Q198.77 74.49 198.77 73.34L198.77 55.23Q198.77 55.05 198.89 54.93Q199.02 54.8 199.2 54.8L203.41 54.8Q203.59 54.8 203.72 54.93Q203.84 55.05 203.84 55.23L203.84 72.84Q203.84 76.22 201.88 78.25Q199.92 80.29 196.71 80.29Z M231.75 80.29Q228.51 80.29 226.55 78.43Q224.59 76.58 224.59 73.48L224.59 61.32Q224.59 58.22 226.55 56.37Q228.51 54.51 231.75 54.51Q234.99 54.51 236.97 56.38Q238.95 58.26 238.95 61.35L238.95 62.72Q238.95 62.9 238.83 63.03Q238.7 63.15 238.52 63.15L234.31 63.15Q234.13 63.15 234 63.03Q233.88 62.9 233.88 62.72L233.88 61.28Q233.88 60.2 233.3 59.53Q232.72 58.87 231.75 58.87Q230.82 58.87 230.24 59.53Q229.66 60.2 229.66 61.28L229.66 73.52Q229.66 74.6 230.24 75.27Q230.82 75.93 231.75 75.93Q232.72 75.93 233.3 75.27Q233.88 74.6 233.88 73.52L233.88 70.64Q233.88 70.46 233.7 70.46L232.11 70.46Q231.93 70.46 231.81 70.33Q231.68 70.21 231.68 70.03L231.68 66.82Q231.68 66.64 231.81 66.52Q231.93 66.39 232.11 66.39L238.52 66.39Q238.7 66.39 238.83 66.52Q238.95 66.64 238.95 66.82L238.95 73.48Q238.95 76.58 236.97 78.43Q234.99 80.29 231.75 80.29Z M273.02 58.72Q273.02 58.9 272.89 59.03Q272.76 59.16 272.58 59.16L265.06 59.16Q264.88 59.16 264.88 59.34L264.88 65.02Q264.88 65.2 265.06 65.2L269.38 65.2Q269.56 65.2 269.69 65.33Q269.81 65.46 269.81 65.64L269.81 69.13Q269.81 69.31 269.69 69.43Q269.56 69.56 269.38 69.56L265.06 69.56Q264.88 69.56 264.88 69.74L264.88 75.46Q264.88 75.64 265.06 75.64L272.58 75.64Q272.76 75.64 272.89 75.77Q273.02 75.9 273.02 76.08L273.02 79.57Q273.02 79.75 272.89 79.87Q272.76 80 272.58 80L260.24 80Q260.06 80 259.93 79.87Q259.8 79.75 259.8 79.57L259.8 55.23Q259.8 55.05 259.93 54.93Q260.06 54.8 260.24 54.8L272.58 54.8Q272.76 54.8 272.89 54.93Q273.02 55.05 273.02 55.23L273.02 58.72Z" fill="#D92D20"/></svg>
+        <p class="app-cap">EMPILHADA · sempre com mastro</p>
+      </div>
+    </div>
+    <p class="note" style="margin-top:-0.6rem">
+      A assinatura empilhada é a de material de marca — site, impresso,
+      proposta. Ela <strong>não tem versão sem mastro</strong>: duas linhas de
+      texto ao lado de uma bandeirola solta perdem o eixo, e é o mastro que dá
+      a vertical contra a qual as duas linhas se apoiam.
+    </p>
+    <p class="note" style="margin-top:-0.4rem">
+      As duas palavras ocupam <strong>a mesma largura</strong>, e a largura é a
+      da palavra mais larga — a outra estica até bater. Não é um número
+      escolhido: é o que sobra quando <code>FLAMME</code> e <code>ROUGE</code>
+      recebem a mesma entreletra e a coluna assume a maior.
+    </p>
+
+    <div class="cells">
+      <div class="cell" style="padding-bottom:1.5rem">
+        <svg viewBox="0 0 351 57" style="width:100%;max-width:17rem;height:auto" role="img" aria-label="Assinatura em linha com mastro"><g transform="translate(-3.68 8.10) scale(0.48)">
+    <rect x="16" y="12" width="7" height="76" fill="#D92D20"/>
+    <polygon points="23,22 88,22 68,44 88,66 23,66" fill="#D92D20"/>
+  </g>
+  <path d="M67.51 21.46Q67.51 21.8 67.17 21.8L59.18 21.8Q59.05 21.8 59.05 21.93L59.05 31.15Q59.05 31.28 59.18 31.28L64.32 31.28Q64.66 31.28 64.66 31.62L64.66 32.54Q64.66 32.88 64.32 32.88L59.18 32.88Q59.05 32.88 59.05 33.02L59.05 43.66Q59.05 44 58.71 44L57.59 44Q57.25 44 57.25 43.66L57.25 20.54Q57.25 20.2 57.59 20.2L67.17 20.2Q67.51 20.2 67.51 20.54L67.51 21.46Z M82.71 44Q82.37 44 82.37 43.66L82.37 20.54Q82.37 20.2 82.71 20.2L83.83 20.2Q84.17 20.2 84.17 20.54L84.17 42.27Q84.17 42.4 84.31 42.4L92.27 42.4Q92.61 42.4 92.61 42.74L92.61 43.66Q92.61 44 92.27 44L82.71 44Z M115.86 44Q115.56 44 115.49 43.69L114.57 39.24Q114.57 39.17 114.52 39.14Q114.47 39.1 114.4 39.1L107.74 39.1Q107.67 39.1 107.62 39.14Q107.57 39.17 107.57 39.24L106.65 43.69Q106.61 44 106.27 44L105.15 44Q104.98 44 104.9 43.9Q104.81 43.8 104.85 43.63L110.01 20.51Q110.08 20.2 110.39 20.2L111.75 20.2Q112.09 20.2 112.12 20.51L117.32 43.63L117.32 43.69Q117.32 44 117.02 44L115.86 44ZM107.94 37.47Q107.94 37.61 108.04 37.61L114.06 37.61Q114.16 37.61 114.16 37.47L111.14 23.09Q111.1 22.99 111.07 22.99Q111.03 22.99 111 23.09L107.94 37.47Z M142.25 20.44Q142.35 20.2 142.62 20.2L143.78 20.2Q144.12 20.2 144.12 20.54L144.12 43.66Q144.12 44 143.78 44L142.65 44Q142.31 44 142.31 43.66L142.31 24.38Q142.31 24.28 142.25 24.28Q142.18 24.28 142.14 24.35L138.4 32.64Q138.3 32.92 138.06 32.92Q137.79 32.92 137.69 32.68L133.92 24.42Q133.85 24.35 133.8 24.35Q133.75 24.35 133.75 24.45L133.75 43.66Q133.75 44 133.41 44L132.28 44Q131.94 44 131.94 43.66L131.94 20.54Q131.94 20.2 132.28 20.2L133.44 20.2Q133.71 20.2 133.81 20.44L137.96 29.35Q138 29.41 138.06 29.41Q138.13 29.41 138.17 29.35L142.25 20.44Z M171.28 20.44Q171.38 20.2 171.66 20.2L172.81 20.2Q173.15 20.2 173.15 20.54L173.15 43.66Q173.15 44 172.81 44L171.69 44Q171.35 44 171.35 43.66L171.35 24.38Q171.35 24.28 171.28 24.28Q171.21 24.28 171.18 24.35L167.44 32.64Q167.34 32.92 167.1 32.92Q166.83 32.92 166.73 32.68L162.95 24.42Q162.88 24.35 162.83 24.35Q162.78 24.35 162.78 24.45L162.78 43.66Q162.78 44 162.44 44L161.32 44Q160.98 44 160.98 43.66L160.98 20.54Q160.98 20.2 161.32 20.2L162.48 20.2Q162.75 20.2 162.85 20.44L167 29.35Q167.03 29.41 167.1 29.41Q167.17 29.41 167.2 29.35L171.28 20.44Z M200.39 21.46Q200.39 21.8 200.05 21.8L191.99 21.8Q191.85 21.8 191.85 21.93L191.85 31.15Q191.85 31.28 191.99 31.28L197.16 31.28Q197.5 31.28 197.5 31.62L197.5 32.54Q197.5 32.88 197.16 32.88L191.99 32.88Q191.85 32.88 191.85 33.02L191.85 42.27Q191.85 42.4 191.99 42.4L200.05 42.4Q200.39 42.4 200.39 42.74L200.39 43.66Q200.39 44 200.05 44L190.39 44Q190.05 44 190.05 43.66L190.05 20.54Q190.05 20.2 190.39 20.2L200.05 20.2Q200.39 20.2 200.39 20.54L200.39 21.46Z" fill="#12171C"/>
+  <path d="M231.8 44Q231.43 44 231.33 43.66L228.71 34.28Q228.64 34.14 228.54 34.14L227.38 34.14Q227.21 34.14 227.21 34.31L227.21 43.59Q227.21 43.76 227.09 43.88Q226.97 44 226.8 44L222.83 44Q222.66 44 222.54 43.88Q222.42 43.76 222.42 43.59L222.42 20.61Q222.42 20.44 222.54 20.32Q222.66 20.2 222.83 20.2L229.69 20.2Q231.56 20.2 233.03 21.1Q234.49 22 235.29 23.63Q236.09 25.27 236.09 27.37Q236.09 29.38 235.32 30.91Q234.56 32.44 233.2 33.29Q233.13 33.32 233.09 33.38Q233.06 33.43 233.09 33.49L236.22 43.52L236.26 43.66Q236.26 44 235.88 44L231.8 44ZM227.38 24.31Q227.21 24.31 227.21 24.48L227.21 30.3Q227.21 30.47 227.38 30.47L228.91 30.47Q229.97 30.47 230.63 29.64Q231.29 28.8 231.29 27.41Q231.29 25.98 230.63 25.15Q229.97 24.31 228.91 24.31L227.38 24.31Z M256.52 44.27Q253.39 44.27 251.52 42.44Q249.65 40.6 249.65 37.54L249.65 26.66Q249.65 23.6 251.52 21.76Q253.39 19.93 256.52 19.93Q259.65 19.93 261.54 21.76Q263.42 23.6 263.42 26.66L263.42 37.54Q263.42 40.6 261.54 42.44Q259.65 44.27 256.52 44.27ZM256.52 40.16Q257.47 40.16 258.05 39.49Q258.63 38.83 258.63 37.74L258.63 26.46Q258.63 25.37 258.05 24.71Q257.47 24.04 256.52 24.04Q255.57 24.04 255.01 24.71Q254.45 25.37 254.45 26.46L254.45 37.74Q254.45 38.83 255.01 39.49Q255.57 40.16 256.52 40.16Z M284.3 44.27Q281.24 44.27 279.39 42.35Q277.53 40.43 277.53 37.23L277.53 20.61Q277.53 20.44 277.65 20.32Q277.77 20.2 277.94 20.2L281.92 20.2Q282.09 20.2 282.21 20.32Q282.33 20.44 282.33 20.61L282.33 37.71Q282.33 38.8 282.87 39.48Q283.41 40.16 284.3 40.16Q285.18 40.16 285.71 39.48Q286.24 38.8 286.24 37.71L286.24 20.61Q286.24 20.44 286.36 20.32Q286.47 20.2 286.64 20.2L290.62 20.2Q290.79 20.2 290.91 20.32Q291.03 20.44 291.03 20.61L291.03 37.23Q291.03 40.43 289.18 42.35Q287.32 44.27 284.3 44.27Z M311.91 44.27Q308.85 44.27 306.99 42.52Q305.14 40.77 305.14 37.85L305.14 26.35Q305.14 23.43 306.99 21.68Q308.85 19.93 311.91 19.93Q314.97 19.93 316.84 21.7Q318.71 23.46 318.71 26.39L318.71 27.68Q318.71 27.85 318.59 27.97Q318.47 28.09 318.3 28.09L314.32 28.09Q314.15 28.09 314.03 27.97Q313.91 27.85 313.91 27.68L313.91 26.32Q313.91 25.3 313.37 24.67Q312.82 24.04 311.91 24.04Q311.02 24.04 310.48 24.67Q309.93 25.3 309.93 26.32L309.93 37.88Q309.93 38.9 310.48 39.53Q311.02 40.16 311.91 40.16Q312.82 40.16 313.37 39.53Q313.91 38.9 313.91 37.88L313.91 35.16Q313.91 34.99 313.74 34.99L312.25 34.99Q312.08 34.99 311.96 34.87Q311.84 34.75 311.84 34.58L311.84 31.56Q311.84 31.39 311.96 31.27Q312.08 31.15 312.25 31.15L318.3 31.15Q318.47 31.15 318.59 31.27Q318.71 31.39 318.71 31.56L318.71 37.85Q318.71 40.77 316.84 42.52Q314.97 44.27 311.91 44.27Z M345.4 23.91Q345.4 24.08 345.28 24.2Q345.16 24.31 344.99 24.31L337.88 24.31Q337.71 24.31 337.71 24.48L337.71 29.86Q337.71 30.03 337.88 30.03L341.96 30.03Q342.13 30.03 342.25 30.15Q342.37 30.26 342.37 30.43L342.37 33.73Q342.37 33.9 342.25 34.02Q342.13 34.14 341.96 34.14L337.88 34.14Q337.71 34.14 337.71 34.31L337.71 39.72Q337.71 39.89 337.88 39.89L344.99 39.89Q345.16 39.89 345.28 40.01Q345.4 40.12 345.4 40.29L345.4 43.59Q345.4 43.76 345.28 43.88Q345.16 44 344.99 44L333.33 44Q333.16 44 333.04 43.88Q332.92 43.76 332.92 43.59L332.92 20.61Q332.92 20.44 333.04 20.32Q333.16 20.2 333.33 20.2L344.99 20.2Q345.16 20.2 345.28 20.32Q345.4 20.44 345.4 20.61L345.4 23.91Z" fill="#D92D20"/></svg>
+        <div class="cell-cap">
+          <b>Em linha · com mastro</b>
+          <span>Site, e onde houver largura.</span>
+        </div>
+      </div>
+      <div class="cell" style="padding-bottom:1.5rem">
+        <svg viewBox="0 0 347 50" style="width:100%;max-width:17rem;height:auto" role="img" aria-label="Assinatura em linha sem mastro"><g transform="translate(-7.04 10.98) scale(0.48)">
+    
+    <polygon points="23,22 88,22 68,44 88,66 23,66" fill="#D92D20"/>
+  </g>
+  <path d="M64.15 21.46Q64.15 21.8 63.81 21.8L55.82 21.8Q55.69 21.8 55.69 21.93L55.69 31.15Q55.69 31.28 55.82 31.28L60.96 31.28Q61.3 31.28 61.3 31.62L61.3 32.54Q61.3 32.88 60.96 32.88L55.82 32.88Q55.69 32.88 55.69 33.02L55.69 43.66Q55.69 44 55.35 44L54.23 44Q53.89 44 53.89 43.66L53.89 20.54Q53.89 20.2 54.23 20.2L63.81 20.2Q64.15 20.2 64.15 20.54L64.15 21.46Z M79.35 44Q79.01 44 79.01 43.66L79.01 20.54Q79.01 20.2 79.35 20.2L80.47 20.2Q80.81 20.2 80.81 20.54L80.81 42.27Q80.81 42.4 80.95 42.4L88.91 42.4Q89.25 42.4 89.25 42.74L89.25 43.66Q89.25 44 88.91 44L79.35 44Z M112.5 44Q112.2 44 112.13 43.69L111.21 39.24Q111.21 39.17 111.16 39.14Q111.11 39.1 111.04 39.1L104.38 39.1Q104.31 39.1 104.26 39.14Q104.21 39.17 104.21 39.24L103.29 43.69Q103.25 44 102.91 44L101.79 44Q101.62 44 101.54 43.9Q101.45 43.8 101.49 43.63L106.65 20.51Q106.72 20.2 107.03 20.2L108.39 20.2Q108.73 20.2 108.76 20.51L113.96 43.63L113.96 43.69Q113.96 44 113.66 44L112.5 44ZM104.58 37.47Q104.58 37.61 104.68 37.61L110.7 37.61Q110.8 37.61 110.8 37.47L107.78 23.09Q107.74 22.99 107.71 22.99Q107.67 22.99 107.64 23.09L104.58 37.47Z M138.89 20.44Q138.99 20.2 139.26 20.2L140.42 20.2Q140.76 20.2 140.76 20.54L140.76 43.66Q140.76 44 140.42 44L139.29 44Q138.95 44 138.95 43.66L138.95 24.38Q138.95 24.28 138.89 24.28Q138.82 24.28 138.78 24.35L135.04 32.64Q134.94 32.92 134.7 32.92Q134.43 32.92 134.33 32.68L130.56 24.42Q130.49 24.35 130.44 24.35Q130.39 24.35 130.39 24.45L130.39 43.66Q130.39 44 130.05 44L128.92 44Q128.58 44 128.58 43.66L128.58 20.54Q128.58 20.2 128.92 20.2L130.08 20.2Q130.35 20.2 130.45 20.44L134.6 29.35Q134.64 29.41 134.7 29.41Q134.77 29.41 134.81 29.35L138.89 20.44Z M167.92 20.44Q168.02 20.2 168.3 20.2L169.45 20.2Q169.79 20.2 169.79 20.54L169.79 43.66Q169.79 44 169.45 44L168.33 44Q167.99 44 167.99 43.66L167.99 24.38Q167.99 24.28 167.92 24.28Q167.85 24.28 167.82 24.35L164.08 32.64Q163.98 32.92 163.74 32.92Q163.47 32.92 163.37 32.68L159.59 24.42Q159.52 24.35 159.47 24.35Q159.42 24.35 159.42 24.45L159.42 43.66Q159.42 44 159.08 44L157.96 44Q157.62 44 157.62 43.66L157.62 20.54Q157.62 20.2 157.96 20.2L159.12 20.2Q159.39 20.2 159.49 20.44L163.64 29.35Q163.67 29.41 163.74 29.41Q163.81 29.41 163.84 29.35L167.92 20.44Z M197.03 21.46Q197.03 21.8 196.69 21.8L188.63 21.8Q188.49 21.8 188.49 21.93L188.49 31.15Q188.49 31.28 188.63 31.28L193.8 31.28Q194.14 31.28 194.14 31.62L194.14 32.54Q194.14 32.88 193.8 32.88L188.63 32.88Q188.49 32.88 188.49 33.02L188.49 42.27Q188.49 42.4 188.63 42.4L196.69 42.4Q197.03 42.4 197.03 42.74L197.03 43.66Q197.03 44 196.69 44L187.03 44Q186.69 44 186.69 43.66L186.69 20.54Q186.69 20.2 187.03 20.2L196.69 20.2Q197.03 20.2 197.03 20.54L197.03 21.46Z" fill="#12171C"/>
+  <path d="M228.44 44Q228.07 44 227.97 43.66L225.35 34.28Q225.28 34.14 225.18 34.14L224.02 34.14Q223.85 34.14 223.85 34.31L223.85 43.59Q223.85 43.76 223.73 43.88Q223.61 44 223.44 44L219.47 44Q219.3 44 219.18 43.88Q219.06 43.76 219.06 43.59L219.06 20.61Q219.06 20.44 219.18 20.32Q219.3 20.2 219.47 20.2L226.33 20.2Q228.2 20.2 229.67 21.1Q231.13 22 231.93 23.63Q232.73 25.27 232.73 27.37Q232.73 29.38 231.96 30.91Q231.2 32.44 229.84 33.29Q229.77 33.32 229.73 33.38Q229.7 33.43 229.73 33.49L232.86 43.52L232.9 43.66Q232.9 44 232.52 44L228.44 44ZM224.02 24.31Q223.85 24.31 223.85 24.48L223.85 30.3Q223.85 30.47 224.02 30.47L225.55 30.47Q226.61 30.47 227.27 29.64Q227.93 28.8 227.93 27.41Q227.93 25.98 227.27 25.15Q226.61 24.31 225.55 24.31L224.02 24.31Z M253.16 44.27Q250.03 44.27 248.16 42.44Q246.29 40.6 246.29 37.54L246.29 26.66Q246.29 23.6 248.16 21.76Q250.03 19.93 253.16 19.93Q256.29 19.93 258.18 21.76Q260.06 23.6 260.06 26.66L260.06 37.54Q260.06 40.6 258.18 42.44Q256.29 44.27 253.16 44.27ZM253.16 40.16Q254.11 40.16 254.69 39.49Q255.27 38.83 255.27 37.74L255.27 26.46Q255.27 25.37 254.69 24.71Q254.11 24.04 253.16 24.04Q252.21 24.04 251.65 24.71Q251.09 25.37 251.09 26.46L251.09 37.74Q251.09 38.83 251.65 39.49Q252.21 40.16 253.16 40.16Z M280.94 44.27Q277.88 44.27 276.03 42.35Q274.17 40.43 274.17 37.23L274.17 20.61Q274.17 20.44 274.29 20.32Q274.41 20.2 274.58 20.2L278.56 20.2Q278.73 20.2 278.85 20.32Q278.97 20.44 278.97 20.61L278.97 37.71Q278.97 38.8 279.51 39.48Q280.05 40.16 280.94 40.16Q281.82 40.16 282.35 39.48Q282.88 38.8 282.88 37.71L282.88 20.61Q282.88 20.44 283 20.32Q283.11 20.2 283.28 20.2L287.26 20.2Q287.43 20.2 287.55 20.32Q287.67 20.44 287.67 20.61L287.67 37.23Q287.67 40.43 285.82 42.35Q283.96 44.27 280.94 44.27Z M308.55 44.27Q305.49 44.27 303.63 42.52Q301.78 40.77 301.78 37.85L301.78 26.35Q301.78 23.43 303.63 21.68Q305.49 19.93 308.55 19.93Q311.61 19.93 313.48 21.7Q315.35 23.46 315.35 26.39L315.35 27.68Q315.35 27.85 315.23 27.97Q315.11 28.09 314.94 28.09L310.96 28.09Q310.79 28.09 310.67 27.97Q310.55 27.85 310.55 27.68L310.55 26.32Q310.55 25.3 310.01 24.67Q309.46 24.04 308.55 24.04Q307.66 24.04 307.12 24.67Q306.57 25.3 306.57 26.32L306.57 37.88Q306.57 38.9 307.12 39.53Q307.66 40.16 308.55 40.16Q309.46 40.16 310.01 39.53Q310.55 38.9 310.55 37.88L310.55 35.16Q310.55 34.99 310.38 34.99L308.89 34.99Q308.72 34.99 308.6 34.87Q308.48 34.75 308.48 34.58L308.48 31.56Q308.48 31.39 308.6 31.27Q308.72 31.15 308.89 31.15L314.94 31.15Q315.11 31.15 315.23 31.27Q315.35 31.39 315.35 31.56L315.35 37.85Q315.35 40.77 313.48 42.52Q311.61 44.27 308.55 44.27Z M342.04 23.91Q342.04 24.08 341.92 24.2Q341.8 24.31 341.63 24.31L334.52 24.31Q334.35 24.31 334.35 24.48L334.35 29.86Q334.35 30.03 334.52 30.03L338.6 30.03Q338.77 30.03 338.89 30.15Q339.01 30.26 339.01 30.43L339.01 33.73Q339.01 33.9 338.89 34.02Q338.77 34.14 338.6 34.14L334.52 34.14Q334.35 34.14 334.35 34.31L334.35 39.72Q334.35 39.89 334.52 39.89L341.63 39.89Q341.8 39.89 341.92 40.01Q342.04 40.12 342.04 40.29L342.04 43.59Q342.04 43.76 341.92 43.88Q341.8 44 341.63 44L329.97 44Q329.8 44 329.68 43.88Q329.56 43.76 329.56 43.59L329.56 20.61Q329.56 20.44 329.68 20.32Q329.8 20.2 329.97 20.2L341.63 20.2Q341.8 20.2 341.92 20.32Q342.04 20.44 342.04 20.61L342.04 23.91Z" fill="#D92D20"/></svg>
+        <div class="cell-cap">
+          <b>Em linha · sem mastro</b>
+          <span>Painel da direção e app do motorista.</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="note" style="margin-top:-0.6rem">
+      <strong>É a assinatura EM LINHA que tem as duas versões de mastro</strong>,
+      e a escolha é de espaço vertical, não de gosto: num cabeçalho de altura
+      fixa o mastro gasta altura sem acrescentar reconhecimento, e some
+      visualmente no tamanho em que aquele cabeçalho roda. Mesma marca em dois
+      contextos, não duas marcas.
+    </p>
+    <p class="note" style="margin-top:-0.4rem">
+      Em linha as palavras <em>não</em> casam de largura. Empilhadas elas formam
+      um bloco e precisam casar; lado a lado o que dá ritmo é a entreletra
+      corrida, e igualar as larguras abriria um buraco entre as duas.
+    </p>
+
     <p class="note" style="margin-top:-0.6rem">
       A área de proteção é a própria profundidade da mordida — a marca traz sua
       unidade de medida consigo, então a regra não depende de tabela. Nada de
@@ -398,11 +472,6 @@
         <div class="sw-chip" style="background:#ecEFF1"></div>
         <div class="sw-info"><b>Craie</b><span>#ECEFF1</span>
           <span class="sw-use">Marca monocromática sobre escuro.</span></div>
-      </div>
-      <div class="sw">
-        <div class="sw-chip" style="background:#a6e51a"></div>
-        <div class="sw-info"><b>TRAKR lime</b><span>#A6E51A</span>
-          <span class="sw-use">Só no endosso. Nunca isolado.</span></div>
       </div>
     </div>
 
@@ -515,58 +584,29 @@
     </div>
   </section>
 
-  <!-- ===================== 05 · ENDOSSO ===================== -->
+  <!-- ===================== 05 · NOME ===================== -->
   <section>
     <div class="sec-head">
       <p class="sec-num">05</p>
       <div class="block">
-        <h2>O endosso</h2>
+        <h2>Como o nome aparece</h2>
         <p class="note">
-          A marca é própria porque o comprador é próprio: quem contrata direção
-          de prova é organização e federação, não o atleta do TRAKR nem o
-          treinador do TRAKR+. O endosso existe porque a vizinhança é real — o
-          diretor de prova conhece o TRAKR pelos treinadores que passam pelos
-          eventos dele.
+          Duas formas oficiais. Isso não é redundância: doze caracteres em duas
+          palavras seriam encurtados de qualquer jeito na prática, e a diferença
+          entre <em>uma</em> marca e <em>duas</em> é essa redução ter sido
+          desenhada de propósito em vez de acontecer sozinha.
         </p>
-        <p class="note">
-          <strong>Onde usar:</strong> primeiro contato, rodapé, proposta
-          comercial, tela de login. <strong>Onde não usar:</strong> dentro do
-          produto em operação. O motorista no meio da prova não precisa saber
-          quem é a controladora.
-        </p>
-      </div>
-    </div>
-
-    <div class="plate">
-      <div style="display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;justify-content:center">
-        <svg width="76" height="76" viewBox="0 0 100 100" style="color:var(--rouge)" role="img" aria-label="Marca"><use href="#mark-pole"></use></svg>
-        <div style="display:flex;flex-direction:column;gap:0.3rem;line-height:0.92">
-          <span style="font-size:2rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Flamme</span>
-          <span style="font-size:2rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--rouge)">Rouge</span>
-          <span style="font-family:var(--mono);font-size:0.625rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--ink-faint);padding-top:0.6rem">
-            by <span style="color:var(--lime);font-weight:700">TRAKR</span>
-          </span>
-        </div>
       </div>
     </div>
 
     <div class="cells">
       <div class="cell">
-        <div class="cell-cap"><b>Completo</b><span><code>Flamme Rouge</code><br>Login, impressos, domínio, contrato.</span></div>
+        <div class="cell-cap"><b>Completo</b><span><code>Flamme Rouge</code><br>Login, impressos, domínio, contrato, e-mail.</span></div>
       </div>
       <div class="cell">
         <div class="cell-cap"><b>Curto</b><span><code>Flamme</code><br>Cabeçalho estreito, ícone, rádio.</span></div>
       </div>
-      <div class="cell">
-        <div class="cell-cap"><b>Endossado</b><span><code>Flamme Rouge, by TRAKR</code><br>Rodapé, comercial, primeiro contato.</span></div>
-      </div>
     </div>
-    <p class="note" style="margin-top:-0.6rem">
-      As três formas são oficiais. Isso não é redundância: doze caracteres em
-      duas palavras seriam encurtados de qualquer jeito na prática, e a
-      diferença entre <em>uma</em> marca e <em>duas</em> é essa redução ter sido
-      desenhada de propósito em vez de acontecer sozinha.
-    </p>
   </section>
 
   <!-- ===================== 06 · APLICAÇÕES ===================== -->
@@ -654,25 +694,43 @@
       <div class="block">
         <h2>Tipografia</h2>
         <p class="note">
-          Uma advertência honesta antes de qualquer recomendação:
-          <strong>o letreiro atual está composto em fonte de sistema.</strong>
-          Funciona e é legível, mas um logotipo de verdade tem letras
-          desenhadas ou pelo menos uma face licenciada e ajustada. Enquanto
-          isso não for feito, a marca está a meio caminho.
+          A face é <strong>Barlow Condensed</strong>, e a escolha vem da forma
+          da marca: a bandeirola é horizontal, e uma condensada acompanha essa
+          horizontalidade em vez de brigar com ela. FLAMME em 300 e ROUGE em
+          700 — o contraste de peso dá ritmo ao empilhamento e faz a palavra
+          vermelha carregar peso visual junto com a cor, em vez de cor e peso
+          competirem pelo mesmo trabalho.
         </p>
         <ul class="tight">
-          <li><strong>Letreiro</strong> — grotesca pesada, caixa alta, entreletra generosa (0,10 em). Uma face de largura estreita valorizaria a horizontalidade da bandeirola.</li>
-          <li><strong>Interface</strong> — a mesma família em pesos 400/600/700, ou uma neogrotesca neutra. O produto é lido sob pressão; personalidade tipográfica atrapalha.</li>
+          <li><strong>Letreiro</strong> — Barlow Condensed 300 e 700, caixa alta, entreletra 0,10 em. As duas palavras recebem a <em>mesma largura</em>: a folga vai para os espaços entre as letras, nunca para dentro delas.</li>
+          <li><strong>Interface</strong> — Barlow em 400/600/700. O produto é lido sob pressão; personalidade tipográfica atrapalha.</li>
           <li><strong>Dados</strong> — monoespaçada com <code>tabular-nums</code> obrigatório. Distância, tempo e velocidade mudam sozinhos na tela; sem largura fixa o número pula e o olho perde a leitura.</li>
         </ul>
       </div>
     </div>
 
+    <div class="rule-box">
+      <h4>O arquivo do logotipo não contém texto</h4>
+      <p class="note" style="max-width:none">
+        Um <code>&lt;text&gt;</code> em SVG só desenha na fonte pedida se ela
+        existir na máquina que abre o arquivo. Aberto solto, colocado num editor
+        de terceiros, impresso ou rasterizado por uma ferramenta sem a Barlow,
+        o letreiro caía para a reserva — e <strong>ROUGE saía com serifa.</strong>
+      </p>
+      <p class="note" style="max-width:none">
+        Por isso as letras dos arquivos de marca são <strong>curvas</strong>,
+        geradas a partir do arquivo da fonte por <code>npm run brand</code>.
+        O SVG é autocontido: a mesma forma em qualquer máquina, com ou sem fonte
+        instalada, na tela e no papel. É o que se espera de um arquivo de
+        logotipo — e a razão pela qual ele nunca deve ser recomposto à mão.
+      </p>
+    </div>
+
     <div class="plate">
       <div style="display:flex;flex-direction:column;gap:1.4rem;width:100%;max-width:34rem">
         <div>
-          <p class="app-cap" style="margin-bottom:0.4rem">LETREIRO · caixa alta, 0,10 em</p>
-          <p style="font-size:clamp(1.4rem,4vw,2.2rem);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin:0">Flamme Rouge</p>
+          <p class="app-cap" style="margin-bottom:0.4rem">LETREIRO · Barlow Condensed 300 / 700, 0,10 em</p>
+          <p style="font-family:var(--letreiro);font-size:clamp(1.6rem,4.5vw,2.5rem);letter-spacing:0.1em;text-transform:uppercase;margin:0;line-height:0.95"><span style="font-weight:300">Flamme</span> <span style="font-weight:700;color:var(--rouge)">Rouge</span></p>
         </div>
         <div>
           <p class="app-cap" style="margin-bottom:0.4rem">INTERFACE · 400 / 650</p>
@@ -693,10 +751,16 @@
       <div class="block">
         <h2>Os arquivos</h2>
         <p class="note">
-          Existe <strong>uma</strong> definição da marca, em
-          <code>src/brand/mark.ts</code>. Todo o resto é gerado por
-          <code>npm run brand</code>. Um PNG editado à mão é apagado na próxima
-          execução — e isso é o comportamento desejado, não um efeito colateral.
+          Tudo aqui é gerado por <code>npm run brand</code>. Um SVG ou PNG
+          editado à mão é apagado na próxima execução — e isso é o comportamento
+          desejado, não um efeito colateral.
+        </p>
+        <p class="note">
+          A geometria e as cores vivem <strong>num lugar só</strong>,
+          <code>src/brand/mark.ts</code>, e o gerador importa de lá. Até há
+          pouco ele mantinha uma cópia dos mesmos seis valores — batiam porque
+          foram digitados iguais, não porque um lesse o outro. Mudar a
+          bandeirola agora é mudar um arquivo.
         </p>
       </div>
     </div>
@@ -707,7 +771,8 @@
           <tr><th>Arquivo</th><th>Uso</th></tr>
         </thead>
         <tbody>
-          <tr><td>src/brand/mark.ts</td><td>Fonte única: geometria, cores, nomes e a regra de aplicação.</td></tr>
+          <tr><td>src/brand/mark.ts</td><td>Geometria, cores, nomes e a regra de aplicação, para o produto.</td></tr>
+          <tr><td>scripts/build-brand.mjs</td><td>Gera todos os arquivos abaixo. Converte o letreiro em curva a partir de <code>@fontsource/barlow-condensed</code>.</td></tr>
           <tr><td>public/icon.svg</td><td>Favicon vetorial. Nítido em qualquer densidade.</td></tr>
           <tr><td>public/favicon-32.png</td><td>Rede para navegadores sem favicon vetorial.</td></tr>
           <tr><td>public/icon-192.png<br>public/icon-512.png</td><td>Ícone do PWA. Branco sobre rouge.</td></tr>
@@ -716,12 +781,16 @@
           <tr><td>public/brand/mark-rouge.svg</td><td>Símbolo em rouge.</td></tr>
           <tr><td>public/brand/mark-mono-dark.svg<br>public/brand/mark-mono-light.svg</td><td>Monocromáticas. Uso obrigatório em tela operacional.</td></tr>
           <tr><td>public/brand/mark-with-pole.svg</td><td>Símbolo com mastro, mínimo 24 px.</td></tr>
-          <tr><td>public/brand/signature*.svg</td><td>Assinaturas: clara, escura, e as duas endossadas.</td></tr>
+          <tr><td>public/brand/signature.svg<br>public/brand/signature-dark.svg</td><td>Assinatura <strong>empilhada</strong>, sobre claro e sobre escuro. Site, impressos, comercial. Sempre com mastro. <strong>Letras em curva</strong>, sem dependência de fonte.</td></tr>
+          <tr><td>public/brand/signature-inline.svg<br>public/brand/signature-inline-dark.svg</td><td>Assinatura <strong>em linha, com mastro</strong>. Site e onde houver largura.</td></tr>
+          <tr><td>public/brand/signature-inline-no-pole.svg<br>public/brand/signature-inline-no-pole-dark.svg</td><td>Assinatura <strong>em linha, sem mastro</strong>. Cabeçalho do painel e do app do motorista.</td></tr>
+          <tr><td>public/brand/email-mark.png</td><td>Bandeirola em bitmap, para e-mail. HTML de e-mail não renderiza SVG, e o letreiro ali é texto — ver seção 06.</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
 </div>
+
 
 </body></html>
