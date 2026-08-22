@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VENTUNO — manual da marca</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/assets/marca/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ameixa:#551A55; --ameixa-fundo:#F3EEF3; --ameixa-linha:#D9CFD9;
+  --lima:#C8FF00;
+  --papel:#F6F5F2; --cartao:#FFFFFF; --afundado:#EDEBE7;
+  --tinta:#14141A; --tinta-2:#5A5560; --tinta-3:#8B8590; --tinta-4:#ADA7B2;
+  --linha:rgba(20,20,26,.12); --linha-firme:rgba(20,20,26,.28);
+  --malha:rgba(20,20,26,.055);
+  --noite:#0A0A0B;
+  --sans:'Space Grotesk',system-ui,-apple-system,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Consolas,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.folha{max-width:1060px;margin:0 auto;padding:clamp(2rem,5vw,4rem) clamp(1.25rem,4vw,3rem) 6rem}
+a{color:var(--ameixa)}
+
+.kicker{font-family:var(--mono);font-size:.6875rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ameixa);margin:0}
+h1{font-size:clamp(2.1rem,6vw,3.6rem);line-height:1;letter-spacing:-.035em;font-weight:600;margin:.7rem 0 0}
+h2{font-size:clamp(1.3rem,3vw,1.85rem);line-height:1.12;letter-spacing:-.022em;font-weight:600;margin:0}
+h3{font-family:var(--mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-3);font-weight:500;margin:0}
+p{margin:0;max-width:62ch}
+.lede{font-size:1.0625rem;color:var(--tinta-2)}
+.nota{font-size:.9375rem;color:var(--tinta-2)}
+strong{font-weight:600}
+code{font-family:var(--mono);font-size:.875em;background:var(--afundado);padding:.1em .35em}
+
+header.capa{display:flex;flex-direction:column;gap:1.1rem;padding-bottom:3rem;border-bottom:3px solid var(--ameixa)}
+.capa-marca{display:flex;align-items:flex-end;gap:1.6rem;padding:2.2rem 0 .5rem;flex-wrap:wrap}
+.capa-marca .cx{width:132px;height:132px;background:var(--ameixa);display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.capa-marca .cx svg{width:104px;height:auto;display:block}
+.capa-aberta{height:132px;width:auto;display:block}
+.capa-meta{display:flex;flex-wrap:wrap;gap:.4rem 2rem;font-family:var(--mono);font-size:.6875rem;letter-spacing:.06em;color:var(--tinta-3);text-transform:uppercase}
+
+section{display:flex;flex-direction:column;gap:1.75rem;padding:3.5rem 0;border-bottom:1px solid var(--linha)}
+section:last-of-type{border-bottom:0}
+.cab{display:grid;gap:.9rem}
+@media(min-width:820px){.cab{grid-template-columns:9rem minmax(0,1fr);gap:2.5rem;align-items:start}}
+.num{font-family:var(--mono);font-size:.75rem;letter-spacing:.16em;color:var(--tinta-3);padding-top:.35rem}
+.bloco{display:flex;flex-direction:column;gap:.9rem}
+
+.selo{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;white-space:nowrap;margin-top:.5rem;align-self:flex-start}
+.selo--doc{background:var(--tinta);color:var(--papel)}
+.selo--prop{background:transparent;color:var(--ameixa);border:1px solid var(--ameixa)}
+
+.chapa{background:var(--cartao);border:1px solid var(--linha);display:grid;place-items:center;padding:clamp(1.75rem,5vw,3.5rem) 1.25rem;overflow-x:auto}
+.chapa-malha{background-image:linear-gradient(var(--malha) 1px,transparent 1px),linear-gradient(90deg,var(--malha) 1px,transparent 1px);background-size:24px 24px;background-position:center}
+
+.celulas{display:grid;gap:1px;background:var(--linha);border:1px solid var(--linha);grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr))}
+.cel{background:var(--cartao);padding:1.6rem 1.25rem 1.25rem;display:flex;flex-direction:column;align-items:center;gap:1.1rem;text-align:center}
+.cel--escura{background:var(--noite)}
+.cel-cap{display:flex;flex-direction:column;gap:.3rem}
+.cel-cap b{font-family:var(--mono);font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase}
+.cel-cap span{font-size:.85rem;color:var(--tinta-2);line-height:1.45}
+.cel--escura .cel-cap b{color:var(--papel)}
+.cel--escura .cel-cap span{color:var(--tinta-4)}
+
+.palco{height:104px;display:grid;place-items:center}
+.palco svg{height:74px;width:auto;display:block}
+.palco .cx{width:104px;height:104px;background:var(--ameixa);display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.palco .cx svg{width:82px;height:auto}
+
+.amostras{display:grid;gap:1px;background:var(--linha);border:1px solid var(--linha);grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr))}
+.am{background:var(--cartao);display:flex;flex-direction:column}
+.am-chip{height:5.5rem}
+.am-info{padding:.85rem .95rem;display:flex;flex-direction:column;gap:.3rem}
+.am-info b{font-size:.9375rem;font-weight:600}
+.am-info span{font-family:var(--mono);font-size:.6875rem;color:var(--tinta-3)}
+.am-uso{font-size:.8125rem;color:var(--tinta-2);line-height:1.4;padding-top:.2rem}
+
+.caixa-regra{border:2px solid var(--ameixa);padding:1.5rem;display:flex;flex-direction:column;gap:.9rem;background:var(--cartao)}
+.caixa-regra h4{margin:0;font-size:1.05rem;font-weight:600;letter-spacing:-.01em}
+
+.simnao{display:grid;gap:1px;background:var(--linha);border:1px solid var(--linha);grid-template-columns:repeat(auto-fit,minmax(min(100%,12rem),1fr))}
+.sn{background:var(--cartao);padding:1.4rem 1rem 1.1rem;display:flex;flex-direction:column;align-items:center;gap:.9rem;text-align:center}
+.sn-arte{width:100%;height:6rem;display:grid;place-items:center;background:var(--afundado);overflow:hidden}
+.sn-arte svg{height:52px;width:auto}
+.sn-tag{font-family:var(--mono);font-size:.625rem;letter-spacing:.12em;text-transform:uppercase}
+.sn-tag.sim{color:#1a7f4b}
+.sn-tag.nao{color:#c02418}
+.sn p{font-size:.8125rem;color:var(--tinta-2);line-height:1.4}
+
+.dados{width:100%;border-collapse:collapse;font-size:.875rem}
+.dados th,.dados td{text-align:left;padding:.6rem .75rem;border-bottom:1px solid var(--linha);vertical-align:top}
+.dados th{font-family:var(--mono);font-size:.625rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-3);font-weight:500}
+.dados td:first-child{color:var(--tinta-2)}
+.dados td:nth-child(2){font-family:var(--mono);white-space:nowrap}
+.dados td:last-child{color:var(--tinta-3);font-size:.8125rem}
+.dados-wrap{overflow-x:auto;border:1px solid var(--linha);background:var(--cartao)}
+
+ul.enxuta{margin:0;padding-left:1.05rem;display:flex;flex-direction:column;gap:.4rem}
+ul.enxuta li{font-size:.9375rem;color:var(--tinta-2)}
+ul.enxuta li::marker{color:var(--ameixa)}
+
+.malha-svg{width:100%;max-width:460px;height:auto;display:block;margin:0 auto}
+.malha-svg .g{stroke:var(--linha-firme);stroke-width:2.4;fill:none}
+.malha-svg .corte{stroke:var(--ameixa);stroke-width:5;stroke-dasharray:16 10}
+.malha-svg text{font-family:'JetBrains Mono',monospace;font-size:32px;fill:var(--tinta-3)}
+.malha-svg text.dest{fill:var(--ameixa)}
+
+footer{border-top:1px solid var(--linha);background:var(--cartao);padding:30px 0 44px;margin-top:20px}
+footer .folha{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-bottom:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-4)}
+.topo{border-bottom:1px solid var(--linha);background:var(--cartao)}
+.topo .folha{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:74px;padding-top:0;padding-bottom:0;flex-wrap:wrap}
+.topo .assin{display:inline-flex;align-items:flex-end;gap:.7rem}
+.topo .cx{width:38px;height:38px;background:var(--ameixa);display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.topo .cx svg{width:30px;height:auto;display:block}
+.topo .nome{font-weight:600;letter-spacing:.14em;font-size:14px}
+.volta{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-3);text-decoration:none}
+.volta:hover{color:var(--ameixa)}
+</style>
+</head>
+<body>
+
+<div class="topo">
+  <div class="folha">
+    <span class="assin"><span class="cx"><svg class="" viewBox="0 0 1325.95 902.28" fill="#FFFFFF" fill-rule="nonzero" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M-0 902.28c9.08,-27.98 20.11,-54.65 33.08,-80.02 36.57,-71.94 96.64,-146.74 179.98,-224.14 15.43,-14.25 49.86,-42.74 103.53,-85.48 53.9,-42.74 94.98,-80.73 123.23,-114.21 18.99,-22.32 33.24,-45.35 42.74,-69.57 9.5,-23.98 14.25,-48.68 14.25,-73.61 0,-37.28 -8.31,-65.53 -24.93,-85 -16.62,-19.47 -41.32,-29.21 -73.61,-29.21 -37.04,0 -65.06,16.15 -84.06,48.2 -18.99,32.06 -29.68,81.44 -32.53,148.4l-185.21 0c2.37,-112.31 29.44,-196.6 81.44,-253.11 51.76,-56.27 128.93,-84.53 230.79,-84.53 86.67,0 154.81,22.32 203.96,67.2 49.15,44.64 73.61,106.37 73.61,184.73 0,66.72 -14.96,126.79 -45.11,179.98 -30.16,52.95 -98.78,124.89 -205.86,215.36l-4.27 3.33c-134.76,114.4 -212.58,198.15 -233.46,251.69l-197.58 0zm949.93 0l126.23 -613.07c-35.62,5.94 -72.9,10.92 -111.36,14.96 -38.46,3.8 -77.64,6.89 -117.53,9.26l24.93 -125.37c87.85,-7.83 157.19,-26.36 208.48,-55.8 51.29,-29.2 89.28,-71.94 113.74,-127.98l131.54 0 -186.48 898 -189.54 0z"/></svg></span><span class="nome">VENTUNO</span></span>
+    <a class="volta" href="/#identity">← voltar ao site</a>
+  </div>
+</div>
+
+<div class="folha">
+
+  <header class="capa">
+    <p class="kicker">Manual da marca · v1</p>
+    <h1>VENTUNO</h1>
+    <div class="capa-marca">
+      <span class="cx"><svg class="" viewBox="0 0 1325.95 902.28" fill="#FFFFFF" fill-rule="nonzero" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M-0 902.28c9.08,-27.98 20.11,-54.65 33.08,-80.02 36.57,-71.94 96.64,-146.74 179.98,-224.14 15.43,-14.25 49.86,-42.74 103.53,-85.48 53.9,-42.74 94.98,-80.73 123.23,-114.21 18.99,-22.32 33.24,-45.35 42.74,-69.57 9.5,-23.98 14.25,-48.68 14.25,-73.61 0,-37.28 -8.31,-65.53 -24.93,-85 -16.62,-19.47 -41.32,-29.21 -73.61,-29.21 -37.04,0 -65.06,16.15 -84.06,48.2 -18.99,32.06 -29.68,81.44 -32.53,148.4l-185.21 0c2.37,-112.31 29.44,-196.6 81.44,-253.11 51.76,-56.27 128.93,-84.53 230.79,-84.53 86.67,0 154.81,22.32 203.96,67.2 49.15,44.64 73.61,106.37 73.61,184.73 0,66.72 -14.96,126.79 -45.11,179.98 -30.16,52.95 -98.78,124.89 -205.86,215.36l-4.27 3.33c-134.76,114.4 -212.58,198.15 -233.46,251.69l-197.58 0zm949.93 0l126.23 -613.07c-35.62,5.94 -72.9,10.92 -111.36,14.96 -38.46,3.8 -77.64,6.89 -117.53,9.26l24.93 -125.37c87.85,-7.83 157.19,-26.36 208.48,-55.8 51.29,-29.2 89.28,-71.94 113.74,-127.98l131.54 0 -186.48 898 -189.54 0z"/></svg></span>
+      <svg class="capa-aberta" viewBox="0 0 1325.95 902.28" fill="#551A55" fill-rule="nonzero" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M-0 902.28c9.08,-27.98 20.11,-54.65 33.08,-80.02 36.57,-71.94 96.64,-146.74 179.98,-224.14 15.43,-14.25 49.86,-42.74 103.53,-85.48 53.9,-42.74 94.98,-80.73 123.23,-114.21 18.99,-22.32 33.24,-45.35 42.74,-69.57 9.5,-23.98 14.25,-48.68 14.25,-73.61 0,-37.28 -8.31,-65.53 -24.93,-85 -16.62,-19.47 -41.32,-29.21 -73.61,-29.21 -37.04,0 -65.06,16.15 -84.06,48.2 -18.99,32.06 -29.68,81.44 -32.53,148.4l-185.21 0c2.37,-112.31 29.44,-196.6 81.44,-253.11 51.76,-56.27 128.93,-84.53 230.79,-84.53 86.67,0 154.81,22.32 203.96,67.2 49.15,44.64 73.61,106.37 73.61,184.73 0,66.72 -14.96,126.79 -45.11,179.98 -30.16,52.95 -98.78,124.89 -205.86,215.36l-4.27 3.33c-134.76,114.4 -212.58,198.15 -233.46,251.69l-197.58 0zm949.93 0l126.23 -613.07c-35.62,5.94 -72.9,10.92 -111.36,14.96 -38.46,3.8 -77.64,6.89 -117.53,9.26l24.93 -125.37c87.85,-7.83 157.19,-26.36 208.48,-55.8 51.29,-29.2 89.28,-71.94 113.74,-127.98l131.54 0 -186.48 898 -189.54 0z"/></svg>
+    </div>
+    <p class="lede">021 é o código de área do Rio de Janeiro. Ventuno é vinte e um em italiano. A marca é o encontro dos dois: dois algarismos que dizem de onde a pessoa veio e onde ela trabalha, sem precisar de legenda em nenhum dos dois lugares.</p>
+    <div class="capa-meta">
+      <span>Rio de Janeiro · Cuneo</span>
+      <span>Marca única, sem endosso</span>
+      <span>Fonte: 21.svg</span>
+    </div>
+  </header>
+
+  <section>
+    <div class="cab">
+      <p class="num">01</p>
+      <div class="bloco">
+        <h2>O corte é a marca</h2>
+        <span class="selo selo--doc">documentado</span>
+      </div>
+    </div>
+    <p class="lede">O 21 deriva da Swiss 721 Cn BT Bold Italic, e a única intervenção feita sobre a letra é também a coisa mais importante da marca: <strong>um corte horizontal reto no topo da base do “2”.</strong></p>
+    <p class="nota">A barra que fecharia o “2” na linha de base foi removida. O pé do “1” também. Os dois algarismos terminam retos na mesma linha, e é isso que faz a marca parecer que continua para fora do quadro em vez de terminar dentro dele.</p>
+
+    <div class="chapa chapa-malha">
+      <svg class="malha-svg" viewBox="-70 -60 1470 1080" xmlns="http://www.w3.org/2000/svg">
+        <g class="g">
+          <line x1="-40" y1="0" x2="1400" y2="0"/>
+          <line x1="0" y1="-30" x2="0" y2="960"/>
+          <line x1="1325.95" y1="-30" x2="1325.95" y2="960"/>
+        </g>
+        <path d="M-0 902.28c9.08,-27.98 20.11,-54.65 33.08,-80.02 36.57,-71.94 96.64,-146.74 179.98,-224.14 15.43,-14.25 49.86,-42.74 103.53,-85.48 53.9,-42.74 94.98,-80.73 123.23,-114.21 18.99,-22.32 33.24,-45.35 42.74,-69.57 9.5,-23.98 14.25,-48.68 14.25,-73.61 0,-37.28 -8.31,-65.53 -24.93,-85 -16.62,-19.47 -41.32,-29.21 -73.61,-29.21 -37.04,0 -65.06,16.15 -84.06,48.2 -18.99,32.06 -29.68,81.44 -32.53,148.4l-185.21 0c2.37,-112.31 29.44,-196.6 81.44,-253.11 51.76,-56.27 128.93,-84.53 230.79,-84.53 86.67,0 154.81,22.32 203.96,67.2 49.15,44.64 73.61,106.37 73.61,184.73 0,66.72 -14.96,126.79 -45.11,179.98 -30.16,52.95 -98.78,124.89 -205.86,215.36l-4.27 3.33c-134.76,114.4 -212.58,198.15 -233.46,251.69l-197.58 0zm949.93 0l126.23 -613.07c-35.62,5.94 -72.9,10.92 -111.36,14.96 -38.46,3.8 -77.64,6.89 -117.53,9.26l24.93 -125.37c87.85,-7.83 157.19,-26.36 208.48,-55.8 51.29,-29.2 89.28,-71.94 113.74,-127.98l131.54 0 -186.48 898 -189.54 0z" fill="#551A55"/>
+        <line class="corte" x1="-50" y1="902.28" x2="1400" y2="902.28"/>
+        <text x="-56" y="-14">0</text>
+        <text x="1230" y="-14">1325,95</text>
+        <text class="dest" x="-56" y="965">902,28 — a linha do corte</text>
+      </svg>
+    </div>
+
+    <div class="caixa-regra">
+      <h4>A marca já vem cortada. Nunca recortar de novo.</h4>
+      <p class="nota" style="max-width:none">O arquivo <code>21.svg</code> é o desenho final: o corte está nas curvas, não no enquadramento. Aplicar uma sangria por cima dele come parte do desenho e destrói a proporção — <strong>o “2” perde a diagonal e o “1” encurta.</strong></p>
+      <p class="nota" style="max-width:none">Quando a marca for usada dentro de uma caixa, a base dela <strong>encosta</strong> na borda de baixo. Não passa, não sobra.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="cab">
+      <p class="num">02</p>
+      <div class="bloco">
+        <h2>Construção</h2>
+        <span class="selo selo--doc">documentado</span>
+      </div>
+    </div>
+    <p class="lede">Todas as medidas em unidades do desenho, onde a altura do “2” é 902,28. Proporções, não milímetros — a marca escala sem tabela.</p>
+
+    <div class="dados-wrap">
+      <table class="dados">
+        <thead><tr><th>Medida</th><th>Unidades</th><th>Relação</th></tr></thead>
+        <tbody>
+          <tr><td>Largura total</td><td>1325,95</td><td>146,96% da altura</td></tr>
+          <tr><td>Altura do “2” (até o corte)</td><td>902,28</td><td>a referência: 100%</td></tr>
+          <tr><td>Altura do “1”</td><td>898,00</td><td>99,5% — o “2” transborda 4,28 no topo</td></tr>
+          <tr><td>Largura do “2”</td><td>686,30</td><td>76,1% da altura</td></tr>
+          <tr><td>Largura do “1”</td><td>478,70</td><td>53,1% da altura</td></tr>
+          <tr><td>Vão entre os algarismos</td><td>161,00</td><td>17,8% da altura</td></tr>
+          <tr><td>Haste</td><td>190,00</td><td>21,1% da altura, constante</td></tr>
+          <tr><td>Ângulo do itálico</td><td>11,68°</td><td>nas curvas, nunca por transformação</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="caixa-regra">
+      <h4>Duas medidas que não são acaso</h4>
+      <p class="nota" style="max-width:none"><strong>A haste mede 190 em toda a altura.</strong> Medi em quatro alturas diferentes e o valor não varia um décimo — o traço não afina, e é isso que segura a marca legível a 16 px.</p>
+      <p class="nota" style="max-width:none"><strong>O “2” é 4,28 unidades mais alto que o “1”.</strong> É transbordo tipográfico: o topo curvo do 2 ultrapassa a linha de altura de propósito, porque uma curva que para na mesma linha de uma reta <em>parece</em> mais baixa. Corrigir esse desnível estraga a marca.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="cab">
+      <p class="num">03</p>
+      <div class="bloco">
+        <h2>As três versões</h2>
+        <span class="selo selo--doc">documentado</span>
+      </div>
+    </div>
+    <p class="lede">A escolha é pelo fundo, nunca pelo gosto.</p>
+
+    <div class="celulas">
+      <div class="cel">
+        <div class="palco"><svg class="" viewBox="0 0 1325.95 902.28" fill="#551A55" fill-rule="nonzero" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M-0 902.28c9.08,-27.98 20.11,-54.65 33.08,-80.02 36.57,-71.94 96.64,-146.74 179.98,-224.14 15.43,-14.25 49.86,-42.74 103.53,-85.48 53.9,-42.74 94.98,-80.73 123.23,-114.21 18.99,-22.32 33.24,-45.35 42.74,-69.57 9.5,-23.98 14.25,-48.68 14.25,-73.61 0,-37.28 -8.31,-65.53 -24.93,-85 -16.62,-19.47 -41.32,-29.21 -73.61,-29.21 -37.04,0 -65.06,16.15 -84.06,48.2 -18.99,32.06 -29.68,81.44 -32.53,148.4l-185.21 0c2.37,-112.31 29.44,-196.6 81.44,-253.11 51.76,-56.27 128.93,-84.53 230.79,-84.53 86.67,0 154.81,22.32 203.96,67.2 49.15,44.64 73.61,106.37 73.61,184.73 0,66.72 -14.96,126.79 -45.11,179.98 -30.16,52.95 -98.78,124.89 -205.86,215.36l-4.27 3.33c-134.76,114.4 -212.58,198.15 -233.46,251.69l-197.58 0zm949.93 0l126.23 -613.07c-35.62,5.94 -72.9,10.92 -111.36,14.96 -38.46,3.8 -77.64,6.89 -117.53,9.26l24.93 -125.37c87.85,-7.83 157.19,-26.36 208.48,-55.8 51.29,-29.2 89.28,-71.94 113.74,-127.98l131.54 0 -186.48 898 -189.54 0z"/></svg></div>
+        <div class="cel-cap"><b>Aberta, ameixa</b><span>Fundo claro: papel, assinatura de e-mail, documento.</span></div>
+      </div>
+      <div class="cel cel--escura">
+        <div class="palco"><svg class="" viewBox="0 0 1325.95 902.28" fill="#FFFFFF" fill-rule="nonzero" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M-0 902.28c9.08,-27.98 20.11,-54.65 33.08,-80.02 36.57,-71.94 96.64,-146.74 179.98,-224.14 15.43,-14.25 49.86,-42.74 103.53,-85.48 53.9,-42.74 94.98,-80.73 123.23,-114.21 18.99,-22.32 33.24,-45.35 42.74,-69.57 9.5,-23.98 14.25,-48.68 14.25,-73.61 0,-37.28 -8.31,-65.53 -24.93,-85 -16.62,-19.47 -41.32,-29.21 -73.61,-29.21 -37.04,0 -65.06,16.15 -84.06,48.2 -18.99,32.06 -29.68,81.44 -32.53,148.4l-185.21 0c2.37,-112.31 29.44,-196.6 81.44,-253.11 51.76,-56.27 128.93,-84.53 230.79,-84.53 86.67,0 154.81,22.32 203.96,67.2 49.15,44.64 73.61,106.37 73.61,184.73 0,66.72 -14.96,126.79 -45.11,179.98 -30.16,52.95 -98.78,124.89 -205.86,215.36l-4.27 3.33c-134.76,114.4 -212.58,198.15 -233.46,251.69l-197.58 0zm949.93 0l126.23 -613.07c-35.62,5.94 -72.9,10.92 -111.36,14.96 -38.46,3.8 -77.64,6.89 -117.53,9.26l24.93 -125.37c87.85,-7.83 157.19,-26.36 208.48,-55.8 51.29,-29.2 89.28,-71.94 113.74,-127.98l131.54 0 -186.48 898 -189.54 0z"/></svg></div>
+        <div class="cel-cap"><b>Aberta, branca</b><span>Fundo escuro: o site, apresentação, slide.</span></div>
+      </div>
+      <div class="cel">
+        <div class="palco"><span class="cx"><svg class="" viewBox="0 0 1325.95 902.28" fill="#FFFFFF" fill-rule="nonzero" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M-0 902.28c9.08,-27.98 20.11,-54.65 33.08,-80.02 36.57,-71.94 96.64,-146.74 179.98,-224.14 15.43,-14.25 49.86,-42.74 103.53,-85.48 53.9,-42.74 94.98,-80.73 123.23,-114.21 18.99,-22.32 33.24,-45.35 42.74,-69.57 9.5,-23.98 14.25,-48.68 14.25,-73.61 0,-37.28 -8.31,-65.53 -24.93,-85 -16.62,-19.47 -41.32,-29.21 -73.61,-29.21 -37.04,0 -65.06,16.15 -84.06,48.2 -18.99,32.06 -29.68,81.44 -32.53,148.4l-185.21 0c2.37,-112.31 29.44,-196.6 81.44,-253.11 51.76,-56.27 128.93,-84.53 230.79,-84.53 86.67,0 154.81,22.32 203.96,67.2 49.15,44.64 73.61,106.37 73.61,184.73 0,66.72 -14.96,126.79 -45.11,179.98 -30.16,52.95 -98.78,124.89 -205.86,215.36l-4.27 3.33c-134.76,114.4 -212.58,198.15 -233.46,251.69l-197.58 0zm949.93 0l126.23 -613.07c-35.62,5.94 -72.9,10.92 -111.36,14.96 -38.46,3.8 -77.64,6.89 -117.53,9.26l24.93 -125.37c87.85,-7.83 157.19,-26.36 208.48,-55.8 51.29,-29.2 89.28,-71.94 113.74,-127.98l131.54 0 -186.48 898 -189.54 0z"/></svg></span></div>
+        <div class="cel-cap"><b>Caixa</b><span>Fundo que você não controla: favicon, avatar, ícone, foto.</span></div>
+      </div>
+    </div>
+
+    <p class="nota">A caixa é a única versão que sobrevive a qualquer coisa por trás dela, e é onde o corte faz mais trabalho: a base do 21 encosta na borda de baixo e a marca parece sair do quadro. As abertas são o símbolo; a caixa é o lockup.</p>
+  </section>
+
+  <section>
+    <div class="cab">
+      <p class="num">04</p>
+      <div class="bloco">
+        <h2>Cor</h2>
+        <span class="selo selo--doc">documentado</span>
+      </div>
+    </div>
+    <p class="lede">Duas cores fazem trabalhos opostos e nunca se encontram: o ameixa é a cor da marca no papel, o lima é a linguagem do site. A marca em si nunca carrega cor própria — ela é monocromática por regra.</p>
+
+    <div class="amostras">
+      <div class="am"><div class="am-chip" style="background:#551A55"></div><div class="am-info"><b>Ameixa</b><span>#551A55</span><span class="am-uso">A cor da marca. Papel, assinatura, documento.</span></div></div>
+      <div class="am"><div class="am-chip" style="background:#C8FF00"></div><div class="am-info"><b>Lima</b><span>#C8FF00</span><span class="am-uso">Acento do site. Nunca na marca.</span></div></div>
+      <div class="am"><div class="am-chip" style="background:#0A0A0B"></div><div class="am-info"><b>Noite</b><span>#0A0A0B</span><span class="am-uso">Fundo do site.</span></div></div>
+      <div class="am"><div class="am-chip" style="background:#F6F5F2"></div><div class="am-info"><b>Papel</b><span>#F6F5F2</span><span class="am-uso">Fundo claro, documento impresso.</span></div></div>
+    </div>
+
+    <div class="caixa-regra">
+      <h4>O ameixa foi escolhido contra o azul</h4>
+      <p class="nota" style="max-width:none">O critério foi “roxo sem azul, com leve tom de vinho”. Um índigo (#2E3092) foi testado e recusado por puxar para o azul. O ameixa fica em 300° de matiz — o ponto onde o roxo já saiu do azul mas ainda não virou bordô.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="cab">
+      <p class="num">05</p>
+      <div class="bloco">
+        <h2>Respiro e tamanho mínimo</h2>
+        <span class="selo selo--prop">proposta</span>
+      </div>
+    </div>
+    <p class="lede">Isto ainda não estava definido. É proposta, derivada da geometria da própria marca — se você mudar, vira regra.</p>
+
+    <div class="celulas">
+      <div class="cel">
+        <div class="palco"><span style="display:inline-block;padding:19px;outline:1px dashed var(--ameixa)"><svg class="" viewBox="0 0 1325.95 902.28" fill="#551A55" fill-rule="nonzero" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M-0 902.28c9.08,-27.98 20.11,-54.65 33.08,-80.02 36.57,-71.94 96.64,-146.74 179.98,-224.14 15.43,-14.25 49.86,-42.74 103.53,-85.48 53.9,-42.74 94.98,-80.73 123.23,-114.21 18.99,-22.32 33.24,-45.35 42.74,-69.57 9.5,-23.98 14.25,-48.68 14.25,-73.61 0,-37.28 -8.31,-65.53 -24.93,-85 -16.62,-19.47 -41.32,-29.21 -73.61,-29.21 -37.04,0 -65.06,16.15 -84.06,48.2 -18.99,32.06 -29.68,81.44 -32.53,148.4l-185.21 0c2.37,-112.31 29.44,-196.6 81.44,-253.11 51.76,-56.27 128.93,-84.53 230.79,-84.53 86.67,0 154.81,22.32 203.96,67.2 49.15,44.64 73.61,106.37 73.61,184.73 0,66.72 -14.96,126.79 -45.11,179.98 -30.16,52.95 -98.78,124.89 -205.86,215.36l-4.27 3.33c-134.76,114.4 -212.58,198.15 -233.46,251.69l-197.58 0zm949.93 0l126.23 -613.07c-35.62,5.94 -72.9,10.92 -111.36,14.96 -38.46,3.8 -77.64,6.89 -117.53,9.26l24.93 -125.37c87.85,-7.83 157.19,-26.36 208.48,-55.8 51.29,-29.2 89.28,-71.94 113.74,-127.98l131.54 0 -186.48 898 -189.54 0z"/></svg></span></div>
+        <div class="cel-cap"><b>Respiro</b><span>Uma largura de haste (21% da altura) nos quatro lados. A medida sai da marca, então escala junto.</span></div>
+      </div>
+      <div class="cel">
+        <div class="palco" style="gap:14px;grid-auto-flow:column"><span style="display:grid;place-items:center"><svg class="" viewBox="0 0 1325.95 902.28" fill="#551A55" fill-rule="nonzero" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M-0 902.28c9.08,-27.98 20.11,-54.65 33.08,-80.02 36.57,-71.94 96.64,-146.74 179.98,-224.14 15.43,-14.25 49.86,-42.74 103.53,-85.48 53.9,-42.74 94.98,-80.73 123.23,-114.21 18.99,-22.32 33.24,-45.35 42.74,-69.57 9.5,-23.98 14.25,-48.68 14.25,-73.61 0,-37.28 -8.31,-65.53 -24.93,-85 -16.62,-19.47 -41.32,-29.21 -73.61,-29.21 -37.04,0 -65.06,16.15 -84.06,48.2 -18.99,32.06 -29.68,81.44 -32.53,148.4l-185.21 0c2.37,-112.31 29.44,-196.6 81.44,-253.11 51.76,-56.27 128.93,-84.53 230.79,-84.53 86.67,0 154.81,22.32 203.96,67.2 49.15,44.64 73.61,106.37 73.61,184.73 0,66.72 -14.96,126.79 -45.11,179.98 -30.16,52.95 -98.78,124.89 -205.86,215.36l-4.27 3.33c-134.76,114.4 -212.58,198.15 -233.46,251.69l-197.58 0zm949.93 0l126.23 -613.07c-35.62,5.94 -72.9,10.92 -111.36,14.96 -38.46,3.8 -77.64,6.89 -117.53,9.26l24.93 -125.37c87.85,-7.83 157.19,-26.36 208.48,-55.8 51.29,-29.2 89.28,-71.94 113.74,-127.98l131.54 0 -186.48 898 -189.54 0z"/></svg></span></div>
+        <div class="cel-cap"><b>Mínimo, aberta</b><span><strong>64 px</strong> de largura em tela, <strong>18 mm</strong> em papel.</span></div>
+      </div>
+      <div class="cel">
+        <div class="palco"><span class="cx" style="width:44px;height:44px"><svg class="" viewBox="0 0 1325.95 902.28" fill="#FFFFFF" fill-rule="nonzero" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M-0 902.28c9.08,-27.98 20.11,-54.65 33.08,-80.02 36.57,-71.94 96.64,-146.74 179.98,-224.14 15.43,-14.25 49.86,-42.74 103.53,-85.48 53.9,-42.74 94.98,-80.73 123.23,-114.21 18.99,-22.32 33.24,-45.35 42.74,-69.57 9.5,-23.98 14.25,-48.68 14.25,-73.61 0,-37.28 -8.31,-65.53 -24.93,-85 -16.62,-19.47 -41.32,-29.21 -73.61,-29.21 -37.04,0 -65.06,16.15 -84.06,48.2 -18.99,32.06 -29.68,81.44 -32.53,148.4l-185.21 0c2.37,-112.31 29.44,-196.6 81.44,-253.11 51.76,-56.27 128.93,-84.53 230.79,-84.53 86.67,0 154.81,22.32 203.96,67.2 49.15,44.64 73.61,106.37 73.61,184.73 0,66.72 -14.96,126.79 -45.11,179.98 -30.16,52.95 -98.78,124.89 -205.86,215.36l-4.27 3.33c-134.76,114.4 -212.58,198.15 -233.46,251.69l-197.58 0zm949.93 0l126.23 -613.07c-35.62,5.94 -72.9,10.92 -111.36,14.96 -38.46,3.8 -77.64,6.89 -117.53,9.26l24.93 -125.37c87.85,-7.83 157.19,-26.36 208.48,-55.8 51.29,-29.2 89.28,-71.94 113.74,-127.98l131.54 0 -186.48 898 -189.54 0z"/></svg></span></div>
+        <div class="cel-cap"><b>Mínimo, caixa</b><span><strong>32 px</strong>. Abaixo disso o vão entre os algarismos fecha.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="cab">
+      <p class="num">06</p>
+      <div class="bloco">
+        <h2>Usos indevidos</h2>
+        <span class="selo selo--prop">proposta</span>
+      </div>
+    </div>
+    <p class="lede">Seis maneiras de estragar a marca. As duas primeiras são as que realmente vão acontecer.</p>
+
+    <div class="simnao">
+      <div class="sn">
+        <div class="sn-arte"><svg class="" viewBox="0 0 1325.95 902.28" fill="#551A55" fill-rule="nonzero" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M-0 902.28c9.08,-27.98 20.11,-54.65 33.08,-80.02 36.57,-71.94 96.64,-146.74 179.98,-224.14 15.43,-14.25 49.86,-42.74 103.53,-85.48 53.9,-42.74 94.98,-80.73 123.23,-114.21 18.99,-22.32 33.24,-45.35 42.74,-69.57 9.5,-23.98 14.25,-48.68 14.25,-73.61 0,-37.28 -8.31,-65.53 -24.93,-85 -16.62,-19.47 -41.32,-29.21 -73.61,-29.21 -37.04,0 -65.06,16.15 -84.06,48.2 -18.99,32.06 -29.68,81.44 -32.53,148.4l-185.21 0c2.37,-112.31 29.44,-196.6 81.44,-253.11 51.76,-56.27 128.93,-84.53 230.79,-84.53 86.67,0 154.81,22.32 203.96,67.2 49.15,44.64 73.61,106.37 73.61,184.73 0,66.72 -14.96,126.79 -45.11,179.98 -30.16,52.95 -98.78,124.89 -205.86,215.36l-4.27 3.33c-134.76,114.4 -212.58,198.15 -233.46,251.69l-197.58 0zm949.93 0l126.23 -613.07c-35.62,5.94 -72.9,10.92 -111.36,14.96 -38.46,3.8 -77.64,6.89 -117.53,9.26l24.93 -125.37c87.85,-7.83 157.19,-26.36 208.48,-55.8 51.29,-29.2 89.28,-71.94 113.74,-127.98l131.54 0 -186.48 898 -189.54 0z"/></svg></div>
+        <span class="sn-tag sim">✓ Correto</span>
+        <p>Proporção original, cor sólida, o corte como veio.</p>
+      </div>
+      <div class="sn">
+        <div class="sn-arte"><span style="display:block;height:52px;overflow:hidden"><svg class="" viewBox="0 0 1325.95 902.28" fill="#551A55" fill-rule="nonzero" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M-0 902.28c9.08,-27.98 20.11,-54.65 33.08,-80.02 36.57,-71.94 96.64,-146.74 179.98,-224.14 15.43,-14.25 49.86,-42.74 103.53,-85.48 53.9,-42.74 94.98,-80.73 123.23,-114.21 18.99,-22.32 33.24,-45.35 42.74,-69.57 9.5,-23.98 14.25,-48.68 14.25,-73.61 0,-37.28 -8.31,-65.53 -24.93,-85 -16.62,-19.47 -41.32,-29.21 -73.61,-29.21 -37.04,0 -65.06,16.15 -84.06,48.2 -18.99,32.06 -29.68,81.44 -32.53,148.4l-185.21 0c2.37,-112.31 29.44,-196.6 81.44,-253.11 51.76,-56.27 128.93,-84.53 230.79,-84.53 86.67,0 154.81,22.32 203.96,67.2 49.15,44.64 73.61,106.37 73.61,184.73 0,66.72 -14.96,126.79 -45.11,179.98 -30.16,52.95 -98.78,124.89 -205.86,215.36l-4.27 3.33c-134.76,114.4 -212.58,198.15 -233.46,251.69l-197.58 0zm949.93 0l126.23 -613.07c-35.62,5.94 -72.9,10.92 -111.36,14.96 -38.46,3.8 -77.64,6.89 -117.53,9.26l24.93 -125.37c87.85,-7.83 157.19,-26.36 208.48,-55.8 51.29,-29.2 89.28,-71.94 113.74,-127.98l131.54 0 -186.48 898 -189.54 0z"/></svg></span></div>
+        <span class="sn-tag nao">✕ Nunca</span>
+        <p>Recortar de novo. O corte já está no desenho.</p>
+      </div>
+      <div class="sn">
+        <div class="sn-arte"><svg viewBox="0 0 1325.95 902.28" fill="#551A55" fill-rule="nonzero" style="height:52px;width:110px" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M-0 902.28c9.08,-27.98 20.11,-54.65 33.08,-80.02 36.57,-71.94 96.64,-146.74 179.98,-224.14 15.43,-14.25 49.86,-42.74 103.53,-85.48 53.9,-42.74 94.98,-80.73 123.23,-114.21 18.99,-22.32 33.24,-45.35 42.74,-69.57 9.5,-23.98 14.25,-48.68 14.25,-73.61 0,-37.28 -8.31,-65.53 -24.93,-85 -16.62,-19.47 -41.32,-29.21 -73.61,-29.21 -37.04,0 -65.06,16.15 -84.06,48.2 -18.99,32.06 -29.68,81.44 -32.53,148.4l-185.21 0c2.37,-112.31 29.44,-196.6 81.44,-253.11 51.76,-56.27 128.93,-84.53 230.79,-84.53 86.67,0 154.81,22.32 203.96,67.2 49.15,44.64 73.61,106.37 73.61,184.73 0,66.72 -14.96,126.79 -45.11,179.98 -30.16,52.95 -98.78,124.89 -205.86,215.36l-4.27 3.33c-134.76,114.4 -212.58,198.15 -233.46,251.69l-197.58 0zm949.93 0l126.23 -613.07c-35.62,5.94 -72.9,10.92 -111.36,14.96 -38.46,3.8 -77.64,6.89 -117.53,9.26l24.93 -125.37c87.85,-7.83 157.19,-26.36 208.48,-55.8 51.29,-29.2 89.28,-71.94 113.74,-127.98l131.54 0 -186.48 898 -189.54 0z"/></svg></div>
+        <span class="sn-tag nao">✕ Nunca</span>
+        <p>Esticar ou achatar. A proporção 1,47 é a marca.</p>
+      </div>
+      <div class="sn">
+        <div class="sn-arte"><span style="display:block;transform:skewX(-10deg)"><svg class="" viewBox="0 0 1325.95 902.28" fill="#551A55" fill-rule="nonzero" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M-0 902.28c9.08,-27.98 20.11,-54.65 33.08,-80.02 36.57,-71.94 96.64,-146.74 179.98,-224.14 15.43,-14.25 49.86,-42.74 103.53,-85.48 53.9,-42.74 94.98,-80.73 123.23,-114.21 18.99,-22.32 33.24,-45.35 42.74,-69.57 9.5,-23.98 14.25,-48.68 14.25,-73.61 0,-37.28 -8.31,-65.53 -24.93,-85 -16.62,-19.47 -41.32,-29.21 -73.61,-29.21 -37.04,0 -65.06,16.15 -84.06,48.2 -18.99,32.06 -29.68,81.44 -32.53,148.4l-185.21 0c2.37,-112.31 29.44,-196.6 81.44,-253.11 51.76,-56.27 128.93,-84.53 230.79,-84.53 86.67,0 154.81,22.32 203.96,67.2 49.15,44.64 73.61,106.37 73.61,184.73 0,66.72 -14.96,126.79 -45.11,179.98 -30.16,52.95 -98.78,124.89 -205.86,215.36l-4.27 3.33c-134.76,114.4 -212.58,198.15 -233.46,251.69l-197.58 0zm949.93 0l126.23 -613.07c-35.62,5.94 -72.9,10.92 -111.36,14.96 -38.46,3.8 -77.64,6.89 -117.53,9.26l24.93 -125.37c87.85,-7.83 157.19,-26.36 208.48,-55.8 51.29,-29.2 89.28,-71.94 113.74,-127.98l131.54 0 -186.48 898 -189.54 0z"/></svg></span></div>
+        <span class="sn-tag nao">✕ Nunca</span>
+        <p>Inclinar mais. O itálico de 11,68° já está nas curvas.</p>
+      </div>
+      <div class="sn">
+        <div class="sn-arte"><svg class="" viewBox="0 0 1325.95 902.28" fill="#C8FF00" fill-rule="nonzero" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M-0 902.28c9.08,-27.98 20.11,-54.65 33.08,-80.02 36.57,-71.94 96.64,-146.74 179.98,-224.14 15.43,-14.25 49.86,-42.74 103.53,-85.48 53.9,-42.74 94.98,-80.73 123.23,-114.21 18.99,-22.32 33.24,-45.35 42.74,-69.57 9.5,-23.98 14.25,-48.68 14.25,-73.61 0,-37.28 -8.31,-65.53 -24.93,-85 -16.62,-19.47 -41.32,-29.21 -73.61,-29.21 -37.04,0 -65.06,16.15 -84.06,48.2 -18.99,32.06 -29.68,81.44 -32.53,148.4l-185.21 0c2.37,-112.31 29.44,-196.6 81.44,-253.11 51.76,-56.27 128.93,-84.53 230.79,-84.53 86.67,0 154.81,22.32 203.96,67.2 49.15,44.64 73.61,106.37 73.61,184.73 0,66.72 -14.96,126.79 -45.11,179.98 -30.16,52.95 -98.78,124.89 -205.86,215.36l-4.27 3.33c-134.76,114.4 -212.58,198.15 -233.46,251.69l-197.58 0zm949.93 0l126.23 -613.07c-35.62,5.94 -72.9,10.92 -111.36,14.96 -38.46,3.8 -77.64,6.89 -117.53,9.26l24.93 -125.37c87.85,-7.83 157.19,-26.36 208.48,-55.8 51.29,-29.2 89.28,-71.94 113.74,-127.98l131.54 0 -186.48 898 -189.54 0z"/></svg></div>
+        <span class="sn-tag nao">✕ Nunca</span>
+        <p>Pintar de lima. O lima é do site, não da marca.</p>
+      </div>
+      <div class="sn">
+        <div class="sn-arte"><span style="display:block;filter:drop-shadow(3px 4px 3px rgba(0,0,0,.45))"><svg class="" viewBox="0 0 1325.95 902.28" fill="#551A55" fill-rule="nonzero" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M-0 902.28c9.08,-27.98 20.11,-54.65 33.08,-80.02 36.57,-71.94 96.64,-146.74 179.98,-224.14 15.43,-14.25 49.86,-42.74 103.53,-85.48 53.9,-42.74 94.98,-80.73 123.23,-114.21 18.99,-22.32 33.24,-45.35 42.74,-69.57 9.5,-23.98 14.25,-48.68 14.25,-73.61 0,-37.28 -8.31,-65.53 -24.93,-85 -16.62,-19.47 -41.32,-29.21 -73.61,-29.21 -37.04,0 -65.06,16.15 -84.06,48.2 -18.99,32.06 -29.68,81.44 -32.53,148.4l-185.21 0c2.37,-112.31 29.44,-196.6 81.44,-253.11 51.76,-56.27 128.93,-84.53 230.79,-84.53 86.67,0 154.81,22.32 203.96,67.2 49.15,44.64 73.61,106.37 73.61,184.73 0,66.72 -14.96,126.79 -45.11,179.98 -30.16,52.95 -98.78,124.89 -205.86,215.36l-4.27 3.33c-134.76,114.4 -212.58,198.15 -233.46,251.69l-197.58 0zm949.93 0l126.23 -613.07c-35.62,5.94 -72.9,10.92 -111.36,14.96 -38.46,3.8 -77.64,6.89 -117.53,9.26l24.93 -125.37c87.85,-7.83 157.19,-26.36 208.48,-55.8 51.29,-29.2 89.28,-71.94 113.74,-127.98l131.54 0 -186.48 898 -189.54 0z"/></svg></span></div>
+        <span class="sn-tag nao">✕ Nunca</span>
+        <p>Sombra, brilho, gradiente ou contorno.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="cab">
+      <p class="num">07</p>
+      <div class="bloco">
+        <h2>Tipografia</h2>
+        <span class="selo selo--doc">documentado</span>
+      </div>
+    </div>
+    <p class="lede">Três cortes, cada um com um trabalho. A marca não usa nenhum deles — ela é desenho, não texto.</p>
+    <ul class="enxuta">
+      <li><strong>Marca</strong> — Swiss 721 Cn BT Bold Italic, convertida em curvas e cortada. Nunca composta ao vivo, nunca redigitada.</li>
+      <li><strong>Títulos</strong> — Clash Display, pesos 500 e 600.</li>
+      <li><strong>Texto</strong> — Space Grotesk, pesos 300 a 500.</li>
+      <li><strong>Dado</strong> — JetBrains Mono. Número em coluna precisa de largura fixa.</li>
+    </ul>
+
+    <div class="caixa-regra">
+      <h4>Uma pendência honesta</h4>
+      <p class="nota" style="max-width:none">O 21 são hoje dois algarismos de uma fonte licenciada, com uma modificação — o corte. Isso é o suficiente para ser <em>seu</em> desenho? Para uso comercial, sim. Para <strong>registro de marca</strong>, é frágil: órgãos costumam exigir distintividade, e “dois números numa face comercial” se sustenta mal.</p>
+      <p class="nota" style="max-width:none">Duas coisas a fazer antes de registrar: conferir o EULA da Bitstream/Monotype quanto a uso em logotipo, e considerar <strong>uma segunda intervenção</strong> na letra — o ângulo do terminal do “2”, o corte da bandeirola do “1”, ou um vão travado que não é o da fonte. Uma só já basta para mudar de “composto em” para “desenhado a partir de”.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="cab">
+      <p class="num">08</p>
+      <div class="bloco">
+        <h2>Os arquivos</h2>
+        <span class="selo selo--doc">documentado</span>
+      </div>
+    </div>
+    <p class="lede">Existe <strong>uma</strong> definição da marca: <code>21.svg</code>. Tudo o mais é gerado a partir dela.</p>
+
+    <div class="dados-wrap">
+      <table class="dados">
+        <thead><tr><th>Arquivo</th><th>Formato</th><th>Uso</th></tr></thead>
+        <tbody>
+          <tr><td>21.svg</td><td>vetor</td><td>Mestre. Curvas em <code>#373435</code> — trocar pela cor certa ao aplicar.</td></tr>
+          <tr><td>assets/marca/favicon.svg</td><td>vetor</td><td>Favicon: lima sobre noite.</td></tr>
+          <tr><td>assets/marca/ventuno-21.png</td><td>240 × 240</td><td>Caixa ameixa, 21 branco. Assinatura, avatar.</td></tr>
+          <tr><td>assets/marca/ventuno-21-aberto.png</td><td>272 × 188</td><td>Aberta ameixa. Assinatura de e-mail.</td></tr>
+          <tr><td>marca/ventuno-21-branco.png</td><td>272 × 188</td><td>Aberta branca, para fundo escuro.</td></tr>
+          <tr><td>marca/render-png*.html</td><td>fonte</td><td>Gera os PNG. Enquadramento por coordenada, não por flexbox.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="nota">No site a marca é SVG embutido com <code>currentColor</code>, não imagem: nítida em qualquer tela e a cor decidida por CSS.</p>
+  </section>
+
+</div>
+
+<footer>
+  <div class="folha">
+    <span>VENTUNO · manual da marca · v1</span>
+    <span>zeroventuno.com</span>
+  </div>
+</footer>
+
+</body>
+</html>

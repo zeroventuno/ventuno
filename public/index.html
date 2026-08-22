@@ -368,7 +368,7 @@ section{position:relative;padding:clamp(90px,14vh,170px) clamp(20px,4vw,56px)}
 .id-intro{max-width:66ch;color:var(--txt-2);font-size:clamp(15px,1.5vw,17px);line-height:1.65;margin-bottom:clamp(34px,5vh,54px)}
 .id-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(18px,2.4vw,30px)}
 @media(max-width:860px){.id-grid{grid-template-columns:1fr}}
-.id-card{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#0D0D0F;transition:border-color .3s}
+.id-card{display:block;color:inherit;text-decoration:none;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#0D0D0F;transition:border-color .3s}
 .id-card:hover{border-color:var(--acc-dim)}
 .id-mark{
   height:clamp(130px,17vh,176px);display:flex;align-items:center;justify-content:center;
@@ -939,13 +939,13 @@ html.static .scroll-ind{display:none}
     <p class="id-intro rv" data-i18n="id.intro">Quatro marcas desenhadas do zero, todas de produtos próprios. Cada símbolo nasce do que o produto mede ou faz — não de uma forma bonita procurando significado depois.</p>
     <div class="id-grid">
 
-      <article class="id-card rv">
+      <a class="id-card rv" href="/marca/ventuno.html" data-hover>
         <div class="id-mark"><svg class="m-ventuno" viewBox="0 0 1325.95 902.28" fill="#EDEDEA" fill-rule="nonzero" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M-0 902.28c9.08,-27.98 20.11,-54.65 33.08,-80.02 36.57,-71.94 96.64,-146.74 179.98,-224.14 15.43,-14.25 49.86,-42.74 103.53,-85.48 53.9,-42.74 94.98,-80.73 123.23,-114.21 18.99,-22.32 33.24,-45.35 42.74,-69.57 9.5,-23.98 14.25,-48.68 14.25,-73.61 0,-37.28 -8.31,-65.53 -24.93,-85 -16.62,-19.47 -41.32,-29.21 -73.61,-29.21 -37.04,0 -65.06,16.15 -84.06,48.2 -18.99,32.06 -29.68,81.44 -32.53,148.4l-185.21 0c2.37,-112.31 29.44,-196.6 81.44,-253.11 51.76,-56.27 128.93,-84.53 230.79,-84.53 86.67,0 154.81,22.32 203.96,67.2 49.15,44.64 73.61,106.37 73.61,184.73 0,66.72 -14.96,126.79 -45.11,179.98 -30.16,52.95 -98.78,124.89 -205.86,215.36l-4.27 3.33c-134.76,114.4 -212.58,198.15 -233.46,251.69l-197.58 0zm949.93 0l126.23 -613.07c-35.62,5.94 -72.9,10.92 -111.36,14.96 -38.46,3.8 -77.64,6.89 -117.53,9.26l24.93 -125.37c87.85,-7.83 157.19,-26.36 208.48,-55.8 51.29,-29.2 89.28,-71.94 113.74,-127.98l131.54 0 -186.48 898 -189.54 0z"/></svg></div>
         <div class="id-body">
           <div class="id-name">VENTUNO</div>
           <p class="id-note" data-i18n="id.n1">O 021 do Rio reduzido a dois dígitos, cortado pela base da caixa.</p>
         </div>
-      </article>
+      </a>
 
       <article class="id-card rv">
         <div class="id-mark"><span class="m-flamme"><svg viewBox="0 0 100 100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect x="16" y="12" width="7" height="76" fill="#D92D20"/><polygon points="23,22 88,22 68,44 88,66 23,66" fill="#D92D20"/></svg><span class="wm">FLAMME <i>ROUGE</i></span></span></div>
