@@ -361,6 +361,31 @@ section{position:relative;padding:clamp(90px,14vh,170px) clamp(20px,4vw,56px)}
 .om-item .d{font-size:13px;color:var(--txt-3);line-height:1.5}
 
 /* ---------- skills ---------- */
+/* ---------- identidade: as marcas juntas ---------- */
+.id-intro{max-width:66ch;color:var(--txt-2);font-size:clamp(15px,1.5vw,17px);line-height:1.65;margin-bottom:clamp(34px,5vh,54px)}
+.id-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(18px,2.4vw,30px)}
+@media(max-width:860px){.id-grid{grid-template-columns:1fr}}
+.id-card{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#0D0D0F;transition:border-color .3s}
+.id-card:hover{border-color:var(--acc-dim)}
+.id-mark{
+  height:clamp(130px,17vh,176px);display:flex;align-items:center;justify-content:center;
+  padding:22px 30px;background:#111113;border-bottom:1px solid var(--line);
+}
+.id-mark svg,.id-mark img{display:block;width:auto;max-width:100%}
+/* cada marca tem proporcao propria - a altura e ajustada para que todas
+   tenham peso optico parecido, nao medida igual */
+.m-ventuno{height:48px}
+.m-trakr{height:39px}
+.m-plus{height:91px}
+.m-flamme{display:flex;align-items:center;gap:13px;white-space:nowrap}
+.m-flamme svg{height:32px;width:auto}
+.m-flamme .wm{font-family:var(--display);font-weight:600;font-size:27px;letter-spacing:.15em;color:var(--txt)}
+.m-flamme .wm i{font-style:normal;color:#D92D20}
+/* no celular o logotipo nao pode quebrar em duas linhas */
+@media(max-width:480px){.m-flamme .wm{font-size:21px}.m-flamme svg{height:25px}.m-flamme{gap:10px}}
+.id-body{padding:20px 24px 24px}
+.id-name{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);margin-bottom:10px}
+.id-note{font-size:14.5px;line-height:1.62;color:var(--txt-2)}
 .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,44px)}
 @media(max-width:900px){.skills-grid{grid-template-columns:1fr}}
 .skill-col{border-top:1px solid var(--line);padding-top:24px}
@@ -574,6 +599,7 @@ html.static .scroll-ind{display:none}
     <div class="nav-links">
       <a href="#about" data-hover data-i18n="nav.about">Sobre</a>
       <a href="#work" data-hover data-i18n="nav.work">Projetos</a>
+      <a href="#identity" data-hover data-i18n="id.title">Identidade</a>
       <a href="#skills" data-hover data-i18n="nav.skills">Skills</a>
       <a href="#exp" data-hover data-i18n="nav.exp">Experiência</a>
       <a href="#contact" data-hover data-i18n="nav.contact">Contato</a>
@@ -879,11 +905,58 @@ html.static .scroll-ind{display:none}
   </div>
 </section>
 
+<!-- ============ IDENTIDADE ============ -->
+<section id="identity">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-num">03 / 21</span>
+      <h2 class="sec-title" data-i18n="id.title">Identidade</h2>
+      <span class="sec-side" data-i18n="id.side">marcas próprias</span>
+    </div>
+    <p class="id-intro rv" data-i18n="id.intro">Quatro marcas desenhadas do zero, todas de produtos próprios. Cada símbolo nasce do que o produto mede ou faz — não de uma forma bonita procurando significado depois.</p>
+    <div class="id-grid">
+
+      <article class="id-card rv">
+        <div class="id-mark"><svg class="m-ventuno" viewBox="0 0 176 120" fill="#EDEDEA" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="translate(25.5,0) skewX(-12)"><path d="M0 40C0 17 20 0 42 0C65 0 84 16 84 40C84 44 83 48 80 53L38 120L12 120L54 53C57 48 58 46 58 42C58 31 51 24 42 24C33 24 26 32 26 40Z"/><path d="M150 0L150 120L124 120L124 32L102 44L102 24L136 0Z"/></g></svg></div>
+        <div class="id-body">
+          <div class="id-name">VENTUNO</div>
+          <p class="id-note" data-i18n="id.n1">O 021 do Rio reduzido a dois dígitos, cortado pela base da caixa.</p>
+        </div>
+      </article>
+
+      <article class="id-card rv" data-gallery="trak" data-index="10" data-hover style="cursor:pointer">
+        <div class="id-mark"><img class="m-trakr" src="assets/trakr-logo.svg" alt="MY TRAKR" width="1287" height="203"></div>
+        <div class="id-body">
+          <div class="id-name">MY TRAKR</div>
+          <p class="id-note" data-i18n="id.n2">Três barras em progressão — o gráfico que cresce treino após treino.</p>
+        </div>
+      </article>
+
+      <article class="id-card rv">
+        <div class="id-mark"><img class="m-plus" src="assets/trakr-plus.png" alt="TRAKR+" width="1200" height="400"></div>
+        <div class="id-body">
+          <div class="id-name">TRAKR+</div>
+          <p class="id-note" data-i18n="id.n3">A mesma marca com um sinal a mais: a versão que atende times.</p>
+        </div>
+      </article>
+
+      <article class="id-card rv">
+        <div class="id-mark"><span class="m-flamme"><svg viewBox="0 0 100 100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect x="16" y="12" width="7" height="76" fill="#D92D20"/><polygon points="23,22 88,22 68,44 88,66 23,66" fill="#D92D20"/></svg><span class="wm">FLAMME <i>ROUGE</i></span></span></div>
+        <div class="id-body">
+          <div class="id-name">FLAMME ROUGE</div>
+          <p class="id-note" data-i18n="id.n4">A bandeira vermelha que marca o último quilômetro.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 <!-- ============ SKILLS ============ -->
 <section id="skills">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="sec-num">03 / 21</span>
+      <span class="sec-num">04 / 21</span>
       <h2 class="sec-title">Skills</h2>
       <span class="sec-side" data-i18n="skills.side">Três disciplinas, uma prática</span>
     </div>
@@ -933,7 +1006,7 @@ html.static .scroll-ind{display:none}
 <section id="exp">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="sec-num">04 / 21</span>
+      <span class="sec-num">05 / 21</span>
       <h2 class="sec-title" data-i18n="exp.title">Experiência</h2>
       <span class="sec-side">2007 — 2026</span>
     </div>
@@ -972,7 +1045,7 @@ html.static .scroll-ind{display:none}
 <section id="contact">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="sec-num">05 / 21</span>
+      <span class="sec-num">06 / 21</span>
       <h2 class="sec-title" data-i18n="contact.title">Contato</h2>
       <span class="sec-side">cristiano@zeroventuno.com</span>
     </div>
@@ -1053,7 +1126,7 @@ pt:{
  "about.f3k":"Idiomas","about.f3v":"<b>Português</b> nativo · <b>Inglês</b> avançado · <b>Italiano</b> intermediário",
  "about.f4k":"Formação","about.f4v":"<b>Design Industrial</b> — PUC-Rio",
  "work.title":"Projetos","work.side":"Cases selecionados",
- "lbl.problem":"Problema","lbl.more":"Ver detalhes","lbl.solution":"Solução","lbl.impact":"Impacto","lbl.process":"Processo","lbl.build":"Montagem","lbl.lesson":"Tese",
+ "lbl.problem":"Problema","lbl.more":"Ver detalhes","id.title":"Identidade","id.side":"marcas próprias","id.intro":"Quatro marcas desenhadas do zero, todas de produtos próprios. Cada símbolo nasce do que o produto mede ou faz — não de uma forma bonita procurando significado depois.","id.n1":"O 021 do Rio reduzido a dois dígitos, cortado pela base da caixa.","id.n2":"Três barras em progressão — o gráfico que cresce treino após treino.","id.n3":"A mesma marca com um sinal a mais: a versão que atende times.","id.n4":"A bandeira vermelha que marca o último quilômetro.","lbl.solution":"Solução","lbl.impact":"Impacto","lbl.process":"Processo","lbl.build":"Montagem","lbl.lesson":"Tese",
  "roero.tag":"Case em destaque — Web App",
  "roero.desc":"Plataforma completa para um centro esportivo aquático com 5 sedes: disponibilidade de raias em tempo real, totem de check-in, CMS próprio e uma rotina de notícias com IA — substituindo um site que não era tocado desde 2005.",
  "roero.p1":"Site de 2005 sem HTTPS nem versão mobile, navegação entre sedes feita só por imagens, reservas espalhadas em dois sistemas de terceiros e conteúdo que só mudava com ajuda técnica.",
@@ -1171,7 +1244,7 @@ en:{
  "about.f3k":"Languages","about.f3v":"<b>Portuguese</b> native · <b>English</b> advanced · <b>Italian</b> intermediate",
  "about.f4k":"Education","about.f4v":"<b>Industrial Design</b> — PUC-Rio",
  "work.title":"Work","work.side":"Selected cases",
- "lbl.problem":"Problem","lbl.more":"See details","lbl.solution":"Solution","lbl.impact":"Impact","lbl.process":"Process","lbl.build":"Build","lbl.lesson":"Thesis",
+ "lbl.problem":"Problem","lbl.more":"See details","id.title":"Identity","id.side":"own marks","id.intro":"Four marks drawn from scratch, all for products of my own. Each symbol comes from what the product measures or does — not from a shape looking for meaning afterwards.","id.n1":"Rio’s 021 cut down to two digits, trimmed by the base of the box.","id.n2":"Three bars in progression — the chart that grows session after session.","id.n3":"The same mark with one more sign: the version that serves teams.","id.n4":"The red flag that marks the final kilometre.","lbl.solution":"Solution","lbl.impact":"Impact","lbl.process":"Process","lbl.build":"Build","lbl.lesson":"Thesis",
  "roero.tag":"Featured case — Web App",
  "roero.desc":"A full platform for an aquatic sports center with 5 facilities: real-time lane availability, a self-service kiosk, its own CMS and an AI news routine — replacing a site untouched since 2005.",
  "roero.p1":"A 2005 site with no HTTPS and no mobile version, navigation between facilities done through images alone, bookings scattered across two third-party systems, and content that only changed with technical help.",
@@ -1289,7 +1362,7 @@ it:{
  "about.f3k":"Lingue","about.f3v":"<b>Portoghese</b> madrelingua · <b>Inglese</b> avanzato · <b>Italiano</b> intermedio",
  "about.f4k":"Formazione","about.f4v":"<b>Design Industriale</b> — PUC-Rio",
  "work.title":"Progetti","work.side":"Case selezionati",
- "lbl.problem":"Problema","lbl.more":"Vedi i dettagli","lbl.solution":"Soluzione","lbl.impact":"Impatto","lbl.process":"Processo","lbl.build":"Montaggio","lbl.lesson":"Tesi",
+ "lbl.problem":"Problema","lbl.more":"Vedi i dettagli","id.title":"Identità","id.side":"marchi propri","id.intro":"Quattro marchi disegnati da zero, tutti di prodotti miei. Ogni simbolo nasce da ciò che il prodotto misura o fa — non da una bella forma in cerca di significato.","id.n1":"Lo 021 di Rio ridotto a due cifre, tagliato dalla base della cornice.","id.n2":"Tre barre in progressione — il grafico che cresce allenamento dopo allenamento.","id.n3":"Lo stesso marchio con un segno in più: la versione per le squadre.","id.n4":"La bandiera rossa che segna l’ultimo chilometro.","lbl.solution":"Soluzione","lbl.impact":"Impatto","lbl.process":"Processo","lbl.build":"Montaggio","lbl.lesson":"Tesi",
  "roero.tag":"Case in evidenza — Web App",
  "roero.desc":"Piattaforma completa per un centro sportivo acquatico con 5 sedi: disponibilità corsie in tempo reale, totem di check-in, CMS proprio e una rassegna stampa con IA — al posto di un sito fermo dal 2005.",
  "roero.p1":"Sito del 2005 senza HTTPS né versione mobile, navigazione tra le sedi affidata solo a immagini, prenotazioni divise su due sistemi esterni e contenuti modificabili solo con aiuto tecnico.",
@@ -1407,7 +1480,7 @@ es:{
  "about.f3k":"Idiomas","about.f3v":"<b>Portugués</b> nativo · <b>Inglés</b> avanzado · <b>Italiano</b> intermedio",
  "about.f4k":"Formación","about.f4v":"<b>Diseño Industrial</b> — PUC-Rio",
  "work.title":"Proyectos","work.side":"Casos seleccionados",
- "lbl.problem":"Problema","lbl.more":"Ver detalles","lbl.solution":"Solución","lbl.impact":"Impacto","lbl.process":"Proceso","lbl.build":"Montaje","lbl.lesson":"Tesis",
+ "lbl.problem":"Problema","lbl.more":"Ver detalles","id.title":"Identidad","id.side":"marcas propias","id.intro":"Cuatro marcas dibujadas desde cero, todas de productos propios. Cada símbolo nace de lo que el producto mide o hace — no de una forma bonita buscando significado después.","id.n1":"El 021 de Río reducido a dos dígitos, cortado por la base del recuadro.","id.n2":"Tres barras en progresión — el gráfico que crece entrenamiento tras entrenamiento.","id.n3":"La misma marca con un signo más: la versión que atiende equipos.","id.n4":"La bandera roja que marca el último kilómetro.","lbl.solution":"Solución","lbl.impact":"Impacto","lbl.process":"Proceso","lbl.build":"Montaje","lbl.lesson":"Tesis",
  "roero.tag":"Caso destacado — Web App",
  "roero.desc":"Plataforma completa para un centro deportivo acuático con 5 sedes: disponibilidad de calles en tiempo real, tótem de check-in, CMS propio y una rutina de noticias con IA — en lugar de una web sin tocar desde 2005.",
  "roero.p1":"Web de 2005 sin HTTPS ni versión móvil, navegación entre sedes hecha solo con imágenes, reservas repartidas en dos sistemas externos y contenido que solo cambiaba con ayuda técnica.",
@@ -1525,7 +1598,7 @@ fr:{
  "about.f3k":"Langues","about.f3v":"<b>Portugais</b> natif · <b>Anglais</b> avancé · <b>Italien</b> intermédiaire",
  "about.f4k":"Formation","about.f4v":"<b>Design Industriel</b> — PUC-Rio",
  "work.title":"Projets","work.side":"Projets sélectionnés",
- "lbl.problem":"Problème","lbl.more":"Voir les détails","lbl.solution":"Solution","lbl.impact":"Impact","lbl.process":"Processus","lbl.build":"Montage","lbl.lesson":"Thèse",
+ "lbl.problem":"Problème","lbl.more":"Voir les détails","id.title":"Identité","id.side":"marques propres","id.intro":"Quatre marques dessinées de zéro, toutes pour mes propres produits. Chaque symbole vient de ce que le produit mesure ou fait — pas d’une belle forme cherchant ensuite un sens.","id.n1":"Le 021 de Rio réduit à deux chiffres, coupé par la base du cadre.","id.n2":"Trois barres en progression — la courbe qui monte séance après séance.","id.n3":"La même marque avec un signe en plus : la version pour les équipes.","id.n4":"Le drapeau rouge qui marque le dernier kilomètre.","lbl.solution":"Solution","lbl.impact":"Impact","lbl.process":"Processus","lbl.build":"Montage","lbl.lesson":"Thèse",
  "roero.tag":"Projet phare — Web App",
  "roero.desc":"Plateforme complète pour un centre sportif aquatique de 5 sites : disponibilité des lignes en temps réel, borne de check-in, CMS maison et une revue de presse par IA — à la place d'un site inchangé depuis 2005.",
  "roero.p1":"Un site de 2005 sans HTTPS ni version mobile, une navigation entre sites reposant uniquement sur des images, des réservations éclatées sur deux systèmes tiers et un contenu modifiable seulement avec une aide technique.",
@@ -1643,7 +1716,7 @@ de:{
  "about.f3k":"Sprachen","about.f3v":"<b>Portugiesisch</b> Muttersprache · <b>Englisch</b> fortgeschritten · <b>Italienisch</b> mittleres Niveau",
  "about.f4k":"Ausbildung","about.f4v":"<b>Industriedesign</b> — PUC-Rio",
  "work.title":"Projekte","work.side":"Ausgewählte Projekte",
- "lbl.problem":"Problem","lbl.more":"Details ansehen","lbl.solution":"Lösung","lbl.impact":"Wirkung","lbl.process":"Prozess","lbl.build":"Aufbau","lbl.lesson":"These",
+ "lbl.problem":"Problem","lbl.more":"Details ansehen","id.title":"Identität","id.side":"eigene marken","id.intro":"Vier Marken von Grund auf gezeichnet, alle für eigene Produkte. Jedes Zeichen kommt daher, was das Produkt misst oder tut — nicht von einer schönen Form, die später Bedeutung sucht.","id.n1":"Rios 021 auf zwei Ziffern reduziert, von der Rahmenkante beschnitten.","id.n2":"Drei Balken in Progression — die Kurve, die mit jedem Training wächst.","id.n3":"Dieselbe Marke mit einem Zeichen mehr: die Version für Teams.","id.n4":"Die rote Flagge, die den letzten Kilometer markiert.","lbl.solution":"Lösung","lbl.impact":"Wirkung","lbl.process":"Prozess","lbl.build":"Aufbau","lbl.lesson":"These",
  "roero.tag":"Referenzprojekt — Web-App",
  "roero.desc":"Komplette Plattform für ein Wassersportzentrum mit 5 Standorten: Bahnverfügbarkeit in Echtzeit, Check-in-Terminal, eigenes CMS und eine KI-Presseschau — als Ersatz für eine Website, die seit 2005 unangetastet war.",
  "roero.p1":"Eine Website von 2005 ohne HTTPS und ohne mobile Version, Navigation zwischen den Standorten allein über Bilder, Buchungen verteilt auf zwei Fremdsysteme und Inhalte, die sich nur mit technischer Hilfe ändern ließen.",
