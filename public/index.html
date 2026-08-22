@@ -28,7 +28,7 @@
 <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=JetBrains+Mono:wght@300;400&family=Barlow+Condensed:wght@300;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#0A0A0B;
@@ -379,10 +379,18 @@ section{position:relative;padding:clamp(90px,14vh,170px) clamp(20px,4vw,56px)}
 .m-plus{height:91px}
 .m-flamme{display:flex;align-items:center;gap:13px;white-space:nowrap}
 .m-flamme svg{height:32px;width:auto}
-.m-flamme .wm{font-family:var(--display);font-weight:600;font-size:27px;letter-spacing:.15em;color:var(--txt)}
-.m-flamme .wm i{font-style:normal;color:#D92D20}
+/* especificacao lida do CSS do proprio flammerouge.org:
+   Barlow Condensed, tracking .34em, FLAMME light / ROUGE bold,
+   e o vermelho claro (#ff6a5e) que a marca usa sobre fundo escuro —
+   o #D92D20 e a cor da bandeira, nao a do texto */
+.m-flamme .wm{
+  font-family:'Barlow Condensed','Barlow','Arial Narrow',system-ui,sans-serif;
+  font-weight:300;font-size:31px;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--txt);margin-right:-.34em;
+}
+.m-flamme .wm i{font-style:normal;font-weight:700;color:#ff6a5e}
 /* no celular o logotipo nao pode quebrar em duas linhas */
-@media(max-width:480px){.m-flamme .wm{font-size:21px}.m-flamme svg{height:25px}.m-flamme{gap:10px}}
+@media(max-width:480px){.m-flamme .wm{font-size:23px}.m-flamme svg{height:24px}.m-flamme{gap:9px}}
 .id-body{padding:20px 24px 24px}
 .id-name{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);margin-bottom:10px}
 .id-note{font-size:14.5px;line-height:1.62;color:var(--txt-2)}
