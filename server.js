@@ -120,7 +120,10 @@ app.post("/api/contact", async (req, res) => {
     await transporter.sendMail({
       from: `"VENTUNO — site" <${SMTP_USER}>`, // must be the authenticated mailbox (SPF/DMARC)
       to: CONTACT_TO,
-      replyTo: `"${clean.name}" <${clean.email}>`,
+      // forma estruturada, não string montada à mão: o nome vem do visitante e
+      // uma aspa dentro dele quebraria a string, injetando um segundo endereço
+      // no replyTo. Passando {name, address} quem escapa é o nodemailer.
+      replyTo: { name: clean.name, address: clean.email },
       subject: `Novo contato pelo site — ${clean.name}`,
       text: `Nome: ${clean.name}\nEmail: ${clean.email}\nIdioma: ${clean.lang}\nRecebido: ${clean.when}\n\n${clean.message}`,
       html: buildHtml(clean),
