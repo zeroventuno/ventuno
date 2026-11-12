@@ -136,8 +136,8 @@ section{padding:clamp(72px,11vh,132px) clamp(20px,4vw,56px)}
 .step p{color:var(--txt-2);font-size:16px;line-height:1.66}
 
 /* ---------- exemplos ---------- */
-.ex-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(252px,1fr));gap:clamp(28px,4vw,56px)}
-.ex{display:flex;flex-direction:column;align-items:center;text-align:center}
+.ex-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(28px,4vw,56px)}
+.ex{display:flex;flex-direction:column;align-items:center;text-align:center;flex:0 1 252px}
 .phone{
   position:relative;width:100%;max-width:272px;aspect-ratio:9/19.5;
   border:1px solid rgba(255,255,255,.14);border-radius:34px;
@@ -618,12 +618,21 @@ footer a:hover{color:var(--acc)}
 
   /* Exemplos: uma entrada por cartao. Tirar ou acrescentar e mexer so aqui. */
   var EXEMPLOS = [
+    { nome:"VENTUNO", tag:"Premium",
+      video:"/assets/cartoes/retrato-ventuno.mp4", poster:"/assets/cartoes/retrato-ventuno.webp",
+      url:"https://zeroventuno.com" },
     { nome:"Officine Mattio", tag:"Premium",
       video:"/assets/cartoes/retrato-mattio.mp4", poster:"/assets/cartoes/retrato-mattio.webp",
       url:"https://cristiano-om.vercel.app" },
-    { nome:"VENTUNO", tag:"Premium",
-      video:"/assets/cartoes/retrato-ventuno.mp4", poster:"/assets/cartoes/retrato-ventuno.webp",
-      url:"https://zeroventuno.com" }
+    { nome:"Rentaloop", tag:"Premium",
+      video:"/assets/cartoes/retrato-rentaloop.mp4", poster:"/assets/cartoes/retrato-rentaloop.webp",
+      url:"https://vcard-lemon.vercel.app/#rentaloop" },
+    { nome:"MY TRAKR", tag:"Premium",
+      video:"/assets/cartoes/retrato-trakr.mp4", poster:"/assets/cartoes/retrato-trakr.webp",
+      url:"https://vcard-lemon.vercel.app/#trakr" },
+    { nome:"Flamme Rouge", tag:"Premium",
+      video:"/assets/cartoes/retrato-flamme.mp4", poster:"/assets/cartoes/retrato-flamme.webp",
+      url:"https://vcard-lemon.vercel.app/#flamme" }
   ];
 
   var reduzido = matchMedia("(prefers-reduced-motion: reduce)").matches;
