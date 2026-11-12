@@ -178,6 +178,10 @@ section{padding:clamp(72px,11vh,132px) clamp(20px,4vw,56px)}
 .both li{position:relative;padding-left:20px;color:var(--txt-2);font-size:15px}
 .both li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:1px;background:var(--acc)}
 
+.medida{margin-top:clamp(20px,2.4vw,28px);color:var(--txt-2);font-size:15px;line-height:1.62}
+.medida a{color:var(--acc);text-decoration:none;border-bottom:1px solid var(--acc-dim);padding-bottom:2px;transition:border-color .25s}
+.medida a:hover{border-color:var(--acc)}
+
 /* ---------- pedido ---------- */
 .pedido-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:clamp(30px,4.5vw,70px);align-items:start}
 @media(max-width:900px){.pedido-grid{grid-template-columns:1fr;gap:44px}}
@@ -353,6 +357,7 @@ footer a:hover{color:var(--acc)}
           <li data-i18n="both4">Ícone na tela inicial do celular</li>
         </ul>
       </div>
+      <p class="medida rv" data-i18n="custom">Tem uma ideia que não cabe em nenhum dos dois? Faço projetos customizados — <a href="#pedido">me conte qual é</a>.</p>
     </div>
   </section>
 
@@ -503,6 +508,7 @@ footer a:hover{color:var(--acc)}
       planPremTxt:"Tudo do padrão, mais um retrato em vídeo com o logo da marca animado e uma página escura com acabamento sob medida. É o cartão que as pessoas mostram umas às outras: você é lembrado depois da reunião.",
       bothLbl:"Os dois incluem", both1:"Vários idiomas", both2:"Link próprio",
       both3:"QR code na tela, para compartilhar à distância", both4:"Ícone na tela inicial do celular",
+      custom:"Tem uma ideia que não cabe em nenhum dos dois? Faço projetos customizados — <a href=\"#pedido\">me conte qual é</a>.",
       pedTitle:"Pedir meu cartão",
       lNome:'Nome <span class="obr">*</span>', lSobrenome:'Sobrenome <span class="obr">*</span>',
       lEmail:'E-mail <span class="obr">*</span>', lTelefone:'Telefone / WhatsApp <span class="obr">*</span>',
@@ -545,6 +551,7 @@ footer a:hover{color:var(--acc)}
       planPremTxt:"Tutto quello dello standard, più un ritratto in video con il logo animato e una pagina scura con finitura su misura. È il biglietto che le persone si mostrano a vicenda: ti ricordano dopo la riunione.",
       bothLbl:"Entrambi includono", both1:"Più lingue", both2:"Link dedicato",
       both3:"QR code a schermo, per condividerlo a distanza", both4:"Icona sulla schermata principale del telefono",
+      custom:"Hai un’idea che non rientra in nessuno dei due? Faccio progetti personalizzati — <a href=\"#pedido\">raccontamela</a>.",
       pedTitle:"Richiedi il biglietto",
       lNome:'Nome <span class="obr">*</span>', lSobrenome:'Cognome <span class="obr">*</span>',
       lEmail:'E-mail <span class="obr">*</span>', lTelefone:'Telefono / WhatsApp <span class="obr">*</span>',
@@ -587,6 +594,7 @@ footer a:hover{color:var(--acc)}
       planPremTxt:"Everything in Standard, plus a video portrait with your animated logo and a dark page finished to measure. It is the card people show each other: you get remembered after the meeting.",
       bothLbl:"Both include", both1:"Several languages", both2:"Your own link",
       both3:"On-screen QR code, to share at a distance", both4:"Icon on the phone's home screen",
+      custom:"Have an idea that fits neither? I build custom projects — <a href=\"#pedido\">tell me about it</a>.",
       pedTitle:"Request my card",
       lNome:'First name <span class="obr">*</span>', lSobrenome:'Last name <span class="obr">*</span>',
       lEmail:'Email <span class="obr">*</span>', lTelefone:'Phone / WhatsApp <span class="obr">*</span>',
