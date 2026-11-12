@@ -8,6 +8,7 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "busboy": "1.6.0",
     "compression": "1.8.2",
     "express": "4.22.3",
     "nodemailer": "10.0.14"

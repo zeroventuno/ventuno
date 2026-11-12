@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cartões digitais — VENTUNO</title>
+<meta name="description" content="Cartão de visita digital: um toque no celular e seu contato já está salvo, com a sua cara e a da sua marca.">
+<meta name="theme-color" content="#0A0A0B">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cartões digitais — VENTUNO">
+<meta property="og:description" content="Um toque no celular e seu contato já está salvo, com a sua cara e a da sua marca.">
+<meta property="og:url" content="https://zeroventuno.com/cartoes/">
+
+<link rel="icon" href="/assets/marca/favicon.svg" type="image/svg+xml">
+
+<!-- Mesmas fontes da marca: Clash Display (Fontshare) + Space Grotesk / JetBrains Mono (Google) -->
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+/* Tokens identicos aos do index.html — esta pagina e parte do mesmo site,
+   nao um satelite com paleta propria. */
+:root{
+  --bg:#0A0A0B;
+  --bg-2:#101012;
+  --bg-3:#161619;
+  --line:rgba(255,255,255,.08);
+  --txt:#EDEDEA;
+  --txt-2:rgba(237,237,234,.62);
+  --txt-3:rgba(237,237,234,.38);
+  --acc:#C8FF00;
+  --acc-dim:rgba(200,255,0,.14);
+  --acc-glow:rgba(200,255,0,.25);
+  --erro:#FF6B5A;
+  --display:'Clash Display',system-ui,sans-serif;
+  --body:'Space Grotesk',system-ui,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);color:var(--txt);
+  font-family:var(--body);font-weight:300;
+  line-height:1.6;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit}
+img,video{display:block;max-width:100%}
+
+/* ---------- barra superior ---------- */
+.top{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;gap:16px;
+  padding:14px clamp(20px,4vw,56px);
+  background:rgba(10,10,11,.82);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.back{display:flex;align-items:center;gap:11px;text-decoration:none;transition:opacity .25s}
+.back:hover{opacity:.62}
+.back-mark{width:26px;height:auto;fill:var(--txt);flex:none}
+.back-txt{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--txt-2)}
+@media(max-width:560px){.back-txt{display:none}}
+.top-lang{margin-left:auto;display:flex;gap:2px;border:1px solid var(--line);border-radius:100px;padding:3px}
+.top-lang button{
+  background:none;border:0;cursor:pointer;color:var(--txt-3);
+  font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+  padding:6px 12px;border-radius:100px;transition:.25s;
+}
+.top-lang button[aria-pressed="true"]{background:var(--acc);color:#0A0A0B}
+.top-lang button:hover{color:var(--txt)}
+.top-lang button[aria-pressed="true"]:hover{color:#0A0A0B}
+
+/* ---------- blocos ---------- */
+section{padding:clamp(72px,11vh,132px) clamp(20px,4vw,56px)}
+.wrap{max-width:1180px;margin:0 auto}
+.sec-head{
+  display:flex;align-items:baseline;gap:22px;
+  border-top:1px solid var(--line);padding-top:22px;
+  margin-bottom:clamp(38px,6vh,70px);
+}
+.sec-num{font-family:var(--mono);font-size:12px;color:var(--acc);letter-spacing:.1em;white-space:nowrap}
+.sec-title{
+  font-family:var(--display);font-weight:500;text-transform:uppercase;
+  font-size:clamp(26px,3.6vw,50px);line-height:1;letter-spacing:-.01em;
+}
+
+/* ---------- hero ---------- */
+.hero{padding-top:clamp(56px,9vh,96px);padding-bottom:clamp(56px,8vh,104px)}
+.hero-kicker{
+  font-family:var(--mono);font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--acc);margin-bottom:26px;
+}
+.hero h1{
+  font-family:var(--display);font-weight:500;text-transform:uppercase;
+  font-size:clamp(38px,7.4vw,104px);line-height:.96;letter-spacing:-.02em;
+  margin-bottom:30px;
+}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.hero-sub{
+  font-size:clamp(16px,1.9vw,21px);color:var(--txt-2);
+  max-width:46ch;line-height:1.62;margin-bottom:38px;
+}
+.acoes{display:flex;flex-wrap:wrap;align-items:center;gap:16px 22px}
+
+/* ---------- botoes ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:11px;
+  font-family:var(--body);font-weight:500;font-size:16px;
+  padding:16px 30px;border-radius:100px;border:0;cursor:pointer;
+  text-decoration:none;
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,background .25s,border-color .25s;
+}
+.btn-1{background:var(--acc);color:#0A0A0B}
+.btn-1:hover{transform:translateY(-2px);box-shadow:0 12px 40px var(--acc-glow)}
+.btn-1[disabled]{opacity:.55;cursor:default;transform:none;box-shadow:none}
+.btn-2{background:none;color:var(--txt);border:1px solid var(--line)}
+.btn-2:hover{border-color:var(--acc);color:var(--acc)}
+.btn svg{width:19px;height:19px;flex:none}
+.btn-1 svg{fill:#0A0A0B}
+.btn-2 svg{fill:currentColor}
+.nota{
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--txt-3);
+}
+
+/* ---------- como funciona ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px)}
+@media(max-width:800px){.steps{grid-template-columns:1fr;gap:0}}
+.step{border-top:1px solid var(--line);padding-top:24px}
+@media(max-width:800px){.step{padding:24px 0}}
+.step-n{font-family:var(--mono);font-size:11px;color:var(--acc);letter-spacing:.14em;margin-bottom:14px}
+.step p{color:var(--txt-2);font-size:16px;line-height:1.66}
+
+/* ---------- exemplos ---------- */
+.ex-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(252px,1fr));gap:clamp(28px,4vw,56px)}
+.ex{display:flex;flex-direction:column;align-items:center;text-align:center}
+.phone{
+  position:relative;width:100%;max-width:272px;aspect-ratio:9/19.5;
+  border:1px solid rgba(255,255,255,.14);border-radius:34px;
+  background:var(--bg-3);overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.5);
+}
+.phone video,.phone img{width:100%;height:100%;object-fit:cover}
+.phone::after{
+  content:"";position:absolute;top:9px;left:50%;transform:translateX(-50%);
+  width:62px;height:5px;border-radius:100px;background:rgba(255,255,255,.18);
+}
+.ex-name{margin-top:22px;font-family:var(--display);font-weight:500;font-size:19px}
+.ex-tag{margin-top:7px;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--txt-3)}
+.ex-link{
+  margin-top:15px;display:inline-flex;align-items:center;gap:7px;
+  font-size:14px;color:var(--txt-2);text-decoration:none;
+  border-bottom:1px solid var(--line);padding-bottom:3px;transition:.25s;
+}
+.ex-link:hover{color:var(--acc);border-color:var(--acc-dim)}
+
+/* ---------- planos ---------- */
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.4vw,30px)}
+@media(max-width:820px){.plans{grid-template-columns:1fr}}
+.plan{
+  border:1px solid var(--line);border-radius:18px;
+  padding:clamp(26px,3.2vw,40px);background:var(--bg-2);
+  display:flex;flex-direction:column;
+}
+.plan.is-premium{border-color:var(--acc-dim);background:linear-gradient(180deg,rgba(200,255,0,.04),transparent 55%),var(--bg-2)}
+.plan-name{
+  font-family:var(--display);font-weight:500;text-transform:uppercase;
+  font-size:clamp(21px,2.4vw,30px);letter-spacing:-.01em;margin-bottom:6px;
+}
+.plan-price{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);margin-bottom:22px}
+.plan p{color:var(--txt-2);font-size:16px;line-height:1.68}
+.both{margin-top:clamp(26px,3.4vw,40px);border-top:1px solid var(--line);padding-top:26px}
+.both-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--txt-3);margin-bottom:18px}
+.both ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px 30px}
+.both li{position:relative;padding-left:20px;color:var(--txt-2);font-size:15px}
+.both li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:1px;background:var(--acc)}
+
+/* ---------- pedido ---------- */
+.pedido-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:clamp(30px,4.5vw,70px);align-items:start}
+@media(max-width:900px){.pedido-grid{grid-template-columns:1fr;gap:44px}}
+.campos{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
+@media(max-width:620px){.campos{grid-template-columns:1fr}}
+.campo{display:flex;flex-direction:column;gap:7px}
+.campo.largo{grid-column:1/-1}
+.campo label{
+  font-family:var(--mono);font-size:10px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--txt-3);
+}
+.campo .obr{color:var(--acc)}
+.campo input,.campo select,.campo textarea{
+  font-family:var(--body);font-size:15px;font-weight:300;color:var(--txt);
+  background:var(--bg-2);border:1px solid var(--line);border-radius:10px;
+  padding:13px 15px;width:100%;transition:border-color .25s,background .25s;
+}
+.campo textarea{min-height:104px;resize:vertical}
+.campo input:focus,.campo select:focus,.campo textarea:focus{outline:none;border-color:var(--acc);background:var(--bg-3)}
+.campo input[aria-invalid="true"],.campo select[aria-invalid="true"]{border-color:var(--erro)}
+.campo select{appearance:none;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--txt-3) 50%),linear-gradient(135deg,var(--txt-3) 50%,transparent 50%);background-position:calc(100% - 19px) 21px,calc(100% - 14px) 21px;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+.campo select option{background:var(--bg-2);color:var(--txt)}
+
+/* o arquivo: input nativo escondido, rotulo faz o papel do botao */
+.arquivo input[type=file]{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.arquivo-btn{
+  display:inline-flex;align-items:center;gap:10px;cursor:pointer;
+  background:var(--bg-2);border:1px dashed rgba(255,255,255,.18);border-radius:10px;
+  padding:13px 17px;font-size:14px;color:var(--txt-2);transition:.25s;width:100%;
+}
+.arquivo-btn:hover{border-color:var(--acc);color:var(--txt)}
+.arquivo input[type=file]:focus-visible + .arquivo-btn{border-color:var(--acc);color:var(--txt)}
+.arquivo-nome{margin-top:7px;font-family:var(--mono);font-size:11px;color:var(--txt-3);word-break:break-all}
+
+.consent{grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;margin-top:4px}
+.consent input{appearance:none;flex:none;width:19px;height:19px;margin-top:2px;border:1px solid var(--line);border-radius:5px;background:var(--bg-2);cursor:pointer;transition:.2s}
+.consent input:checked{background:var(--acc);border-color:var(--acc)}
+.consent input:checked::after{content:"✓";display:block;text-align:center;line-height:17px;color:#0A0A0B;font-size:13px;font-weight:700}
+.consent input[aria-invalid="true"]{border-color:var(--erro)}
+.consent label{font-size:13px;color:var(--txt-2);line-height:1.55;cursor:pointer}
+
+.enviar{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:8px}
+.aviso{grid-column:1/-1;font-size:14px;line-height:1.55;padding:13px 16px;border-radius:10px;display:none}
+.aviso.erro{display:block;background:rgba(255,107,90,.1);border:1px solid rgba(255,107,90,.3);color:var(--erro)}
+
+.obrigado{display:none;text-align:center;padding:clamp(34px,5vw,60px) 0}
+.obrigado.on{display:block}
+.obrigado-ok{font-size:46px;line-height:1;margin-bottom:20px}
+.obrigado h3{font-family:var(--display);font-weight:500;text-transform:uppercase;font-size:clamp(23px,3vw,36px);letter-spacing:-.01em;margin-bottom:12px}
+.obrigado p{color:var(--txt-2);max-width:40ch;margin:0 auto 28px}
+form.enviado{display:none}
+
+.lado{border:1px solid var(--line);border-radius:18px;padding:clamp(24px,2.8vw,32px);background:var(--bg-2)}
+.lado h3{font-family:var(--display);font-weight:500;text-transform:uppercase;font-size:21px;letter-spacing:-.01em;margin-bottom:12px}
+.lado p{color:var(--txt-2);font-size:15px;margin-bottom:22px;line-height:1.6}
+.lado .btn{width:100%}
+.lado-ou{
+  display:flex;align-items:center;gap:14px;margin:22px 0;
+  font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--txt-3);
+}
+.lado-ou::before,.lado-ou::after{content:"";flex:1;height:1px;background:var(--line)}
+.lado-mail{
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  font-size:14px;color:var(--txt-2);text-decoration:none;word-break:break-all;
+  padding:14px;border:1px solid var(--line);border-radius:100px;transition:.25s;
+}
+.lado-mail:hover{border-color:var(--acc);color:var(--acc)}
+
+footer{
+  border-top:1px solid var(--line);
+  padding:28px clamp(20px,4vw,56px);
+  display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--txt-3);
+}
+footer a{text-decoration:none;transition:color .25s}
+footer a:hover{color:var(--acc)}
+.foot-end{margin-left:auto}
+@media(max-width:620px){.foot-end{margin-left:0;width:100%}}
+
+/* ---------- revelacao ---------- */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="back" href="/" aria-label="VENTUNO">
+    <!-- 21 em curvas, derivado de Swiss 721 Cn BT Bold Italic. Mesma marca do site. -->
+    <svg class="back-mark" viewBox="0 0 1325.95 902.28" fill-rule="nonzero" aria-hidden="true" focusable="false">
+      <path d="M-0 902.28c9.08,-27.98 20.11,-54.65 33.08,-80.02 36.57,-71.94 96.64,-146.74 179.98,-224.14 15.43,-14.25 49.86,-42.74 103.53,-85.48 53.9,-42.74 94.98,-80.73 123.23,-114.21 18.99,-22.32 33.24,-45.35 42.74,-69.57 9.5,-23.98 14.25,-48.68 14.25,-73.61 0,-37.28 -8.31,-65.53 -24.93,-85 -16.62,-19.47 -41.32,-29.21 -73.61,-29.21 -37.04,0 -65.06,16.15 -84.06,48.2 -18.99,32.06 -29.68,81.44 -32.53,148.4l-185.21 0c2.37,-112.31 29.44,-196.6 81.44,-253.11 51.76,-56.27 128.93,-84.53 230.79,-84.53 86.67,0 154.81,22.32 203.96,67.2 49.15,44.64 73.61,106.37 73.61,184.73 0,66.72 -14.96,126.79 -45.11,179.98 -30.16,52.95 -98.78,124.89 -205.86,215.36l-4.27 3.33c-134.76,114.4 -212.58,198.15 -233.46,251.69l-197.58 0zm949.93 0l126.23 -613.07c-35.62,5.94 -72.9,10.92 -111.36,14.96 -38.46,3.8 -77.64,6.89 -117.53,9.26l24.93 -125.37c87.85,-7.83 157.19,-26.36 208.48,-55.8 51.29,-29.2 89.28,-71.94 113.74,-127.98l131.54 0 -186.48 898 -189.54 0z"/>
+    </svg>
+    <span class="back-txt">zeroventuno.com</span>
+  </a>
+  <div class="top-lang" role="group" aria-label="Idioma / Lingua / Language">
+    <button data-lang="pt" aria-pressed="true">PT</button>
+    <button data-lang="it" aria-pressed="false">IT</button>
+    <button data-lang="en" aria-pressed="false">EN</button>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-kicker rv" data-i18n="kicker">Cartões digitais</div>
+      <h1 class="rv" data-i18n="h1">Um toque e você<br>fica <em>na agenda.</em></h1>
+      <p class="hero-sub rv" data-i18n="sub">Seu cartão de visita digital: um toque no celular e seu contato já está salvo, com a sua cara e a da sua marca.</p>
+      <div class="acoes rv">
+        <a class="btn btn-1" href="#pedido" data-i18n="ctaPedir">Pedir meu cartão</a>
+        <a class="btn btn-2 wa" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.98-.14.16-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
+          <span data-i18n="ctaWa">Falar no WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-num">01 / 21</span>
+        <h2 class="sec-title" data-i18n="howTitle">Como funciona</h2>
+      </div>
+      <div class="steps">
+        <div class="step rv"><div class="step-n">01</div><p data-i18n="step1">A pessoa encosta o celular no cartão — ou lê o QR code.</p></div>
+        <div class="step rv"><div class="step-n">02</div><p data-i18n="step2">Abre uma página com o seu retrato, nome, cargo e marca. Sem baixar nenhum app.</p></div>
+        <div class="step rv"><div class="step-n">03</div><p data-i18n="step3">Um botão salva o seu contato direto na agenda. Os outros levam ao WhatsApp, e-mail, site e redes.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-num">02 / 21</span>
+        <h2 class="sec-title" data-i18n="exTitle">Exemplos ao vivo</h2>
+      </div>
+      <div class="ex-grid" id="ex-grid"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-num">03 / 21</span>
+        <h2 class="sec-title" data-i18n="planTitle">Padrão e Premium</h2>
+      </div>
+      <div class="plans">
+        <div class="plan rv">
+          <div class="plan-name" data-i18n="planStd">Padrão</div>
+          <div class="plan-price" data-i18n="price">Sob consulta</div>
+          <p data-i18n="planStdTxt">Cartão digital na identidade visual da sua empresa, com foto profissional. Fica pronto rápido, causa boa impressão e substitui o cartão de papel para sempre: mudou de telefone ou de cargo, atualizamos o link e o cartão físico continua valendo.</p>
+        </div>
+        <div class="plan is-premium rv">
+          <div class="plan-name" data-i18n="planPrem">Premium</div>
+          <div class="plan-price" data-i18n="price">Sob consulta</div>
+          <p data-i18n="planPremTxt">Tudo do padrão, mais um retrato em vídeo com o logo da marca animado e uma página escura com acabamento sob medida. É o cartão que as pessoas mostram umas às outras: você é lembrado depois da reunião.</p>
+        </div>
+      </div>
+      <div class="both rv">
+        <div class="both-lbl" data-i18n="bothLbl">Os dois incluem</div>
+        <ul>
+          <li data-i18n="both1">Vários idiomas</li>
+          <li data-i18n="both2">Link próprio</li>
+          <li data-i18n="both3">QR code na tela, para compartilhar à distância</li>
+          <li data-i18n="both4">Ícone na tela inicial do celular</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="pedido">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-num">04 / 21</span>
+        <h2 class="sec-title" data-i18n="pedTitle">Pedir meu cartão</h2>
+      </div>
+
+      <div class="pedido-grid">
+        <div>
+          <form id="form" novalidate enctype="multipart/form-data">
+            <div class="campos">
+              <div class="campo rv">
+                <label for="f-nome" data-i18n="lNome">Nome <span class="obr">*</span></label>
+                <input id="f-nome" name="nome" type="text" autocomplete="given-name" maxlength="80" required>
+              </div>
+              <div class="campo rv">
+                <label for="f-sobrenome" data-i18n="lSobrenome">Sobrenome <span class="obr">*</span></label>
+                <input id="f-sobrenome" name="sobrenome" type="text" autocomplete="family-name" maxlength="80" required>
+              </div>
+              <div class="campo rv">
+                <label for="f-email" data-i18n="lEmail">E-mail <span class="obr">*</span></label>
+                <input id="f-email" name="email" type="email" autocomplete="email" maxlength="200" required>
+              </div>
+              <div class="campo rv">
+                <label for="f-telefone" data-i18n="lTelefone">Telefone / WhatsApp <span class="obr">*</span></label>
+                <input id="f-telefone" name="telefone" type="tel" autocomplete="tel" maxlength="40" required>
+              </div>
+              <div class="campo rv">
+                <label for="f-empresa" data-i18n="lEmpresa">Empresa <span class="obr">*</span></label>
+                <input id="f-empresa" name="empresa" type="text" autocomplete="organization" maxlength="120" required>
+              </div>
+              <div class="campo rv">
+                <label for="f-cargo" data-i18n="lCargo">Cargo <span class="obr">*</span></label>
+                <input id="f-cargo" name="cargo" type="text" autocomplete="organization-title" maxlength="120" required>
+              </div>
+              <div class="campo rv">
+                <label for="f-site" data-i18n="lSite">Site da empresa</label>
+                <input id="f-site" name="site" type="url" inputmode="url" placeholder="https://" maxlength="200">
+              </div>
+              <div class="campo rv">
+                <label for="f-plano" data-i18n="lPlano">Plano de interesse</label>
+                <select id="f-plano" name="plano">
+                  <option value="Padrão" data-i18n-opt="oStd">Padrão</option>
+                  <option value="Premium" data-i18n-opt="oPrem">Premium</option>
+                  <option value="Ainda não sei" selected data-i18n-opt="oTalvez">Ainda não sei</option>
+                </select>
+              </div>
+
+              <div class="campo arquivo largo rv">
+                <label for="f-foto" data-i18n="lFoto">Foto (opcional)</label>
+                <input id="f-foto" name="foto" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.jpg,.jpeg,.png,.webp,.heic">
+                <label class="arquivo-btn" for="f-foto">
+                  <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 16V4m0 0L7 9m5-5 5 5"/><path d="M4 17v2a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2"/></svg>
+                  <span data-i18n="fotoBtn">Escolher uma foto — jpg, png, webp ou heic, até 10 MB</span>
+                </label>
+                <div class="arquivo-nome" id="foto-nome"></div>
+              </div>
+
+              <div class="campo largo rv">
+                <label for="f-msg" data-i18n="lMsg">Mensagem</label>
+                <textarea id="f-msg" name="mensagem" maxlength="3000"></textarea>
+              </div>
+
+              <!-- honeypot: invisivel para gente, irresistivel para bot -->
+              <div style="position:absolute;left:-9999px" aria-hidden="true">
+                <label for="f-website">Website</label>
+                <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="consent rv">
+                <input id="f-consent" name="consentimento" type="checkbox" value="1" required>
+                <label for="f-consent" data-i18n="lConsent">Autorizo o uso dos meus dados para responder a este pedido. Não são usados para mais nada nem repassados a ninguém.</label>
+              </div>
+
+              <div class="aviso" id="aviso" role="alert"></div>
+
+              <div class="enviar rv">
+                <button class="btn btn-1" id="btn-enviar" type="submit" data-i18n="btnEnviar">Enviar pedido</button>
+                <span class="nota" data-i18n="notaEnviar">Resposta direta com o Cristiano</span>
+              </div>
+            </div>
+          </form>
+
+          <div class="obrigado" id="obrigado">
+            <div class="obrigado-ok" aria-hidden="true">✓</div>
+            <h3 data-i18n="okTitle">Pedido enviado</h3>
+            <p data-i18n="okTxt">Recebi tudo. Respondo no seu e-mail com o formato e o prazo.</p>
+            <a class="btn btn-2 wa" href="#" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.98-.14.16-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
+              <span data-i18n="okWa">Prefere falar agora? WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <aside class="lado rv">
+          <h3 data-i18n="ladoTitle">Prefere conversar?</h3>
+          <p data-i18n="ladoTxt">Se for mais fácil explicar falando, me chame direto. Respondo eu mesmo.</p>
+          <a class="btn btn-1 wa" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.98-.14.16-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
+            <span data-i18n="ctaWa">Falar no WhatsApp</span>
+          </a>
+          <div class="lado-ou" data-i18n="ou">ou</div>
+          <a class="lado-mail" id="lado-mail" href="#">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 6.5L21 6"/></svg>
+            <span id="lado-mail-txt"></span>
+          </a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>VENTUNO</span>
+  <a href="/">zeroventuno.com</a>
+  <a id="foot-mail" href="#"></a>
+  <span class="foot-end" data-i18n="footNote">Cartões digitais NFC · vCard</span>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* Os dois dados de contato ficam em constante: aparecem em varios lugares da
+     pagina e um digito ou uma letra trocada vira cliente perdido em silencio. */
+  var WA = "393421270379";
+  var EMAIL = "cristiano@zeroventuno.com";
+
+  var FOTO_MAX = 10 * 1024 * 1024; // igual ao limite do servidor
+
+  var I18N = {
+    pt:{
+      kicker:"Cartões digitais",
+      h1:"Um toque e você<br>fica <em>na agenda.</em>",
+      sub:"Seu cartão de visita digital: um toque no celular e seu contato já está salvo, com a sua cara e a da sua marca.",
+      ctaPedir:"Pedir meu cartão", ctaWa:"Falar no WhatsApp",
+      howTitle:"Como funciona",
+      step1:"A pessoa encosta o celular no cartão — ou lê o QR code.",
+      step2:"Abre uma página com o seu retrato, nome, cargo e marca. Sem baixar nenhum app.",
+      step3:"Um botão salva o seu contato direto na agenda. Os outros levam ao WhatsApp, e-mail, site e redes.",
+      exTitle:"Exemplos ao vivo", exOpen:"abrir o cartão",
+      planTitle:"Padrão e Premium", planStd:"Padrão", planPrem:"Premium", price:"Sob consulta",
+      planStdTxt:"Cartão digital na identidade visual da sua empresa, com foto profissional. Fica pronto rápido, causa boa impressão e substitui o cartão de papel para sempre: mudou de telefone ou de cargo, atualizamos o link e o cartão físico continua valendo.",
+      planPremTxt:"Tudo do padrão, mais um retrato em vídeo com o logo da marca animado e uma página escura com acabamento sob medida. É o cartão que as pessoas mostram umas às outras: você é lembrado depois da reunião.",
+      bothLbl:"Os dois incluem", both1:"Vários idiomas", both2:"Link próprio",
+      both3:"QR code na tela, para compartilhar à distância", both4:"Ícone na tela inicial do celular",
+      pedTitle:"Pedir meu cartão",
+      lNome:'Nome <span class="obr">*</span>', lSobrenome:'Sobrenome <span class="obr">*</span>',
+      lEmail:'E-mail <span class="obr">*</span>', lTelefone:'Telefone / WhatsApp <span class="obr">*</span>',
+      lEmpresa:'Empresa <span class="obr">*</span>', lCargo:'Cargo <span class="obr">*</span>',
+      lSite:"Site da empresa", lPlano:"Plano de interesse",
+      oStd:"Padrão", oPrem:"Premium", oTalvez:"Ainda não sei",
+      lFoto:"Foto (opcional)", fotoBtn:"Escolher uma foto — jpg, png, webp ou heic, até 10 MB",
+      lMsg:"Mensagem",
+      lConsent:"Autorizo o uso dos meus dados para responder a este pedido. Não são usados para mais nada nem repassados a ninguém.",
+      btnEnviar:"Enviar pedido", btnEnviando:"Enviando…", notaEnviar:"Resposta direta com o Cristiano",
+      okTitle:"Pedido enviado", okTxt:"Recebi tudo. Respondo no seu e-mail com o formato e o prazo.",
+      okWa:"Prefere falar agora? WhatsApp",
+      ladoTitle:"Prefere conversar?", ladoTxt:"Se for mais fácil explicar falando, me chame direto. Respondo eu mesmo.",
+      ou:"ou", footNote:"Cartões digitais NFC · vCard",
+      waText:"Olá Cristiano, vi a página dos cartões digitais e quero saber mais.",
+      erros:{
+        campos:"Preencha os campos obrigatórios.",
+        email:"Esse e-mail não parece válido.",
+        consent:"Preciso da sua autorização para usar os dados.",
+        foto:"Esse arquivo não é uma imagem. Use jpg, png, webp ou heic.",
+        grande:"A foto passa de 10 MB. Mande uma menor.",
+        limite:"Muitos envios deste computador. Tente de novo daqui a pouco.",
+        ocupado:"Estou recebendo outros envios agora. Tente de novo em instantes.",
+        rede:"Não consegui enviar. Verifique a conexão e tente de novo.",
+        geral:"Não consegui enviar agora. Tente de novo, ou me chame no WhatsApp."
+      }
+    },
+    it:{
+      kicker:"Biglietti digitali",
+      h1:"Un tocco e sei<br><em>in rubrica.</em>",
+      sub:"Il tuo biglietto da visita digitale: un tocco sul telefono e il tuo contatto è già salvato, con il tuo volto e il tuo brand.",
+      ctaPedir:"Richiedi il biglietto", ctaWa:"Scrivi su WhatsApp",
+      howTitle:"Come funziona",
+      step1:"La persona avvicina il telefono al biglietto — oppure legge il QR code.",
+      step2:"Si apre una pagina con il tuo ritratto, nome, ruolo e brand. Senza scaricare nessuna app.",
+      step3:"Un pulsante salva il tuo contatto direttamente in rubrica. Gli altri portano a WhatsApp, e-mail, sito e social.",
+      exTitle:"Esempi dal vivo", exOpen:"apri il biglietto",
+      planTitle:"Standard e Premium", planStd:"Standard", planPrem:"Premium", price:"Su richiesta",
+      planStdTxt:"Biglietto digitale nell'identità visiva della tua azienda, con foto professionale. È pronto in poco tempo, fa una buona impressione e sostituisce per sempre il biglietto di carta: cambi numero o ruolo, aggiorniamo il link e il biglietto fisico resta valido.",
+      planPremTxt:"Tutto quello dello standard, più un ritratto in video con il logo animato e una pagina scura con finitura su misura. È il biglietto che le persone si mostrano a vicenda: ti ricordano dopo la riunione.",
+      bothLbl:"Entrambi includono", both1:"Più lingue", both2:"Link dedicato",
+      both3:"QR code a schermo, per condividerlo a distanza", both4:"Icona sulla schermata principale del telefono",
+      pedTitle:"Richiedi il biglietto",
+      lNome:'Nome <span class="obr">*</span>', lSobrenome:'Cognome <span class="obr">*</span>',
+      lEmail:'E-mail <span class="obr">*</span>', lTelefone:'Telefono / WhatsApp <span class="obr">*</span>',
+      lEmpresa:'Azienda <span class="obr">*</span>', lCargo:'Ruolo <span class="obr">*</span>',
+      lSite:"Sito dell'azienda", lPlano:"Piano di interesse",
+      oStd:"Standard", oPrem:"Premium", oTalvez:"Non lo so ancora",
+      lFoto:"Foto (facoltativa)", fotoBtn:"Scegli una foto — jpg, png, webp o heic, fino a 10 MB",
+      lMsg:"Messaggio",
+      lConsent:"Autorizzo l'uso dei miei dati per rispondere a questa richiesta. Non vengono usati per altro né ceduti a nessuno.",
+      btnEnviar:"Invia richiesta", btnEnviando:"Invio…", notaEnviar:"Risposta diretta di Cristiano",
+      okTitle:"Richiesta inviata", okTxt:"Ho ricevuto tutto. Ti rispondo via e-mail con formato e tempi.",
+      okWa:"Preferisci parlare subito? WhatsApp",
+      ladoTitle:"Preferisci parlare?", ladoTxt:"Se è più comodo spiegarlo a voce, scrivimi direttamente. Rispondo io.",
+      ou:"oppure", footNote:"Biglietti digitali NFC · vCard",
+      waText:"Ciao Cristiano, ho visto la pagina dei biglietti digitali e vorrei saperne di più.",
+      erros:{
+        campos:"Compila i campi obbligatori.",
+        email:"Questa e-mail non sembra valida.",
+        consent:"Mi serve la tua autorizzazione per usare i dati.",
+        foto:"Questo file non è un'immagine. Usa jpg, png, webp o heic.",
+        grande:"La foto supera i 10 MB. Inviane una più piccola.",
+        limite:"Troppi invii da questo computer. Riprova tra poco.",
+        ocupado:"Sto ricevendo altri invii in questo momento. Riprova tra un istante.",
+        rede:"Non sono riuscito a inviare. Controlla la connessione e riprova.",
+        geral:"Non sono riuscito a inviare ora. Riprova, oppure scrivimi su WhatsApp."
+      }
+    },
+    en:{
+      kicker:"Digital cards",
+      h1:"One tap and you're<br><em>in their contacts.</em>",
+      sub:"Your digital business card: one tap on the phone and your contact is saved, with your face and your brand on it.",
+      ctaPedir:"Request my card", ctaWa:"Message on WhatsApp",
+      howTitle:"How it works",
+      step1:"They tap their phone on the card — or scan the QR code.",
+      step2:"A page opens with your portrait, name, role and brand. No app to download.",
+      step3:"One button saves your contact straight to their phone. The others go to WhatsApp, email, site and socials.",
+      exTitle:"Live examples", exOpen:"open the card",
+      planTitle:"Standard and Premium", planStd:"Standard", planPrem:"Premium", price:"On request",
+      planStdTxt:"A digital card in your company's visual identity, with a professional photo. It is ready quickly, makes a good impression and replaces the paper card for good: change your number or your role and we update the link, while the physical card keeps working.",
+      planPremTxt:"Everything in Standard, plus a video portrait with your animated logo and a dark page finished to measure. It is the card people show each other: you get remembered after the meeting.",
+      bothLbl:"Both include", both1:"Several languages", both2:"Your own link",
+      both3:"On-screen QR code, to share at a distance", both4:"Icon on the phone's home screen",
+      pedTitle:"Request my card",
+      lNome:'First name <span class="obr">*</span>', lSobrenome:'Last name <span class="obr">*</span>',
+      lEmail:'Email <span class="obr">*</span>', lTelefone:'Phone / WhatsApp <span class="obr">*</span>',
+      lEmpresa:'Company <span class="obr">*</span>', lCargo:'Role <span class="obr">*</span>',
+      lSite:"Company website", lPlano:"Plan you have in mind",
+      oStd:"Standard", oPrem:"Premium", oTalvez:"Not sure yet",
+      lFoto:"Photo (optional)", fotoBtn:"Choose a photo — jpg, png, webp or heic, up to 10 MB",
+      lMsg:"Message",
+      lConsent:"I agree to my details being used to answer this request. They are not used for anything else and never passed on.",
+      btnEnviar:"Send request", btnEnviando:"Sending…", notaEnviar:"Cristiano answers you directly",
+      okTitle:"Request sent", okTxt:"Got everything. I'll reply to your email with the format and the timing.",
+      okWa:"Rather talk now? WhatsApp",
+      ladoTitle:"Rather talk?", ladoTxt:"If it is easier to explain out loud, message me directly. I answer myself.",
+      ou:"or", footNote:"NFC digital cards · vCard",
+      waText:"Hello Cristiano, I saw the digital cards page and I'd like to know more.",
+      erros:{
+        campos:"Please fill in the required fields.",
+        email:"That email doesn't look valid.",
+        consent:"I need your permission to use your details.",
+        foto:"That file isn't an image. Use jpg, png, webp or heic.",
+        grande:"The photo is over 10 MB. Please send a smaller one.",
+        limite:"Too many submissions from this computer. Try again shortly.",
+        ocupado:"I'm receiving other submissions right now. Try again in a moment.",
+        rede:"Couldn't send. Check your connection and try again.",
+        geral:"Couldn't send right now. Try again, or message me on WhatsApp."
+      }
+    }
+  };
+
+  /* Exemplos: uma entrada por cartao. Tirar ou acrescentar e mexer so aqui. */
+  var EXEMPLOS = [
+    { nome:"Officine Mattio", tag:"Premium",
+      video:"/assets/cartoes/retrato-mattio.mp4", poster:"/assets/cartoes/retrato-mattio.webp",
+      url:"https://cristiano-om.vercel.app" },
+    { nome:"VENTUNO", tag:"Premium",
+      video:"/assets/cartoes/retrato-ventuno.mp4", poster:"/assets/cartoes/retrato-ventuno.webp",
+      url:"https://zeroventuno.com" }
+  ];
+
+  var reduzido = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var lang = "pt";
+  var d = I18N.pt;
+
+  /* ---------- exemplos ---------- */
+  function montarExemplos(){
+    var alvo = document.getElementById("ex-grid");
+    alvo.innerHTML = "";
+    EXEMPLOS.forEach(function(ex){
+      var art = document.createElement("div");
+      art.className = "ex rv";
+      art.innerHTML =
+        '<div class="phone"><video muted loop playsinline preload="none" poster="' + ex.poster + '">' +
+        '<source src="' + ex.video + '" type="video/mp4"></video></div>' +
+        '<div class="ex-name"></div><div class="ex-tag"></div>' +
+        '<a class="ex-link" target="_blank" rel="noopener"><span></span> ↗</a>';
+      art.querySelector(".ex-name").textContent = ex.nome;
+      art.querySelector(".ex-tag").textContent = ex.tag;
+      var a = art.querySelector(".ex-link");
+      a.href = ex.url;
+      alvo.appendChild(art);
+    });
+    observarVideos();
+  }
+
+  /* Os videos so carregam quando entram na tela: sao ~800 KB cada e nao devem
+     pesar no primeiro carregamento de quem nem rolou ate eles. */
+  function observarVideos(){
+    var vids = document.querySelectorAll(".phone video");
+    if(reduzido) return;
+    if(!("IntersectionObserver" in window)){
+      vids.forEach(function(v){ v.play().catch(function(){}); });
+      return;
+    }
+    var io = new IntersectionObserver(function(ents){
+      ents.forEach(function(e){
+        if(e.isIntersecting) e.target.play().catch(function(){});
+        else e.target.pause();
+      });
+    },{rootMargin:"120px 0px"});
+    vids.forEach(function(v){ io.observe(v); });
+  }
+
+  function observarRevelacao(){
+    var els = document.querySelectorAll(".rv:not(.in)");
+    if(reduzido || !("IntersectionObserver" in window)){
+      els.forEach(function(el){ el.classList.add("in"); });
+      return;
+    }
+    var io = new IntersectionObserver(function(ents){
+      ents.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    },{rootMargin:"0px 0px -8% 0px"});
+    els.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---------- idioma ---------- */
+  function aplicar(novo){
+    if(!I18N[novo]) return;
+    lang = novo; d = I18N[lang];
+    document.documentElement.lang = lang === "pt" ? "pt-BR" : lang;
+
+    document.querySelectorAll("[data-i18n]").forEach(function(el){
+      var k = el.getAttribute("data-i18n");
+      if(d[k] !== undefined) el.innerHTML = d[k];
+    });
+    document.querySelectorAll("[data-i18n-opt]").forEach(function(el){
+      var k = el.getAttribute("data-i18n-opt");
+      if(d[k] !== undefined) el.textContent = d[k];
+    });
+    document.querySelectorAll(".ex-link span").forEach(function(s){ s.textContent = d.exOpen; });
+
+    /* O texto do WhatsApp vai codificado: acento e pontuacao quebram a URL. */
+    var waHref = "https://wa.me/" + WA + "?text=" + encodeURIComponent(d.waText);
+    document.querySelectorAll("a.wa").forEach(function(a){ a.href = waHref; });
+
+    document.getElementById("lado-mail").href = "mailto:" + EMAIL;
+    document.getElementById("lado-mail-txt").textContent = EMAIL;
+    var fm = document.getElementById("foot-mail");
+    fm.href = "mailto:" + EMAIL; fm.textContent = EMAIL;
+
+    document.querySelectorAll(".top-lang button").forEach(function(b){
+      b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
+    });
+    try{ localStorage.setItem("vt-cartoes-lang", lang); }catch(e){}
+  }
+
+  function idiomaInicial(){
+    var q = new URLSearchParams(location.search).get("lang");
+    if(q && I18N[q]) return q;
+    try{ var s = localStorage.getItem("vt-cartoes-lang"); if(s && I18N[s]) return s; }catch(e){}
+    var n = (navigator.language || "").toLowerCase();
+    if(n.indexOf("it") === 0) return "it";
+    if(n.indexOf("pt") === 0) return "pt";
+    return n ? "en" : "pt";
+  }
+
+  /* ---------- formulario ---------- */
+  var form = document.getElementById("form");
+  var aviso = document.getElementById("aviso");
+  var botao = document.getElementById("btn-enviar");
+  var campoFoto = document.getElementById("f-foto");
+  var nomeFoto = document.getElementById("foto-nome");
+
+  campoFoto.addEventListener("change", function(){
+    var f = campoFoto.files && campoFoto.files[0];
+    if(!f){ nomeFoto.textContent = ""; return; }
+    nomeFoto.textContent = f.name + " · " + (f.size/1048576).toFixed(1) + " MB";
+    if(f.size > FOTO_MAX){ mostrarErro(d.erros.grande); campoFoto.value = ""; nomeFoto.textContent = ""; }
+  });
+
+  function mostrarErro(txt){ aviso.textContent = txt; aviso.className = "aviso erro"; }
+  function limparErro(){ aviso.textContent = ""; aviso.className = "aviso"; }
+
+  function marcar(el, ruim){
+    if(ruim) el.setAttribute("aria-invalid","true");
+    else el.removeAttribute("aria-invalid");
+    return !ruim;
+  }
+
+  var MAPA = {
+    missing_fields:"campos", invalid_email:"email", consent_required:"consent",
+    invalid_image:"foto", too_large:"grande", rate_limited:"limite",
+    busy:"ocupado", not_multipart:"geral", not_configured:"geral",
+    send_failed:"geral", too_many_files:"geral"
+  };
+
+  form.addEventListener("submit", async function(ev){
+    ev.preventDefault();
+    limparErro();
+
+    var obrigatorios = ["f-nome","f-sobrenome","f-email","f-telefone","f-empresa","f-cargo"];
+    var ok = true;
+    obrigatorios.forEach(function(id){
+      var el = document.getElementById(id);
+      if(!marcar(el, !el.value.trim())) ok = false;
+    });
+    if(!ok){ mostrarErro(d.erros.campos); return; }
+
+    var email = document.getElementById("f-email");
+    if(!marcar(email, !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()))){
+      mostrarErro(d.erros.email); return;
+    }
+    var consent = document.getElementById("f-consent");
+    if(!marcar(consent, !consent.checked)){ mostrarErro(d.erros.consent); return; }
+
+    var dados = new FormData(form);
+    dados.set("consentimento", consent.checked ? "1" : "");
+    dados.set("lang", lang);
+    if(campoFoto.files && campoFoto.files[0] && campoFoto.files[0].size === 0) dados.delete("foto");
+
+    botao.disabled = true;
+    botao.textContent = d.btnEnviando;
+    try{
+      var r = await fetch("/api/cartoes", { method:"POST", body:dados });
+      var corpo = {};
+      try{ corpo = await r.json(); }catch(e){}
+      if(r.ok && corpo.ok){
+        form.classList.add("enviado");
+        document.getElementById("obrigado").classList.add("on");
+        document.getElementById("pedido").scrollIntoView({behavior:"smooth", block:"start"});
+        return;
+      }
+      mostrarErro(d.erros[MAPA[corpo.error]] || d.erros.geral);
+    }catch(e){
+      mostrarErro(d.erros.rede);
+    }finally{
+      botao.disabled = false;
+      botao.textContent = d.btnEnviar;
+    }
+  });
+
+  /* ---------- partida ---------- */
+  document.documentElement.classList.add("js");
+  document.querySelectorAll(".top-lang button").forEach(function(b){
+    b.addEventListener("click", function(){ aplicar(b.dataset.lang); });
+  });
+
+  montarExemplos();
+  aplicar(idiomaInicial());
+  observarRevelacao();
+})();
+</script>
+</body>
+</html>
