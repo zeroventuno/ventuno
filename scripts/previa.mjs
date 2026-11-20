@@ -267,7 +267,8 @@ function cardProjeto(grupo, d) {
     .map((x) => `<div class="linha-selo">${grupo.length > 1 ? `<b>${txt(x.fm.titulo)}</b>` : ""}${selo(x.fm.estado)}${prontidaoPeca(x)}</div>`)
     .join("");
   const tags = [];
-  if (grupo.some((x) => x.slug === d.ordem.destaque)) tags.push('<span class="tag destaque">case em destaque</span>');
+  const posDestaque = grupo.map((x) => d.ordem.destaques.indexOf(x.slug)).filter((i) => i >= 0);
+  if (posDestaque.length) tags.push(`<span class="tag destaque">case em destaque · ${Math.min(...posDestaque) + 1} de ${d.ordem.destaques.length}</span>`);
   else if (grupo.some((x) => x.fm.destaque === true)) tags.push('<span class="tag">candidata a destaque</span>');
   if (grupo.length > 1) tags.push(`<span class="tag">família ${esc(p.fm.familia)}</span>`);
   const nums = lista(p.fm.numeros).slice(0, 4).map((n) => `<div><b>${txt(n.valor)}</b><span>${txt(n.rotulo)}</span></div>`).join("");

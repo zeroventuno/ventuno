@@ -1,21 +1,26 @@
 # Ordem do portfólio.
 # O conteúdo mora nas peças (_portfolio/<slug>/ de cada projeto). Esta lista só
-# decide a ordem dos cards e qual é o case em destaque. Uma peça que não esteja
-# aqui entra no fim; um slug daqui sem peça aparece na prévia como "ainda sem peça".
+# decide a ordem dos cards e quais são os cases em destaque. Uma peça que não
+# esteja aqui entra no fim; um slug daqui sem peça aparece na prévia como
+# "ainda sem peça".
 
-# Case em destaque hoje no site. Decisão pendente do Cristiano.
-destaque: centro-sportivo-roero
+# Os três cases em destaque, na ordem em que aparecem. Escolhidos pelo
+# Cristiano em 20/11/2026: MY TRAKR primeiro, pelo apelo de venda.
+destaques:
+  - my-trakr
+  - rentaloop
+  - flamme-rouge
 
 projetos:
-  - centro-sportivo-roero
-  - flamme-rouge
   - my-trakr
   - trakr-plus
+  - rentaloop
+  - flamme-rouge
+  - centro-sportivo-roero
   - om-rent-bikes
   - ventuno-01-02
   - sistemas-officine-mattio
   - producao-visual-ia
-  - rentaloop
   - espaco-labore
   - guidelo
 

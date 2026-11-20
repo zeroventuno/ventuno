@@ -380,8 +380,9 @@ export function lerTudo(raiz = RAIZ_PADRAO) {
 export function lerOrdem(arq) {
   try {
     const o = yaml.load(fs.readFileSync(arq, "utf8"), { schema: yaml.CORE_SCHEMA }) || {};
-    return { destaque: o.destaque || null, projetos: o.projetos || [], identidade: o.identidade || [] };
+    const destaques = Array.isArray(o.destaques) ? o.destaques : o.destaque ? [o.destaque] : [];
+    return { destaques, projetos: o.projetos || [], identidade: o.identidade || [] };
   } catch {
-    return { destaque: null, projetos: [], identidade: [] };
+    return { destaques: [], projetos: [], identidade: [] };
   }
 }
