@@ -1,0 +1,25 @@
+# Ordem do portfólio.
+# O conteúdo mora nas peças (_portfolio/<slug>/ de cada projeto). Esta lista só
+# decide a ordem dos cards e qual é o case em destaque. Uma peça que não esteja
+# aqui entra no fim; um slug daqui sem peça aparece na prévia como "ainda sem peça".
+
+# Case em destaque hoje no site. Decisão pendente do Cristiano.
+destaque: centro-sportivo-roero
+
+projetos:
+  - centro-sportivo-roero
+  - flamme-rouge
+  - my-trakr
+  - trakr-plus
+  - om-rent-bikes
+  - ventuno-01-02
+  - sistemas-officine-mattio
+  - producao-visual-ia
+  - rentaloop
+  - espaco-labore
+  - guidelo
+
+identidade:
+  - ventuno
+  - flamme-rouge
+  - my-trakr

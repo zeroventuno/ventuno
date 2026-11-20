@@ -5,12 +5,16 @@
   "description": "VENTUNO — portfolio site + contact endpoint",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "previa": "node scripts/previa.mjs"
   },
   "dependencies": {
     "busboy": "1.6.0",
     "compression": "1.8.2",
     "express": "4.22.3",
     "nodemailer": "10.2.1"
+  },
+  "devDependencies": {
+    "js-yaml": "5.5.0"
   }
 }
