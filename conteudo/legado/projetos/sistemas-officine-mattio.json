@@ -1,0 +1,117 @@
+{
+  "slug": "sistemas-officine-mattio",
+  "secao": "projetos",
+  "capa": null,
+  "galeria": [],
+  "identidade": null,
+  "t": {
+    "pt": {
+      "titulo": "Sistemas Operacionais Officine Mattio",
+      "etiqueta": "Sistemas internos · Vibe coding",
+      "resumo": "Sistemas internos para envios e assistência técnica, feitos por quem vive o processo.",
+      "descricao": "Dois sistemas construídos via vibe coding (Antigravity) para resolver problemas operacionais reais da própria rotina de trabalho. Quem vive o processo constrói a ferramenta certa para ele — do problema real à ferramenta funcional, em dias, não meses.",
+      "pontos": [
+        {
+          "rotulo": "Controle de Envios",
+          "texto": "Gestão e rastreamento de logística e transportes internacionais."
+        },
+        {
+          "rotulo": "Tickets de Suporte",
+          "texto": "Plataforma para assistência técnica e gestão de garantias."
+        }
+      ],
+      "numeros": [],
+      "legendas": []
+    },
+    "en": {
+      "titulo": "Operational Systems Officine Mattio",
+      "etiqueta": "Internal systems · Vibe coding",
+      "resumo": "Internal systems for shipping and technical support, built by someone who lives the process.",
+      "descricao": "Two systems built via vibe coding (Antigravity) to solve real operational problems from my own daily workflow. Whoever lives the process builds the right tool for it — from real problem to working tool in days, not months.",
+      "pontos": [
+        {
+          "rotulo": "Shipment Control",
+          "texto": "Management and tracking of international logistics and transport."
+        },
+        {
+          "rotulo": "Support Tickets",
+          "texto": "Platform for technical assistance and warranty management."
+        }
+      ],
+      "numeros": [],
+      "legendas": []
+    },
+    "it": {
+      "titulo": "Sistemi Operativi Officine Mattio",
+      "etiqueta": "Sistemi interni · Vibe coding",
+      "resumo": "Sistemi interni per spedizioni e assistenza tecnica, creati da chi vive il processo.",
+      "descricao": "Due sistemi costruiti via vibe coding (Antigravity) per risolvere problemi operativi reali della mia routine di lavoro. Chi vive il processo costruisce lo strumento giusto — dal problema reale allo strumento funzionante in giorni, non mesi.",
+      "pontos": [
+        {
+          "rotulo": "Controllo Spedizioni",
+          "texto": "Gestione e tracciamento di logistica e trasporti internazionali."
+        },
+        {
+          "rotulo": "Ticket di Assistenza",
+          "texto": "Piattaforma per assistenza tecnica e gestione garanzie."
+        }
+      ],
+      "numeros": [],
+      "legendas": []
+    },
+    "es": {
+      "titulo": "Sistemas Operativos Officine Mattio",
+      "etiqueta": "Sistemas internos · Vibe coding",
+      "resumo": "Sistemas internos para envíos y asistencia técnica, hechos por quien vive el proceso.",
+      "descricao": "Dos sistemas construidos con vibe coding (Antigravity) para resolver problemas operativos reales de la propia rutina de trabajo. Quien vive el proceso construye la herramienta adecuada — del problema real a la herramienta funcional, en días, no meses.",
+      "pontos": [
+        {
+          "rotulo": "Control de Envíos",
+          "texto": "Gestión y seguimiento de logística y transporte internacional."
+        },
+        {
+          "rotulo": "Tickets de Soporte",
+          "texto": "Plataforma para asistencia técnica y gestión de garantías."
+        }
+      ],
+      "numeros": [],
+      "legendas": []
+    },
+    "fr": {
+      "titulo": "Systèmes Opérationnels Officine Mattio",
+      "etiqueta": "Systèmes internes · Vibe coding",
+      "resumo": "Des systèmes internes pour les expéditions et l'assistance technique, créés par celui qui vit le processus.",
+      "descricao": "Deux systèmes construits en vibe coding (Antigravity) pour résoudre de vrais problèmes opérationnels issus de mon quotidien de travail. Celui qui vit le processus construit le bon outil — du problème réel à l'outil fonctionnel, en jours et non en mois.",
+      "pontos": [
+        {
+          "rotulo": "Suivi des Expéditions",
+          "texto": "Gestion et suivi de la logistique et du transport international."
+        },
+        {
+          "rotulo": "Tickets de Support",
+          "texto": "Plateforme d'assistance technique et de gestion des garanties."
+        }
+      ],
+      "numeros": [],
+      "legendas": []
+    },
+    "de": {
+      "titulo": "Operative Systeme Officine Mattio",
+      "etiqueta": "Interne Systeme · Vibe Coding",
+      "resumo": "Interne Systeme für Versand und technischen Support, gebaut von jemandem, der den Prozess selbst lebt.",
+      "descricao": "Zwei Systeme, per Vibe Coding (Antigravity) gebaut, um echte operative Probleme aus dem eigenen Arbeitsalltag zu lösen. Wer den Prozess lebt, baut das richtige Werkzeug dafür — vom echten Problem zum funktionierenden Tool, in Tagen statt Monaten.",
+      "pontos": [
+        {
+          "rotulo": "Versandverwaltung",
+          "texto": "Verwaltung und Sendungsverfolgung in Logistik und internationalem Transport."
+        },
+        {
+          "rotulo": "Support-Tickets",
+          "texto": "Plattform für technischen Service und Garantieabwicklung."
+        }
+      ],
+      "numeros": [],
+      "legendas": []
+    }
+  }
+}

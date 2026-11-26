@@ -1,8 +1,8 @@
 # Ordem do portfólio.
 # O conteúdo mora nas peças (_portfolio/<slug>/ de cada projeto). Esta lista só
-# decide a ordem dos cards e quais são os cases em destaque. Uma peça que não
-# esteja aqui entra no fim; um slug daqui sem peça aparece na prévia como
-# "ainda sem peça".
+# decide onde cada peça aparece, em que ordem, e quais são os cases em destaque.
+# Uma peça que não esteja aqui entra no fim de Projetos; um slug daqui sem peça
+# aparece na prévia como "ainda sem peça".
 
 # Os três cases em destaque, na ordem em que aparecem. Escolhidos pelo
 # Cristiano em 20/11/2026: MY TRAKR primeiro, pelo apelo de venda.
@@ -11,20 +11,29 @@ destaques:
   - rentaloop
   - flamme-rouge
 
+# Projetos que existem e funcionam.
+# Saíram em 20/11/2026: trakr-plus (é a versão B2B dentro do MY TRAKR) e
+# om-rent-bikes (é o Rentaloop). VENTUNO 01 & 02 fica com a peça oculta até
+# haver fotos boas das bicicletas.
 projetos:
   - my-trakr
-  - trakr-plus
   - rentaloop
   - flamme-rouge
-  - centro-sportivo-roero
-  - om-rent-bikes
-  - ventuno-01-02
   - sistemas-officine-mattio
+  - guidelo
   - producao-visual-ia
   - espaco-labore
-  - guidelo
+  - ventuno-01-02
+
+# Estudos e propostas: projetos feitos para um cliente que não comprou, ou que
+# saíram do ar. Aparecem numa seção própria, depois de Projetos.
+# Falta a peça da piscina Hidroesporte (pasta ainda não localizada em C:\Dev).
+estudos:
+  - centro-sportivo-roero
 
 identidade:
   - ventuno
-  - flamme-rouge
   - my-trakr
+  - rentaloop
+  - flamme-rouge
+  - guidelo

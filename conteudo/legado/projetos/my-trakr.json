@@ -1,0 +1,578 @@
+{
+  "slug": "my-trakr",
+  "secao": "projetos",
+  "capa": "/assets/trakr-02-fitness.jpg",
+  "galeria": [
+    {
+      "src": "/assets/trakr-01-hero.jpg",
+      "alta": false
+    },
+    {
+      "src": "/assets/trakr-02-fitness.jpg",
+      "alta": false
+    },
+    {
+      "src": "/assets/trakr-03-calendario.jpg",
+      "alta": false
+    },
+    {
+      "src": "/assets/trakr-04-temporada.jpg",
+      "alta": false
+    },
+    {
+      "src": "/assets/trakr-05-zonas.jpg",
+      "alta": false
+    },
+    {
+      "src": "/assets/trakr-06-corpo.jpg",
+      "alta": false
+    },
+    {
+      "src": "/assets/trakr-07-nutricao.jpg",
+      "alta": false
+    },
+    {
+      "src": "/assets/trakr-08-forca.jpg",
+      "alta": false
+    },
+    {
+      "src": "/assets/trakr-09-config.jpg",
+      "alta": false
+    },
+    {
+      "src": "/assets/trakr-10-completo.jpg",
+      "alta": true
+    }
+  ],
+  "identidade": "my-trakr",
+  "t": {
+    "pt": {
+      "titulo": "MY TRAKR",
+      "etiqueta": "Produto próprio · Plataforma de treino",
+      "resumo": "O painel que nasceu para um IRONMAN 70.3 e virou produto. O atleta conecta a própria IA, e o painel mostra o que a conversa não mostra.",
+      "versoes": "<b>MY TRAKR</b> para o atleta. <b>TRAKR+</b> para a assessoria.",
+      "descricao": "O dashboard que nasceu para um IRONMAN 70.3 e virou produto.",
+      "pontos": [
+        {
+          "rotulo": "Origem",
+          "texto": "Comecei como ferramenta de uso próprio: um painel para enxergar a preparação inteira num lugar só — calendário, carga, prontidão, lesões, temporada em fases."
+        },
+        {
+          "rotulo": "A virada",
+          "texto": "O que funcionava para um atleta passou a funcionar para qualquer um. O TRAK virou <b>MY TRAKR</b>: multi-tenant, cada atleta com a própria conta e os próprios dados, isolados no banco."
+        },
+        {
+          "rotulo": "Conceito",
+          "texto": "O produto <b>não embarca IA</b>. O atleta conecta a própria — Claude ou ChatGPT — por um conector MCP. O modelo passa a ler e escrever no sistema, e o painel é a camada visual daquela conversa. O custo de inferência sai da assinatura que ele já tem, e a prescrição continua com quem tem responsabilidade por ela."
+        },
+        {
+          "rotulo": "Sistema",
+          "texto": "Adesão por tempo em zona, pace ajustado por inclinação (GAP), carga de treino calculada, protocolos de teste de limiar com cadência de reteste, importação do Strava e leitura/escrita do formato <code>.fit</code> implementada do zero."
+        },
+        {
+          "rotulo": "Tese",
+          "texto": "O painel não compete com o chat. Ele mostra exatamente o que a conversa não consegue mostrar: tendência, comparação entre o prescrito e o realizado, e a temporada inteira de uma vez."
+        }
+      ],
+      "numeros": [
+        {
+          "valor": "1 ano",
+          "rotulo": "em uso real, todos os dias"
+        },
+        {
+          "valor": "MCP",
+          "rotulo": "conecta Claude ou ChatGPT"
+        },
+        {
+          "valor": "2",
+          "rotulo": "versões: atleta e assessoria"
+        },
+        {
+          "valor": ".fit",
+          "rotulo": "leitura e escrita feitas do zero"
+        }
+      ],
+      "secoes": [
+        {
+          "titulo": "TRAKR+",
+          "etiqueta": "Produto em construção · Plataforma B2B",
+          "texto": "Escalar uma assessoria esportiva sem perder a qualidade do atendimento.",
+          "pontos": [
+            {
+              "rotulo": "Problema",
+              "texto": "Um treinador atende 30 a 50 alunos, e o gargalo não é conhecimento — é repetição mecânica. Montar semana, transcrever treino, conferir o que foi feito. Do outro lado, o dono raramente tem instrumentação de negócio: não sabe qual treinador está sobrecarregado nem qual carteira está perdendo aluno."
+            },
+            {
+              "rotulo": "Conceito",
+              "texto": "Copiloto de IA para o profissional, painel para o resto. Conversa serve ao julgamento; painel serve à repetição. Cada profissional — treinador, nutricionista, fisioterapeuta — escreve no mesmo aluno, com escopo e permissões próprias."
+            },
+            {
+              "rotulo": "Operação",
+              "texto": "Roster agrupado por fase e ordenado por atenção, banco de treinos da casa, prescrição em lote, blocos de plano multi-semana distribuídos pela disponibilidade real de cada aluno."
+            },
+            {
+              "rotulo": "Gestão",
+              "texto": "Dashboards internos de negócio: placar comparativo por treinador, custo e margem por aluno, capacidade por profissional, redistribuição de carteiras com prévia do impacto antes de confirmar, e CRM de retenção — quem estava treinando e parou, com o valor mensal em risco."
+            },
+            {
+              "rotulo": "Tese",
+              "texto": "A unidade do painel do dono é o <b>treinador</b>, não o aluno. Empilhar todos os atletas numa lista é a versão que quebra justamente nos 200 alunos que são a meta."
+            }
+          ]
+        }
+      ],
+      "legendas": [
+        "Contagem para a prova e prontidão do dia",
+        "Condicionamento e frescor — fitness, fadiga e forma",
+        "Calendário de treinos com totais semanais",
+        "Temporada — volume semanal por fase",
+        "Zonas de performance — bike, corrida e natação",
+        "Composição corporal — tendências de bioimpedância",
+        "Plano alimentar e nutrição por duração de treino",
+        "Força, registro de lesões e estilo de vida",
+        "Configurações do atleta — disponibilidade e o que mede",
+        "O sistema completo, de ponta a ponta"
+      ]
+    },
+    "en": {
+      "titulo": "MY TRAKR",
+      "etiqueta": "Own product · Training platform",
+      "resumo": "The dashboard built for an IRONMAN 70.3 that became a product. Athletes connect their own AI, and the dashboard shows what the conversation can't.",
+      "versoes": "<b>MY TRAKR</b> for the athlete. <b>TRAKR+</b> for the coaching team.",
+      "descricao": "The dashboard born for an IRONMAN 70.3 that became a product.",
+      "pontos": [
+        {
+          "rotulo": "Origin",
+          "texto": "It started as a tool for my own use: a panel to see the whole preparation in one place — calendar, load, readiness, injuries, the season in phases."
+        },
+        {
+          "rotulo": "The turn",
+          "texto": "What worked for one athlete started working for anyone. TRAK became <b>MY TRAKR</b>: multi-tenant, each athlete with their own account and their own data, isolated in the database."
+        },
+        {
+          "rotulo": "Concept",
+          "texto": "The product <b>ships no AI</b>. The athlete connects their own — Claude or ChatGPT — through an MCP connector. The model reads and writes into the system, and the panel is the visual layer of that conversation. Inference cost comes out of the subscription they already pay for, and prescription stays with whoever is accountable for it."
+        },
+        {
+          "rotulo": "System",
+          "texto": "Adherence by time in zone, grade-adjusted pace (GAP), computed training load, threshold-test protocols with retest cadence, Strava import, and <code>.fit</code> read/write implemented from scratch."
+        },
+        {
+          "rotulo": "Thesis",
+          "texto": "The panel doesn't compete with the chat. It shows exactly what a conversation can't: trend, prescribed versus completed, and the entire season at once."
+        }
+      ],
+      "numeros": [
+        {
+          "valor": "1 year",
+          "rotulo": "in real daily use"
+        },
+        {
+          "valor": "MCP",
+          "rotulo": "connects Claude or ChatGPT"
+        },
+        {
+          "valor": "2",
+          "rotulo": "versions: athlete and coaching team"
+        },
+        {
+          "valor": ".fit",
+          "rotulo": "read and write built from scratch"
+        }
+      ],
+      "secoes": [
+        {
+          "titulo": "TRAKR+",
+          "etiqueta": "Product in progress · B2B platform",
+          "texto": "Scaling a coaching business without losing the quality of the service.",
+          "pontos": [
+            {
+              "rotulo": "Problem",
+              "texto": "A coach handles 30 to 50 athletes, and the bottleneck isn't knowledge — it's mechanical repetition. Building the week, transcribing the session, checking what was done. On the other side, the owner rarely has business instrumentation: no idea which coach is overloaded or which roster is losing athletes."
+            },
+            {
+              "rotulo": "Concept",
+              "texto": "An AI copilot for the professional, a panel for everything else. Conversation serves judgement; the panel serves repetition. Every professional — coach, nutritionist, physiotherapist — writes on the same athlete, each with their own scope and permissions."
+            },
+            {
+              "rotulo": "Operations",
+              "texto": "Roster grouped by phase and ordered by attention, an in-house workout bank, batch prescription, and multi-week plan blocks distributed across each athlete's real availability."
+            },
+            {
+              "rotulo": "Management",
+              "texto": "Internal business dashboards: comparative scoreboard by coach, cost and margin per athlete, capacity per professional, roster redistribution with an impact preview before confirming, and a retention CRM — who was training and stopped, with the monthly revenue at risk."
+            },
+            {
+              "rotulo": "Thesis",
+              "texto": "The unit of the owner's panel is the <b>coach</b>, not the athlete. Stacking every athlete into one list is the version that breaks at exactly the 200 athletes that are the goal."
+            }
+          ]
+        }
+      ],
+      "legendas": [
+        "Race countdown and today's readiness",
+        "Fitness and freshness — fitness, fatigue and form",
+        "Training calendar with weekly totals",
+        "Season — weekly volume by phase",
+        "Performance zones — bike, run and swim",
+        "Body composition — bioimpedance trends",
+        "Meal plan and nutrition by session length",
+        "Strength, injury log and lifestyle",
+        "Athlete settings — availability and what you measure",
+        "The whole system, end to end"
+      ]
+    },
+    "it": {
+      "titulo": "MY TRAKR",
+      "etiqueta": "Prodotto proprio · Piattaforma di allenamento",
+      "resumo": "Il pannello nato per un IRONMAN 70.3 e diventato prodotto. L'atleta collega la propria IA, e il pannello mostra ciò che la conversazione non mostra.",
+      "versoes": "<b>MY TRAKR</b> per l'atleta. <b>TRAKR+</b> per lo staff tecnico.",
+      "descricao": "La dashboard nata per un IRONMAN 70.3 e diventata prodotto.",
+      "pontos": [
+        {
+          "rotulo": "Origine",
+          "texto": "È partita come strumento per uso personale: un pannello per vedere l'intera preparazione in un unico posto — calendario, carico, readiness, infortuni, stagione per fasi."
+        },
+        {
+          "rotulo": "La svolta",
+          "texto": "Ciò che funzionava per un atleta ha iniziato a funzionare per chiunque. TRAK è diventata <b>MY TRAKR</b>: multi-tenant, ogni atleta con il proprio account e i propri dati, isolati nel database."
+        },
+        {
+          "rotulo": "Concetto",
+          "texto": "Il prodotto <b>non incorpora IA</b>. L'atleta collega la propria — Claude o ChatGPT — tramite un connettore MCP. Il modello legge e scrive nel sistema, e il pannello è il livello visivo di quella conversazione. Il costo di inferenza esce dall'abbonamento che ha già, e la prescrizione resta a chi ne ha la responsabilità."
+        },
+        {
+          "rotulo": "Sistema",
+          "texto": "Aderenza per tempo in zona, passo corretto per pendenza (GAP), carico di allenamento calcolato, protocolli di test di soglia con cadenza di ripetizione, importazione da Strava e lettura/scrittura del formato <code>.fit</code> implementata da zero."
+        },
+        {
+          "rotulo": "Tesi",
+          "texto": "Il pannello non compete con la chat. Mostra esattamente ciò che la conversazione non riesce a mostrare: tendenza, confronto tra prescritto e svolto, e l'intera stagione in una volta."
+        }
+      ],
+      "numeros": [
+        {
+          "valor": "1 anno",
+          "rotulo": "di uso reale, ogni giorno"
+        },
+        {
+          "valor": "MCP",
+          "rotulo": "collega Claude o ChatGPT"
+        },
+        {
+          "valor": "2",
+          "rotulo": "versioni: atleta e staff tecnico"
+        },
+        {
+          "valor": ".fit",
+          "rotulo": "lettura e scrittura scritte da zero"
+        }
+      ],
+      "secoes": [
+        {
+          "titulo": "TRAKR+",
+          "etiqueta": "Prodotto in costruzione · Piattaforma B2B",
+          "texto": "Far crescere una società di coaching senza perdere la qualità del servizio.",
+          "pontos": [
+            {
+              "rotulo": "Problema",
+              "texto": "Un allenatore segue dai 30 ai 50 atleti, e il collo di bottiglia non è la conoscenza — è la ripetizione meccanica. Costruire la settimana, trascrivere l'allenamento, verificare cosa è stato fatto. Dall'altra parte, il titolare raramente ha strumenti di gestione: non sa quale allenatore è sovraccarico né quale portafoglio sta perdendo atleti."
+            },
+            {
+              "rotulo": "Concetto",
+              "texto": "Copilota IA per il professionista, pannello per tutto il resto. La conversazione serve al giudizio; il pannello serve alla ripetizione. Ogni professionista — allenatore, nutrizionista, fisioterapista — scrive sullo stesso atleta, con ambito e permessi propri."
+            },
+            {
+              "rotulo": "Operatività",
+              "texto": "Roster raggruppato per fase e ordinato per priorità di attenzione, banca allenamenti della struttura, prescrizione in blocco, blocchi di piano pluri-settimanali distribuiti sulla disponibilità reale di ogni atleta."
+            },
+            {
+              "rotulo": "Gestione",
+              "texto": "Dashboard interne di business: quadro comparativo per allenatore, costo e margine per atleta, capacità per professionista, ridistribuzione dei portafogli con anteprima dell'impatto prima di confermare, e CRM di retention — chi si allenava e ha smesso, con il valore mensile a rischio."
+            },
+            {
+              "rotulo": "Tesi",
+              "texto": "L'unità del pannello del titolare è l'<b>allenatore</b>, non l'atleta. Impilare tutti gli atleti in un'unica lista è la versione che si rompe proprio ai 200 atleti che sono l'obiettivo."
+            }
+          ]
+        }
+      ],
+      "legendas": [
+        "Conto alla rovescia per la gara e readiness del giorno",
+        "Condizione e freschezza — fitness, fatica e forma",
+        "Calendario allenamenti con totali settimanali",
+        "Stagione — volume settimanale per fase",
+        "Zone di performance — bici, corsa e nuoto",
+        "Composizione corporea — andamento bioimpedenza",
+        "Piano alimentare e nutrizione per durata dell'allenamento",
+        "Forza, registro infortuni e stile di vita",
+        "Impostazioni dell'atleta — disponibilità e cosa misuri",
+        "L'intero sistema, dall'inizio alla fine"
+      ]
+    },
+    "es": {
+      "titulo": "MY TRAKR",
+      "etiqueta": "Producto propio · Plataforma de entrenamiento",
+      "resumo": "El panel que nació para un IRONMAN 70.3 y se convirtió en producto. El atleta conecta su propia IA, y el panel muestra lo que la conversación no muestra.",
+      "versoes": "<b>MY TRAKR</b> para el atleta. <b>TRAKR+</b> para la asesoría deportiva.",
+      "descricao": "El dashboard que nació para un IRONMAN 70.3 y se convirtió en producto.",
+      "pontos": [
+        {
+          "rotulo": "Origen",
+          "texto": "Empezó como herramienta de uso propio: un panel para ver toda la preparación en un solo lugar — calendario, carga, readiness, lesiones, temporada por fases."
+        },
+        {
+          "rotulo": "El giro",
+          "texto": "Lo que funcionaba para un atleta pasó a funcionar para cualquiera. TRAK se convirtió en <b>MY TRAKR</b>: multi-tenant, cada atleta con su propia cuenta y sus propios datos, aislados en la base de datos."
+        },
+        {
+          "rotulo": "Concepto",
+          "texto": "El producto <b>no incorpora IA</b>. El atleta conecta la suya — Claude o ChatGPT — mediante un conector MCP. El modelo lee y escribe en el sistema, y el panel es la capa visual de esa conversación. El coste de inferencia sale de la suscripción que ya paga, y la prescripción sigue en manos de quien tiene la responsabilidad."
+        },
+        {
+          "rotulo": "Sistema",
+          "texto": "Adherencia por tiempo en zona, ritmo ajustado por pendiente (GAP), carga de entrenamiento calculada, protocolos de test de umbral con cadencia de repetición, importación desde Strava y lectura/escritura del formato <code>.fit</code> implementada desde cero."
+        },
+        {
+          "rotulo": "Tesis",
+          "texto": "El panel no compite con el chat. Muestra exactamente lo que la conversación no puede: tendencia, comparación entre lo prescrito y lo realizado, y la temporada entera de una vez."
+        }
+      ],
+      "numeros": [
+        {
+          "valor": "1 año",
+          "rotulo": "de uso real, todos los días"
+        },
+        {
+          "valor": "MCP",
+          "rotulo": "conecta Claude o ChatGPT"
+        },
+        {
+          "valor": "2",
+          "rotulo": "versiones: atleta y asesoría"
+        },
+        {
+          "valor": ".fit",
+          "rotulo": "lectura y escritura hechas desde cero"
+        }
+      ],
+      "secoes": [
+        {
+          "titulo": "TRAKR+",
+          "etiqueta": "Producto en construcción · Plataforma B2B",
+          "texto": "Escalar una asesoría deportiva sin perder la calidad de la atención.",
+          "pontos": [
+            {
+              "rotulo": "Problema",
+              "texto": "Un entrenador atiende de 30 a 50 alumnos, y el cuello de botella no es el conocimiento — es la repetición mecánica. Montar la semana, transcribir el entrenamiento, comprobar lo que se hizo. Del otro lado, el dueño rara vez tiene instrumentación de negocio: no sabe qué entrenador está sobrecargado ni qué cartera está perdiendo alumnos."
+            },
+            {
+              "rotulo": "Concepto",
+              "texto": "Copiloto de IA para el profesional, panel para todo lo demás. La conversación sirve al criterio; el panel sirve a la repetición. Cada profesional — entrenador, nutricionista, fisioterapeuta — escribe sobre el mismo alumno, con su propio alcance y permisos."
+            },
+            {
+              "rotulo": "Operación",
+              "texto": "Roster agrupado por fase y ordenado por atención, banco de entrenamientos de la casa, prescripción por lotes, bloques de plan multi-semana distribuidos según la disponibilidad real de cada alumno."
+            },
+            {
+              "rotulo": "Gestión",
+              "texto": "Dashboards internos de negocio: marcador comparativo por entrenador, coste y margen por alumno, capacidad por profesional, redistribución de carteras con vista previa del impacto antes de confirmar, y CRM de retención — quién entrenaba y dejó de hacerlo, con el valor mensual en riesgo."
+            },
+            {
+              "rotulo": "Tesis",
+              "texto": "La unidad del panel del dueño es el <b>entrenador</b>, no el alumno. Apilar a todos los atletas en una lista es la versión que se rompe justo en los 200 alumnos que son la meta."
+            }
+          ]
+        }
+      ],
+      "legendas": [
+        "Cuenta atrás para la prueba y readiness del día",
+        "Condición y frescura — fitness, fatiga y forma",
+        "Calendario de entrenamientos con totales semanales",
+        "Temporada — volumen semanal por fase",
+        "Zonas de rendimiento — bici, carrera y natación",
+        "Composición corporal — tendencias de bioimpedancia",
+        "Plan de alimentación y nutrición por duración de sesión",
+        "Fuerza, registro de lesiones y estilo de vida",
+        "Ajustes del atleta — disponibilidad y qué mides",
+        "El sistema completo, de principio a fin"
+      ]
+    },
+    "fr": {
+      "titulo": "MY TRAKR",
+      "etiqueta": "Produit maison · Plateforme d'entraînement",
+      "resumo": "Le tableau de bord né pour un IRONMAN 70.3 et devenu produit. L'athlète connecte sa propre IA, et le tableau montre ce que la conversation ne montre pas.",
+      "versoes": "<b>MY TRAKR</b> pour l'athlète. <b>TRAKR+</b> pour l'équipe d'entraîneurs.",
+      "descricao": "Le tableau de bord né pour un IRONMAN 70.3, devenu produit.",
+      "pontos": [
+        {
+          "rotulo": "Origine",
+          "texto": "Cela a commencé comme un outil personnel : un tableau de bord pour voir toute la préparation au même endroit — calendrier, charge, readiness, blessures, saison par phases."
+        },
+        {
+          "rotulo": "Le tournant",
+          "texto": "Ce qui marchait pour un athlète s'est mis à marcher pour n'importe qui. TRAK est devenu <b>MY TRAKR</b> : multi-tenant, chaque athlète avec son propre compte et ses propres données, isolées dans la base."
+        },
+        {
+          "rotulo": "Concept",
+          "texto": "Le produit <b>n'embarque pas d'IA</b>. L'athlète connecte la sienne — Claude ou ChatGPT — via un connecteur MCP. Le modèle lit et écrit dans le système, et le tableau de bord est la couche visuelle de cette conversation. Le coût d'inférence sort de l'abonnement qu'il a déjà, et la prescription reste à celui qui en porte la responsabilité."
+        },
+        {
+          "rotulo": "Système",
+          "texto": "Adhérence par temps en zone, allure corrigée de la pente (GAP), charge d'entraînement calculée, protocoles de test de seuil avec cadence de retest, import Strava et lecture/écriture du format <code>.fit</code> implémentées de zéro."
+        },
+        {
+          "rotulo": "Thèse",
+          "texto": "Le tableau de bord ne concurrence pas le chat. Il montre exactement ce que la conversation ne peut pas montrer : la tendance, la comparaison entre prescrit et réalisé, et la saison entière d'un seul coup."
+        }
+      ],
+      "numeros": [
+        {
+          "valor": "1 an",
+          "rotulo": "d'usage réel, chaque jour"
+        },
+        {
+          "valor": "MCP",
+          "rotulo": "connecte Claude ou ChatGPT"
+        },
+        {
+          "valor": "2",
+          "rotulo": "versions : athlète et entraîneurs"
+        },
+        {
+          "valor": ".fit",
+          "rotulo": "lecture et écriture écrites de zéro"
+        }
+      ],
+      "secoes": [
+        {
+          "titulo": "TRAKR+",
+          "etiqueta": "Produit en construction · Plateforme B2B",
+          "texto": "Faire grandir une structure de coaching sans perdre la qualité du suivi.",
+          "pontos": [
+            {
+              "rotulo": "Problème",
+              "texto": "Un coach suit 30 à 50 athlètes, et le goulot d'étranglement n'est pas la connaissance — c'est la répétition mécanique. Construire la semaine, transcrire la séance, vérifier ce qui a été fait. De l'autre côté, le dirigeant n'a que rarement d'instruments de pilotage : il ignore quel coach est surchargé et quel portefeuille perd des athlètes."
+            },
+            {
+              "rotulo": "Concept",
+              "texto": "Un copilote IA pour le professionnel, un tableau de bord pour le reste. La conversation sert au jugement ; le tableau de bord sert à la répétition. Chaque professionnel — coach, nutritionniste, kinésithérapeute — écrit sur le même athlète, avec son propre périmètre et ses permissions."
+            },
+            {
+              "rotulo": "Opérations",
+              "texto": "Roster groupé par phase et trié par priorité d'attention, bibliothèque de séances de la structure, prescription en lot, blocs de plan pluri-hebdomadaires répartis selon la disponibilité réelle de chaque athlète."
+            },
+            {
+              "rotulo": "Gestion",
+              "texto": "Tableaux de bord de gestion : comparatif par coach, coût et marge par athlète, capacité par professionnel, redistribution des portefeuilles avec aperçu de l'impact avant validation, et CRM de rétention — qui s'entraînait et a arrêté, avec le revenu mensuel en jeu."
+            },
+            {
+              "rotulo": "Thèse",
+              "texto": "L'unité du tableau de bord du dirigeant, c'est le <b>coach</b>, pas l'athlète. Empiler tous les athlètes dans une seule liste, c'est la version qui casse précisément aux 200 athlètes visés."
+            }
+          ]
+        }
+      ],
+      "legendas": [
+        "Compte à rebours de la course et readiness du jour",
+        "Condition et fraîcheur — fitness, fatigue et forme",
+        "Calendrier d'entraînement avec totaux hebdomadaires",
+        "Saison — volume hebdomadaire par phase",
+        "Zones de performance — vélo, course et natation",
+        "Composition corporelle — tendances de bio-impédance",
+        "Plan alimentaire et nutrition selon la durée de séance",
+        "Force, journal des blessures et hygiène de vie",
+        "Réglages de l'athlète — disponibilité et ce que vous mesurez",
+        "Le système entier, de bout en bout"
+      ]
+    },
+    "de": {
+      "titulo": "MY TRAKR",
+      "etiqueta": "Eigenes Produkt · Trainingsplattform",
+      "resumo": "Das Dashboard, das für einen IRONMAN 70.3 entstand und zum Produkt wurde. Athleten verbinden ihre eigene KI, und das Dashboard zeigt, was das Gespräch nicht zeigt.",
+      "versoes": "<b>MY TRAKR</b> für Athleten. <b>TRAKR+</b> für Trainerteams.",
+      "descricao": "Das Dashboard, das für einen IRONMAN 70.3 entstand und zum Produkt wurde.",
+      "pontos": [
+        {
+          "rotulo": "Ursprung",
+          "texto": "Es begann als Werkzeug für den Eigenbedarf: ein Panel, um die gesamte Vorbereitung an einem Ort zu sehen — Kalender, Belastung, Readiness, Verletzungen, Saison in Phasen."
+        },
+        {
+          "rotulo": "Die Wende",
+          "texto": "Was für einen Athleten funktionierte, funktionierte plötzlich für alle. Aus TRAK wurde <b>MY TRAKR</b>: mandantenfähig, jeder Athlet mit eigenem Konto und eigenen Daten, in der Datenbank isoliert."
+        },
+        {
+          "rotulo": "Konzept",
+          "texto": "Das Produkt <b>bringt keine KI mit</b>. Der Athlet verbindet seine eigene — Claude oder ChatGPT — über einen MCP-Connector. Das Modell liest und schreibt im System, und das Panel ist die visuelle Ebene dieses Gesprächs. Die Inferenzkosten laufen über das Abo, das er ohnehin hat, und die Trainingsvorgabe bleibt bei dem, der die Verantwortung dafür trägt."
+        },
+        {
+          "rotulo": "System",
+          "texto": "Adhärenz nach Zeit in der Zone, steigungskorrigiertes Tempo (GAP), berechnete Trainingsbelastung, Schwellentest-Protokolle mit Retest-Rhythmus, Strava-Import und von Grund auf implementiertes Lesen/Schreiben des <code>.fit</code>-Formats."
+        },
+        {
+          "rotulo": "These",
+          "texto": "Das Panel konkurriert nicht mit dem Chat. Es zeigt genau das, was ein Gespräch nicht zeigen kann: Trend, Soll gegen Ist, und die ganze Saison auf einen Blick."
+        }
+      ],
+      "numeros": [
+        {
+          "valor": "1 Jahr",
+          "rotulo": "im echten Alltag"
+        },
+        {
+          "valor": "MCP",
+          "rotulo": "verbindet Claude oder ChatGPT"
+        },
+        {
+          "valor": "2",
+          "rotulo": "Versionen: Athlet und Trainerteam"
+        },
+        {
+          "valor": ".fit",
+          "rotulo": "Lesen und Schreiben selbst entwickelt"
+        }
+      ],
+      "secoes": [
+        {
+          "titulo": "TRAKR+",
+          "etiqueta": "Produkt im Aufbau · B2B-Plattform",
+          "texto": "Ein Coaching-Unternehmen skalieren, ohne die Betreuungsqualität zu verlieren.",
+          "pontos": [
+            {
+              "rotulo": "Problem",
+              "texto": "Ein Trainer betreut 30 bis 50 Sportler, und der Engpass ist nicht das Wissen — es ist die mechanische Wiederholung. Die Woche bauen, die Einheit übertragen, prüfen, was gemacht wurde. Auf der anderen Seite hat die Inhaberin oder der Inhaber selten betriebswirtschaftliche Instrumente: unklar, welcher Trainer überlastet ist und welcher Kundenstamm Sportler verliert."
+            },
+            {
+              "rotulo": "Konzept",
+              "texto": "KI-Copilot für die Fachkraft, Panel für alles andere. Das Gespräch dient dem Urteil; das Panel dient der Wiederholung. Jede Fachkraft — Trainer, Ernährungsberaterin, Physiotherapeut — schreibt beim selben Sportler, mit eigenem Zuständigkeitsbereich und eigenen Rechten."
+            },
+            {
+              "rotulo": "Betrieb",
+              "texto": "Roster nach Phase gruppiert und nach Aufmerksamkeitsbedarf sortiert, hauseigene Trainingsbibliothek, Stapel-Vorgabe und mehrwöchige Planblöcke, verteilt nach der realen Verfügbarkeit jedes Sportlers."
+            },
+            {
+              "rotulo": "Steuerung",
+              "texto": "Interne Business-Dashboards: Vergleichsübersicht je Trainer, Kosten und Marge je Sportler, Kapazität je Fachkraft, Neuverteilung der Kundenstämme mit Wirkungsvorschau vor der Bestätigung, und ein Retention-CRM — wer trainiert hat und aufgehört hat, mit dem monatlichen Umsatzrisiko."
+            },
+            {
+              "rotulo": "These",
+              "texto": "Die Einheit im Panel der Inhaberin ist der <b>Trainer</b>, nicht der Sportler. Alle Athleten in eine Liste zu stapeln ist die Variante, die genau bei den angestrebten 200 Sportlern bricht."
+            }
+          ]
+        }
+      ],
+      "legendas": [
+        "Countdown zum Wettkampf und Readiness des Tages",
+        "Form und Frische — Fitness, Ermüdung und Form",
+        "Trainingskalender mit Wochensummen",
+        "Saison — Wochenvolumen nach Phase",
+        "Leistungszonen — Rad, Lauf und Schwimmen",
+        "Körperzusammensetzung — Bioimpedanz-Verlauf",
+        "Ernährungsplan nach Trainingsdauer",
+        "Kraft, Verletzungsprotokoll und Lebensstil",
+        "Athleteneinstellungen — Verfügbarkeit und was gemessen wird",
+        "Das ganze System, von Anfang bis Ende"
+      ]
+    }
+  }
+}

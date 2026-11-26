@@ -1,0 +1,30 @@
+{
+  "slug": "ventuno",
+  "marca": "VENTUNO",
+  "logo": {
+    "claro": "/assets/marca/ventuno-21-principal.svg",
+    "escuro": "/assets/marca/ventuno-21-negativo.svg"
+  },
+  "manual": "/marca/ventuno.html",
+  "projeto": null,
+  "t": {
+    "pt": {
+      "conceito": "O 021 do Rio reduzido a dois dígitos, cortado pela base da caixa."
+    },
+    "en": {
+      "conceito": "Rio’s 021 cut down to two digits, trimmed by the base of the box."
+    },
+    "it": {
+      "conceito": "Lo 021 di Rio ridotto a due cifre, tagliato dalla base della cornice."
+    },
+    "es": {
+      "conceito": "El 021 de Río reducido a dos dígitos, cortado por la base del recuadro."
+    },
+    "fr": {
+      "conceito": "Le 021 de Rio réduit à deux chiffres, coupé par la base du cadre."
+    },
+    "de": {
+      "conceito": "Rios 021 auf zwei Ziffern reduziert, von der Rahmenkante beschnitten."
+    }
+  }
+}

@@ -1,0 +1,229 @@
+{
+  "slug": "centro-sportivo-roero",
+  "secao": "estudos",
+  "capa": "/assets/roero.jpg",
+  "galeria": [
+    {
+      "src": "/assets/roero.jpg"
+    },
+    {
+      "src": "/assets/roero-2-sede.jpg"
+    },
+    {
+      "src": "/assets/roero-3-kiosk.jpg"
+    },
+    {
+      "src": "/assets/roero-4-admin.jpg"
+    },
+    {
+      "src": "/assets/roero-5-n8n.jpg"
+    }
+  ],
+  "identidade": null,
+  "t": {
+    "pt": {
+      "titulo": "Centro Sportivo Roero",
+      "etiqueta": "Proposta · Web app",
+      "resumo": "Plataforma para um centro esportivo aquático com 5 sedes: raias em tempo real, totem de check-in e painel próprio.",
+      "meta": "Proposta não contratada, hoje fora do ar",
+      "descricao": "Plataforma para um centro esportivo aquático com 5 sedes: raias em tempo real, totem de check-in e painel próprio.",
+      "pontos": [
+        {
+          "rotulo": "Problema",
+          "texto": "Site de 2005 sem HTTPS nem versão mobile, navegação entre sedes feita só por imagens, reservas espalhadas em dois sistemas de terceiros e conteúdo que só mudava com ajuda técnica."
+        },
+        {
+          "rotulo": "Solução",
+          "texto": "As 5 sedes num só sistema, com raias em tempo real, totem de auto-atendimento, calendário unificado e painel administrativo com dois níveis de acesso."
+        },
+        {
+          "rotulo": "Status",
+          "texto": "Proposta completa, apresentada ao centro, que não a contratou. O site saiu do ar."
+        }
+      ],
+      "destaque": {
+        "etiqueta": "Automação · rassegna stampa",
+        "titulo": "Um site que se mantém vivo sozinho",
+        "texto": "Duas vezes por semana, uma rotina busca notícias reais de natação, polo aquático e nado artístico em cinco fontes, reescreve em italiano no tom do centro e deposita como rascunho no painel. Publicar continua sendo decisão humana — a máquina só elimina a página parada."
+      },
+      "numeros": [],
+      "legendas": [
+        "Centro Sportivo Roero",
+        "Página de sede — raias em tempo real, horários e tarifas",
+        "Totem de check-in — escolha da raia",
+        "Painel administrativo — visão geral",
+        "Automação n8n — rassegna stampa com IA"
+      ]
+    },
+    "en": {
+      "titulo": "Centro Sportivo Roero",
+      "etiqueta": "Proposal · Web app",
+      "resumo": "A platform for an aquatic sports centre with 5 sites: live lane availability, a check-in kiosk and its own admin panel.",
+      "meta": "Proposal not commissioned, now offline",
+      "descricao": "A platform for an aquatic sports centre with 5 sites: live lane availability, a check-in kiosk and its own admin panel.",
+      "pontos": [
+        {
+          "rotulo": "Problem",
+          "texto": "A 2005 site with no HTTPS and no mobile version, navigation between facilities done through images alone, bookings scattered across two third-party systems, and content that only changed with technical help."
+        },
+        {
+          "rotulo": "Solution",
+          "texto": "All 5 facilities in one system, with real-time lanes, a self-service kiosk, a unified calendar and an admin panel with two permission levels."
+        },
+        {
+          "rotulo": "Status",
+          "texto": "A complete proposal presented to the centre, which didn't commission it. The site is now offline."
+        }
+      ],
+      "destaque": {
+        "etiqueta": "Automation · press review",
+        "titulo": "A site that keeps itself alive",
+        "texto": "Twice a week a routine pulls real swimming, water polo and artistic swimming news from five sources, rewrites it in Italian in the center's voice and drops it into the panel as a draft. Publishing stays a human decision — the machine only kills the stale page."
+      },
+      "numeros": [],
+      "legendas": [
+        "Centro Sportivo Roero",
+        "Facility page — real-time lanes, hours and rates",
+        "Check-in kiosk — choosing the lane",
+        "Admin panel — overview",
+        "n8n automation — AI press review"
+      ]
+    },
+    "it": {
+      "titulo": "Centro Sportivo Roero",
+      "etiqueta": "Proposta · Web app",
+      "resumo": "Piattaforma per un centro sportivo acquatico con 5 sedi: corsie in tempo reale, totem di check-in e pannello proprio.",
+      "meta": "Proposta non commissionata, oggi offline",
+      "descricao": "Piattaforma per un centro sportivo acquatico con 5 sedi: corsie in tempo reale, totem di check-in e pannello proprio.",
+      "pontos": [
+        {
+          "rotulo": "Problema",
+          "texto": "Sito del 2005 senza HTTPS né versione mobile, navigazione tra le sedi affidata solo a immagini, prenotazioni divise su due sistemi esterni e contenuti modificabili solo con aiuto tecnico."
+        },
+        {
+          "rotulo": "Soluzione",
+          "texto": "Le 5 sedi in un unico sistema, con corsie in tempo reale, totem self-service, calendario unificato e pannello amministrativo con due livelli di accesso."
+        },
+        {
+          "rotulo": "Stato",
+          "texto": "Proposta completa, presentata al centro, che non l'ha commissionata. Il sito è offline."
+        }
+      ],
+      "destaque": {
+        "etiqueta": "Automazione · rassegna stampa",
+        "titulo": "Un sito che si tiene vivo da solo",
+        "texto": "Due volte a settimana una routine raccoglie notizie vere di nuoto, pallanuoto e nuoto artistico da cinque fonti, le riscrive in italiano nel tono del centro e le deposita in bozza nel pannello. Pubblicare resta una decisione umana — la macchina elimina solo la pagina ferma."
+      },
+      "numeros": [],
+      "legendas": [
+        "Centro Sportivo Roero",
+        "Pagina sede — corsie in tempo reale, orari e tariffe",
+        "Totem di check-in — scelta della corsia",
+        "Pannello amministrativo — panoramica",
+        "Automazione n8n — rassegna stampa con IA"
+      ]
+    },
+    "es": {
+      "titulo": "Centro Sportivo Roero",
+      "etiqueta": "Propuesta · Web app",
+      "resumo": "Plataforma para un centro deportivo acuático con 5 sedes: calles en tiempo real, tótem de check-in y panel propio.",
+      "meta": "Propuesta no contratada, hoy fuera de línea",
+      "descricao": "Plataforma para un centro deportivo acuático con 5 sedes: calles en tiempo real, tótem de check-in y panel propio.",
+      "pontos": [
+        {
+          "rotulo": "Problema",
+          "texto": "Web de 2005 sin HTTPS ni versión móvil, navegación entre sedes hecha solo con imágenes, reservas repartidas en dos sistemas externos y contenido que solo cambiaba con ayuda técnica."
+        },
+        {
+          "rotulo": "Solución",
+          "texto": "Las 5 sedes en un único sistema, con calles en tiempo real, tótem de autoservicio, calendario unificado y panel administrativo con dos niveles de acceso."
+        },
+        {
+          "rotulo": "Estado",
+          "texto": "Propuesta completa, presentada al centro, que no la contrató. El sitio ya no está en línea."
+        }
+      ],
+      "destaque": {
+        "etiqueta": "Automatización · reseña de prensa",
+        "titulo": "Una web que se mantiene viva sola",
+        "texto": "Dos veces por semana una rutina recoge noticias reales de natación, waterpolo y natación artística de cinco fuentes, las reescribe en italiano con el tono del centro y las deja como borrador en el panel. Publicar sigue siendo decisión humana — la máquina solo elimina la página parada."
+      },
+      "numeros": [],
+      "legendas": [
+        "Centro Sportivo Roero",
+        "Página de sede — calles en tiempo real, horarios y tarifas",
+        "Tótem de check-in — elección de la calle",
+        "Panel administrativo — visión general",
+        "Automatización n8n — reseña de prensa con IA"
+      ]
+    },
+    "fr": {
+      "titulo": "Centro Sportivo Roero",
+      "etiqueta": "Proposition · Web app",
+      "resumo": "Une plateforme pour un centre aquatique de 5 sites : lignes d'eau en temps réel, borne d'enregistrement et back-office maison.",
+      "meta": "Proposition non retenue, aujourd'hui hors ligne",
+      "descricao": "Une plateforme pour un centre aquatique de 5 sites : lignes d'eau en temps réel, borne d'enregistrement et back-office maison.",
+      "pontos": [
+        {
+          "rotulo": "Problème",
+          "texto": "Un site de 2005 sans HTTPS ni version mobile, une navigation entre sites reposant uniquement sur des images, des réservations éclatées sur deux systèmes tiers et un contenu modifiable seulement avec une aide technique."
+        },
+        {
+          "rotulo": "Solution",
+          "texto": "Les 5 sites dans un seul système, avec lignes d'eau en temps réel, borne en libre-service, calendrier unifié et panneau d'administration à deux niveaux d'accès."
+        },
+        {
+          "rotulo": "Statut",
+          "texto": "Une proposition complète, présentée au centre, qui ne l'a pas retenue. Le site n'est plus en ligne."
+        }
+      ],
+      "destaque": {
+        "etiqueta": "Automatisation · revue de presse",
+        "titulo": "Un site qui se maintient vivant tout seul",
+        "texto": "Deux fois par semaine, une routine récupère de vraies actualités de natation, water-polo et natation artistique sur cinq sources, les réécrit en italien dans le ton du centre et les dépose en brouillon dans le panneau. Publier reste une décision humaine — la machine ne supprime que la page figée."
+      },
+      "numeros": [],
+      "legendas": [
+        "Centro Sportivo Roero",
+        "Page de site — lignes en temps réel, horaires et tarifs",
+        "Borne de check-in — choix de la ligne",
+        "Panneau d'administration — vue d'ensemble",
+        "Automatisation n8n — revue de presse par IA"
+      ]
+    },
+    "de": {
+      "titulo": "Centro Sportivo Roero",
+      "etiqueta": "Vorschlag · Web-App",
+      "resumo": "Eine Plattform für ein Wassersportzentrum mit 5 Standorten: Bahnen in Echtzeit, Check-in-Terminal und eigenes Admin-Panel.",
+      "meta": "Vorschlag nicht beauftragt, heute offline",
+      "descricao": "Eine Plattform für ein Wassersportzentrum mit 5 Standorten: Bahnen in Echtzeit, Check-in-Terminal und eigenes Admin-Panel.",
+      "pontos": [
+        {
+          "rotulo": "Problem",
+          "texto": "Eine Website von 2005 ohne HTTPS und ohne mobile Version, Navigation zwischen den Standorten allein über Bilder, Buchungen verteilt auf zwei Fremdsysteme und Inhalte, die sich nur mit technischer Hilfe ändern ließen."
+        },
+        {
+          "rotulo": "Lösung",
+          "texto": "Alle 5 Standorte in einem System, mit Echtzeit-Bahnen, Self-Service-Terminal, einheitlichem Kalender und einem Verwaltungspanel mit zwei Zugriffsebenen."
+        },
+        {
+          "rotulo": "Status",
+          "texto": "Ein vollständiger Vorschlag, dem Zentrum vorgestellt, das ihn nicht beauftragt hat. Die Website ist offline."
+        }
+      ],
+      "destaque": {
+        "etiqueta": "Automatisierung · Presseschau",
+        "titulo": "Eine Website, die sich selbst am Leben hält",
+        "texto": "Zweimal pro Woche holt eine Routine echte Nachrichten aus Schwimmen, Wasserball und Kunstschwimmen von fünf Quellen, schreibt sie im Ton des Zentrums auf Italienisch um und legt sie als Entwurf ins Panel. Das Veröffentlichen bleibt eine menschliche Entscheidung — die Maschine beseitigt nur die stehengebliebene Seite."
+      },
+      "numeros": [],
+      "legendas": [
+        "Centro Sportivo Roero",
+        "Standortseite — Bahnen in Echtzeit, Zeiten und Tarife",
+        "Check-in-Terminal — Bahnauswahl",
+        "Verwaltungspanel — Übersicht",
+        "n8n-Automatisierung — KI-Presseschau"
+      ]
+    }
+  }
+}

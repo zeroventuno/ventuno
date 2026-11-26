@@ -1,0 +1,209 @@
+{
+  "slug": "producao-visual-ia",
+  "secao": "projetos",
+  "capa": "/assets/ai-capa.jpg",
+  "galeria": [
+    {
+      "src": "/assets/ai-1-2d.jpg"
+    },
+    {
+      "src": "/assets/ai-2-3d.jpg"
+    },
+    {
+      "src": "/assets/ai-3-cena.jpg"
+    },
+    {
+      "src": "/assets/ai-4-video.mp4",
+      "video": true
+    }
+  ],
+  "identidade": null,
+  "t": {
+    "pt": {
+      "titulo": "Produção visual com IA",
+      "etiqueta": "Prova de conceito · IA generativa",
+      "resumo": "Do desenho 2D da estampa de um kit de ciclismo ao vídeo de campanha, sem set físico.",
+      "descricao": "De um desenho 2D de estampa de jersey a um manequim 3D realista em cenário de uso real — e até vídeo final — em poucos minutos e poucos prompts. Sem fotógrafo, sem modelo, sem set físico. Eficiência e redução radical de custo de produção para marcas pequenas.",
+      "pontos": [
+        {
+          "rotulo": "Desenho 2D",
+          "texto": "Estampa técnica plana do kit — o input original do designer."
+        },
+        {
+          "rotulo": "Render 3D",
+          "texto": "Manequim 3D realista vestindo a peça, gerado via IA em minutos."
+        },
+        {
+          "rotulo": "Cena real",
+          "texto": "O kit em situação de uso real — luz, estrada e movimento, sem sair do estúdio."
+        },
+        {
+          "rotulo": "Vídeo de campanha",
+          "texto": "A cena ganha movimento: vídeo pronto para mídia social — sem filmagem."
+        }
+      ],
+      "numeros": [],
+      "legendas": [
+        "Desenho 2D",
+        "Render 3D",
+        "Cena real",
+        "Vídeo de campanha"
+      ]
+    },
+    "en": {
+      "titulo": "AI Visual Production",
+      "etiqueta": "Proof of concept · Generative AI",
+      "resumo": "From the 2D drawing of a cycling kit print to the campaign video, with no physical set.",
+      "descricao": "From a 2D cycling-jersey artwork to a realistic 3D mannequin in a real-use scene — and even a final video — in minutes and a few prompts. No photographer, no model, no physical set. Efficiency and radical production-cost reduction for small brands.",
+      "pontos": [
+        {
+          "rotulo": "2D Artwork",
+          "texto": "Flat technical kit print — the designer's original input."
+        },
+        {
+          "rotulo": "3D Render",
+          "texto": "Realistic 3D mannequin wearing the piece, AI-generated in minutes."
+        },
+        {
+          "rotulo": "Real-world scene",
+          "texto": "The kit in a real riding situation — light, road and motion, without leaving the studio."
+        },
+        {
+          "rotulo": "Campaign video",
+          "texto": "The scene comes alive: social-ready video — no film crew."
+        }
+      ],
+      "numeros": [],
+      "legendas": [
+        "2D Artwork",
+        "3D Render",
+        "Real-world scene",
+        "Campaign video"
+      ]
+    },
+    "it": {
+      "titulo": "Produzione visiva con IA",
+      "etiqueta": "Proof of concept · IA generativa",
+      "resumo": "Dal disegno 2D della stampa di un kit da ciclismo al video della campagna, senza set fisico.",
+      "descricao": "Da un disegno 2D di una grafica per jersey a un manichino 3D realistico in una scena d'uso reale — fino al video finale — in pochi minuti e pochi prompt. Senza fotografo, senza modello, senza set fisico. Efficienza e riduzione radicale dei costi di produzione per i piccoli brand.",
+      "pontos": [
+        {
+          "rotulo": "Disegno 2D",
+          "texto": "Grafica tecnica piatta del kit — l'input originale del designer."
+        },
+        {
+          "rotulo": "Render 3D",
+          "texto": "Manichino 3D realistico che indossa il capo, generato via IA in minuti."
+        },
+        {
+          "rotulo": "Scena reale",
+          "texto": "Il kit in una situazione d'uso reale — luce, strada e movimento, senza uscire dallo studio."
+        },
+        {
+          "rotulo": "Video di campagna",
+          "texto": "La scena prende vita: video pronto per i social — senza troupe."
+        }
+      ],
+      "numeros": [],
+      "legendas": [
+        "Disegno 2D",
+        "Render 3D",
+        "Scena reale",
+        "Video di campagna"
+      ]
+    },
+    "es": {
+      "titulo": "Producción visual con IA",
+      "etiqueta": "Prueba de concepto · IA generativa",
+      "resumo": "Del dibujo 2D del estampado de un kit de ciclismo al vídeo de campaña, sin set físico.",
+      "descricao": "De un diseño 2D de un maillot a un maniquí 3D realista en una escena de uso real — y hasta un vídeo final — en pocos minutos y pocos prompts. Sin fotógrafo, sin modelo, sin set físico. Eficiencia y reducción radical del coste de producción para marcas pequeñas.",
+      "pontos": [
+        {
+          "rotulo": "Diseño 2D",
+          "texto": "Estampado técnico plano del kit — el input original del diseñador."
+        },
+        {
+          "rotulo": "Render 3D",
+          "texto": "Maniquí 3D realista con la prenda puesta, generado por IA en minutos."
+        },
+        {
+          "rotulo": "Escena real",
+          "texto": "El kit en situación de uso real — luz, carretera y movimiento, sin salir del estudio."
+        },
+        {
+          "rotulo": "Vídeo de campaña",
+          "texto": "La escena cobra movimiento: vídeo listo para redes — sin rodaje."
+        }
+      ],
+      "numeros": [],
+      "legendas": [
+        "Diseño 2D",
+        "Render 3D",
+        "Escena real",
+        "Vídeo de campaña"
+      ]
+    },
+    "fr": {
+      "titulo": "Production visuelle par IA",
+      "etiqueta": "Preuve de concept · IA générative",
+      "resumo": "Du dessin 2D d'un maillot de cyclisme à la vidéo de campagne, sans studio.",
+      "descricao": "D'un dessin 2D de maillot à un mannequin 3D réaliste dans une scène d'usage réel — et jusqu'à une vidéo finale — en quelques minutes et quelques prompts. Sans photographe, sans mannequin, sans plateau. Efficacité et réduction radicale du coût de production pour les petites marques.",
+      "pontos": [
+        {
+          "rotulo": "Dessin 2D",
+          "texto": "Impression technique à plat de la tenue — l'input original du designer."
+        },
+        {
+          "rotulo": "Rendu 3D",
+          "texto": "Mannequin 3D réaliste portant la pièce, généré par IA en quelques minutes."
+        },
+        {
+          "rotulo": "Scène réelle",
+          "texto": "La tenue en situation réelle — lumière, route et mouvement, sans quitter le studio."
+        },
+        {
+          "rotulo": "Vidéo de campagne",
+          "texto": "La scène s'anime : vidéo prête pour les réseaux — sans tournage."
+        }
+      ],
+      "numeros": [],
+      "legendas": [
+        "Dessin 2D",
+        "Rendu 3D",
+        "Scène réelle",
+        "Vidéo de campagne"
+      ]
+    },
+    "de": {
+      "titulo": "Visuelle Produktion mit KI",
+      "etiqueta": "Proof of Concept · Generative KI",
+      "resumo": "Von der 2D-Zeichnung eines Radtrikot-Designs bis zum Kampagnenvideo, ohne physisches Set.",
+      "descricao": "Von einer 2D-Zeichnung eines Trikotdesigns zu einer realistischen 3D-Figur in einer echten Einsatzszene — bis hin zum fertigen Video — in wenigen Minuten und wenigen Prompts. Ohne Fotograf, ohne Model, ohne Studio-Set. Effizienz und radikal geringere Produktionskosten für kleine Marken.",
+      "pontos": [
+        {
+          "rotulo": "2D-Zeichnung",
+          "texto": "Technische Flachdarstellung des Trikots — der ursprüngliche Input des Designers."
+        },
+        {
+          "rotulo": "3D-Render",
+          "texto": "Realistische 3D-Figur im Trikot, per KI in Minuten erzeugt."
+        },
+        {
+          "rotulo": "Echte Szene",
+          "texto": "Das Trikot im echten Einsatz — Licht, Straße und Bewegung, ohne das Studio zu verlassen."
+        },
+        {
+          "rotulo": "Kampagnenvideo",
+          "texto": "Die Szene wird lebendig: Video bereit für Social Media — ganz ohne Dreh."
+        }
+      ],
+      "numeros": [],
+      "legendas": [
+        "2D-Zeichnung",
+        "3D-Render",
+        "Echte Szene",
+        "Kampagnenvideo"
+      ]
+    }
+  }
+}

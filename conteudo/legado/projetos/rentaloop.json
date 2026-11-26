@@ -1,0 +1,360 @@
+{
+  "slug": "rentaloop",
+  "secao": "projetos",
+  "capa": "/assets/rentaloop/rentaloop-1.jpg",
+  "telas": [
+    "/assets/rentaloop/rentaloop-1.jpg",
+    "/assets/rentaloop/rentaloop-2.jpg",
+    "/assets/rentaloop/rentaloop-3.jpg"
+  ],
+  "galeria": [
+    {
+      "src": "/assets/rentaloop/rentaloop-1.jpg"
+    },
+    {
+      "src": "/assets/rentaloop/rentaloop-2.jpg"
+    },
+    {
+      "src": "/assets/rentaloop/rentaloop-3.jpg"
+    }
+  ],
+  "identidade": null,
+  "t": {
+    "pt": {
+      "titulo": "Rentaloop",
+      "etiqueta": "Produto próprio · Gestão de locação",
+      "resumo": "Aluguel de bicicletas de alta performance de ponta a ponta: reserva online, pagamento, contrato pronto para assinar e a frota bloqueada pela janela real de transporte.",
+      "descricao": "Sistema de gestão de aluguel de bicicletas de alta performance, rodando numa operação real na Itália.",
+      "pontos": [
+        {
+          "rotulo": "Problema",
+          "texto": "Cada bicicleta é um ativo caro e único, montada peça a peça, que precisa estar no lugar certo, no tamanho certo, para o cliente certo. E o mesmo equipamento é disputado por reservas que se sobrepõem no transporte, não só no calendário — planilha não resolve isso."
+        },
+        {
+          "rotulo": "Modelo",
+          "texto": "A bicicleta é tratada como ativo, com componentes, custo de montagem e retorno acumulado em aluguéis. Um diagrama interativo com pontos clicáveis liga cada peça ao campo do formulário — cadastrar deixa de exigir vocabulário técnico de mecânico."
+        },
+        {
+          "rotulo": "Janela física",
+          "texto": "Um aluguel de segunda a sexta pode ter a bike saindo no domingo e voltando no sábado. Bloquear a frota pelas datas contratadas faz duas reservas colidirem no caminhão, então entrega e devolução são campos próprios e o bloqueio usa a janela real de indisponibilidade."
+        },
+        {
+          "rotulo": "Contrato",
+          "texto": "O contrato de locação não é texto decorativo: tem cláusulas de responsabilidade, condições de pagamento, dados bancários e política de cancelamento com penalidades. É montado a partir dos dados do aluguel, no idioma do cliente, pronto para assinar."
+        },
+        {
+          "rotulo": "Migração",
+          "texto": "O projeto atravessou três bancos e uma reescrita completa de framework, sempre com dados reais em produção. As três tabelas centrais nunca foram recriadas: as 27 migrations só estendem o schema, e a reescrita foi erguida sobre o mesmo banco — o que permitiu migrar módulo a módulo em vez de virar a chave de uma vez."
+        }
+      ],
+      "destaque": {
+        "etiqueta": "Em andamento · de sistema a produto",
+        "titulo": "Uma camada de marca em vez de um fork",
+        "texto": "A identidade visual e a identidade jurídica foram extraídas para uma camada única: cores, nome, favicon e os dados que entram no contrato saem todos de um só lugar. É o que transforma um sistema feito para um cliente em base para atender vários — sem duplicar código e sem manter dois sistemas parecidos vivos ao mesmo tempo."
+      },
+      "numeros": [
+        {
+          "valor": "1 ano",
+          "rotulo": "em uso numa locadora real"
+        },
+        {
+          "valor": "~10.100",
+          "rotulo": "linhas de TypeScript"
+        },
+        {
+          "valor": "22",
+          "rotulo": "telas"
+        },
+        {
+          "valor": "27",
+          "rotulo": "migrations sem recriar tabela"
+        }
+      ],
+      "legendas": [
+        "Reserva online, mostrando só as bikes realmente livres",
+        "O contrato lido e assinado no celular",
+        "Checklist de entrega e devolução com QR"
+      ]
+    },
+    "en": {
+      "titulo": "Rentaloop",
+      "etiqueta": "Own product · Rental management",
+      "resumo": "High-performance bike rental end to end: online booking, payment, a contract ready to sign and the fleet blocked by the real transport window.",
+      "descricao": "Management system for high-performance bicycle rental, running a real operation in Italy.",
+      "pontos": [
+        {
+          "rotulo": "Problem",
+          "texto": "Each bicycle is an expensive, one-of-a-kind asset, built part by part, that has to be in the right place, in the right size, for the right customer. And the same equipment is contested by bookings that overlap in transport, not just on the calendar — a spreadsheet doesn't solve that."
+        },
+        {
+          "rotulo": "Model",
+          "texto": "The bike is modelled as an asset, with components, build cost and return accumulated across rentals. An interactive diagram with clickable hotspots links each part to its form field — registering a bike no longer requires a mechanic's vocabulary."
+        },
+        {
+          "rotulo": "Physical window",
+          "texto": "A Monday-to-Friday rental may have the bike leaving on Sunday and coming back on Saturday. Blocking the fleet by the contracted dates makes two bookings collide in the truck, so delivery and return are fields of their own and the block uses the real window of unavailability."
+        },
+        {
+          "rotulo": "Contract",
+          "texto": "The rental contract is not decorative text: it carries liability clauses, payment terms, bank details and a cancellation policy with penalties. It is assembled from the rental's own data, in the customer's language, ready to sign."
+        },
+        {
+          "rotulo": "Migration",
+          "texto": "The project went through three databases and a full framework rewrite, always with real production data. The three core tables were never recreated: the 27 migrations only extend the schema, and the rewrite was built on top of the same database — which allowed migrating module by module instead of flipping a switch."
+        }
+      ],
+      "destaque": {
+        "etiqueta": "In progress · from system to product",
+        "titulo": "A brand layer instead of a fork",
+        "texto": "The visual identity and the legal identity were extracted into a single layer: colours, name, favicon and the data that goes into the contract all come from one place. That is what turns a system built for one client into a base for serving many — without duplicating code and without keeping two near-identical systems alive at once."
+      },
+      "numeros": [
+        {
+          "valor": "1 year",
+          "rotulo": "in use at a real rental shop"
+        },
+        {
+          "valor": "~10.100",
+          "rotulo": "lines of TypeScript"
+        },
+        {
+          "valor": "22",
+          "rotulo": "screens"
+        },
+        {
+          "valor": "27",
+          "rotulo": "migrations, no table recreated"
+        }
+      ],
+      "legendas": [
+        "Online booking that shows only the bikes really available",
+        "The contract read and signed on the phone",
+        "Handover and return checklist with QR"
+      ]
+    },
+    "it": {
+      "titulo": "Rentaloop",
+      "etiqueta": "Prodotto proprio · Gestione noleggi",
+      "resumo": "Noleggio di bici ad alte prestazioni dall'inizio alla fine: prenotazione online, pagamento, contratto pronto da firmare e flotta bloccata sulla finestra reale di trasporto.",
+      "descricao": "Sistema di gestione del noleggio di biciclette di alta gamma, in esercizio in un'attività reale in Italia.",
+      "pontos": [
+        {
+          "rotulo": "Problema",
+          "texto": "Ogni bicicletta è un bene costoso e unico, montata pezzo per pezzo, che deve trovarsi nel posto giusto, nella taglia giusta, per il cliente giusto. E la stessa attrezzatura è contesa da prenotazioni che si sovrappongono nel trasporto, non solo sul calendario — un foglio di calcolo non lo risolve."
+        },
+        {
+          "rotulo": "Modello",
+          "texto": "La bici è trattata come un bene, con componenti, costo di montaggio e ritorno accumulato sui noleggi. Un diagramma interattivo con punti cliccabili collega ogni pezzo al campo del modulo — registrare una bici non richiede più il vocabolario del meccanico."
+        },
+        {
+          "rotulo": "Finestra fisica",
+          "texto": "Un noleggio dal lunedì al venerdì può avere la bici che parte la domenica e rientra il sabato. Bloccare la flotta sulle date contrattuali fa scontrare due prenotazioni sul camion, quindi consegna e riconsegna sono campi propri e il blocco usa la finestra reale di indisponibilità."
+        },
+        {
+          "rotulo": "Contratto",
+          "texto": "Il contratto di noleggio non è un testo decorativo: contiene clausole di responsabilità, condizioni di pagamento, dati bancari e politica di cancellazione con penali. Viene composto dai dati del noleggio, nella lingua del cliente, pronto da firmare."
+        },
+        {
+          "rotulo": "Migrazione",
+          "texto": "Il progetto ha attraversato tre database e una riscrittura completa del framework, sempre con dati reali in produzione. Le tre tabelle centrali non sono mai state ricreate: le 27 migration estendono soltanto lo schema, e la riscrittura è stata costruita sopra lo stesso database — permettendo di migrare modulo per modulo invece di cambiare tutto in una volta."
+        }
+      ],
+      "destaque": {
+        "etiqueta": "In corso · da sistema a prodotto",
+        "titulo": "Un livello di marca invece di un fork",
+        "texto": "L'identità visiva e quella giuridica sono state estratte in un unico livello: colori, nome, favicon e i dati che finiscono nel contratto arrivano tutti da un solo posto. È ciò che trasforma un sistema fatto per un cliente in una base per servirne molti — senza duplicare il codice e senza tenere in vita due sistemi quasi identici."
+      },
+      "numeros": [
+        {
+          "valor": "1 anno",
+          "rotulo": "in uso in un vero noleggio"
+        },
+        {
+          "valor": "~10.100",
+          "rotulo": "righe di TypeScript"
+        },
+        {
+          "valor": "22",
+          "rotulo": "schermate"
+        },
+        {
+          "valor": "27",
+          "rotulo": "migration senza ricreare tabelle"
+        }
+      ],
+      "legendas": [
+        "Prenotazione online che mostra solo le bici davvero libere",
+        "Il contratto letto e firmato sul telefono",
+        "Checklist di consegna e riconsegna con QR"
+      ]
+    },
+    "es": {
+      "titulo": "Rentaloop",
+      "etiqueta": "Producto propio · Gestión de alquileres",
+      "resumo": "Alquiler de bicicletas de alto rendimiento de principio a fin: reserva online, pago, contrato listo para firmar y la flota bloqueada por la ventana real de transporte.",
+      "descricao": "Sistema de gestión de alquiler de bicicletas de alto rendimiento, en marcha en una operación real en Italia.",
+      "pontos": [
+        {
+          "rotulo": "Problema",
+          "texto": "Cada bicicleta es un activo caro y único, montada pieza a pieza, que tiene que estar en el lugar correcto, en la talla correcta, para el cliente correcto. Y el mismo equipo lo disputan reservas que se solapan en el transporte, no solo en el calendario — una hoja de cálculo no resuelve eso."
+        },
+        {
+          "rotulo": "Modelo",
+          "texto": "La bici se modela como activo, con componentes, coste de montaje y retorno acumulado en alquileres. Un diagrama interactivo con puntos clicables conecta cada pieza con su campo del formulario — registrar una bici deja de exigir el vocabulario de un mecánico."
+        },
+        {
+          "rotulo": "Ventana física",
+          "texto": "Un alquiler de lunes a viernes puede tener la bici saliendo el domingo y volviendo el sábado. Bloquear la flota por las fechas contratadas hace que dos reservas choquen en el camión, así que entrega y devolución son campos propios y el bloqueo usa la ventana real de indisponibilidad."
+        },
+        {
+          "rotulo": "Contrato",
+          "texto": "El contrato de alquiler no es texto decorativo: lleva cláusulas de responsabilidad, condiciones de pago, datos bancarios y política de cancelación con penalizaciones. Se compone a partir de los datos del alquiler, en el idioma del cliente, listo para firmar."
+        },
+        {
+          "rotulo": "Migración",
+          "texto": "El proyecto pasó por tres bases de datos y una reescritura completa de framework, siempre con datos reales en producción. Las tres tablas centrales nunca se recrearon: las 27 migraciones solo extienden el esquema, y la reescritura se levantó sobre la misma base — lo que permitió migrar módulo a módulo en vez de cambiarlo todo de golpe."
+        }
+      ],
+      "destaque": {
+        "etiqueta": "En curso · de sistema a producto",
+        "titulo": "Una capa de marca en vez de un fork",
+        "texto": "La identidad visual y la jurídica se extrajeron a una capa única: colores, nombre, favicon y los datos que entran en el contrato salen todos de un solo sitio. Es lo que convierte un sistema hecho para un cliente en base para atender a muchos — sin duplicar código y sin mantener vivos dos sistemas casi idénticos."
+      },
+      "numeros": [
+        {
+          "valor": "1 año",
+          "rotulo": "en uso en una tienda de alquiler real"
+        },
+        {
+          "valor": "~10.100",
+          "rotulo": "líneas de TypeScript"
+        },
+        {
+          "valor": "22",
+          "rotulo": "pantallas"
+        },
+        {
+          "valor": "27",
+          "rotulo": "migraciones sin recrear tablas"
+        }
+      ],
+      "legendas": [
+        "Reserva online que muestra solo las bicis realmente libres",
+        "El contrato leído y firmado en el móvil",
+        "Checklist de entrega y devolución con QR"
+      ]
+    },
+    "fr": {
+      "titulo": "Rentaloop",
+      "etiqueta": "Produit maison · Gestion de location",
+      "resumo": "Location de vélos haut de gamme de bout en bout : réservation en ligne, paiement, contrat prêt à signer et flotte bloquée selon la vraie fenêtre de transport.",
+      "descricao": "Système de gestion de location de vélos haut de gamme, en service dans une exploitation réelle en Italie.",
+      "pontos": [
+        {
+          "rotulo": "Problème",
+          "texto": "Chaque vélo est un actif coûteux et unique, monté pièce par pièce, qui doit se trouver au bon endroit, à la bonne taille, pour le bon client. Et le même matériel est disputé par des réservations qui se chevauchent dans le transport, pas seulement au calendrier — un tableur ne règle pas cela."
+        },
+        {
+          "rotulo": "Modèle",
+          "texto": "Le vélo est modélisé comme un actif, avec ses composants, son coût de montage et le retour cumulé sur les locations. Un schéma interactif à points cliquables relie chaque pièce à son champ du formulaire — enregistrer un vélo n'exige plus le vocabulaire d'un mécanicien."
+        },
+        {
+          "rotulo": "Fenêtre physique",
+          "texto": "Une location du lundi au vendredi peut voir le vélo partir le dimanche et revenir le samedi. Bloquer la flotte sur les dates contractuelles fait entrer deux réservations en collision dans le camion : livraison et retour sont donc des champs à part, et le blocage suit la vraie fenêtre d'indisponibilité."
+        },
+        {
+          "rotulo": "Contrat",
+          "texto": "Le contrat de location n'est pas un texte décoratif : il porte des clauses de responsabilité, des conditions de paiement, des coordonnées bancaires et une politique d'annulation avec pénalités. Il est composé à partir des données de la location, dans la langue du client, prêt à signer."
+        },
+        {
+          "rotulo": "Migration",
+          "texto": "Le projet a traversé trois bases de données et une réécriture complète du framework, toujours avec des données réelles en production. Les trois tables centrales n'ont jamais été recréées : les 27 migrations ne font qu'étendre le schéma, et la réécriture a été bâtie sur la même base — ce qui a permis de migrer module par module au lieu de tout basculer d'un coup."
+        }
+      ],
+      "destaque": {
+        "etiqueta": "En cours · du système au produit",
+        "titulo": "Une couche de marque plutôt qu'un fork",
+        "texto": "L'identité visuelle et l'identité juridique ont été extraites dans une couche unique : couleurs, nom, favicon et les données qui alimentent le contrat proviennent tous d'un seul endroit. C'est ce qui transforme un système fait pour un client en socle pour en servir plusieurs — sans dupliquer le code ni maintenir deux systèmes presque identiques."
+      },
+      "numeros": [
+        {
+          "valor": "1 an",
+          "rotulo": "en service chez un vrai loueur"
+        },
+        {
+          "valor": "~10.100",
+          "rotulo": "lignes de TypeScript"
+        },
+        {
+          "valor": "22",
+          "rotulo": "écrans"
+        },
+        {
+          "valor": "27",
+          "rotulo": "migrations sans recréer de table"
+        }
+      ],
+      "legendas": [
+        "Réservation en ligne qui n'affiche que les vélos vraiment libres",
+        "Le contrat lu et signé sur le téléphone",
+        "Checklist de remise et de retour avec QR"
+      ]
+    },
+    "de": {
+      "titulo": "Rentaloop",
+      "etiqueta": "Eigenes Produkt · Vermietungsverwaltung",
+      "resumo": "Verleih von Hochleistungsrädern von Anfang bis Ende: Online-Buchung, Zahlung, unterschriftsreifer Vertrag und eine Flotte, die nach dem echten Transportfenster gesperrt wird.",
+      "descricao": "Verwaltungssystem für den Verleih von High-End-Fahrrädern, im Einsatz in einem realen Betrieb in Italien.",
+      "pontos": [
+        {
+          "rotulo": "Problem",
+          "texto": "Jedes Fahrrad ist ein teurer Einzelwert, Teil für Teil aufgebaut, das am richtigen Ort, in der richtigen Größe, für den richtigen Kunden stehen muss. Und dasselbe Material wird von Buchungen beansprucht, die sich im Transport überschneiden, nicht nur im Kalender — mit einer Tabelle ist das nicht zu lösen."
+        },
+        {
+          "rotulo": "Modell",
+          "texto": "Das Rad wird als Anlagegut modelliert, mit Komponenten, Aufbaukosten und der über die Vermietungen aufgelaufenen Rendite. Ein interaktives Diagramm mit klickbaren Punkten verbindet jedes Teil mit seinem Formularfeld — ein Rad zu erfassen verlangt kein Mechaniker-Vokabular mehr."
+        },
+        {
+          "rotulo": "Physisches Zeitfenster",
+          "texto": "Eine Vermietung von Montag bis Freitag kann bedeuten, dass das Rad am Sonntag rausgeht und am Samstag zurückkommt. Sperrt man die Flotte nach den Vertragsdaten, kollidieren zwei Buchungen im Transporter — deshalb sind Auslieferung und Rückgabe eigene Felder, und die Sperre folgt dem echten Zeitfenster der Nichtverfügbarkeit."
+        },
+        {
+          "rotulo": "Vertrag",
+          "texto": "Der Mietvertrag ist kein dekorativer Text: Er enthält Haftungsklauseln, Zahlungsbedingungen, Bankdaten und eine Stornoregelung mit Gebühren. Er wird aus den Daten der Vermietung zusammengesetzt, in der Sprache des Kunden, unterschriftsreif."
+        },
+        {
+          "rotulo": "Migration",
+          "texto": "Das Projekt hat drei Datenbanken und eine komplette Framework-Neuentwicklung durchlaufen, immer mit echten Produktionsdaten. Die drei Kerntabellen wurden nie neu angelegt: Die 27 Migrationen erweitern das Schema nur, und die Neuentwicklung wurde auf derselben Datenbank aufgesetzt — so ließ sich Modul für Modul migrieren statt alles auf einmal umzuschalten."
+        }
+      ],
+      "destaque": {
+        "etiqueta": "Laufend · vom System zum Produkt",
+        "titulo": "Eine Markenschicht statt eines Forks",
+        "texto": "Visuelle und juristische Identität wurden in eine einzige Schicht ausgelagert: Farben, Name, Favicon und die Daten, die in den Vertrag einfließen, kommen alle aus einer Quelle. Genau das macht aus einem System für einen Kunden die Grundlage, um viele zu bedienen — ohne Code zu duplizieren und ohne zwei fast identische Systeme parallel am Leben zu halten."
+      },
+      "numeros": [
+        {
+          "valor": "1 Jahr",
+          "rotulo": "im Einsatz bei einem echten Verleih"
+        },
+        {
+          "valor": "~10.100",
+          "rotulo": "Zeilen TypeScript"
+        },
+        {
+          "valor": "22",
+          "rotulo": "Bildschirme"
+        },
+        {
+          "valor": "27",
+          "rotulo": "Migrationen ohne neu angelegte Tabelle"
+        }
+      ],
+      "legendas": [
+        "Online-Buchung, die nur wirklich freie Räder zeigt",
+        "Der Vertrag, auf dem Handy gelesen und unterschrieben",
+        "Übergabe- und Rückgabe-Checkliste mit QR"
+      ]
+    }
+  }
+}

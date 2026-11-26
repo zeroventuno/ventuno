@@ -342,7 +342,9 @@ app.use(
 app.use((req, res) => {
   const last = req.path.split("/").pop() || "";
   if (last.includes(".")) return res.status(404).type("txt").send("Not found");
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  // projeto ou marca que não existe: mostra a home, mas com 404 de verdade
+  const naoExiste = /^\/(projetos|identidade)\//.test(req.path);
+  res.status(naoExiste ? 404 : 200).sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.listen(PORT, () => console.log(`VENTUNO no ar na porta ${PORT}`));

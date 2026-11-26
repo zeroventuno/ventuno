@@ -6,7 +6,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "previa": "node scripts/previa.mjs"
+    "previa": "node scripts/previa.mjs",
+    "gerar": "node scripts/gerar.mjs"
   },
   "dependencies": {
     "busboy": "1.6.0",

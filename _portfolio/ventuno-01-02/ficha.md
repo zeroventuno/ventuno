@@ -10,8 +10,8 @@ ano: "[preencher]"
 status: concluido
 papel: [Pesquisa, Especificação, Montagem]
 capa: "[preencher]"
-estado: rascunho
-atualizado: 2026-11-19
+estado: oculto           # escondida a pedido do Cristiano até haver fotos boas das bicicletas
+atualizado: 2026-11-20
 destaque: false
 ---
 

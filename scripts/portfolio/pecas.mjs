@@ -381,8 +381,8 @@ export function lerOrdem(arq) {
   try {
     const o = yaml.load(fs.readFileSync(arq, "utf8"), { schema: yaml.CORE_SCHEMA }) || {};
     const destaques = Array.isArray(o.destaques) ? o.destaques : o.destaque ? [o.destaque] : [];
-    return { destaques, projetos: o.projetos || [], identidade: o.identidade || [] };
+    return { destaques, projetos: o.projetos || [], estudos: o.estudos || [], identidade: o.identidade || [] };
   } catch {
-    return { destaques: [], projetos: [], identidade: [] };
+    return { destaques: [], projetos: [], estudos: [], identidade: [] };
   }
 }

@@ -1,0 +1,75 @@
+{
+  "slug": "my-trakr",
+  "marca": "MY TRAKR",
+  "logo": {
+    "escuro": "/assets/trakr-logo.svg"
+  },
+  "logoExtra": {
+    "src": "/assets/trakr-plus.png"
+  },
+  "imagem": "/assets/trakr-logo-sketch.jpg",
+  "manual": null,
+  "projeto": "my-trakr",
+  "t": {
+    "pt": {
+      "conceito": "Uma marca, dois públicos. Três barras em progressão — o gráfico que cresce treino após treino — e um sinal de mais que basta para separar quem treina de quem treina os outros.",
+      "historiaTitulo": "Uma marca que mede o esforço",
+      "historia": "A identidade nasce do próprio produto: três barras em progressão — o gráfico de performance que cresce treino após treino — e um wordmark itálico que empresta velocidade. O símbolo aparece em construção, do traçado a lápis ao vetor final: moderno, hi-tech, desenhado para medir desempenho.",
+      "legendaImagem": "Identidade própria — do esboço ao vetor",
+      "versoes": [
+        "B2C · o atleta",
+        "B2B · a assessoria"
+      ]
+    },
+    "en": {
+      "conceito": "One mark, two audiences. Three bars in progression — the chart that grows session after session — and a plus sign that is enough to separate who trains from who trains others.",
+      "historiaTitulo": "A brand that measures effort",
+      "historia": "The identity is born from the product itself: three ascending bars — the performance chart growing session after session — and an italic wordmark that lends speed. The symbol is shown under construction, from pencil strokes to the final vector: modern, hi-tech, designed to measure performance.",
+      "legendaImagem": "Its own identity — from sketch to vector",
+      "versoes": [
+        "B2C · the athlete",
+        "B2B · the coaching business"
+      ]
+    },
+    "it": {
+      "conceito": "Un marchio, due pubblici. Tre barre in progressione — il grafico che cresce allenamento dopo allenamento — e un segno più che basta a separare chi si allena da chi allena gli altri.",
+      "historiaTitulo": "Un marchio che misura lo sforzo",
+      "historia": "L'identità nasce dal prodotto stesso: tre barre in progressione — il grafico della performance che cresce allenamento dopo allenamento — e un wordmark in corsivo che dà velocità. Il simbolo appare in costruzione, dal tratto a matita al vettoriale finale: moderno, hi-tech, disegnato per misurare le prestazioni.",
+      "legendaImagem": "Identità propria — dallo schizzo al vettoriale",
+      "versoes": [
+        "B2C · l’atleta",
+        "B2B · il team di coaching"
+      ]
+    },
+    "es": {
+      "conceito": "Una marca, dos públicos. Tres barras en progresión — el gráfico que crece entrenamiento tras entrenamiento — y un signo más que basta para separar a quien entrena de quien entrena a otros.",
+      "historiaTitulo": "Una marca que mide el esfuerzo",
+      "historia": "La identidad nace del propio producto: tres barras en progresión — el gráfico de rendimiento que crece sesión tras sesión — y un wordmark en cursiva que aporta velocidad. El símbolo aparece en construcción, del trazo a lápiz al vector final: moderno, hi-tech, diseñado para medir el rendimiento.",
+      "legendaImagem": "Identidad propia — del boceto al vector",
+      "versoes": [
+        "B2C · el atleta",
+        "B2B · la asesoría"
+      ]
+    },
+    "fr": {
+      "conceito": "Une marque, deux publics. Trois barres en progression — la courbe qui monte séance après séance — et un signe plus qui suffit à séparer celui qui s’entraîne de celui qui entraîne les autres.",
+      "historiaTitulo": "Une marque qui mesure l'effort",
+      "historia": "L'identité naît du produit lui-même : trois barres en progression — la courbe de performance qui grandit séance après séance — et un logotype en italique qui apporte la vitesse. Le symbole apparaît en construction, du trait au crayon au vectoriel final : moderne, hi-tech, dessiné pour mesurer la performance.",
+      "legendaImagem": "Identité propre — du croquis au vectoriel",
+      "versoes": [
+        "B2C · l’athlète",
+        "B2B · la structure d’entraînement"
+      ]
+    },
+    "de": {
+      "conceito": "Eine Marke, zwei Publika. Drei Balken in Progression — die Kurve, die mit jedem Training wächst — und ein Pluszeichen, das genügt, um Trainierende von Trainern zu trennen.",
+      "historiaTitulo": "Eine Marke, die Anstrengung misst",
+      "historia": "Die Identität entsteht aus dem Produkt selbst: drei ansteigende Balken — die Leistungskurve, die mit jedem Training wächst — und eine kursive Wortmarke, die Geschwindigkeit verleiht. Das Symbol erscheint im Entstehen, vom Bleistiftstrich bis zum fertigen Vektor: modern, hi-tech, gemacht, um Leistung zu messen.",
+      "legendaImagem": "Eigene Identität — von der Skizze zum Vektor",
+      "versoes": [
+        "B2C · der Athlet",
+        "B2B · das Coaching-Team"
+      ]
+    }
+  }
+}

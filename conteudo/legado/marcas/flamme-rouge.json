@@ -1,0 +1,27 @@
+{
+  "slug": "flamme-rouge",
+  "marca": "Flamme Rouge",
+  "logoHtml": "<span class=\"fr\"><svg viewBox=\"0 0 100 100\" aria-hidden=\"true\"><rect x=\"16\" y=\"12\" width=\"7\" height=\"76\" fill=\"#D92D20\"/><polygon points=\"23,22 88,22 68,44 88,66 23,66\" fill=\"#D92D20\"/></svg>FLAMME <i>ROUGE</i></span>",
+  "manual": "/marca/flamme-rouge.html",
+  "projeto": "flamme-rouge",
+  "t": {
+    "pt": {
+      "conceito": "A bandeira vermelha que marca o último quilômetro."
+    },
+    "en": {
+      "conceito": "The red flag that marks the final kilometre."
+    },
+    "it": {
+      "conceito": "La bandiera rossa che segna l’ultimo chilometro."
+    },
+    "es": {
+      "conceito": "La bandera roja que marca el último kilómetro."
+    },
+    "fr": {
+      "conceito": "Le drapeau rouge qui marque le dernier kilomètre."
+    },
+    "de": {
+      "conceito": "Die rote Flagge, die den letzten Kilometer markiert."
+    }
+  }
+}

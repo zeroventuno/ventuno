@@ -10,6 +10,8 @@ import { fileURLToPath } from "node:url";
 import express from "express";
 import { lerTudo, lerOrdem, TIPOS, STATUS, RAIZ_PADRAO, PRE } from "./portfolio/pecas.mjs";
 import { esc, blocos } from "./portfolio/markdown.mjs";
+import { montarModelo } from "./portfolio/modelo.mjs";
+import { paginaHome as siteHome, paginaProjeto as siteProjeto, paginaMarca as siteMarca } from "./portfolio/paginas.mjs";
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 const ORDEM = path.join(AQUI, "..", "conteudo", "ordem.yml");
@@ -300,17 +302,20 @@ function agrupar(itens, chaveFamilia) {
 
 function paginaIndice(d) {
   const ordemProj = d.ordem.projetos;
+  const ordemEst = d.ordem.estudos;
   const ordemId = d.ordem.identidade;
   const visiveis = d.pecas.filter((p) => p.fm.estado !== "oculto");
-  const projetos = agrupar(ordenar(visiveis.filter((p) => p.emProjetos), ordemProj, (p) => p.slug), (p) => p.fm.familia);
+  const emProjetos = visiveis.filter((p) => p.emProjetos);
+  const projetos = agrupar(ordenar(emProjetos.filter((p) => !ordemEst.includes(p.slug)), ordemProj, (p) => p.slug), (p) => p.fm.familia);
+  const estudos = agrupar(ordenar(emProjetos.filter((p) => ordemEst.includes(p.slug)), ordemEst, (p) => p.slug), (p) => p.fm.familia);
   const marcas = agrupar(
     ordenar(visiveis.filter((p) => p.emIdentidade && p.identidade.entraNaSecao && p.identidade.fm.estado !== "oculto"), ordemId, (p) => p.slug),
     (p) => p.identidade.fm.familia
   );
   const ocultas = d.pecas.filter((p) => p.fm.estado === "oculto");
   const achados = new Set(d.pecas.map((p) => p.slug));
-  const semPeca = [...new Set([...ordemProj, ...ordemId])].filter((s) => !achados.has(s));
-  const todas = ordenar(d.pecas, [...ordemProj, ...ordemId], (p) => p.slug);
+  const semPeca = [...new Set([...ordemProj, ...ordemEst, ...ordemId])].filter((s) => !achados.has(s));
+  const todas = ordenar(d.pecas, [...ordemProj, ...ordemEst, ...ordemId], (p) => p.slug);
   const nEst = (e) => d.pecas.filter((p) => p.fm.estado === e).length;
   const vaoAoAr = d.pecas.filter((p) => p.publicavel).length;
 
@@ -330,6 +335,8 @@ function paginaIndice(d) {
 <main class="wrap">
 <section class="sec"><div class="sec-head"><h2>Projetos</h2><p class="nota">na ordem de <code>conteudo/ordem.yml</code></p></div>
 <div class="grid">${projetos.map((g) => cardProjeto(g, d)).join("") || '<p class="nota">Nenhuma peça de projeto ainda.</p>'}</div></section>
+<section class="sec"><div class="sec-head"><h2>Estudos e propostas</h2><p class="nota">feitos para quem não comprou, ou que saíram do ar</p></div>
+<div class="grid">${estudos.map((g) => cardProjeto(g, d)).join("") || `<p class="nota">Nenhuma peça ainda. Previstas: ${ordemEst.map(esc).join(", ") || "nenhuma"}.</p>`}</div></section>
 <section class="sec"><div class="sec-head"><h2>Identidade</h2><p class="nota">uma marca por card; a família vira um card só</p></div>
 <div class="grid">${marcas.map(cardMarca).join("") || '<p class="nota">Nenhuma marca ainda.</p>'}</div></section>
 ${ocultas.length ? `<section class="sec"><div class="sec-head"><h2>Ocultas</h2><p class="nota">completas, mas fora do site</p></div><div class="vazias">${ocultas.map((p) => `<span>${esc(p.fm.titulo || p.slug)}</span>`).join("")}</div></section>` : ""}
@@ -461,6 +468,28 @@ const pagina404 = (o) =>
 
 const app = express();
 app.disable("x-powered-by");
+
+// Rascunhos do redesign (site/design/) e as imagens do site de hoje.
+app.use("/design", express.static(path.join(AQUI, "..", "design")));
+app.use("/assets", express.static(path.join(AQUI, "..", "public", "assets")));
+app.get("/marca/:arq", (req, res) => res.sendFile(path.join(AQUI, "..", "public", "marca", path.basename(req.params.arq))));
+
+// O site novo montado na hora: /site com rascunhos, /no-ar só com o que iria ao ar.
+for (const [base, modo] of [["/site", "previa"], ["/no-ar", "producao"]]) {
+  app.get(`${base}/`, (_req, res) => res.type("html").send(siteHome(montarModelo({ modo }), { base })));
+  app.get(`${base}/projetos/:slug/`, (req, res) => {
+    const M = montarModelo({ modo });
+    const p = M.projetos.find((x) => x.slug === req.params.slug);
+    if (!p) return res.status(404).type("html").send(pagina404(`o projeto ${req.params.slug}`));
+    res.type("html").send(siteProjeto(M, p, { base }));
+  });
+  app.get(`${base}/identidade/:slug/`, (req, res) => {
+    const M = montarModelo({ modo });
+    const m = M.marcas.find((x) => x.slug === req.params.slug);
+    if (!m) return res.status(404).type("html").send(pagina404(`a marca ${req.params.slug}`));
+    res.type("html").send(siteMarca(M, m, { base }));
+  });
+}
 
 app.get("/", (_req, res) => res.type("html").send(paginaIndice(dados(true))));
 

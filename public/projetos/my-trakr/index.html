@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>MY TRAKR · VENTUNO</title>
+<meta name="description" content="O painel que nasceu para um IRONMAN 70.3 e virou produto. O atleta conecta a própria IA, e o painel mostra o que a conversa não mostra." data-t-content="p.my-trakr.resumo">
+<link rel="canonical" href="https://zeroventuno.com/projetos/my-trakr/">
+<meta property="og:title" content="MY TRAKR · VENTUNO">
+<meta property="og:description" content="O painel que nasceu para um IRONMAN 70.3 e virou produto. O atleta conecta a própria IA, e o painel mostra o que a conversa não mostra.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zeroventuno.com/projetos/my-trakr/">
+<meta property="og:site_name" content="VENTUNO">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://zeroventuno.com/assets/trakr-02-fitness.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MY TRAKR · VENTUNO">
+<meta name="twitter:description" content="O painel que nasceu para um IRONMAN 70.3 e virou produto. O atleta conecta a própria IA, e o painel mostra o que a conversa não mostra.">
+<meta name="twitter:image" content="https://zeroventuno.com/assets/trakr-02-fitness.jpg">
+<meta name="author" content="Cristiano Martignoni">
+<meta name="theme-color" content="#0C0B0E">
+<link rel="icon" type="image/svg+xml" href="/assets/marca/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=IBM+Plex+Mono:wght@400&family=Barlow+Condensed:wght@300;700&display=swap">
+<style>
+:root{--papel:#0C0B0E;--tinta:#F3F1EE;--texto:#CFCAD3;--mudo:#A39EA8;--linha:rgba(243,241,238,.14);--ameixa:#551A55;--acento:#D7B4D5;--ameixa-claro:#551A55;--branco:#FFFFFF;--escuro:#16151A}
+/* seções claras (Identidade, Sobre): papel e tinta, com a ameixa como acento */
+.claro{--papel:#F6F5F2;--tinta:#16151A;--texto:#3A383E;--mudo:#5E5A63;--linha:rgba(22,21,26,.14);--acento:#551A55;--ameixa-claro:#EFE7EE;background:var(--papel);color:var(--tinta)}
+*{box-sizing:border-box}
+html{background:var(--papel);color:var(--tinta);scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font:17px/1.6 "Archivo",system-ui,sans-serif;background:var(--papel);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+.wrap{max-width:1360px;margin:0 auto;padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))}
+@media(max-width:700px){.wrap{padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}}
+.cond{font-family:"Archivo",system-ui,sans-serif;font-stretch:62%;font-style:italic;font-weight:850;letter-spacing:-.005em;text-transform:uppercase;text-wrap:balance}
+.mono{font:12px/1.5 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.02em}
+:focus-visible{outline:2px solid var(--acento);outline-offset:3px}
+.pulo{position:absolute;left:-9999px}.pulo:focus{left:16px;top:12px;z-index:99;background:var(--tinta);color:var(--papel);padding:10px 14px}
+
+.nav{position:sticky;top:0;z-index:40;background:rgba(12,11,14,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--linha)}
+.nav .wrap{height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav .marca{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.16em;font-size:14px;flex:none}
+.nav .marca img{height:18px;width:auto}
+.nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-size:14px}
+.nav li a:hover,.nav li a.on{color:var(--acento)}
+.nav .progresso{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--acento);transform-origin:0 50%;transform:scaleX(0)}
+.link .seta{font-style:normal;display:inline-block;transition:translate .45s cubic-bezier(.16,1,.3,1)}
+.link:hover .seta,.dest:hover .link .seta{translate:6px 0}
+.idioma option{color:#16151A}
+.idioma{font:12px "IBM Plex Mono",monospace;color:var(--tinta);background:transparent;border:1px solid var(--linha);padding:6px 8px;border-radius:0}
+@media(max-width:900px){.nav ul{display:none}}
+
+.btn{display:inline-block;background:var(--tinta);color:var(--papel);padding:15px 24px;font-weight:600;font-size:15px;white-space:nowrap;transition:background .25s;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--acento);color:#0C0B0E}
+.link{display:inline-flex;gap:12px;align-items:center;font-weight:600;border-bottom:2px solid var(--acento);padding-bottom:3px}
+.link:hover{color:var(--acento)}
+.foto{overflow:hidden;background:#1A181E}
+.foto img{width:100%;height:100%;object-fit:cover;transition:scale 1.2s cubic-bezier(.16,1,.3,1)}
+a:hover .foto img,.foto:hover img{scale:1.03}
+.nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--tinta);margin-top:36px}
+.nums div{padding:16px 16px 16px 0}
+.nums b{display:block;font-family:"Archivo";font-stretch:75%;font-weight:700;font-size:40px;line-height:1;color:var(--acento);font-variant-numeric:tabular-nums}
+.nums span{display:block;margin-top:8px;font-size:13px;color:var(--mudo);line-height:1.35}
+.painel{background:var(--ameixa-claro);padding:56px 40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:end}
+.painel img{box-shadow:0 30px 60px -36px rgba(85,26,85,.55)}
+.painel img:nth-child(2){transform:translateY(-28px)}
+.semimg{background:var(--ameixa-claro);display:grid;place-items:center;padding:40px;color:var(--acento);font-size:clamp(40px,5vw,72px);line-height:.9;text-align:center}
+
+/* topo */
+.hero{position:relative;overflow:hidden;min-height:calc(100svh - 64px);display:grid;align-items:end;border-bottom:1px solid var(--linha)}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 78% 100%,rgba(85,26,85,.55),rgba(85,26,85,0) 70%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-block:40px 96px}
+.hero h1{margin:0;font-size:clamp(56px,9vw,150px);line-height:.86;max-width:11ch}
+.hero h1 .pt{color:var(--acento)}
+.ln,.ln>span{display:block}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;-webkit-mask-image:linear-gradient(100deg,rgba(0,0,0,.35) 20%,#000 70%);mask-image:linear-gradient(100deg,rgba(0,0,0,.35) 20%,#000 70%)}
+.hero .desce{position:absolute;left:max(40px,calc((100% - 1360px) / 2 + 40px));bottom:0;width:1px;height:72px;background:var(--linha);overflow:hidden;z-index:1}
+@media(max-width:700px){.hero .desce{left:18px;height:48px}}
+.hero p{margin:36px 0 0;font-size:20px;max-width:34ch;color:var(--texto)}
+.hero .acoes{margin-top:34px}
+.hero .vinte{position:absolute;right:2vw;bottom:-1px;width:min(44vw,720px);height:auto;aspect-ratio:1325.95/902.28;z-index:0;pointer-events:none}
+@media(max-width:900px){.hero .vinte{width:72vw;right:-2vw}.hero .wrap{padding-bottom:calc(49vw + 24px)}}
+.vinte svg{position:absolute;inset:0;width:100%;height:100%}
+
+/* faixa corrida com as competências, logo abaixo do topo */
+.faixa{overflow:hidden;border-bottom:1px solid var(--linha);padding-block:18px;color:var(--mudo);text-transform:uppercase;letter-spacing:.08em}
+.faixa .trilho{display:flex;width:max-content}
+.faixa .trilho>span{padding-inline:28px;white-space:nowrap}
+.faixa .trilho>i{font-style:normal;color:var(--acento)}
+
+/* destaques: fichas presas no topo, que se empilham uma sobre a outra ao rolar */
+.sec-proj{padding-block:120px 0}
+.sec-proj .cab-sec h2{margin:0 0 12px;font-size:clamp(48px,6.4vw,104px);line-height:.86}
+.sec-proj .cab-sec .intro{margin-bottom:64px}
+.pilha{display:flex;flex-direction:column;gap:40px;padding-bottom:120px}
+.caso{--i:0;position:sticky;top:calc(88px + var(--i) * 16px);height:min(740px,calc(100svh - 120px));min-height:540px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);background:#141218;border:1px solid var(--linha);overflow:hidden}
+.caso-txt{position:relative;z-index:1;display:flex;flex-direction:column;min-width:0;padding:44px}
+.caso-cab{display:flex;justify-content:space-between;gap:20px;color:var(--mudo)}
+.caso-cab .idx{color:var(--acento)}
+.caso-txt h2{margin:36px 0 0;font-size:clamp(60px,7vw,124px);line-height:.86}
+.caso-txt .lede{margin-top:22px;font-size:19px;color:var(--texto);max-width:40ch}
+.caso-txt .empurra{flex:1 0 24px}
+.caso .nums{margin-top:0;grid-template-columns:repeat(2,minmax(0,1fr));border-top-color:rgba(243,241,238,.25)}
+.caso .nums div{padding:14px 16px 14px 0;border-bottom:1px solid var(--linha)}
+.caso .nums div:nth-child(even){padding-left:16px;border-left:1px solid var(--linha)}
+.caso .nums div:nth-last-child(-n+2){border-bottom:0}
+.caso .nums b{font-stretch:62%;font-style:italic;font-weight:850;font-size:44px;color:var(--tinta)}
+.caso-pe{margin-top:24px;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:16px 20px;border:1px solid rgba(243,241,238,.4);font-weight:600;transition:background-color .3s,color .3s,padding .45s cubic-bezier(.16,1,.3,1)}
+.caso-pe .seta{font-style:normal;font-size:20px;transition:translate .45s cubic-bezier(.16,1,.3,1)}
+.caso-pe:hover,.caso:has(.media:hover) .caso-pe{background:var(--tinta);color:var(--papel);padding-inline:28px}
+.caso-pe:hover .seta,.caso:has(.media:hover) .caso-pe .seta{translate:6px 0}
+.caso .media{position:relative;overflow:hidden;min-height:0}
+.caso .media.foto img{position:absolute;inset:0}
+.caso .media.foto::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#141218,rgba(20,18,24,0) 28%);pointer-events:none}
+.caso.tela{background:var(--ameixa);border-color:var(--ameixa)}
+.caso.tela .caso-cab,.caso.tela .caso-cab .idx,.caso.tela .nums span{color:#E4CDE2}
+.caso.tela .lede{color:#F1E6F0}
+.caso.tela .media.painel{background:transparent;padding:56px 48px 56px 8px;align-items:center;height:100%}
+.caso.cheio{display:block}
+.caso.cheio .media{position:absolute;inset:0}
+.caso.cheio .media.foto::after{background:linear-gradient(0deg,rgba(12,11,14,.94),rgba(12,11,14,.5) 46%,rgba(12,11,14,.1))}
+.caso.cheio .caso-txt{height:100%;justify-content:flex-end}
+.caso.cheio .caso-txt h2{font-size:clamp(64px,9vw,152px)}
+.caso.cheio .lede{max-width:52ch;color:#E2DEE5}
+.caso.cheio .empurra{display:none}
+.caso.cheio .nums{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:28px}
+.caso.cheio .nums div{border-bottom:0;padding-left:16px;border-left:1px solid var(--linha)}
+.caso.cheio .nums div:first-child{padding-left:0;border-left:0}
+.caso.cheio .caso-pe{align-self:flex-start;min-width:280px}
+.lede{margin:0;font-size:20px;line-height:1.5;max-width:44ch}
+.versoes{margin:16px 0 0;color:var(--mudo)}
+.versoes b{color:var(--tinta);font-weight:600}
+@media(max-width:960px){.caso,.caso.cheio{position:relative;top:auto;height:auto;min-height:0;display:flex;flex-direction:column}.caso-txt,.caso.cheio .caso-txt{padding:28px 22px;height:auto}.caso .media,.caso.cheio .media{position:relative;inset:auto;order:-1;aspect-ratio:16/10}.caso .nums,.caso.cheio .nums{grid-template-columns:repeat(2,minmax(0,1fr))}.caso.cheio .nums div:nth-child(3){padding-left:0;border-left:0}.caso.tela .media.painel{padding:28px 16px;gap:8px}.caso.cheio .caso-pe{min-width:0;align-self:stretch}.pilha{padding-bottom:80px}.nums{grid-template-columns:repeat(2,1fr)}}
+
+/* seções */
+.sec{padding-block:110px;border-bottom:1px solid var(--linha)}
+.sec h2{margin:0 0 12px;font-size:clamp(44px,5.6vw,88px);line-height:.9}
+.intro{margin:0 0 52px;color:var(--mudo);max-width:56ch}
+.outros{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:8px}
+.outros::-webkit-scrollbar{display:none}
+.item{flex:0 0 min(560px,84vw);scroll-snap-align:start;display:block;min-width:0;border-top:2px solid var(--tinta)}
+.item .item-cab{display:block;color:var(--mudo);padding-block:14px;border-bottom:1px solid var(--linha);margin-bottom:24px}
+.item .foto,.item .semimg{aspect-ratio:4/3}
+.item .semimg{background:var(--ameixa);color:#F3F1EE}
+.item h3{margin:18px 0 6px;font-size:36px;line-height:.95}
+.item p{margin:0;color:var(--texto);font-size:16px;max-width:46ch}
+.item:hover h3{color:var(--acento)}
+.estudo{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:40px;align-items:center;border-top:1px solid var(--tinta);border-bottom:1px solid var(--linha);padding-block:26px}
+.estudo h3{margin:0 0 8px;font-size:44px;line-height:.95}
+.estudo p{margin:0;color:var(--texto);max-width:56ch}
+.estudo .mono{display:block;color:var(--mudo);margin-top:14px}
+.estudo .foto{aspect-ratio:16/10}
+.estudo .foto img{filter:grayscale(1) contrast(1.05);transition:filter .5s,scale 1.2s cubic-bezier(.16,1,.3,1)}
+.estudo:hover .foto img{filter:none}
+@media(max-width:760px){.estudo{grid-template-columns:1fr}}
+.marcas{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));border-top:1px solid var(--tinta);border-left:1px solid var(--linha)}
+.mc{border-right:1px solid var(--linha);border-bottom:1px solid var(--linha);display:flex;flex-direction:column;overflow:hidden}
+.mc .logo{aspect-ratio:4/3;display:grid;place-items:center;padding:16% 26%;background:var(--branco)}
+.mc .logo.escuro{background:var(--escuro)}
+.mc .logo img{width:100%;height:100%;object-fit:contain}
+.mc .logo.v21{padding:33%}
+.mc .logo:has(.fr){padding:10%}
+.fr{display:flex;align-items:center;gap:6px;font:700 19px "Barlow Condensed",sans-serif;letter-spacing:.1em;color:#ECEFF1;white-space:nowrap}
+.fr svg{width:38px;height:38px;flex:none}.fr i{font-style:normal;font-weight:300}
+.mc .txt{padding:16px 18px 22px}
+.mc b{font-weight:700;font-size:16px}
+.mc p{margin:6px 0 0;font-size:13px;color:var(--mudo);line-height:1.45}
+.mc:hover b{color:var(--acento)}
+@media(max-width:600px){.fr{font-size:13px;gap:4px}.fr svg{width:24px;height:24px}}
+.sobre{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px}
+.bio{margin:0;font-size:clamp(26px,2.6vw,38px);line-height:1.2;font-weight:500;letter-spacing:-.01em}
+.bio em{font-style:italic;color:var(--acento);background:linear-gradient(rgba(85,26,85,.15),rgba(85,26,85,.15)) 0 92%/100% .46em no-repeat}
+.fatos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;border-top:1px solid var(--linha);padding-top:18px}
+.fatos .mono{color:var(--mudo)}
+.fatos b{display:block;margin-top:4px;font-weight:600}
+.trab>div{padding-block:18px;border-top:1px solid var(--linha)}
+.trab h3{margin:0 0 4px;font-size:17px}
+.trab p{margin:0;color:var(--texto);font-size:15px}
+.exp{display:grid;grid-template-columns:110px 1fr;gap:10px 16px}
+@media(max-width:900px){.sobre{grid-template-columns:1fr;gap:44px}}
+.bloco-cor{background:var(--ameixa);color:#F3F1EE}
+.bloco-cor .wrap{display:flex;justify-content:space-between;align-items:center;gap:28px;padding-block:56px}
+.bloco-cor p{margin:0;font-size:clamp(28px,3vw,44px);line-height:1}
+.bloco-cor .btn{background:#F3F1EE;color:var(--ameixa)}
+.bloco-cor .btn:hover{background:var(--branco)}
+@media(max-width:700px){.bloco-cor .wrap{flex-direction:column;align-items:flex-start}}
+.contato{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px}
+.mail{text-transform:none;display:inline-block;margin-top:18px;font-size:clamp(30px,4vw,60px);line-height:1;border-bottom:3px solid var(--acento);word-break:break-all;user-select:all}
+.canais{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:26px;font-size:15px}
+.canais span{color:var(--mudo)}
+.canais a{border-bottom:1px solid var(--linha)}
+.canais a:hover{color:var(--acento);border-color:var(--acento)}
+form{display:grid;gap:18px}
+label{display:grid;gap:8px;font-size:13px;font-weight:600}
+input,textarea{background:transparent;border:0;border-bottom:1px solid rgba(243,241,238,.35);padding:14px 0;font:inherit;font-size:18px;color:var(--tinta);border-radius:0}
+textarea{min-height:140px;resize:vertical}
+input:focus,textarea:focus{outline:2px solid var(--acento);outline-offset:1px}
+.form-status{min-height:1.5em;margin:0;font-size:14px}
+.form-status.ok{color:#8FDCA8}.form-status.err{color:#FF9A8F}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+@media(max-width:900px){.contato{grid-template-columns:1fr;gap:40px}}
+footer{display:flex;justify-content:space-between;gap:20px;padding-block:36px 40px;color:var(--mudo);font-size:13px;flex-wrap:wrap}
+/* fecho: VENTUNO gigante, cortado pela borda de baixo da página, como o 21 no topo */
+.assina{--t:clamp(64px,25.5vw,372px);height:calc(var(--t) * .56);overflow:hidden;display:flex;justify-content:center;pointer-events:none;user-select:none}
+.assina span{display:block;font-size:var(--t);line-height:.8;padding-right:.08em;background:linear-gradient(rgba(243,241,238,.16),rgba(243,241,238,.03) 62%);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* página de projeto e de marca */
+.topo-pag{padding-block:56px 40px;border-bottom:1px solid var(--linha)}
+.topo-pag .voltar{display:inline-block;color:var(--mudo);margin-bottom:34px}
+.topo-pag .voltar:hover{color:var(--acento)}
+.topo-pag h1{margin:10px 0 0;font-size:clamp(56px,10vw,160px);line-height:.85}
+.topo-pag .lede{margin-top:28px;max-width:52ch}
+.ficha{display:flex;flex-wrap:wrap;gap:10px 40px;margin-top:30px}
+.ficha div .mono{display:block;color:var(--mudo)}
+.ficha b{font-weight:600}
+.capa-pag{margin-top:48px}
+.capa-pag .foto{aspect-ratio:21/9}
+.corpo{padding-block:72px;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:56px;border-bottom:1px solid var(--linha)}
+.corpo .rot{color:var(--mudo)}
+.texto p{margin:0 0 1em;font-size:19px;line-height:1.6;color:var(--tinta);max-width:62ch}
+.texto h3{font-family:"Archivo";font-stretch:75%;font-weight:700;font-size:30px;margin:36px 0 12px}
+.texto li{margin-bottom:6px;color:var(--texto)}
+.texto table{border-collapse:collapse;width:100%;font-size:15px;margin:18px 0}
+.texto th,.texto td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--linha)}
+.texto th{font:12px "IBM Plex Mono",monospace;color:var(--mudo);font-weight:400}
+.tabela{overflow-x:auto}
+.pontos{border-top:1px solid var(--tinta)}
+.ponto{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:56px;padding-block:22px;border-bottom:1px solid var(--linha)}
+.ponto .k{font:12px/1.5 "IBM Plex Mono",monospace;letter-spacing:.06em;color:var(--acento);text-transform:uppercase;padding-top:6px}
+.ponto .v{font-size:18px;line-height:1.6;max-width:62ch}
+.ponto .v p{margin:0 0 .6em}.ponto .v p:last-child{margin:0}
+@media(max-width:860px){.corpo,.ponto{grid-template-columns:1fr;gap:10px}}
+.bloco-dest{background:var(--ameixa-claro);padding:56px;margin-block:72px}
+.bloco-dest .mono{color:var(--acento)}
+.bloco-dest h2{margin:12px 0 18px;font-size:clamp(36px,4.6vw,68px);line-height:.92}
+.bloco-dest p{font-size:19px;line-height:1.6;max-width:68ch;margin:0}
+@media(max-width:700px){.bloco-dest{padding:28px 20px}}
+.secao-extra{padding-block:72px;border-top:1px solid var(--tinta)}
+.secao-extra h2{margin:8px 0 18px;font-size:clamp(48px,6vw,96px);line-height:.88}
+.secao-extra .lede{margin-bottom:36px}
+.galeria{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;padding-block:72px;border-top:1px solid var(--linha)}
+.galeria figure{margin:0;min-width:0}
+.galeria .midia{background:#1A181E;overflow:hidden}
+.galeria img,.galeria video{width:100%;height:auto}
+.galeria figure.alta .midia{max-height:620px;position:relative}
+.galeria figure.alta .midia::after{content:"";position:absolute;inset:auto 0 0;height:120px;background:linear-gradient(transparent,rgba(12,11,14,.95))}
+.galeria figcaption{margin-top:12px;font-size:14px;color:var(--texto)}
+.galeria figcaption a{color:var(--acento);border-bottom:1px solid currentColor;margin-left:6px}
+@media(max-width:760px){.galeria{grid-template-columns:1fr}}
+.ligacoes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px;padding-block:72px}
+.liga{display:flex;align-items:center;gap:24px;border:1px solid var(--tinta);padding:20px 24px;background:#141218;transition:border-color .25s}
+.liga:hover{border-color:var(--acento)}
+.liga .logo{width:120px;aspect-ratio:16/10;display:grid;place-items:center;padding:12px;background:#FFFFFF;flex:none}
+.liga .logo.escuro{background:var(--escuro)}
+.liga .logo img{max-height:100%;width:auto;max-width:100%}
+.liga .mono{display:block;color:var(--mudo)}
+.liga b{display:block;font-family:"Archivo";font-stretch:68%;font-style:italic;font-weight:800;font-size:30px;line-height:1}
+.logos-marca{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1px;background:var(--linha);margin-top:48px;border:1px solid var(--linha)}
+.logos-marca .logo{aspect-ratio:16/10;display:grid;place-items:center;padding:16%;background:var(--branco)}
+.logos-marca .logo.escuro{background:var(--escuro)}
+.logos-marca .logo.papel{background:#F6F5F2}
+.logos-marca img{max-width:100%;max-height:100%;width:auto}
+.logos-marca .fr{font-size:36px}.logos-marca .fr svg{width:64px;height:64px}
+.logos-marca .rotulo-logo{display:block;text-align:center;margin-top:12px}
+.cores-marca{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr));gap:20px}
+.cor .amostra{height:110px;border:1px solid var(--linha)}
+.cor b{display:block;margin-top:10px}
+.cor code{font:12px "IBM Plex Mono",monospace;color:var(--mudo)}
+.cor p{margin:4px 0 0;font-size:14px;color:var(--texto)}
+
+/* movimento: só com html.mov (sem "reduzir movimento" e sem ?static) */
+html.lenis,html.lenis body{height:auto}
+html.lenis,.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+@keyframes sobe{from{transform:translateY(108%)}to{transform:none}}
+@keyframes surge{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes aparece{from{opacity:0}to{opacity:1}}
+@keyframes base{from{transform:translateY(100%)}to{transform:none}}
+@keyframes desce{0%{top:-100%}55%{top:0}100%{top:100%}}
+@keyframes assenta{from{transform:scale(1.12)}to{transform:none}}
+.mov .ln{overflow:hidden;padding:.1em .14em .12em 0;margin:-.1em -.14em -.12em 0}
+.mov h1.feito .ln{overflow:visible}
+.mov .ln>span{animation:sobe 1.15s cubic-bezier(.16,1,.3,1) both .1s}
+.mov .ln+.ln>span{animation-delay:.2s}
+.mov .hero p{animation:surge 1s cubic-bezier(.16,1,.3,1) both .5s}
+.mov .hero .acoes{animation:surge 1s cubic-bezier(.16,1,.3,1) both .62s}
+.mov .hero .vinte{animation:base 1.5s cubic-bezier(.16,1,.3,1) both .3s}
+.mov .hero canvas{animation:aparece 1.8s ease both .15s}
+.mov .hero .desce::after{content:"";position:absolute;left:0;width:1px;height:100%;background:var(--acento);top:-100%;animation:desce 1.8s cubic-bezier(.65,0,.35,1) infinite 1.4s}
+@keyframes corre{to{transform:translateX(-50%)}}
+@keyframes assenta-rol{from{scale:1.16}to{scale:1}}
+.mov .faixa .trilho{animation:corre 42s linear infinite}
+@supports (animation-timeline:view()){.mov .caso .media.foto img{animation:assenta-rol linear both;animation-timeline:view();animation-range:cover 0% cover 60%}}
+.mov .topo-pag .voltar,.mov .topo-pag .wrap>.mono{animation:surge .9s cubic-bezier(.16,1,.3,1) both}
+.mov .topo-pag .lede,.mov .topo-pag .versoes{animation:surge 1s cubic-bezier(.16,1,.3,1) both .45s}
+.mov .topo-pag .ficha,.mov .topo-pag .logos-marca{animation:surge 1s cubic-bezier(.16,1,.3,1) both .58s}
+.mov .capa-pag .foto img{animation:assenta 1.8s cubic-bezier(.16,1,.3,1) both .2s}
+.mov .rv.esp{opacity:0;transform:translateY(44px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1.1s cubic-bezier(.16,1,.3,1)}
+.mov .rv.esp.on{opacity:1;transform:none}
+.mov.par .dest .foto img,.mov.par .item .foto img,.mov.par .estudo .foto img,.mov.par .capa-pag .foto img{scale:1.14}
+.mov.par a:hover .foto img,.mov.par .foto:hover img{scale:1.18}
+.mov .bio .w{color:rgba(22,21,26,.17);transition:color .4s}
+.mov .bio .w.aceso{color:var(--tinta)}
+.mov .bio em .w.aceso{color:var(--acento)}
+.mov .bio em{background-size:0 .46em;transition:background-size 1.2s cubic-bezier(.65,0,.35,1)}
+.mov .bio em.marcado{background-size:100% .46em}
+.com-cursor,.com-cursor *{cursor:none}
+.com-cursor input,.com-cursor textarea{cursor:text}
+.cursor{position:fixed;left:0;top:0;z-index:100;pointer-events:none;opacity:0;transition:opacity .3s}
+.cursor.on{opacity:1}
+.cursor::before{content:"";position:absolute;left:-5px;top:-5px;width:10px;height:10px;border-radius:50%;background:var(--acento);transition:transform .35s cubic-bezier(.16,1,.3,1),background-color .25s}
+.cursor span{position:absolute;left:-46px;top:-46px;width:92px;height:92px;border-radius:50%;background:var(--acento);color:var(--papel);display:grid;place-items:center;font-size:26px;transform:scale(0);transition:transform .45s cubic-bezier(.16,1,.3,1)}
+.cursor.link::before{transform:scale(3.6);background-color:rgba(85,26,85,.16)}
+.cursor.ver::before{transform:scale(0)}
+.cursor.ver span{transform:scale(1)}
+.cursor.some{opacity:0}
+</style>
+<script>(function(){var H=document.documentElement;H.classList.add("js");try{if(!/[?&]static(?:[=&]|$)/.test(location.search)&&!matchMedia("(prefers-reduced-motion: reduce)").matches)H.classList.add("mov")}catch(e){}})()</script>
+</head>
+<body>
+<a class="pulo" href="#conteudo">Pular para o conteúdo</a>
+<nav class="nav" aria-label="Principal"><div class="wrap">
+<a class="marca" href="/"><img src="/assets/marca/ventuno-21-negativo.svg" alt="" width="27" height="18">VENTUNO</a>
+<ul>
+<li><a href="/#projetos" data-t="s.nav.work">Projetos</a></li>
+<li><a href="/#identidade" data-t="s.id.title">Identidade</a></li>
+<li><a href="/#sobre" data-t="s.nav.about">Sobre</a></li>
+<li><a href="/cartoes/" data-t="s.nav.cards">Cartões</a></li>
+<li><a href="/#contato" data-t="s.nav.contact">Contato</a></li>
+</ul>
+<select class="idioma" id="idioma" aria-label="Idioma / Language"><option value="pt">PT-BR</option><option value="en">EN</option><option value="it">IT</option><option value="es">ES</option><option value="fr">FR</option><option value="de">DE</option></select>
+</div><span class="progresso" aria-hidden="true"></span></nav>
+<main id="conteudo">
+
+<section class="topo-pag"><div class="wrap">
+<a class="voltar mono" href="/#projetos">← <span data-t="s.lbl.todos">Todos os projetos</span></a>
+<span class="mono" style="display:block;color:var(--mudo)" data-t="p.my-trakr.etiqueta">Produto próprio · Plataforma de treino</span>
+<h1 class="cond"><span class="ln"><span>MY TRAKR</span></span></h1>
+<p class="lede" data-t="p.my-trakr.resumo">O painel que nasceu para um IRONMAN 70.3 e virou produto. O atleta conecta a própria IA, e o painel mostra o que a conversa não mostra.</p>
+<p class="versoes" data-t="p.my-trakr.versoes"><b>MY TRAKR</b> para o atleta. <b>TRAKR+</b> para a assessoria.</p>
+
+</div></section>
+<div class="capa-pag wrap"><div class="foto"><img src="/assets/trakr-02-fitness.jpg" alt="MY TRAKR" data-t-alt="p.my-trakr.titulo" decoding="async" fetchpriority="high"></div></div>
+<div class="wrap">
+<div class="rv"><div class="nums"><div><b data-t="p.my-trakr.numeros.0.valor">1 ano</b><span data-t="p.my-trakr.numeros.0.rotulo">em uso real, todos os dias</span></div><div><b data-t="p.my-trakr.numeros.1.valor">MCP</b><span data-t="p.my-trakr.numeros.1.rotulo">conecta Claude ou ChatGPT</span></div><div><b data-t="p.my-trakr.numeros.2.valor">2</b><span data-t="p.my-trakr.numeros.2.rotulo">versões: atleta e assessoria</span></div><div><b data-t="p.my-trakr.numeros.3.valor">.fit</b><span data-t="p.my-trakr.numeros.3.rotulo">leitura e escrita feitas do zero</span></div></div></div>
+<section class="corpo rv"><span></span><div class="texto" data-t="p.my-trakr.descricao">O dashboard que nasceu para um IRONMAN 70.3 e virou produto.</div></section>
+<section style="padding-block:56px"><div class="pontos"><div class="ponto rv"><span class="k" data-t="p.my-trakr.pontos.0.rotulo">Origem</span><div class="v" data-t="p.my-trakr.pontos.0.texto">Comecei como ferramenta de uso próprio: um painel para enxergar a preparação inteira num lugar só — calendário, carga, prontidão, lesões, temporada em fases.</div></div><div class="ponto rv"><span class="k" data-t="p.my-trakr.pontos.1.rotulo">A virada</span><div class="v" data-t="p.my-trakr.pontos.1.texto">O que funcionava para um atleta passou a funcionar para qualquer um. O TRAK virou <b>MY TRAKR</b>: multi-tenant, cada atleta com a própria conta e os próprios dados, isolados no banco.</div></div><div class="ponto rv"><span class="k" data-t="p.my-trakr.pontos.2.rotulo">Conceito</span><div class="v" data-t="p.my-trakr.pontos.2.texto">O produto <b>não embarca IA</b>. O atleta conecta a própria — Claude ou ChatGPT — por um conector MCP. O modelo passa a ler e escrever no sistema, e o painel é a camada visual daquela conversa. O custo de inferência sai da assinatura que ele já tem, e a prescrição continua com quem tem responsabilidade por ela.</div></div><div class="ponto rv"><span class="k" data-t="p.my-trakr.pontos.3.rotulo">Sistema</span><div class="v" data-t="p.my-trakr.pontos.3.texto">Adesão por tempo em zona, pace ajustado por inclinação (GAP), carga de treino calculada, protocolos de teste de limiar com cadência de reteste, importação do Strava e leitura/escrita do formato <code>.fit</code> implementada do zero.</div></div><div class="ponto rv"><span class="k" data-t="p.my-trakr.pontos.4.rotulo">Tese</span><div class="v" data-t="p.my-trakr.pontos.4.texto">O painel não compete com o chat. Ele mostra exatamente o que a conversa não consegue mostrar: tendência, comparação entre o prescrito e o realizado, e a temporada inteira de uma vez.</div></div></div></section>
+
+</div>
+<section class="secao-extra wrap rv"><span class="mono" style="color:var(--mudo)" data-t="p.my-trakr.secoes.0.etiqueta">Produto em construção · Plataforma B2B</span><h2 class="cond">TRAKR+</h2><p class="lede" data-t="p.my-trakr.secoes.0.texto">Escalar uma assessoria esportiva sem perder a qualidade do atendimento.</p>
+<div class="pontos"><div class="ponto"><span class="k" data-t="p.my-trakr.secoes.0.pontos.0.rotulo">Problema</span><div class="v" data-t="p.my-trakr.secoes.0.pontos.0.texto">Um treinador atende 30 a 50 alunos, e o gargalo não é conhecimento — é repetição mecânica. Montar semana, transcrever treino, conferir o que foi feito. Do outro lado, o dono raramente tem instrumentação de negócio: não sabe qual treinador está sobrecarregado nem qual carteira está perdendo aluno.</div></div><div class="ponto"><span class="k" data-t="p.my-trakr.secoes.0.pontos.1.rotulo">Conceito</span><div class="v" data-t="p.my-trakr.secoes.0.pontos.1.texto">Copiloto de IA para o profissional, painel para o resto. Conversa serve ao julgamento; painel serve à repetição. Cada profissional — treinador, nutricionista, fisioterapeuta — escreve no mesmo aluno, com escopo e permissões próprias.</div></div><div class="ponto"><span class="k" data-t="p.my-trakr.secoes.0.pontos.2.rotulo">Operação</span><div class="v" data-t="p.my-trakr.secoes.0.pontos.2.texto">Roster agrupado por fase e ordenado por atenção, banco de treinos da casa, prescrição em lote, blocos de plano multi-semana distribuídos pela disponibilidade real de cada aluno.</div></div><div class="ponto"><span class="k" data-t="p.my-trakr.secoes.0.pontos.3.rotulo">Gestão</span><div class="v" data-t="p.my-trakr.secoes.0.pontos.3.texto">Dashboards internos de negócio: placar comparativo por treinador, custo e margem por aluno, capacidade por profissional, redistribuição de carteiras com prévia do impacto antes de confirmar, e CRM de retenção — quem estava treinando e parou, com o valor mensal em risco.</div></div><div class="ponto"><span class="k" data-t="p.my-trakr.secoes.0.pontos.4.rotulo">Tese</span><div class="v" data-t="p.my-trakr.secoes.0.pontos.4.texto">A unidade do painel do dono é o <b>treinador</b>, não o aluno. Empilhar todos os atletas numa lista é a versão que quebra justamente nos 200 alunos que são a meta.</div></div></div></section>
+<section class="wrap"><div class="galeria"><figure class="rv"><div class="midia"><img src="/assets/trakr-01-hero.jpg" alt="Contagem para a prova e prontidão do dia" data-t-alt="p.my-trakr.legendas.0" loading="lazy" decoding="async"></div><figcaption><span data-t="p.my-trakr.legendas.0">Contagem para a prova e prontidão do dia</span></figcaption></figure><figure class="rv"><div class="midia"><img src="/assets/trakr-02-fitness.jpg" alt="Condicionamento e frescor — fitness, fadiga e forma" data-t-alt="p.my-trakr.legendas.1" loading="lazy" decoding="async"></div><figcaption><span data-t="p.my-trakr.legendas.1">Condicionamento e frescor — fitness, fadiga e forma</span></figcaption></figure><figure class="rv"><div class="midia"><img src="/assets/trakr-03-calendario.jpg" alt="Calendário de treinos com totais semanais" data-t-alt="p.my-trakr.legendas.2" loading="lazy" decoding="async"></div><figcaption><span data-t="p.my-trakr.legendas.2">Calendário de treinos com totais semanais</span></figcaption></figure><figure class="rv"><div class="midia"><img src="/assets/trakr-04-temporada.jpg" alt="Temporada — volume semanal por fase" data-t-alt="p.my-trakr.legendas.3" loading="lazy" decoding="async"></div><figcaption><span data-t="p.my-trakr.legendas.3">Temporada — volume semanal por fase</span></figcaption></figure><figure class="rv"><div class="midia"><img src="/assets/trakr-05-zonas.jpg" alt="Zonas de performance — bike, corrida e natação" data-t-alt="p.my-trakr.legendas.4" loading="lazy" decoding="async"></div><figcaption><span data-t="p.my-trakr.legendas.4">Zonas de performance — bike, corrida e natação</span></figcaption></figure><figure class="rv"><div class="midia"><img src="/assets/trakr-06-corpo.jpg" alt="Composição corporal — tendências de bioimpedância" data-t-alt="p.my-trakr.legendas.5" loading="lazy" decoding="async"></div><figcaption><span data-t="p.my-trakr.legendas.5">Composição corporal — tendências de bioimpedância</span></figcaption></figure><figure class="rv"><div class="midia"><img src="/assets/trakr-07-nutricao.jpg" alt="Plano alimentar e nutrição por duração de treino" data-t-alt="p.my-trakr.legendas.6" loading="lazy" decoding="async"></div><figcaption><span data-t="p.my-trakr.legendas.6">Plano alimentar e nutrição por duração de treino</span></figcaption></figure><figure class="rv"><div class="midia"><img src="/assets/trakr-08-forca.jpg" alt="Força, registro de lesões e estilo de vida" data-t-alt="p.my-trakr.legendas.7" loading="lazy" decoding="async"></div><figcaption><span data-t="p.my-trakr.legendas.7">Força, registro de lesões e estilo de vida</span></figcaption></figure><figure class="rv"><div class="midia"><img src="/assets/trakr-09-config.jpg" alt="Configurações do atleta — disponibilidade e o que mede" data-t-alt="p.my-trakr.legendas.8" loading="lazy" decoding="async"></div><figcaption><span data-t="p.my-trakr.legendas.8">Configurações do atleta — disponibilidade e o que mede</span></figcaption></figure><figure class="rv alta"><div class="midia"><img src="/assets/trakr-10-completo.jpg" alt="O sistema completo, de ponta a ponta" data-t-alt="p.my-trakr.legendas.9" loading="lazy" decoding="async"></div><figcaption><span data-t="p.my-trakr.legendas.9">O sistema completo, de ponta a ponta</span> <a href="/assets/trakr-10-completo.jpg" target="_blank" rel="noopener">↗</a></figcaption></figure></div></section>
+
+<section class="wrap"><div class="ligacoes">
+<a class="liga rv" href="/identidade/my-trakr/" data-ver><div class="logo escuro "><img src="/assets/trakr-logo.svg" alt="MY TRAKR"></div><span><span class="mono" data-t="s.lbl.ver.identidade">Ver a identidade</span><b>MY TRAKR</b></span></a>
+<a class="liga rv" href="/projetos/rentaloop/" data-ver><span><span class="mono" data-t="s.lbl.ver.projeto">Ver o projeto</span><b>Rentaloop</b></span></a><a class="liga rv" href="/projetos/flamme-rouge/" data-ver><span><span class="mono" data-t="s.lbl.ver.projeto">Ver o projeto</span><b>Flamme Rouge</b></span></a>
+</div></section>
+</main>
+<footer class="wrap"><span>VENTUNO · <span data-t="s.about.base.v">Cuneo, Itália</span></span><span>zeroventuno.com</span></footer>
+<div class="assina" aria-hidden="true"><span class="cond">VENTUNO</span></div>
+<script>window.__T={"p.my-trakr.titulo":{"pt":"MY TRAKR","en":"MY TRAKR","it":"MY TRAKR","es":"MY TRAKR","fr":"MY TRAKR","de":"MY TRAKR"},"p.my-trakr.pontos.0.rotulo":{"pt":"Origem","en":"Origin","it":"Origine","es":"Origen","fr":"Origine","de":"Ursprung"},"p.my-trakr.pontos.0.texto":{"pt":"Comecei como ferramenta de uso próprio: um painel para enxergar a preparação inteira num lugar só — calendário, carga, prontidão, lesões, temporada em fases.","en":"It started as a tool for my own use: a panel to see the whole preparation in one place — calendar, load, readiness, injuries, the season in phases.","it":"È partita come strumento per uso personale: un pannello per vedere l'intera preparazione in un unico posto — calendario, carico, readiness, infortuni, stagione per fasi.","es":"Empezó como herramienta de uso propio: un panel para ver toda la preparación en un solo lugar — calendario, carga, readiness, lesiones, temporada por fases.","fr":"Cela a commencé comme un outil personnel : un tableau de bord pour voir toute la préparation au même endroit — calendrier, charge, readiness, blessures, saison par phases.","de":"Es begann als Werkzeug für den Eigenbedarf: ein Panel, um die gesamte Vorbereitung an einem Ort zu sehen — Kalender, Belastung, Readiness, Verletzungen, Saison in Phasen."},"p.my-trakr.pontos.1.rotulo":{"pt":"A virada","en":"The turn","it":"La svolta","es":"El giro","fr":"Le tournant","de":"Die Wende"},"p.my-trakr.pontos.1.texto":{"pt":"O que funcionava para um atleta passou a funcionar para qualquer um. O TRAK virou <b>MY TRAKR</b>: multi-tenant, cada atleta com a própria conta e os próprios dados, isolados no banco.","en":"What worked for one athlete started working for anyone. TRAK became <b>MY TRAKR</b>: multi-tenant, each athlete with their own account and their own data, isolated in the database.","it":"Ciò che funzionava per un atleta ha iniziato a funzionare per chiunque. TRAK è diventata <b>MY TRAKR</b>: multi-tenant, ogni atleta con il proprio account e i propri dati, isolati nel database.","es":"Lo que funcionaba para un atleta pasó a funcionar para cualquiera. TRAK se convirtió en <b>MY TRAKR</b>: multi-tenant, cada atleta con su propia cuenta y sus propios datos, aislados en la base de datos.","fr":"Ce qui marchait pour un athlète s'est mis à marcher pour n'importe qui. TRAK est devenu <b>MY TRAKR</b> : multi-tenant, chaque athlète avec son propre compte et ses propres données, isolées dans la base.","de":"Was für einen Athleten funktionierte, funktionierte plötzlich für alle. Aus TRAK wurde <b>MY TRAKR</b>: mandantenfähig, jeder Athlet mit eigenem Konto und eigenen Daten, in der Datenbank isoliert."},"p.my-trakr.pontos.2.rotulo":{"pt":"Conceito","en":"Concept","it":"Concetto","es":"Concepto","fr":"Concept","de":"Konzept"},"p.my-trakr.pontos.2.texto":{"pt":"O produto <b>não embarca IA</b>. O atleta conecta a própria — Claude ou ChatGPT — por um conector MCP. O modelo passa a ler e escrever no sistema, e o painel é a camada visual daquela conversa. O custo de inferência sai da assinatura que ele já tem, e a prescrição continua com quem tem responsabilidade por ela.","en":"The product <b>ships no AI</b>. The athlete connects their own — Claude or ChatGPT — through an MCP connector. The model reads and writes into the system, and the panel is the visual layer of that conversation. Inference cost comes out of the subscription they already pay for, and prescription stays with whoever is accountable for it.","it":"Il prodotto <b>non incorpora IA</b>. L'atleta collega la propria — Claude o ChatGPT — tramite un connettore MCP. Il modello legge e scrive nel sistema, e il pannello è il livello visivo di quella conversazione. Il costo di inferenza esce dall'abbonamento che ha già, e la prescrizione resta a chi ne ha la responsabilità.","es":"El producto <b>no incorpora IA</b>. El atleta conecta la suya — Claude o ChatGPT — mediante un conector MCP. El modelo lee y escribe en el sistema, y el panel es la capa visual de esa conversación. El coste de inferencia sale de la suscripción que ya paga, y la prescripción sigue en manos de quien tiene la responsabilidad.","fr":"Le produit <b>n'embarque pas d'IA</b>. L'athlète connecte la sienne — Claude ou ChatGPT — via un connecteur MCP. Le modèle lit et écrit dans le système, et le tableau de bord est la couche visuelle de cette conversation. Le coût d'inférence sort de l'abonnement qu'il a déjà, et la prescription reste à celui qui en porte la responsabilité.","de":"Das Produkt <b>bringt keine KI mit</b>. Der Athlet verbindet seine eigene — Claude oder ChatGPT — über einen MCP-Connector. Das Modell liest und schreibt im System, und das Panel ist die visuelle Ebene dieses Gesprächs. Die Inferenzkosten laufen über das Abo, das er ohnehin hat, und die Trainingsvorgabe bleibt bei dem, der die Verantwortung dafür trägt."},"p.my-trakr.pontos.3.rotulo":{"pt":"Sistema","en":"System","it":"Sistema","es":"Sistema","fr":"Système","de":"System"},"p.my-trakr.pontos.3.texto":{"pt":"Adesão por tempo em zona, pace ajustado por inclinação (GAP), carga de treino calculada, protocolos de teste de limiar com cadência de reteste, importação do Strava e leitura/escrita do formato <code>.fit</code> implementada do zero.","en":"Adherence by time in zone, grade-adjusted pace (GAP), computed training load, threshold-test protocols with retest cadence, Strava import, and <code>.fit</code> read/write implemented from scratch.","it":"Aderenza per tempo in zona, passo corretto per pendenza (GAP), carico di allenamento calcolato, protocolli di test di soglia con cadenza di ripetizione, importazione da Strava e lettura/scrittura del formato <code>.fit</code> implementata da zero.","es":"Adherencia por tiempo en zona, ritmo ajustado por pendiente (GAP), carga de entrenamiento calculada, protocolos de test de umbral con cadencia de repetición, importación desde Strava y lectura/escritura del formato <code>.fit</code> implementada desde cero.","fr":"Adhérence par temps en zone, allure corrigée de la pente (GAP), charge d'entraînement calculée, protocoles de test de seuil avec cadence de retest, import Strava et lecture/écriture du format <code>.fit</code> implémentées de zéro.","de":"Adhärenz nach Zeit in der Zone, steigungskorrigiertes Tempo (GAP), berechnete Trainingsbelastung, Schwellentest-Protokolle mit Retest-Rhythmus, Strava-Import und von Grund auf implementiertes Lesen/Schreiben des <code>.fit</code>-Formats."},"p.my-trakr.pontos.4.rotulo":{"pt":"Tese","en":"Thesis","it":"Tesi","es":"Tesis","fr":"Thèse","de":"These"},"p.my-trakr.pontos.4.texto":{"pt":"O painel não compete com o chat. Ele mostra exatamente o que a conversa não consegue mostrar: tendência, comparação entre o prescrito e o realizado, e a temporada inteira de uma vez.","en":"The panel doesn't compete with the chat. It shows exactly what a conversation can't: trend, prescribed versus completed, and the entire season at once.","it":"Il pannello non compete con la chat. Mostra esattamente ciò che la conversazione non riesce a mostrare: tendenza, confronto tra prescritto e svolto, e l'intera stagione in una volta.","es":"El panel no compite con el chat. Muestra exactamente lo que la conversación no puede: tendencia, comparación entre lo prescrito y lo realizado, y la temporada entera de una vez.","fr":"Le tableau de bord ne concurrence pas le chat. Il montre exactement ce que la conversation ne peut pas montrer : la tendance, la comparaison entre prescrit et réalisé, et la saison entière d'un seul coup.","de":"Das Panel konkurriert nicht mit dem Chat. Es zeigt genau das, was ein Gespräch nicht zeigen kann: Trend, Soll gegen Ist, und die ganze Saison auf einen Blick."},"p.my-trakr.secoes.0.etiqueta":{"pt":"Produto em construção · Plataforma B2B","en":"Product in progress · B2B platform","it":"Prodotto in costruzione · Piattaforma B2B","es":"Producto en construcción · Plataforma B2B","fr":"Produit en construction · Plateforme B2B","de":"Produkt im Aufbau · B2B-Plattform"},"p.my-trakr.secoes.0.texto":{"pt":"Escalar uma assessoria esportiva sem perder a qualidade do atendimento.","en":"Scaling a coaching business without losing the quality of the service.","it":"Far crescere una società di coaching senza perdere la qualità del servizio.","es":"Escalar una asesoría deportiva sin perder la calidad de la atención.","fr":"Faire grandir une structure de coaching sans perdre la qualité du suivi.","de":"Ein Coaching-Unternehmen skalieren, ohne die Betreuungsqualität zu verlieren."},"p.my-trakr.secoes.0.pontos.0.rotulo":{"pt":"Problema","en":"Problem","it":"Problema","es":"Problema","fr":"Problème","de":"Problem"},"p.my-trakr.secoes.0.pontos.0.texto":{"pt":"Um treinador atende 30 a 50 alunos, e o gargalo não é conhecimento — é repetição mecânica. Montar semana, transcrever treino, conferir o que foi feito. Do outro lado, o dono raramente tem instrumentação de negócio: não sabe qual treinador está sobrecarregado nem qual carteira está perdendo aluno.","en":"A coach handles 30 to 50 athletes, and the bottleneck isn't knowledge — it's mechanical repetition. Building the week, transcribing the session, checking what was done. On the other side, the owner rarely has business instrumentation: no idea which coach is overloaded or which roster is losing athletes.","it":"Un allenatore segue dai 30 ai 50 atleti, e il collo di bottiglia non è la conoscenza — è la ripetizione meccanica. Costruire la settimana, trascrivere l'allenamento, verificare cosa è stato fatto. Dall'altra parte, il titolare raramente ha strumenti di gestione: non sa quale allenatore è sovraccarico né quale portafoglio sta perdendo atleti.","es":"Un entrenador atiende de 30 a 50 alumnos, y el cuello de botella no es el conocimiento — es la repetición mecánica. Montar la semana, transcribir el entrenamiento, comprobar lo que se hizo. Del otro lado, el dueño rara vez tiene instrumentación de negocio: no sabe qué entrenador está sobrecargado ni qué cartera está perdiendo alumnos.","fr":"Un coach suit 30 à 50 athlètes, et le goulot d'étranglement n'est pas la connaissance — c'est la répétition mécanique. Construire la semaine, transcrire la séance, vérifier ce qui a été fait. De l'autre côté, le dirigeant n'a que rarement d'instruments de pilotage : il ignore quel coach est surchargé et quel portefeuille perd des athlètes.","de":"Ein Trainer betreut 30 bis 50 Sportler, und der Engpass ist nicht das Wissen — es ist die mechanische Wiederholung. Die Woche bauen, die Einheit übertragen, prüfen, was gemacht wurde. Auf der anderen Seite hat die Inhaberin oder der Inhaber selten betriebswirtschaftliche Instrumente: unklar, welcher Trainer überlastet ist und welcher Kundenstamm Sportler verliert."},"p.my-trakr.secoes.0.pontos.1.rotulo":{"pt":"Conceito","en":"Concept","it":"Concetto","es":"Concepto","fr":"Concept","de":"Konzept"},"p.my-trakr.secoes.0.pontos.1.texto":{"pt":"Copiloto de IA para o profissional, painel para o resto. Conversa serve ao julgamento; painel serve à repetição. Cada profissional — treinador, nutricionista, fisioterapeuta — escreve no mesmo aluno, com escopo e permissões próprias.","en":"An AI copilot for the professional, a panel for everything else. Conversation serves judgement; the panel serves repetition. Every professional — coach, nutritionist, physiotherapist — writes on the same athlete, each with their own scope and permissions.","it":"Copilota IA per il professionista, pannello per tutto il resto. La conversazione serve al giudizio; il pannello serve alla ripetizione. Ogni professionista — allenatore, nutrizionista, fisioterapista — scrive sullo stesso atleta, con ambito e permessi propri.","es":"Copiloto de IA para el profesional, panel para todo lo demás. La conversación sirve al criterio; el panel sirve a la repetición. Cada profesional — entrenador, nutricionista, fisioterapeuta — escribe sobre el mismo alumno, con su propio alcance y permisos.","fr":"Un copilote IA pour le professionnel, un tableau de bord pour le reste. La conversation sert au jugement ; le tableau de bord sert à la répétition. Chaque professionnel — coach, nutritionniste, kinésithérapeute — écrit sur le même athlète, avec son propre périmètre et ses permissions.","de":"KI-Copilot für die Fachkraft, Panel für alles andere. Das Gespräch dient dem Urteil; das Panel dient der Wiederholung. Jede Fachkraft — Trainer, Ernährungsberaterin, Physiotherapeut — schreibt beim selben Sportler, mit eigenem Zuständigkeitsbereich und eigenen Rechten."},"p.my-trakr.secoes.0.pontos.2.rotulo":{"pt":"Operação","en":"Operations","it":"Operatività","es":"Operación","fr":"Opérations","de":"Betrieb"},"p.my-trakr.secoes.0.pontos.2.texto":{"pt":"Roster agrupado por fase e ordenado por atenção, banco de treinos da casa, prescrição em lote, blocos de plano multi-semana distribuídos pela disponibilidade real de cada aluno.","en":"Roster grouped by phase and ordered by attention, an in-house workout bank, batch prescription, and multi-week plan blocks distributed across each athlete's real availability.","it":"Roster raggruppato per fase e ordinato per priorità di attenzione, banca allenamenti della struttura, prescrizione in blocco, blocchi di piano pluri-settimanali distribuiti sulla disponibilità reale di ogni atleta.","es":"Roster agrupado por fase y ordenado por atención, banco de entrenamientos de la casa, prescripción por lotes, bloques de plan multi-semana distribuidos según la disponibilidad real de cada alumno.","fr":"Roster groupé par phase et trié par priorité d'attention, bibliothèque de séances de la structure, prescription en lot, blocs de plan pluri-hebdomadaires répartis selon la disponibilité réelle de chaque athlète.","de":"Roster nach Phase gruppiert und nach Aufmerksamkeitsbedarf sortiert, hauseigene Trainingsbibliothek, Stapel-Vorgabe und mehrwöchige Planblöcke, verteilt nach der realen Verfügbarkeit jedes Sportlers."},"p.my-trakr.secoes.0.pontos.3.rotulo":{"pt":"Gestão","en":"Management","it":"Gestione","es":"Gestión","fr":"Gestion","de":"Steuerung"},"p.my-trakr.secoes.0.pontos.3.texto":{"pt":"Dashboards internos de negócio: placar comparativo por treinador, custo e margem por aluno, capacidade por profissional, redistribuição de carteiras com prévia do impacto antes de confirmar, e CRM de retenção — quem estava treinando e parou, com o valor mensal em risco.","en":"Internal business dashboards: comparative scoreboard by coach, cost and margin per athlete, capacity per professional, roster redistribution with an impact preview before confirming, and a retention CRM — who was training and stopped, with the monthly revenue at risk.","it":"Dashboard interne di business: quadro comparativo per allenatore, costo e margine per atleta, capacità per professionista, ridistribuzione dei portafogli con anteprima dell'impatto prima di confermare, e CRM di retention — chi si allenava e ha smesso, con il valore mensile a rischio.","es":"Dashboards internos de negocio: marcador comparativo por entrenador, coste y margen por alumno, capacidad por profesional, redistribución de carteras con vista previa del impacto antes de confirmar, y CRM de retención — quién entrenaba y dejó de hacerlo, con el valor mensual en riesgo.","fr":"Tableaux de bord de gestion : comparatif par coach, coût et marge par athlète, capacité par professionnel, redistribution des portefeuilles avec aperçu de l'impact avant validation, et CRM de rétention — qui s'entraînait et a arrêté, avec le revenu mensuel en jeu.","de":"Interne Business-Dashboards: Vergleichsübersicht je Trainer, Kosten und Marge je Sportler, Kapazität je Fachkraft, Neuverteilung der Kundenstämme mit Wirkungsvorschau vor der Bestätigung, und ein Retention-CRM — wer trainiert hat und aufgehört hat, mit dem monatlichen Umsatzrisiko."},"p.my-trakr.secoes.0.pontos.4.rotulo":{"pt":"Tese","en":"Thesis","it":"Tesi","es":"Tesis","fr":"Thèse","de":"These"},"p.my-trakr.secoes.0.pontos.4.texto":{"pt":"A unidade do painel do dono é o <b>treinador</b>, não o aluno. Empilhar todos os atletas numa lista é a versão que quebra justamente nos 200 alunos que são a meta.","en":"The unit of the owner's panel is the <b>coach</b>, not the athlete. Stacking every athlete into one list is the version that breaks at exactly the 200 athletes that are the goal.","it":"L'unità del pannello del titolare è l'<b>allenatore</b>, non l'atleta. Impilare tutti gli atleti in un'unica lista è la versione che si rompe proprio ai 200 atleti che sono l'obiettivo.","es":"La unidad del panel del dueño es el <b>entrenador</b>, no el alumno. Apilar a todos los atletas en una lista es la versión que se rompe justo en los 200 alumnos que son la meta.","fr":"L'unité du tableau de bord du dirigeant, c'est le <b>coach</b>, pas l'athlète. Empiler tous les athlètes dans une seule liste, c'est la version qui casse précisément aux 200 athlètes visés.","de":"Die Einheit im Panel der Inhaberin ist der <b>Trainer</b>, nicht der Sportler. Alle Athleten in eine Liste zu stapeln ist die Variante, die genau bei den angestrebten 200 Sportlern bricht."},"p.my-trakr.legendas.0":{"pt":"Contagem para a prova e prontidão do dia","en":"Race countdown and today's readiness","it":"Conto alla rovescia per la gara e readiness del giorno","es":"Cuenta atrás para la prueba y readiness del día","fr":"Compte à rebours de la course et readiness du jour","de":"Countdown zum Wettkampf und Readiness des Tages"},"p.my-trakr.legendas.1":{"pt":"Condicionamento e frescor — fitness, fadiga e forma","en":"Fitness and freshness — fitness, fatigue and form","it":"Condizione e freschezza — fitness, fatica e forma","es":"Condición y frescura — fitness, fatiga y forma","fr":"Condition et fraîcheur — fitness, fatigue et forme","de":"Form und Frische — Fitness, Ermüdung und Form"},"p.my-trakr.legendas.2":{"pt":"Calendário de treinos com totais semanais","en":"Training calendar with weekly totals","it":"Calendario allenamenti con totali settimanali","es":"Calendario de entrenamientos con totales semanales","fr":"Calendrier d'entraînement avec totaux hebdomadaires","de":"Trainingskalender mit Wochensummen"},"p.my-trakr.legendas.3":{"pt":"Temporada — volume semanal por fase","en":"Season — weekly volume by phase","it":"Stagione — volume settimanale per fase","es":"Temporada — volumen semanal por fase","fr":"Saison — volume hebdomadaire par phase","de":"Saison — Wochenvolumen nach Phase"},"p.my-trakr.legendas.4":{"pt":"Zonas de performance — bike, corrida e natação","en":"Performance zones — bike, run and swim","it":"Zone di performance — bici, corsa e nuoto","es":"Zonas de rendimiento — bici, carrera y natación","fr":"Zones de performance — vélo, course et natation","de":"Leistungszonen — Rad, Lauf und Schwimmen"},"p.my-trakr.legendas.5":{"pt":"Composição corporal — tendências de bioimpedância","en":"Body composition — bioimpedance trends","it":"Composizione corporea — andamento bioimpedenza","es":"Composición corporal — tendencias de bioimpedancia","fr":"Composition corporelle — tendances de bio-impédance","de":"Körperzusammensetzung — Bioimpedanz-Verlauf"},"p.my-trakr.legendas.6":{"pt":"Plano alimentar e nutrição por duração de treino","en":"Meal plan and nutrition by session length","it":"Piano alimentare e nutrizione per durata dell'allenamento","es":"Plan de alimentación y nutrición por duración de sesión","fr":"Plan alimentaire et nutrition selon la durée de séance","de":"Ernährungsplan nach Trainingsdauer"},"p.my-trakr.legendas.7":{"pt":"Força, registro de lesões e estilo de vida","en":"Strength, injury log and lifestyle","it":"Forza, registro infortuni e stile di vita","es":"Fuerza, registro de lesiones y estilo de vida","fr":"Force, journal des blessures et hygiène de vie","de":"Kraft, Verletzungsprotokoll und Lebensstil"},"p.my-trakr.legendas.8":{"pt":"Configurações do atleta — disponibilidade e o que mede","en":"Athlete settings — availability and what you measure","it":"Impostazioni dell'atleta — disponibilità e cosa misuri","es":"Ajustes del atleta — disponibilidad y qué mides","fr":"Réglages de l'athlète — disponibilité et ce que vous mesurez","de":"Athleteneinstellungen — Verfügbarkeit und was gemessen wird"},"p.my-trakr.legendas.9":{"pt":"O sistema completo, de ponta a ponta","en":"The whole system, end to end","it":"L'intero sistema, dall'inizio alla fine","es":"El sistema completo, de principio a fin","fr":"Le système entier, de bout en bout","de":"Das ganze System, von Anfang bis Ende"},"s.lbl.todos":{"pt":"Todos os projetos","en":"All projects","it":"Tutti i progetti","es":"Todos los proyectos","fr":"Tous les projets","de":"Alle Projekte"},"p.my-trakr.etiqueta":{"pt":"Produto próprio · Plataforma de treino","en":"Own product · Training platform","it":"Prodotto proprio · Piattaforma di allenamento","es":"Producto propio · Plataforma de entrenamiento","fr":"Produit maison · Plateforme d'entraînement","de":"Eigenes Produkt · Trainingsplattform"},"p.my-trakr.resumo":{"pt":"O painel que nasceu para um IRONMAN 70.3 e virou produto. O atleta conecta a própria IA, e o painel mostra o que a conversa não mostra.","en":"The dashboard built for an IRONMAN 70.3 that became a product. Athletes connect their own AI, and the dashboard shows what the conversation can't.","it":"Il pannello nato per un IRONMAN 70.3 e diventato prodotto. L'atleta collega la propria IA, e il pannello mostra ciò che la conversazione non mostra.","es":"El panel que nació para un IRONMAN 70.3 y se convirtió en producto. El atleta conecta su propia IA, y el panel muestra lo que la conversación no muestra.","fr":"Le tableau de bord né pour un IRONMAN 70.3 et devenu produit. L'athlète connecte sa propre IA, et le tableau montre ce que la conversation ne montre pas.","de":"Das Dashboard, das für einen IRONMAN 70.3 entstand und zum Produkt wurde. Athleten verbinden ihre eigene KI, und das Dashboard zeigt, was das Gespräch nicht zeigt."},"p.my-trakr.versoes":{"pt":"<b>MY TRAKR</b> para o atleta. <b>TRAKR+</b> para a assessoria.","en":"<b>MY TRAKR</b> for the athlete. <b>TRAKR+</b> for the coaching team.","it":"<b>MY TRAKR</b> per l'atleta. <b>TRAKR+</b> per lo staff tecnico.","es":"<b>MY TRAKR</b> para el atleta. <b>TRAKR+</b> para la asesoría deportiva.","fr":"<b>MY TRAKR</b> pour l'athlète. <b>TRAKR+</b> pour l'équipe d'entraîneurs.","de":"<b>MY TRAKR</b> für Athleten. <b>TRAKR+</b> für Trainerteams."},"p.my-trakr.numeros.0.valor":{"pt":"1 ano","en":"1 year","it":"1 anno","es":"1 año","fr":"1 an","de":"1 Jahr"},"p.my-trakr.numeros.0.rotulo":{"pt":"em uso real, todos os dias","en":"in real daily use","it":"di uso reale, ogni giorno","es":"de uso real, todos los días","fr":"d'usage réel, chaque jour","de":"im echten Alltag"},"p.my-trakr.numeros.1.valor":{"pt":"MCP","en":"MCP","it":"MCP","es":"MCP","fr":"MCP","de":"MCP"},"p.my-trakr.numeros.1.rotulo":{"pt":"conecta Claude ou ChatGPT","en":"connects Claude or ChatGPT","it":"collega Claude o ChatGPT","es":"conecta Claude o ChatGPT","fr":"connecte Claude ou ChatGPT","de":"verbindet Claude oder ChatGPT"},"p.my-trakr.numeros.2.valor":{"pt":"2","en":"2","it":"2","es":"2","fr":"2","de":"2"},"p.my-trakr.numeros.2.rotulo":{"pt":"versões: atleta e assessoria","en":"versions: athlete and coaching team","it":"versioni: atleta e staff tecnico","es":"versiones: atleta y asesoría","fr":"versions : athlète et entraîneurs","de":"Versionen: Athlet und Trainerteam"},"p.my-trakr.numeros.3.valor":{"pt":".fit","en":".fit","it":".fit","es":".fit","fr":".fit","de":".fit"},"p.my-trakr.numeros.3.rotulo":{"pt":"leitura e escrita feitas do zero","en":"read and write built from scratch","it":"lettura e scrittura scritte da zero","es":"lectura y escritura hechas desde cero","fr":"lecture et écriture écrites de zéro","de":"Lesen und Schreiben selbst entwickelt"},"p.my-trakr.descricao":{"pt":"O dashboard que nasceu para um IRONMAN 70.3 e virou produto.","en":"The dashboard born for an IRONMAN 70.3 that became a product.","it":"La dashboard nata per un IRONMAN 70.3 e diventata prodotto.","es":"El dashboard que nació para un IRONMAN 70.3 y se convirtió en producto.","fr":"Le tableau de bord né pour un IRONMAN 70.3, devenu produit.","de":"Das Dashboard, das für einen IRONMAN 70.3 entstand und zum Produkt wurde."},"s.lbl.ver.identidade":{"pt":"Ver a identidade","en":"See the brand","it":"Vedi l'identità","es":"Ver la identidad","fr":"Voir l'identité","de":"Zur Marke"},"s.lbl.ver.projeto":{"pt":"Ver o projeto","en":"See the project","it":"Vedi il progetto","es":"Ver el proyecto","fr":"Voir le projet","de":"Zum Projekt"},"s.nav.work":{"pt":"Projetos","en":"Work","it":"Progetti","es":"Proyectos","fr":"Projets","de":"Projekte"},"s.id.title":{"pt":"Identidade","en":"Identity","it":"Identità","es":"Identidad","fr":"Identité","de":"Identität"},"s.nav.about":{"pt":"Sobre","en":"About","it":"Chi sono","es":"Perfil","fr":"À propos","de":"Über mich"},"s.nav.cards":{"pt":"Cartões","en":"Cards","it":"Biglietti","es":"Tarjetas","fr":"Cartes","de":"Karten"},"s.nav.contact":{"pt":"Contato","en":"Contact","it":"Contatti","es":"Contacto","fr":"Contact","de":"Kontakt"},"s.about.base.v":{"pt":"Cuneo, Itália","en":"Cuneo, Italy","it":"Cuneo, Italia","es":"Cuneo, Italia","fr":"Cuneo, Italie","de":"Cuneo, Italien"}};window.__TITULO=null;</script>
+<script>(function(){
+var T=window.__T||{},LS=["pt","en","it","es","fr","de"],TAG={pt:"pt-BR",en:"en",it:"it",es:"es",fr:"fr",de:"de"};
+function val(k,l){var v=T[k];return v?(v[l]!=null&&v[l]!==""?v[l]:v.pt):null}
+function aplicar(l){
+ document.documentElement.lang=TAG[l]||l;window.__lang=l;
+ document.querySelectorAll("[data-t]").forEach(function(e){var v=val(e.getAttribute("data-t"),l);if(v!=null)e.innerHTML=v});
+ document.querySelectorAll("[data-t-alt]").forEach(function(e){var v=val(e.getAttribute("data-t-alt"),l);if(v!=null)e.setAttribute("alt",v.replace(/<[^>]+>/g,""))});
+ document.querySelectorAll("[data-t-content]").forEach(function(e){var v=val(e.getAttribute("data-t-content"),l);if(v!=null)e.setAttribute("content",v.replace(/<[^>]+>/g,""))});
+ if(window.__TITULO){var t=val(window.__TITULO,l);if(t)document.title=t.replace(/<[^>]+>/g,"")}
+ var s=document.getElementById("idioma");if(s)s.value=l;
+ try{document.dispatchEvent(new CustomEvent("idioma",{detail:l}))}catch(e){}
+}
+function detectar(){
+ var f=new URLSearchParams(location.search).get("lang");if(f&&LS.indexOf(f.toLowerCase())>=0)return f.toLowerCase();
+ try{var g=localStorage.getItem("ventuno-lang");if(g&&LS.indexOf(g)>=0)return g}catch(e){}
+ var p=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||""];
+ for(var i=0;i<p.length;i++){var b=String(p[i]).toLowerCase().split("-")[0];if(LS.indexOf(b)>=0)return b}
+ return "en";
+}
+window.__aplicarIdioma=aplicar;
+var sel=document.getElementById("idioma");
+if(sel)sel.addEventListener("change",function(){aplicar(sel.value);try{localStorage.setItem("ventuno-lang",sel.value)}catch(e){}});
+aplicar(detectar());
+})();</script>
+
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+<script>(function(){
+var d=document,H=d.documentElement,W=window;
+var mov=H.classList.contains("mov");
+var fino=W.matchMedia&&W.matchMedia("(hover:hover) and (pointer:fine)").matches;
+var vh=W.innerHeight,sujo=true;
+function $$(s,r){return [].slice.call((r||d).querySelectorAll(s))}
+
+/* papel pontilhado do topo: desenha sempre; só reage ao mouse com movimento */
+var cv=d.querySelector(".hero canvas");
+if(cv&&cv.getContext){
+ var cx=cv.getContext("2d"),pts=[],mx=-1e4,my=-1e4,dpr=Math.min(2,W.devicePixelRatio||1),Wc=0,Hc=0,vivo=false;
+ var pintar=function(){var inf=150*dpr,anda=false;cx.clearRect(0,0,Wc,Hc);
+  for(var i=0;i<pts.length;i++){var o=pts[i],dx=o.ox-mx,dy=o.oy-my,di=Math.sqrt(dx*dx+dy*dy),tx=o.ox,ty=o.oy,b=0;
+   if(di<inf&&di>.01){var f=1-di/inf;f=f*f*(3-2*f);tx+=dx/di*f*24*dpr;ty+=dy/di*f*24*dpr;b=f}
+   o.x+=(tx-o.x)*.12;o.y+=(ty-o.y)*.12;o.b+=(b-o.b)*.15;
+   if(Math.abs(tx-o.x)>.15||Math.abs(ty-o.y)>.15||Math.abs(b-o.b)>.01)anda=true;
+   cx.beginPath();cx.arc(o.x,o.y,(1.1+o.b*2.4)*dpr,0,6.2832);
+   cx.fillStyle=(o.a||o.b>.45)?"rgba(215,180,213,"+(.55+o.b*.45).toFixed(3)+")":"rgba(243,241,238,"+(.08+o.b*.5).toFixed(3)+")";cx.fill()}
+  return anda};
+ var montar=function(){Wc=cv.width=Math.round(cv.offsetWidth*dpr);Hc=cv.height=Math.round(cv.offsetHeight*dpr);pts=[];var g=30*dpr;
+  for(var x=g/2;x<Wc;x+=g)for(var y=g/2;y<Hc;y+=g)pts.push({ox:x,oy:y,x:x,y:y,b:0,a:Math.random()<.025});pintar()};
+ var laco=function(){if(pintar())requestAnimationFrame(laco);else vivo=false};
+ var acordar=function(){if(!vivo){vivo=true;requestAnimationFrame(laco)}};
+ montar();
+ if(mov&&fino){var topo=cv.parentElement;
+  topo.addEventListener("mousemove",function(e){var r=cv.getBoundingClientRect();mx=(e.clientX-r.left)*dpr;my=(e.clientY-r.top)*dpr;acordar()});
+  topo.addEventListener("mouseleave",function(){mx=-1e4;my=-1e4;acordar()})}
+ W.addEventListener("resize",function(){clearTimeout(cv.__t);cv.__t=setTimeout(montar,150)});
+}
+if(!mov)return;
+
+/* rolagem suave */
+var lenis=null;
+if(W.Lenis){try{lenis=new W.Lenis({lerp:.09});lenis.on("scroll",function(){sujo=true});
+ var rafL=function(t){lenis.raf(t);requestAnimationFrame(rafL)};requestAnimationFrame(rafL)}catch(e){lenis=null}}
+d.addEventListener("click",function(e){
+ var a=e.target.closest&&e.target.closest("a[href]");
+ if(!a||!lenis||a.classList.contains("pulo")||a.target==="_blank"||!a.hash||a.pathname!==location.pathname||a.search!==location.search)return;
+ var el=d.getElementById(decodeURIComponent(a.hash.slice(1)));if(!el)return;
+ e.preventDefault();lenis.scrollTo(el,{duration:1.4});
+});
+W.addEventListener("scroll",function(){sujo=true},{passive:true});
+W.addEventListener("resize",function(){vh=W.innerHeight;sujo=true});
+
+/* o título sobe da máscara; depois a máscara sai para não cortar acentos */
+$$("h1").forEach(function(h){var u=h.querySelector(".ln:last-child>span");if(u)u.addEventListener("animationend",function(){h.classList.add("feito")})});
+
+/* blocos que surgem: o que já está na tela ao abrir nunca some */
+var fila=[],agendado=0;
+function revelar(el){fila.push(el);if(agendado)return;agendado=requestAnimationFrame(function(){
+ fila.forEach(function(x,i){x.style.transitionDelay=(i*.08)+"s";x.classList.add("on");
+  x.addEventListener("transitionend",function fim(ev){if(ev.target!==x||ev.propertyName!=="opacity")return;x.removeEventListener("transitionend",fim);x.classList.remove("esp","on");x.style.transitionDelay=""})});
+ fila=[];agendado=0})}
+var nums=[];
+if("IntersectionObserver" in W){
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);revelar(e.target)}})},{rootMargin:"0px 0px -8% 0px"});
+ $$(".rv").forEach(function(el){if(el.getBoundingClientRect().top>vh*.92){el.classList.add("esp");io.observe(el)}});
+ var ion=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){ion.unobserve(e.target);contar(e.target)}})},{rootMargin:"0px 0px -12% 0px"});
+ $$(".nums").forEach(function(n){if(n.getBoundingClientRect().top>vh*.88)ion.observe(n)});
+}
+
+/* números contando até o valor (só os que são número de verdade) */
+function contar(caixa){$$("b",caixa).forEach(function(b){
+ var m=b.textContent.match(/^(~?)(\d{1,3}(?:\.\d{3})+|\d+)(.*)$/);if(!m)return;
+ var alvo=+m[2].replace(/\./g,""),pontos=m[2].indexOf(".")>=0,ini=0;b.__para=0;
+ var fmt=function(n){var s=String(n);return pontos?s.replace(/\B(?=(\d{3})+(?!\d))/g,"."):s};
+ var passo=function(t){if(b.__para)return;if(!ini)ini=t;var k=Math.min(1,(t-ini)/1400),e=1-Math.pow(1-k,3);
+  b.textContent=m[1]+fmt(Math.round(alvo*e))+m[3];if(k<1)requestAnimationFrame(passo)};
+ requestAnimationFrame(passo)})}
+
+/* parallax: fotos dentro da moldura, as três telas em velocidades diferentes */
+var par=[];
+$$(".dest .foto img,.item .foto img,.estudo .foto img,.capa-pag .foto img").forEach(function(img){par.push({el:img,c:img.parentElement,k:.06})});
+$$(".painel").forEach(function(p){$$("img",p).forEach(function(img,i){par.push({el:img,c:p,px:[-36,56,-18][i%3]})})});
+if(par.length)H.classList.add("par");
+var barra=d.querySelector(".nav .progresso"),assina=d.querySelector(".assina span");
+
+/* a bio acende palavra por palavra enquanto se lê */
+var bio=d.querySelector(".bio"),pal=[],acesas=-1,emB=null,fimEm=-1;
+function partir(){if(!bio)return;
+ (function anda(n){[].slice.call(n.childNodes).forEach(function(c){
+  if(c.nodeType===3){var f=d.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(function(w){if(!w)return;
+   if(/^\s+$/.test(w))f.appendChild(d.createTextNode(w));else{var s=d.createElement("span");s.className="w";s.textContent=w;f.appendChild(s)}});n.replaceChild(f,c)}
+  else if(c.nodeType===1&&!c.classList.contains("w"))anda(c)})})(bio);
+ pal=$$(".w",bio);acesas=-1;sujo=true;
+ /* o marca-texto passa na frase em destaque quando a última palavra dela acende */
+ emB=bio.querySelector("em");var ws=emB?$$(".w",emB):[];fimEm=ws.length?pal.indexOf(ws[ws.length-1]):-1}
+partir();
+
+/* seção atual na nav (só na home) */
+var secs=$$(".nav ul a").map(function(a){var el=a.hash&&a.pathname===location.pathname?d.getElementById(a.hash.slice(1)):null;return el?{a:a,el:el}:null}).filter(Boolean),atual=-2;
+
+d.addEventListener("idioma",function(){$$(".nums b").forEach(function(b){b.__para=1});partir()});
+
+function quadro(){requestAnimationFrame(quadro);if(!sujo)return;sujo=false;
+ var sy=W.scrollY||W.pageYOffset;
+ if(cv&&sy<vh*1.6)cv.style.translate="0 "+(sy*.16).toFixed(1)+"px";
+ if(barra){var max=H.scrollHeight-vh;barra.style.transform="scaleX("+(max>0?Math.min(1,sy/max):0).toFixed(4)+")"}
+ for(var i=0;i<par.length;i++){var o=par[i],r=o.c.getBoundingClientRect();if(r.bottom<-80||r.top>vh+80)continue;
+  var p=((r.top+r.height/2)-vh/2)/(vh/2+r.height/2);p=Math.max(-1,Math.min(1,p));
+  o.el.style.translate="0 "+(o.px!=null?p*o.px:-p*o.k*r.height).toFixed(1)+"px"}
+ if(bio&&pal.length){var rb=bio.getBoundingClientRect(),pr=(vh*.85-rb.top)/(rb.height+vh*.4),n=Math.round(Math.max(0,Math.min(1,pr))*pal.length);
+  if(n!==acesas){for(var j=0;j<pal.length;j++)pal[j].classList.toggle("aceso",j<n);acesas=n;if(emB&&fimEm>=0)emB.classList.toggle("marcado",n>fimEm)}}
+ if(assina){var ra=assina.parentElement.getBoundingClientRect();if(ra.top<vh+40){var pa=Math.max(0,Math.min(1,(vh-ra.top)/ra.height));assina.style.translate="0 "+((1-pa)*42).toFixed(1)+"%"}}
+ if(secs.length){var at=-1;for(var s=0;s<secs.length;s++)if(secs[s].el.getBoundingClientRect().top<=vh*.45)at=s;
+  if(at!==atual){secs.forEach(function(o,k){o.a.classList.toggle("on",k===at)});atual=at}}
+}
+requestAnimationFrame(quadro);
+
+/* cursor próprio: ponto ameixa; cresce nos links; vira "→" nos projetos e marcas */
+if(fino){var cur=d.createElement("div");cur.className="cursor";cur.setAttribute("aria-hidden","true");cur.innerHTML="<span>→</span>";d.body.appendChild(cur);H.classList.add("com-cursor");
+ var x=-100,y=-100,X=-100,Y=-100,visto=false;
+ d.addEventListener("mousemove",function(e){x=e.clientX;y=e.clientY;if(!visto){visto=true;X=x;Y=y;cur.classList.add("on")}
+  var t=e.target.closest?e.target:null;if(!t)return;var card=t.closest("[data-ver]");
+  cur.classList.toggle("ver",!!card);cur.classList.toggle("link",!card&&!!t.closest("a,button,select,label"));cur.classList.toggle("some",!!t.closest("input,textarea"))},{passive:true});
+ d.documentElement.addEventListener("mouseleave",function(){visto=false;cur.classList.remove("on")});
+ var segue=function(){X+=(x-X)*.22;Y+=(y-Y)*.22;cur.style.transform="translate3d("+X.toFixed(1)+"px,"+Y.toFixed(1)+"px,0)";requestAnimationFrame(segue)};requestAnimationFrame(segue);
+}
+})();</script>
+</body>
+</html>

@@ -1,0 +1,433 @@
+{
+  "slug": "flamme-rouge",
+  "secao": "projetos",
+  "capa": "/assets/flamme-1-kite.jpg",
+  "galeria": [
+    {
+      "src": "/assets/flamme-home.jpg"
+    },
+    {
+      "src": "/assets/flamme-live.jpg"
+    },
+    {
+      "src": "/assets/flamme-codes.jpg"
+    },
+    {
+      "src": "/assets/flamme-driver.jpg"
+    },
+    {
+      "src": "/assets/flamme-races.jpg"
+    },
+    {
+      "src": "/assets/flamme-login.jpg"
+    },
+    {
+      "src": "/assets/flamme-1-kite.jpg"
+    },
+    {
+      "src": "/assets/flamme-2-pave.jpg"
+    },
+    {
+      "src": "/assets/flamme-3-fechamento.jpg"
+    }
+  ],
+  "identidade": "flamme-rouge",
+  "t": {
+    "pt": {
+      "titulo": "Flamme Rouge",
+      "etiqueta": "Produto próprio · Direção de prova em ciclismo",
+      "resumo": "Direção de prova ao vivo para ciclismo de estrada. O celular do motorista vira o rastreador do veículo, sem aplicativo, sem conta e sem equipamento.",
+      "descricao": "Direção de prova ao vivo para ciclismo de estrada.",
+      "pontos": [
+        {
+          "rotulo": "Problema",
+          "texto": "Prova de estrada acontece no rádio. A direção pergunta onde está o carro de fechamento e recebe uma estimativa — e é em cima dela que se reabre a via e que se cumpre, ou não, o tempo de interdição combinado com a autoridade de trânsito."
+        },
+        {
+          "rotulo": "Conceito",
+          "texto": "Cada veículo de apoio recebe um código de 6 caracteres impresso na folha do briefing, com QR ao lado. O motorista aponta a câmera e o celular dele vira o rastreador daquele veículo — sem loja de aplicativos, sem conta, sem equipamento para comprar, carregar e recolher no fim do dia."
+        },
+        {
+          "rotulo": "Medição",
+          "texto": "A janela entre abertura e fechamento deixa de ser palpite: o sistema guarda a que horas a abertura passou por cada ponto, e a janela vira a diferença entre dois horários observados. Sem histórico suficiente, a tela diz <b>projetado</b> e explica o motivo, em vez de fingir precisão."
+        },
+        {
+          "rotulo": "Terreno",
+          "texto": "Numa ida-e-volta, dois veículos podem estar a dezenas de metros em linha reta e a dezenas de quilômetros pela estrada. O sistema projeta cada posição sobre o traçado indexado e compara ao longo dele — inclusive o custo de quem já passou do ponto e precisa retornar contra o fluxo."
+        },
+        {
+          "rotulo": "Resiliência",
+          "texto": "Um pedido de socorro fura a fila na frente de qualquer ponto de GPS e é retentado até o servidor confirmar. Nada é enviado antes de ser gravado no aparelho: num teste sem cobertura, os pontos acumulados chegaram completos, em ordem e sem duplicar quando o sinal voltou."
+        },
+        {
+          "rotulo": "Status",
+          "texto": "Em produção técnica, ainda sem cliente pagante. Testado na rua com celulares de verdade — inclusive com um deles numa bicicleta em movimento —, seguindo cada posição no mapa. O teste numa prova de competição, com o comboio inteiro — carros de abertura e fechamento e ambulância —, ainda está por vir."
+        }
+      ],
+      "destaque": {
+        "etiqueta": "Decisões técnicas",
+        "titulo": "O que se decide antes do dia da prova",
+        "texto": "O dicionário é tipado: uma chave ausente em alemão quebra o build, em vez de virar texto cru na tela de um motorista austríaco no dia da prova. A justificativa de cada acionamento é gravada desmontada — chave e números —, porque a mesma frase é lida por até três pessoas em idiomas diferentes, e só montando na leitura ela acerta para todas. Tabelas com dado sensível não têm política de RLS nenhuma: o Postgres nega por padrão. E a degradação é desenhada, não acidental — chave de mapa indisponível cai sozinha para o fundo padrão, banco fora do ar não vira porta trancada num formulário."
+      },
+      "numeros": [
+        {
+          "valor": "~35.300",
+          "rotulo": "linhas de código"
+        },
+        {
+          "valor": "325",
+          "rotulo": "testes automatizados"
+        },
+        {
+          "valor": "6",
+          "rotulo": "idiomas verificados no build"
+        },
+        {
+          "valor": "9",
+          "rotulo": "papéis de veículo"
+        }
+      ],
+      "legendas": [
+        "A página pública — o argumento em uma frase",
+        "Painel ao vivo — a janela medida, não estimada, e o que fazer com o número",
+        "Folha de vínculo — um código e um QR por veículo, entregues no briefing",
+        "A tela do motorista — o celular vira rastreador, socorro a um toque",
+        "Área da direção — cada prova com traçado, veículos e códigos próprios",
+        "Entrada da direção — configurar antes, assistir no dia",
+        "O último quilômetro — de onde vem o nome",
+        "O comboio de apoio no percurso",
+        "O carro de fechamento e a via que reabre atrás dele"
+      ]
+    },
+    "en": {
+      "titulo": "Flamme Rouge",
+      "etiqueta": "Own product · Race control for road cycling",
+      "resumo": "Live race direction for road cycling. The driver's phone becomes the vehicle tracker, with no app, no account and no hardware.",
+      "descricao": "Live race control for road cycling.",
+      "pontos": [
+        {
+          "rotulo": "Problem",
+          "texto": "A road race runs on the radio. Race control asks where the closing car is and gets an estimate — and the road is reopened on the strength of that estimate, along with the closure window agreed with the traffic authority, met or missed."
+        },
+        {
+          "rotulo": "Concept",
+          "texto": "Each support vehicle gets a 6-character code printed on the briefing sheet, with a QR code beside it. The driver points the camera, and their phone becomes that vehicle's tracker — no app store, no account, no hardware to buy, charge, hand out and collect at the end of the day."
+        },
+        {
+          "rotulo": "Measurement",
+          "texto": "The window between the lead and closing car stops being guesswork: the system records what time the lead car passed each point, and the window becomes the difference between two observed times. When there is not enough history, the screen says <b>projected</b> and gives the reason, instead of faking precision."
+        },
+        {
+          "rotulo": "Terrain",
+          "texto": "On an out-and-back course, two vehicles can be tens of metres apart as the crow flies and tens of kilometres apart along the road. The system projects each position onto the indexed course and compares along it — including the cost paid by a vehicle that has already passed the point and has to turn back against the flow."
+        },
+        {
+          "rotulo": "Resilience",
+          "texto": "A call for help jumps the queue ahead of any GPS point and is retried until the server confirms it. Nothing is sent before it is written to the device: in a test with no coverage, the stored points all arrived — complete, in order and without duplicates — as soon as the signal returned."
+        },
+        {
+          "rotulo": "Status",
+          "texto": "Technically in production, no paying customer yet. Tested on the street with real phones — including one on a moving bike — tracking every position on the map. The test in an actual race, with the whole convoy — lead car, closing car and ambulance — is still ahead."
+        }
+      ],
+      "destaque": {
+        "etiqueta": "Engineering decisions",
+        "titulo": "What gets decided before race day",
+        "texto": "The dictionary is typed: a key missing in German breaks the build instead of showing up as a raw string on an Austrian driver's screen on race day. Each dispatch justification is stored in pieces — keys and numbers — because the same sentence is read by up to three people in different languages, and only assembling it on read gets it right for all of them. Tables holding sensitive data carry no RLS policy at all: Postgres denies by default. And degradation is designed, not accidental — an unavailable map key falls back to the default basemap on its own, a database outage does not become a locked door on a form."
+      },
+      "numeros": [
+        {
+          "valor": "~35.300",
+          "rotulo": "lines of code"
+        },
+        {
+          "valor": "325",
+          "rotulo": "automated tests"
+        },
+        {
+          "valor": "6",
+          "rotulo": "languages checked at build time"
+        },
+        {
+          "valor": "9",
+          "rotulo": "vehicle roles"
+        }
+      ],
+      "legendas": [
+        "The public page — the argument in one sentence",
+        "Live panel — the window measured, not estimated, and what to do about it",
+        "Link sheet — one code and one QR per vehicle, handed out at the briefing",
+        "The driver's screen — the phone becomes the tracker, help one tap away",
+        "Race control area — each race with its own course, vehicles and codes",
+        "Race control sign-in — set it up first, just watch on the day",
+        "The final kilometre — where the name comes from",
+        "The support convoy on the course",
+        "The closing car and the road reopening behind it"
+      ]
+    },
+    "it": {
+      "titulo": "Flamme Rouge",
+      "etiqueta": "Prodotto proprio · Direzione gara nel ciclismo",
+      "resumo": "Direzione di corsa dal vivo per il ciclismo su strada. Il telefono dell'autista diventa il tracker del veicolo, senza app, senza account e senza dispositivi.",
+      "descricao": "Direzione gara in tempo reale per il ciclismo su strada.",
+      "pontos": [
+        {
+          "rotulo": "Problema",
+          "texto": "Una gara su strada si gestisce via radio. La direzione chiede dov'è l'auto di fine corsa e riceve una stima — ed è su quella stima che si riapre la strada e che si rispetta, o no, il tempo di chiusura concordato con la polizia stradale."
+        },
+        {
+          "rotulo": "Concetto",
+          "texto": "Ogni veicolo di assistenza riceve un codice di 6 caratteri stampato sul foglio del briefing, con un QR accanto. L'autista inquadra con la fotocamera e il suo telefono diventa il tracker di quel veicolo — nessuno store, nessun account, nessun dispositivo da comprare, caricare, distribuire e ritirare a fine giornata."
+        },
+        {
+          "rotulo": "Misura",
+          "texto": "La finestra tra apripista e fine corsa smette di essere un'ipotesi: il sistema registra a che ora l'apripista è passata da ogni punto, e la finestra diventa la differenza tra due orari osservati. Quando lo storico non basta, lo schermo scrive <b>proiettato</b> e ne spiega il motivo, invece di fingere precisione."
+        },
+        {
+          "rotulo": "Terreno",
+          "texto": "Su un percorso di andata e ritorno, due veicoli possono distare decine di metri in linea d'aria e decine di chilometri su strada. Il sistema proietta ogni posizione sul tracciato indicizzato e confronta lungo di esso — considerando anche il costo di chi ha già superato il punto e deve tornare indietro contromano."
+        },
+        {
+          "rotulo": "Resilienza",
+          "texto": "Una richiesta di soccorso passa davanti a qualsiasi punto GPS e viene ritentata finché il server non conferma. Niente viene inviato prima di essere scritto sul dispositivo: in un test senza copertura, i punti accumulati sono arrivati tutti — completi, in ordine e senza duplicati — appena il segnale è tornato."
+        },
+        {
+          "rotulo": "Stato",
+          "texto": "Tecnicamente in produzione, ancora senza cliente pagante. Provato su strada con telefoni veri — anche con uno su una bici in movimento — seguendo ogni posizione sulla mappa. La prova in una gara vera, con tutto il convoglio — apripista, fine corsa e ambulanza — deve ancora arrivare."
+        }
+      ],
+      "destaque": {
+        "etiqueta": "Scelte tecniche",
+        "titulo": "Ciò che si decide prima del giorno di gara",
+        "texto": "Il dizionario è tipizzato: una chiave assente in tedesco rompe la build, invece di comparire come stringa grezza sullo schermo di un autista austriaco il giorno della gara. La motivazione di ogni attivazione è salvata a pezzi — chiavi e numeri — perché la stessa frase è letta da un massimo di tre persone in lingue diverse, e solo componendola in lettura risulta giusta per tutte. Le tabelle con dati sensibili non hanno alcuna policy RLS: Postgres nega per impostazione predefinita. E il degrado è progettato, non accidentale — una chiave mappa non disponibile ripiega da sola sullo sfondo predefinito, un database irraggiungibile non diventa una porta chiusa su un modulo."
+      },
+      "numeros": [
+        {
+          "valor": "~35.300",
+          "rotulo": "righe di codice"
+        },
+        {
+          "valor": "325",
+          "rotulo": "test automatici"
+        },
+        {
+          "valor": "6",
+          "rotulo": "lingue verificate in compilazione"
+        },
+        {
+          "valor": "9",
+          "rotulo": "ruoli veicolo"
+        }
+      ],
+      "legendas": [
+        "La pagina pubblica — l'argomento in una frase",
+        "Pannello live — la finestra misurata, non stimata, e cosa farne",
+        "Foglio di abbinamento — un codice e un QR per veicolo, consegnati al briefing",
+        "La schermata del pilota — il telefono diventa il tracker, soccorso a un tocco",
+        "Area direzione gara — ogni gara con percorso, veicoli e codici propri",
+        "Accesso direzione gara — si configura prima, il giorno si guarda e basta",
+        "L'ultimo chilometro — da cui viene il nome",
+        "Il convoglio di assistenza sul percorso",
+        "L'auto di fine corsa e la strada che riapre dietro"
+      ]
+    },
+    "es": {
+      "titulo": "Flamme Rouge",
+      "etiqueta": "Producto propio · Dirección de carrera en ciclismo",
+      "resumo": "Dirección de carrera en vivo para ciclismo en ruta. El móvil del conductor se convierte en el rastreador del vehículo, sin app, sin cuenta y sin equipos.",
+      "descricao": "Dirección de carrera en vivo para ciclismo de ruta.",
+      "pontos": [
+        {
+          "rotulo": "Problema",
+          "texto": "Una carrera de ruta se gestiona por radio. La dirección pregunta dónde está el coche de cierre y recibe una estimación — y sobre esa estimación se reabre la vía y se cumple, o no, el tiempo de corte acordado con la autoridad de tráfico."
+        },
+        {
+          "rotulo": "Concepto",
+          "texto": "Cada vehículo de apoyo recibe un código de 6 caracteres impreso en la hoja del briefing, con un QR al lado. El conductor apunta la cámara y su móvil se convierte en el rastreador de ese vehículo — sin tienda de aplicaciones, sin cuenta, sin equipo que comprar, cargar, repartir y recoger al final del día."
+        },
+        {
+          "rotulo": "Medición",
+          "texto": "La ventana entre el coche de apertura y el de cierre deja de ser una suposición: el sistema guarda a qué hora pasó la apertura por cada punto, y la ventana pasa a ser la diferencia entre dos horarios observados. Sin histórico suficiente, la pantalla dice <b>proyectado</b> y explica el motivo, en vez de fingir precisión."
+        },
+        {
+          "rotulo": "Terreno",
+          "texto": "En un recorrido de ida y vuelta, dos vehículos pueden estar a decenas de metros en línea recta y a decenas de kilómetros por carretera. El sistema proyecta cada posición sobre el trazado indexado y compara a lo largo de él — incluido el coste de quien ya pasó el punto y debe volver en sentido contrario."
+        },
+        {
+          "rotulo": "Resiliencia",
+          "texto": "Una petición de auxilio se salta la cola por delante de cualquier punto de GPS y se reintenta hasta que el servidor confirma. Nada se envía antes de escribirse en el dispositivo: en una prueba sin cobertura, los puntos acumulados llegaron completos, en orden y sin duplicados en cuanto volvió la señal."
+        },
+        {
+          "rotulo": "Estado",
+          "texto": "En producción técnica, todavía sin cliente de pago. Probado en la calle con móviles reales — incluso con uno en una bicicleta en movimiento —, siguiendo cada posición en el mapa. La prueba en una carrera de verdad, con toda la caravana — apertura, cierre y ambulancia —, todavía está por llegar."
+        }
+      ],
+      "destaque": {
+        "etiqueta": "Decisiones técnicas",
+        "titulo": "Lo que se decide antes del día de carrera",
+        "texto": "El diccionario está tipado: una clave ausente en alemán rompe la compilación, en vez de aparecer como texto crudo en la pantalla de un conductor austríaco el día de la carrera. La justificación de cada activación se guarda desmontada — claves y números — porque la misma frase la leen hasta tres personas en idiomas distintos, y solo montándola en la lectura resulta correcta para todas. Las tablas con datos sensibles no tienen ninguna política RLS: Postgres deniega por defecto. Y la degradación está diseñada, no es accidental — una clave de mapa no disponible cae sola al fondo por defecto, una base de datos caída no se convierte en una puerta cerrada en un formulario."
+      },
+      "numeros": [
+        {
+          "valor": "~35.300",
+          "rotulo": "líneas de código"
+        },
+        {
+          "valor": "325",
+          "rotulo": "pruebas automatizadas"
+        },
+        {
+          "valor": "6",
+          "rotulo": "idiomas verificados en compilación"
+        },
+        {
+          "valor": "9",
+          "rotulo": "roles de vehículo"
+        }
+      ],
+      "legendas": [
+        "La página pública — el argumento en una frase",
+        "Panel en vivo — la ventana medida, no estimada, y qué hacer con el número",
+        "Hoja de vinculación — un código y un QR por vehículo, entregados en el briefing",
+        "La pantalla del conductor — el móvil se vuelve el rastreador, auxilio a un toque",
+        "Área de dirección — cada carrera con su recorrido, vehículos y códigos",
+        "Acceso de dirección — configurar antes, el día solo mirar",
+        "El último kilómetro — de donde viene el nombre",
+        "El convoy de apoyo en el recorrido",
+        "El coche de cierre y la vía que reabre detrás"
+      ]
+    },
+    "fr": {
+      "titulo": "Flamme Rouge",
+      "etiqueta": "Produit maison · Direction de course en cyclisme",
+      "resumo": "Direction de course en direct pour le cyclisme sur route. Le téléphone du chauffeur devient le traceur du véhicule, sans appli, sans compte et sans matériel.",
+      "descricao": "Direction de course en direct pour le cyclisme sur route.",
+      "pontos": [
+        {
+          "rotulo": "Problème",
+          "texto": "Une course sur route se gère à la radio. La direction demande où se trouve la voiture-balai et reçoit une estimation — et c'est sur cette estimation que la route rouvre, et que l'horaire de fermeture convenu avec les autorités est tenu, ou non."
+        },
+        {
+          "rotulo": "Concept",
+          "texto": "Chaque véhicule d'assistance reçoit un code de 6 caractères imprimé sur la feuille de briefing, avec un QR à côté. Le conducteur vise avec la caméra et son téléphone devient le traceur de ce véhicule — sans magasin d'applications, sans compte, sans matériel à acheter, recharger, distribuer et récupérer en fin de journée."
+        },
+        {
+          "rotulo": "Mesure",
+          "texto": "La fenêtre entre la voiture d'ouverture et la voiture-balai cesse d'être une supposition : le système enregistre l'heure de passage de l'ouverture à chaque point, et la fenêtre devient l'écart entre deux heures observées. Sans historique suffisant, l'écran affiche <b>projeté</b> et en donne la raison, au lieu de feindre la précision."
+        },
+        {
+          "rotulo": "Terrain",
+          "texto": "Sur un parcours en aller-retour, deux véhicules peuvent être à des dizaines de mètres à vol d'oiseau et à des dizaines de kilomètres par la route. Le système projette chaque position sur le tracé indexé et compare le long de celui-ci — y compris le coût pour celui qui a déjà dépassé le point et doit revenir à contresens."
+        },
+        {
+          "rotulo": "Résilience",
+          "texto": "Un appel à l'aide passe devant n'importe quel point GPS et est réessayé jusqu'à confirmation du serveur. Rien n'est envoyé avant d'être écrit sur l'appareil : lors d'un test sans couverture, les points accumulés sont tous arrivés — complets, dans l'ordre et sans doublons — dès le retour du signal."
+        },
+        {
+          "rotulo": "Statut",
+          "texto": "En production technique, encore sans client payant. Testé dans la rue avec de vrais téléphones — dont un sur un vélo en mouvement —, en suivant chaque position sur la carte. Le test en course réelle, avec tout le convoi — ouverture, voiture-balai et ambulance —, reste à venir."
+        }
+      ],
+      "destaque": {
+        "etiqueta": "Choix techniques",
+        "titulo": "Ce qui se décide avant le jour de la course",
+        "texto": "Le dictionnaire est typé : une clé absente en allemand casse le build, au lieu d'apparaître en texte brut sur l'écran d'un conducteur autrichien le jour de la course. La justification de chaque déclenchement est stockée en pièces détachées — clés et nombres — car la même phrase est lue par jusqu'à trois personnes dans des langues différentes, et seule sa composition à la lecture la rend juste pour toutes. Les tables contenant des données sensibles n'ont aucune politique RLS : Postgres refuse par défaut. Et la dégradation est conçue, non accidentelle — une clé de carte indisponible bascule seule sur le fond par défaut, une base de données hors service ne devient pas une porte verrouillée sur un formulaire."
+      },
+      "numeros": [
+        {
+          "valor": "~35.300",
+          "rotulo": "lignes de code"
+        },
+        {
+          "valor": "325",
+          "rotulo": "tests automatisés"
+        },
+        {
+          "valor": "6",
+          "rotulo": "langues vérifiées à la compilation"
+        },
+        {
+          "valor": "9",
+          "rotulo": "rôles de véhicule"
+        }
+      ],
+      "legendas": [
+        "La page publique — l'argument en une phrase",
+        "Panneau en direct — l’écart mesuré, non estimé, et quoi en faire",
+        "Feuille de liaison — un code et un QR par véhicule, remis au briefing",
+        "L'écran du chauffeur — le téléphone devient le traceur, secours en un geste",
+        "Espace direction de course — chaque course avec son parcours, ses véhicules et ses codes",
+        "Connexion direction de course — tout régler avant, le jour J on regarde",
+        "Le dernier kilomètre — d'où vient le nom",
+        "Le convoi d'assistance sur le parcours",
+        "La voiture-balai et la route qui rouvre derrière"
+      ]
+    },
+    "de": {
+      "titulo": "Flamme Rouge",
+      "etiqueta": "Eigenes Produkt · Rennleitung im Straßenradsport",
+      "resumo": "Live-Rennleitung für den Straßenradsport. Das Handy des Fahrers wird zum Tracker des Fahrzeugs, ohne App, ohne Konto und ohne Hardware.",
+      "descricao": "Rennleitung in Echtzeit für den Straßenradsport.",
+      "pontos": [
+        {
+          "rotulo": "Problem",
+          "texto": "Ein Straßenrennen läuft über Funk. Die Rennleitung fragt, wo das Schlussfahrzeug ist, und bekommt eine Schätzung — und auf dieser Schätzung beruht die Freigabe der Straße und die mit der Verkehrsbehörde vereinbarte Sperrzeit, eingehalten oder nicht."
+        },
+        {
+          "rotulo": "Konzept",
+          "texto": "Jedes Begleitfahrzeug erhält einen 6-stelligen Code, gedruckt auf dem Briefing-Blatt, mit QR-Code daneben. Der Fahrer hält die Kamera darauf, und sein Telefon wird zum Tracker dieses Fahrzeugs — kein App-Store, kein Konto, keine Hardware, die gekauft, geladen, verteilt und abends wieder eingesammelt werden muss."
+        },
+        {
+          "rotulo": "Messung",
+          "texto": "Das Fenster zwischen Führungs- und Schlussfahrzeug ist keine Vermutung mehr: Das System hält fest, wann das Führungsfahrzeug jeden Punkt passiert hat, und das Fenster wird zur Differenz zweier beobachteter Zeiten. Fehlt die Historie, schreibt der Bildschirm <b>projiziert</b> und nennt den Grund, statt Präzision vorzutäuschen."
+        },
+        {
+          "rotulo": "Gelände",
+          "texto": "Auf einer Hin-und-zurück-Strecke können zwei Fahrzeuge in Luftlinie zig Meter und entlang der Straße zig Kilometer auseinanderliegen. Das System projiziert jede Position auf die indizierte Strecke und vergleicht entlang dieser — samt dem Aufwand für ein Fahrzeug, das den Punkt bereits passiert hat und gegen die Fahrtrichtung zurück muss."
+        },
+        {
+          "rotulo": "Ausfallsicherheit",
+          "texto": "Ein Hilferuf überholt jeden GPS-Punkt in der Warteschlange und wird wiederholt, bis der Server bestätigt. Nichts wird gesendet, bevor es auf dem Gerät gespeichert ist: In einem Test ohne Netz kamen alle gesammelten Punkte vollständig, in der richtigen Reihenfolge und ohne Duplikate an, sobald das Signal zurück war."
+        },
+        {
+          "rotulo": "Status",
+          "texto": "Technisch in Produktion, noch ohne zahlenden Kunden. Auf der Straße mit echten Telefonen getestet — eines davon auf einem fahrenden Rad —, jede Position auf der Karte verfolgt. Der Test bei einem echten Rennen mit dem ganzen Konvoi — Führungsfahrzeug, Schlussfahrzeug und Krankenwagen — steht noch aus."
+        }
+      ],
+      "destaque": {
+        "etiqueta": "Technische Entscheidungen",
+        "titulo": "Was vor dem Renntag entschieden wird",
+        "texto": "Das Wörterbuch ist typisiert: Ein fehlender Schlüssel im Deutschen bricht den Build, statt am Renntag als roher Text auf dem Bildschirm eines österreichischen Fahrers zu landen. Die Begründung jeder Alarmierung wird zerlegt gespeichert — Schlüssel und Zahlen — denn denselben Satz lesen bis zu drei Personen in verschiedenen Sprachen, und nur beim Lesen zusammengesetzt stimmt er für alle. Tabellen mit sensiblen Daten haben gar keine RLS-Policy: Postgres verweigert standardmäßig. Und die Degradation ist geplant, nicht zufällig — ein nicht verfügbarer Kartenschlüssel fällt von selbst auf die Standardkarte zurück, eine ausgefallene Datenbank wird nicht zur verschlossenen Tür in einem Formular."
+      },
+      "numeros": [
+        {
+          "valor": "~35.300",
+          "rotulo": "Codezeilen"
+        },
+        {
+          "valor": "325",
+          "rotulo": "automatisierte Tests"
+        },
+        {
+          "valor": "6",
+          "rotulo": "Sprachen, beim Build geprüft"
+        },
+        {
+          "valor": "9",
+          "rotulo": "Fahrzeugrollen"
+        }
+      ],
+      "legendas": [
+        "Die öffentliche Seite — das Argument in einem Satz",
+        "Live-Panel — das Fenster gemessen, nicht geschätzt, und was daraus folgt",
+        "Zuordnungsbogen — ein Code und ein QR pro Fahrzeug, ausgegeben im Briefing",
+        "Der Fahrerbildschirm — das Handy wird zum Tracker, Hilfe mit einem Tipp",
+        "Rennleitungsbereich — jedes Rennen mit eigener Strecke, Fahrzeugen und Codes",
+        "Anmeldung der Rennleitung — vorher einrichten, am Renntag nur zuschauen",
+        "Der letzte Kilometer — daher der Name",
+        "Der Begleitkonvoi auf der Strecke",
+        "Das Schlussfahrzeug und die Straße, die dahinter wieder öffnet"
+      ]
+    }
+  }
+}

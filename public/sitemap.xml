@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://zeroventuno.com/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://zeroventuno.com/</loc></url>
+  <url><loc>https://zeroventuno.com/projetos/my-trakr/</loc></url>
+  <url><loc>https://zeroventuno.com/projetos/rentaloop/</loc></url>
+  <url><loc>https://zeroventuno.com/projetos/flamme-rouge/</loc></url>
+  <url><loc>https://zeroventuno.com/projetos/sistemas-officine-mattio/</loc></url>
+  <url><loc>https://zeroventuno.com/projetos/producao-visual-ia/</loc></url>
+  <url><loc>https://zeroventuno.com/projetos/centro-sportivo-roero/</loc></url>
+  <url><loc>https://zeroventuno.com/identidade/ventuno/</loc></url>
+  <url><loc>https://zeroventuno.com/identidade/my-trakr/</loc></url>
+  <url><loc>https://zeroventuno.com/identidade/flamme-rouge/</loc></url>
+  <url><loc>https://zeroventuno.com/cartoes/</loc></url>
+  <url><loc>https://zeroventuno.com/marca/ventuno.html</loc></url>
+  <url><loc>https://zeroventuno.com/marca/flamme-rouge.html</loc></url>
 </urlset>
